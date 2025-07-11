@@ -1,5 +1,5 @@
-# .github/workflows/deploy.yml
 name: Deploy Hugo site to GitHub Pages
+
 on:
   push:
     branches: [main]
@@ -7,6 +7,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
         with:
@@ -19,9 +20,12 @@ jobs:
           hugo-version: '0.148.0'
 
       - name: Build
-        run: hugo 
+        run: hugo
 
-      - name: Deploy
+      - name: Disable Jekyll
+        run: touch public/.nojekyll
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.GH_PAT }}
