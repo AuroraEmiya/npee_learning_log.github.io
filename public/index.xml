@@ -22,7 +22,34 @@
 &lt;li&gt;算法的时间空间复杂度&lt;/li&gt;
 &lt;li&gt;线性表的顺序表以及相关算法&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;操作系统-想念jyy的第n天&#34;&gt;操作系统-想念jyy的第n天&lt;/h2&gt;</description>
+&lt;p&gt;001-009&lt;/p&gt;
+&lt;h2 id=&#34;操作系统-想念jyy的第n天&#34;&gt;操作系统-想念jyy的第n天&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;操作系统概述
+&lt;ul&gt;
+&lt;li&gt;并发&lt;/li&gt;
+&lt;li&gt;共享&lt;/li&gt;
+&lt;li&gt;虚拟&lt;/li&gt;
+&lt;li&gt;异步&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;操作系统的发展历程
+&lt;ul&gt;
+&lt;li&gt;批处理器
+&lt;ul&gt;
+&lt;li&gt;单道&lt;/li&gt;
+&lt;li&gt;多道&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;分时操作系统&lt;/li&gt;
+&lt;li&gt;实时操作系统&lt;/li&gt;
+&lt;li&gt;网络操作系统&lt;/li&gt;
+&lt;li&gt;分布式操作系统&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;001-002&lt;/p&gt;</description>
     </item>
     <item>
       <title>Intro-全部の始まり</title>
@@ -40,13 +67,6 @@
 &lt;/ol&gt;
 &lt;p&gt;可能以后还会补充，但是目前就先这样。&lt;/p&gt;
 &lt;p&gt;联系方式可能以后会留一个收信的邮箱，这里打一个(&lt;strong&gt;TODO&lt;/strong&gt;)（笑&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Hello World</title>
-      <link>http://localhost:1313/npee_learning_log.github.io/posts/hello-world/</link>
-      <pubDate>Fri, 11 Jul 2025 14:28:41 +0800</pubDate>
-      <guid>http://localhost:1313/npee_learning_log.github.io/posts/hello-world/</guid>
-      <description></description>
     </item>
   </channel>
 </rss>
