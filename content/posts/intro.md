@@ -3,7 +3,9 @@ date = '2025-07-11T16:35:21+08:00'
 draft = false
 title = 'Intro-全部の始まり'
 
-categories = ["日记"]
+categories = ["diary"]
+
+tags = ["日记"]
 
 +++
 

@@ -5,6 +5,9 @@
     <loc>http://localhost:1313/npee_learning_log.github.io/categories/</loc>
     <lastmod>2025-07-11T16:35:21+08:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/npee_learning_log.github.io/categories/diary/</loc>
+    <lastmod>2025-07-11T16:35:21+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/npee_learning_log.github.io/posts/intro/</loc>
     <lastmod>2025-07-11T16:35:21+08:00</lastmod>
   </url><url>
@@ -14,12 +17,10 @@
     <loc>http://localhost:1313/npee_learning_log.github.io/</loc>
     <lastmod>2025-07-11T16:35:21+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/npee_learning_log.github.io/categories/%E6%97%A5%E8%AE%B0/</loc>
+    <loc>http://localhost:1313/npee_learning_log.github.io/tags/</loc>
     <lastmod>2025-07-11T16:35:21+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/npee_learning_log.github.io/posts/hello-world/</loc>
-    <lastmod>2025-07-11T14:28:41+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/npee_learning_log.github.io/tags/</loc>
+    <loc>http://localhost:1313/npee_learning_log.github.io/tags/%E6%97%A5%E8%AE%B0/</loc>
+    <lastmod>2025-07-11T16:35:21+08:00</lastmod>
   </url>
 </urlset>

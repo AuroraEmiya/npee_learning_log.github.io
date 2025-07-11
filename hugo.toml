@@ -1,4 +1,32 @@
 baseURL = "https://auroraemiya.github.io/npee_learning_log.github.io/"
-languageCode = 'en-us'
+languageCode = 'zh-cn'
 title = 'Shyの考研日志'
 theme = "PaperMod"
+enableRobotsTXT = true
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+
+
+[[menu.main]]
+  name = "主页"
+  url = "/"
+  weight = 1
+
+
+[[menu.main]]
+  name = "日记"
+  url = "/categories/diary"
+  weight = 2
+
+[[menu.main]]
+  name = "日志"
+  url = "/categories/log"
+  weight = 3
+
+[[menu.main]]
+  name = "笔记"
+  url = "/categories/memo"
+  weight = 3
