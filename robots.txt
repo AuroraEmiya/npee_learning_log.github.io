@@ -1,3 +1,1 @@
 User-agent: *
-Disallow:
-Sitemap: https://auroraemiya.github.io/npee_learning_log.github.io/sitemap.xml

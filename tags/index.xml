@@ -1,33 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Tags on Shyの考研日志</title>
-    <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/</link>
-    <description>Recent content in Tags on Shyの考研日志</description>
-    <generator>Hugo -- 0.148.0</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Fri, 11 Jul 2025 20:29:14 +0800</lastBuildDate>
-    <atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>操作系统</title>
-      <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
-      <pubDate>Fri, 11 Jul 2025 20:29:14 +0800</pubDate>
-      <guid>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>数据结构</title>
-      <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
-      <pubDate>Fri, 11 Jul 2025 20:29:14 +0800</pubDate>
-      <guid>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>日记</title>
-      <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%97%A5%E8%AE%B0/</link>
-      <pubDate>Fri, 11 Jul 2025 16:35:21 +0800</pubDate>
-      <guid>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%97%A5%E8%AE%B0/</guid>
-      <description></description>
-    </item>
-  </channel>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tags on Shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/</link>
+        <description>Recent content in Tags on Shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Fri, 11 Jul 2025 20:29:14 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>操作系统</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+        <pubDate>Fri, 11 Jul 2025 20:29:14 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>数据结构</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+        <pubDate>Fri, 11 Jul 2025 20:29:14 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>日记</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%97%A5%E8%AE%B0/</link>
+        <pubDate>Fri, 11 Jul 2025 16:35:21 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%97%A5%E8%AE%B0/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
 </rss>
