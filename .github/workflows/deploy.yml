@@ -20,7 +20,7 @@ jobs:
           hugo-version: '0.148.0'
 
       - name: Build
-        run: hugo
+        run: hugo --buildDrafts
 
       - name: Disable Jekyll
         run: touch public/.nojekyll
