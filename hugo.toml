@@ -1,7 +1,7 @@
 baseURL = "https://auroraemiya.github.io/npee_learning_log.github.io/"
 languageCode = 'zh-cn'
 title = 'Shyの考研日志'
-theme = "PaperMod"
+theme = "Stack"
 enableRobotsTXT = true
 
 [taxonomies]
@@ -9,7 +9,45 @@ enableRobotsTXT = true
   tag = "tags"
 
 
+[params]
+  mainSections = ["posts"]
+  toc = true
 
+[params.sidebar]
+  emoji = "🌸"
+  subtitle = "どうが、君と君を囲むこの世界が、これからも幸せでありますように"
+
+[params.sidebar.avatar]
+    enabled = true
+    local = true
+    src = "img/shiki.png"
+
+[params.widgets]
+  [[params.widgets.page]]
+    type = "toc"
+  [[params.widgets.homepage]]
+    type = "search"
+    [[params.widgets.homepage]]
+      type = "categories"
+      [params.widgets.homepage.params]
+        limit = 10
+    [[params.widgets.homepage]]
+      type = "tag-cloud"
+      [params.widgets.homepage.params]
+        limit = 10
+
+[related]
+  includeNewer = true
+  threshold = 60
+  toLower = false
+
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+
+  [[related.indices]]
+    name = "categories"
+    weight = 200
 [[menu.main]]
   name = "主页"
   url = "/"
