@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/npee_learning_log.github.io/posts/hello-world/</loc>
-    <lastmod>2025-07-11T14:28:41+08:00</lastmod>
+    <loc>http://localhost:1313/npee_learning_log.github.io/categories/</loc>
+    <lastmod>2025-07-11T16:35:21+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/npee_learning_log.github.io/posts/intro/</loc>
+    <lastmod>2025-07-11T16:35:21+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/npee_learning_log.github.io/posts/</loc>
-    <lastmod>2025-07-11T14:28:41+08:00</lastmod>
+    <lastmod>2025-07-11T16:35:21+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/npee_learning_log.github.io/</loc>
-    <lastmod>2025-07-11T14:28:41+08:00</lastmod>
+    <lastmod>2025-07-11T16:35:21+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/npee_learning_log.github.io/categories/</loc>
+    <loc>http://localhost:1313/npee_learning_log.github.io/categories/%E6%97%A5%E8%AE%B0/</loc>
+    <lastmod>2025-07-11T16:35:21+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/npee_learning_log.github.io/posts/hello-world/</loc>
+    <lastmod>2025-07-11T14:28:41+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/npee_learning_log.github.io/tags/</loc>
   </url>
