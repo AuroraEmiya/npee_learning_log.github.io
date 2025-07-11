@@ -1,7 +1,7 @@
 baseURL = "https://auroraemiya.github.io/npee_learning_log.github.io/"
 languageCode = 'zh-cn'
 title = 'Shyの考研日志'
-theme = "Stack"
+theme = "stack"
 enableRobotsTXT = true
 
 [taxonomies]
