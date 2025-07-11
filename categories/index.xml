@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on Shy 的考研日志</title>
-    <link>https://AuroraEmiya.github.io/npee_learning_log.github.io/categories/</link>
+    <link>https://auroraemiya.github.io/npee_learning_log.github.io/categories/</link>
     <description>Recent content in Categories on Shy 的考研日志</description>
     <generator>Hugo -- 0.148.0</generator>
     <language>en-us</language>
-    <atom:link href="https://AuroraEmiya.github.io/npee_learning_log.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
