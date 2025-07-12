@@ -10,7 +10,7 @@ enableRobotsTXT = true
 
 
 [params]
-  mainSections = ["posts"]
+  mainSections = ["posts","diary","memo"]
   toc = true
 
 [params.sidebar]
