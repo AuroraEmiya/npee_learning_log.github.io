@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <lastBuildDate>Fri, 11 Jul 2025 20:29:14 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>0711</title>
+        <title>0711学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/</link>
         <pubDate>Fri, 11 Jul 2025 20:29:14 +0800</pubDate>
         
@@ -32,7 +32,7 @@
 &lt;li&gt;算法的时间空间复杂度&lt;/li&gt;
 &lt;li&gt;线性表的顺序表以及相关算法&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;001-009&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;课程编号001-009&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;操作系统-想念jyy的第n天&#34;&gt;操作系统-想念jyy的第n天
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;操作系统概述
@@ -59,15 +59,15 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;001-002&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;课程编号001-002&lt;/code&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>Intro-全部の始まり</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/intro/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/diary/intro/</link>
         <pubDate>Fri, 11 Jul 2025 16:35:21 +0800</pubDate>
         
-        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/intro/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/diary/intro/</guid>
         <description>&lt;h2 id=&#34;写在一切的前面&#34;&gt;写在一切的前面
 &lt;/h2&gt;&lt;p&gt;欢迎来到我的博客，这是我 （笔者自称小shy)为了记录参加2026考研全过程而开始的新栏目。&lt;/p&gt;
 &lt;p&gt;我准备参加今年年底的2026NPEE(The national entrance examination for postgraduate)，科目是11408。&lt;/p&gt;

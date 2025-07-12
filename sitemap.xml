@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://auroraemiya.github.io/npee_learning_log.github.io/diary/</loc>
+    <lastmod>2025-07-12T22:27:55+08:00</lastmod>
+  </url><url>
+    <loc>https://auroraemiya.github.io/npee_learning_log.github.io/</loc>
+    <lastmod>2025-07-12T22:27:55+08:00</lastmod>
+  </url><url>
+    <loc>https://auroraemiya.github.io/npee_learning_log.github.io/posts/</loc>
+    <lastmod>2025-07-12T22:05:39+08:00</lastmod>
+  </url><url>
     <loc>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/</loc>
     <lastmod>2025-07-11T20:29:14+08:00</lastmod>
   </url><url>
@@ -9,12 +18,6 @@
     <lastmod>2025-07-11T20:29:14+08:00</lastmod>
   </url><url>
     <loc>https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/</loc>
-    <lastmod>2025-07-11T20:29:14+08:00</lastmod>
-  </url><url>
-    <loc>https://auroraemiya.github.io/npee_learning_log.github.io/posts/</loc>
-    <lastmod>2025-07-11T20:29:14+08:00</lastmod>
-  </url><url>
-    <loc>https://auroraemiya.github.io/npee_learning_log.github.io/</loc>
     <lastmod>2025-07-11T20:29:14+08:00</lastmod>
   </url><url>
     <loc>https://auroraemiya.github.io/npee_learning_log.github.io/tags/</loc>
@@ -29,7 +32,7 @@
     <loc>https://auroraemiya.github.io/npee_learning_log.github.io/categories/diary/</loc>
     <lastmod>2025-07-11T16:35:21+08:00</lastmod>
   </url><url>
-    <loc>https://auroraemiya.github.io/npee_learning_log.github.io/posts/intro/</loc>
+    <loc>https://auroraemiya.github.io/npee_learning_log.github.io/diary/intro/</loc>
     <lastmod>2025-07-11T16:35:21+08:00</lastmod>
   </url><url>
     <loc>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%97%A5%E8%AE%B0/</loc>
