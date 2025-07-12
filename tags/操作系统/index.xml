@@ -6,7 +6,60 @@
         <description>Recent content in 操作系统 on Shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 11 Jul 2025 20:29:14 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 12 Jul 2025 22:05:39 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0712学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0712/</link>
+        <pubDate>Sat, 12 Jul 2025 22:05:39 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0712/</guid>
+        <description>&lt;h2 id=&#34;操作系统-int-0x80&#34;&gt;操作系统-int 0x80
+&lt;/h2&gt;&lt;p&gt;操作系统的运行环境&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;内核程序
+&lt;ul&gt;
+&lt;li&gt;特权指令&lt;/li&gt;
+&lt;li&gt;核心态，管态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;应用程序
+&lt;ul&gt;
+&lt;li&gt;非特权指令&lt;/li&gt;
+&lt;li&gt;用户态，目态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;操作系统的内核&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;时钟管理&lt;/li&gt;
+&lt;li&gt;中断机制
+&lt;ol&gt;
+&lt;li&gt;内部异常
+&lt;ol&gt;
+&lt;li&gt;故障（Fault）（软件中断）&lt;/li&gt;
+&lt;li&gt;自陷（Trap）（软件中断）&lt;/li&gt;
+&lt;li&gt;终止（Abort）（硬件中断）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;外部中断（硬件）
+&lt;ol&gt;
+&lt;li&gt;可屏蔽中断 INTR&lt;/li&gt;
+&lt;li&gt;不可屏蔽中断 NMI&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号 ：003-004&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;英语-英语构词法&#34;&gt;英语-英语构词法
+&lt;/h2&gt;&lt;p&gt;前缀包含两种作用：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;方向&lt;/li&gt;
+&lt;li&gt;性质&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;后缀一般表示词性，例外：able,&amp;hellip;.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>0711学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/</link>
         <pubDate>Fri, 11 Jul 2025 20:29:14 +0800</pubDate>
