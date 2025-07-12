@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on Shyの考研日志</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/categories/</link>
+        <link>http://localhost:1313/npee_learning_log.github.io/categories/</link>
         <description>Recent content in Categories on Shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 11 Jul 2025 20:29:14 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Log</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/</link>
-        <pubDate>Fri, 11 Jul 2025 20:29:14 +0800</pubDate>
+        <lastBuildDate>Sat, 12 Jul 2025 22:27:55 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Diary</title>
+        <link>http://localhost:1313/npee_learning_log.github.io/categories/diary/</link>
+        <pubDate>Sat, 12 Jul 2025 22:27:55 +0800</pubDate>
         
-        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/</guid>
+        <guid>http://localhost:1313/npee_learning_log.github.io/categories/diary/</guid>
         <description></description>
         </item>
         <item>
-        <title>Diary</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/categories/diary/</link>
-        <pubDate>Fri, 11 Jul 2025 16:35:21 +0800</pubDate>
+        <title>Log</title>
+        <link>http://localhost:1313/npee_learning_log.github.io/categories/log/</link>
+        <pubDate>Sat, 12 Jul 2025 22:05:39 +0800</pubDate>
         
-        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/categories/diary/</guid>
+        <guid>http://localhost:1313/npee_learning_log.github.io/categories/log/</guid>
         <description></description>
         </item>
         

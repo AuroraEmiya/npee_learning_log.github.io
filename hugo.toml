@@ -10,12 +10,13 @@ enableRobotsTXT = true
 
 
 [params]
-  mainSections = ["posts"]
+  mainSections = ["posts","diary"]
   toc = true
 
 [params.sidebar]
   emoji = "🌸"
-  subtitle = "どうが、君と君を囲むこの世界が、これからも幸せでありますように"
+  subtitle = "I am the storm that is approaching!"
+  
 
 [params.sidebar.avatar]
     enabled = true
@@ -36,18 +37,6 @@ enableRobotsTXT = true
       [params.widgets.homepage.params]
         limit = 10
 
-[related]
-  includeNewer = true
-  threshold = 60
-  toLower = false
-
-  [[related.indices]]
-    name = "tags"
-    weight = 100
-
-  [[related.indices]]
-    name = "categories"
-    weight = 200
 [[menu.main]]
   name = "主页"
   url = "/"
