@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>函数 on Shyの考研日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/tags/%E5%87%BD%E6%95%B0/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E5%87%BD%E6%95%B0/</link>
         <description>Recent content in 函数 on Shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 14 Jul 2025 21:15:02 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/tags/%E5%87%BD%E6%95%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 14 Jul 2025 21:15:02 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E5%87%BD%E6%95%B0/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>0714学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0714/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0714/</link>
         <pubDate>Mon, 14 Jul 2025 21:15:02 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0714/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0714/</guid>
         <description>&lt;h2 id=&#34;操作系统-这什么查一下这什么查一下&#34;&gt;操作系统-这什么查一下这什么查一下
 &lt;/h2&gt;&lt;h3 id=&#34;经典同步问题&#34;&gt;经典同步问题
 &lt;/h3&gt;&lt;ol&gt;
@@ -45,29 +45,17 @@
 &lt;li&gt;
 &lt;p&gt;中级调度（内存调度、中程调度）&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;选择部分进程挂起（移出内存到外存）&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;选择挂起的进程恢复（从外存调回内存）&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;选择部分进程挂起（移出内存到外存）&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;选择挂起的进程恢复（从外存调回内存）&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;低级调度（进程调度、线程调度、短程调度）&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;从&lt;strong&gt;就绪队列&lt;/strong&gt;中选择一个进程&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;把 CPU 分配给选中的进程&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;保存和恢复进程的上下文（&lt;strong&gt;进程切换 Context Switch&lt;/strong&gt;）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;控制 CPU 的执行顺序&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;从&lt;strong&gt;就绪队列&lt;/strong&gt;中选择一个进程&lt;/li&gt;
+&lt;li&gt;把 CPU 分配给选中的进程&lt;/li&gt;
+&lt;li&gt;保存和恢复进程的上下文（&lt;strong&gt;进程切换 Context Switch&lt;/strong&gt;）&lt;/li&gt;
+&lt;li&gt;控制 CPU 的执行顺序&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -83,38 +71,38 @@
 &lt;p&gt;选择调度算法的若干准则&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;CPU利用率
-$$
+&lt;p&gt;CPU利用率&lt;/p&gt;
+&lt;p&gt;$$
 \frac{\text{worktime of CPU}}{\text{total time}}
 $$&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;系统吞吐量
-$$
+&lt;p&gt;系统吞吐量&lt;/p&gt;
+&lt;p&gt;$$
 \frac{\text{number of tasks}}{\text{total time}}
 $$&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;周转时间(Turnaround Time)
-$$
+&lt;p&gt;周转时间(Turnaround Time)&lt;/p&gt;
+&lt;p&gt;$$
 \text{Completion Time - Arrival Time}
 $$&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;平均周转时间
-$$
+&lt;p&gt;平均周转时间&lt;/p&gt;
+&lt;p&gt;$$
 \frac{\sum\limits_{N}\text{Turnaround Time of all processes}}{N}
 $$&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;带权周转时间
-$$
+&lt;p&gt;带权周转时间&lt;/p&gt;
+&lt;p&gt;$$
 \frac{\text{Turnaround Time}}{\text{Service Time}}
 $$&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;平均带权周转时间
-$$
+&lt;p&gt;平均带权周转时间&lt;/p&gt;
+&lt;p&gt;$$
 \frac{\sum\limits_{N}\text{Weighted Turnaround Time of all processes}}{N}
 $$&lt;/p&gt;
 &lt;/li&gt;
@@ -169,6 +157,7 @@ $$&lt;/p&gt;
 &lt;li&gt;线程上下文切换&lt;/li&gt;
 &lt;li&gt;中断上下文切换&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号:012-015&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;数据结构-致敬传奇栈帧pc程序计数器&#34;&gt;数据结构-致敬传奇栈帧PC程序计数器
 &lt;/h2&gt;&lt;h3 id=&#34;栈&#34;&gt;栈
 &lt;/h3&gt;&lt;ol&gt;
@@ -218,6 +207,7 @@ $$&lt;/p&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号：014-017&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;数学-太好了是张宇老师我们有救了&#34;&gt;数学-太好了是张宇老师我们有救了！
 &lt;/h2&gt;&lt;h3 id=&#34;函数的概念与特性&#34;&gt;函数的概念与特性
 &lt;/h3&gt;&lt;ol&gt;
@@ -256,6 +246,7 @@ $$&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;分段函数&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;高数第一讲&lt;/code&gt;&lt;/p&gt;
 </description>
         </item>
         
