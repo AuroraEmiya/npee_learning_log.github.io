@@ -12,7 +12,8 @@ enableRobotsTXT = true
 [params]
   mainSections = ["posts","diary","memo"]
   toc = true
-
+[params.article]
+  math = true
 [params.sidebar]
   emoji = "🌸"
   subtitle = "I am the storm that is approaching!"

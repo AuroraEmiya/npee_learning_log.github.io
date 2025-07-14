@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/npee_learning_log.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=npee_learning_log.github.io/livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="数据结构-喜欢在头指针存数据的扣1\r线性表的链式存储\n单链表 静态链表 其他链表 单向循环链表 双向链表 双向循环链表 课程代码010-013\n操作系统-谦让是美德\r进程与线程\r进程\nPCB 进程的特点： 动态性 并发性 独立性 异步性 进程的基本状态及管理切换 运行 阻塞 就绪 创建 终止 线程\n线程的特性 线程的状态 线程与进程的联系和不同 用户级线程与内核级线程的映射关系 互斥与同步\r临界区实现互斥的原则\n空闲让进 忙则等待 有限等待 让权等待（非必须） 临界区实现互斥的基本方法\n软件实现方法 单标志法 双标志法 先检查法 后检查法 Peterson算法 硬件实现方法 中断屏蔽 TestAndSet指令 Swap指令 互斥锁（mutex lock）\nLockOne类 LockTwo类 Peterson锁 Barkley锁 信号量\n整型信号量 记录型信号量 管程\r管程的定义 管程的组成 管程的特性 管程与进程的异同 条件变量 进程通信\r管道通信 消息传递系统 共享存储器系统 课程编号005-011\n">
 <title>0713学习日志</title>
 
-<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0713/'>
+<link rel='canonical' href='http://localhost:1313/npee_learning_log.github.io/posts/0713/'>
 
 <link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0713学习日志">
 <meta property='og:description' content="数据结构-喜欢在头指针存数据的扣1\r线性表的链式存储\n单链表 静态链表 其他链表 单向循环链表 双向链表 双向循环链表 课程代码010-013\n操作系统-谦让是美德\r进程与线程\r进程\nPCB 进程的特点： 动态性 并发性 独立性 异步性 进程的基本状态及管理切换 运行 阻塞 就绪 创建 终止 线程\n线程的特性 线程的状态 线程与进程的联系和不同 用户级线程与内核级线程的映射关系 互斥与同步\r临界区实现互斥的原则\n空闲让进 忙则等待 有限等待 让权等待（非必须） 临界区实现互斥的基本方法\n软件实现方法 单标志法 双标志法 先检查法 后检查法 Peterson算法 硬件实现方法 中断屏蔽 TestAndSet指令 Swap指令 互斥锁（mutex lock）\nLockOne类 LockTwo类 Peterson锁 Barkley锁 信号量\n整型信号量 记录型信号量 管程\r管程的定义 管程的组成 管程的特性 管程与进程的异同 条件变量 进程通信\r管道通信 消息传递系统 共享存储器系统 课程编号005-011\n">
-<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0713/'>
+<meta property='og:url' content='http://localhost:1313/npee_learning_log.github.io/posts/0713/'>
 <meta property='og:site_name' content='Shyの考研日志'>
 <meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='操作系统' /><meta property='article:tag' content='进程' /><meta property='article:tag' content='线程' /><meta property='article:tag' content='互斥' /><meta property='article:tag' content='同步' /><meta property='article:tag' content='管程' /><meta property='article:published_time' content='2025-07-13T23:27:16&#43;08:00'/><meta property='article:modified_time' content='2025-07-13T23:27:16&#43;08:00'/>
 <meta name="twitter:title" content="0713学习日志">
@@ -368,6 +368,32 @@
 
 
     
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
 </article>
 
     
@@ -538,7 +564,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.d3ce7388ef5941233a2fd0541c1324f59fa8d8764f59d9721e2c172354121bcf.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
