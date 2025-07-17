@@ -16,7 +16,7 @@ enableRobotsTXT = true
   math = true
 [params.sidebar]
   emoji = "🌸"
-  subtitle = "I am the storm that is approaching!"
+  subtitle = "Operating system is responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interact with devices, and other fun stuff like that."
   
 
 [params.sidebar.avatar]

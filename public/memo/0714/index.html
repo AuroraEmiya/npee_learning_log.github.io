@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/npee_learning_log.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=npee_learning_log.github.io/livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="朝花夕拾\r先回答一下昨天的疑问：\n什么是用户级线程和内核级线程？\n以下是chatgpt编写的ULT和KLT的示例c代码\n#include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; #include &lt;ucontext.h&gt; #define STACK_SIZE 1024*64 ucontext_t ctx_main, ctx_thread1, ctx_thread2; void thread_func1() { for (int i = 0; i &lt; 5; i++) { printf(&#34;Thread 1: %d\\n&#34;, i); swapcontext(&amp;ctx_thread1, &amp;ctx_thread2); // 切换到线程2 } printf(&#34;Thread 1 finished\\n&#34;); setcontext(&amp;ctx_main); // 结束返回主程序 } void thread_func2() { for (int i = 0; i &lt; 5; i++) { printf(&#34;Thread 2: %d\\n&#34;, i); swapcontext(&amp;ctx_thread2, &amp;ctx_thread1); // 切换到线程1 } printf(&#34;Thread 2 finished\\n&#34;); setcontext(&amp;ctx_main); } int main() { char stack1[STACK_SIZE]; char stack2[STACK_SIZE]; // 初始化线程1上下文 getcontext(&amp;ctx_thread1); ctx_thread1.uc_stack.ss_sp = stack1; ctx_thread1.uc_stack.ss_size = sizeof(stack1); ctx_thread1.uc_link = &amp;ctx_main; // 线程结束返回主上下文 makecontext(&amp;ctx_thread1, thread_func1, 0); // 初始化线程2上下文 getcontext(&amp;ctx_thread2); ctx_thread2.uc_stack.ss_sp = stack2; ctx_thread2.uc_stack.ss_size = sizeof(stack2); ctx_thread2.uc_link = &amp;ctx_main; makecontext(&amp;ctx_thread2, thread_func2, 0); // 从主线程切换到线程1开始执行 swapcontext(&amp;ctx_main, &amp;ctx_thread1); printf(&#34;Main finished\\n&#34;); return 0; } #include &lt;stdio.h&gt; #include &lt;pthread.h&gt; #include &lt;unistd.h&gt; void* func1(void* arg) { for (int i = 0; i &lt; 5; i++) { printf(&#34;pthread func1: %d\\n&#34;, i); sleep(1); // 模拟阻塞 } return NULL; } void* func2(void* arg) { for (int i = 0; i &lt; 5; i++) { printf(&#34;pthread func2: %d\\n&#34;, i); sleep(1); } return NULL; } int main() { pthread_t t1, t2; pthread_create(&amp;t1, NULL, func1, NULL); pthread_create(&amp;t2, NULL, func2, NULL); pthread_join(t1, NULL); pthread_join(t2, NULL); printf(&#34;All pthreads finished\\n&#34;); return 0; 可以看出，实际上ULT是在模拟KLT的实现思想，其调度和上下文切换都是用户程序自己显式实现的，但对于系统来说这仅仅是一个进程而已。那看来多对多的模型就是先申请多个内核，再在每个内核内使用ULT编程。\n">
+<title>0714学习笔记</title>
+
+<link rel='canonical' href='http://localhost:1313/npee_learning_log.github.io/memo/0714/'>
+
+<link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0714学习笔记">
+<meta property='og:description' content="朝花夕拾\r先回答一下昨天的疑问：\n什么是用户级线程和内核级线程？\n以下是chatgpt编写的ULT和KLT的示例c代码\n#include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; #include &lt;ucontext.h&gt; #define STACK_SIZE 1024*64 ucontext_t ctx_main, ctx_thread1, ctx_thread2; void thread_func1() { for (int i = 0; i &lt; 5; i++) { printf(&#34;Thread 1: %d\\n&#34;, i); swapcontext(&amp;ctx_thread1, &amp;ctx_thread2); // 切换到线程2 } printf(&#34;Thread 1 finished\\n&#34;); setcontext(&amp;ctx_main); // 结束返回主程序 } void thread_func2() { for (int i = 0; i &lt; 5; i++) { printf(&#34;Thread 2: %d\\n&#34;, i); swapcontext(&amp;ctx_thread2, &amp;ctx_thread1); // 切换到线程1 } printf(&#34;Thread 2 finished\\n&#34;); setcontext(&amp;ctx_main); } int main() { char stack1[STACK_SIZE]; char stack2[STACK_SIZE]; // 初始化线程1上下文 getcontext(&amp;ctx_thread1); ctx_thread1.uc_stack.ss_sp = stack1; ctx_thread1.uc_stack.ss_size = sizeof(stack1); ctx_thread1.uc_link = &amp;ctx_main; // 线程结束返回主上下文 makecontext(&amp;ctx_thread1, thread_func1, 0); // 初始化线程2上下文 getcontext(&amp;ctx_thread2); ctx_thread2.uc_stack.ss_sp = stack2; ctx_thread2.uc_stack.ss_size = sizeof(stack2); ctx_thread2.uc_link = &amp;ctx_main; makecontext(&amp;ctx_thread2, thread_func2, 0); // 从主线程切换到线程1开始执行 swapcontext(&amp;ctx_main, &amp;ctx_thread1); printf(&#34;Main finished\\n&#34;); return 0; } #include &lt;stdio.h&gt; #include &lt;pthread.h&gt; #include &lt;unistd.h&gt; void* func1(void* arg) { for (int i = 0; i &lt; 5; i++) { printf(&#34;pthread func1: %d\\n&#34;, i); sleep(1); // 模拟阻塞 } return NULL; } void* func2(void* arg) { for (int i = 0; i &lt; 5; i++) { printf(&#34;pthread func2: %d\\n&#34;, i); sleep(1); } return NULL; } int main() { pthread_t t1, t2; pthread_create(&amp;t1, NULL, func1, NULL); pthread_create(&amp;t2, NULL, func2, NULL); pthread_join(t1, NULL); pthread_join(t2, NULL); printf(&#34;All pthreads finished\\n&#34;); return 0; 可以看出，实际上ULT是在模拟KLT的实现思想，其调度和上下文切换都是用户程序自己显式实现的，但对于系统来说这仅仅是一个进程而已。那看来多对多的模型就是先申请多个内核，再在每个内核内使用ULT编程。\n">
+<meta property='og:url' content='http://localhost:1313/npee_learning_log.github.io/memo/0714/'>
+<meta property='og:site_name' content='Shyの考研日志'>
+<meta property='og:type' content='article'><meta property='article:section' content='Memo' /><meta property='article:tag' content='ULT' /><meta property='article:tag' content='KLT' /><meta property='article:tag' content='三角恒等式' /><meta property='article:tag' content='双曲函数' /><meta property='article:published_time' content='2025-07-14T21:15:16&#43;08:00'/><meta property='article:modified_time' content='2025-07-14T21:15:16&#43;08:00'/>
+<meta name="twitter:title" content="0714学习笔记">
+<meta name="twitter:description" content="朝花夕拾\r先回答一下昨天的疑问：\n什么是用户级线程和内核级线程？\n以下是chatgpt编写的ULT和KLT的示例c代码\n#include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; #include &lt;ucontext.h&gt; #define STACK_SIZE 1024*64 ucontext_t ctx_main, ctx_thread1, ctx_thread2; void thread_func1() { for (int i = 0; i &lt; 5; i++) { printf(&#34;Thread 1: %d\\n&#34;, i); swapcontext(&amp;ctx_thread1, &amp;ctx_thread2); // 切换到线程2 } printf(&#34;Thread 1 finished\\n&#34;); setcontext(&amp;ctx_main); // 结束返回主程序 } void thread_func2() { for (int i = 0; i &lt; 5; i++) { printf(&#34;Thread 2: %d\\n&#34;, i); swapcontext(&amp;ctx_thread2, &amp;ctx_thread1); // 切换到线程1 } printf(&#34;Thread 2 finished\\n&#34;); setcontext(&amp;ctx_main); } int main() { char stack1[STACK_SIZE]; char stack2[STACK_SIZE]; // 初始化线程1上下文 getcontext(&amp;ctx_thread1); ctx_thread1.uc_stack.ss_sp = stack1; ctx_thread1.uc_stack.ss_size = sizeof(stack1); ctx_thread1.uc_link = &amp;ctx_main; // 线程结束返回主上下文 makecontext(&amp;ctx_thread1, thread_func1, 0); // 初始化线程2上下文 getcontext(&amp;ctx_thread2); ctx_thread2.uc_stack.ss_sp = stack2; ctx_thread2.uc_stack.ss_size = sizeof(stack2); ctx_thread2.uc_link = &amp;ctx_main; makecontext(&amp;ctx_thread2, thread_func2, 0); // 从主线程切换到线程1开始执行 swapcontext(&amp;ctx_main, &amp;ctx_thread1); printf(&#34;Main finished\\n&#34;); return 0; } #include &lt;stdio.h&gt; #include &lt;pthread.h&gt; #include &lt;unistd.h&gt; void* func1(void* arg) { for (int i = 0; i &lt; 5; i++) { printf(&#34;pthread func1: %d\\n&#34;, i); sleep(1); // 模拟阻塞 } return NULL; } void* func2(void* arg) { for (int i = 0; i &lt; 5; i++) { printf(&#34;pthread func2: %d\\n&#34;, i); sleep(1); } return NULL; } int main() { pthread_t t1, t2; pthread_create(&amp;t1, NULL, func1, NULL); pthread_create(&amp;t2, NULL, func2, NULL); pthread_join(t1, NULL); pthread_join(t2, NULL); printf(&#34;All pthreads finished\\n&#34;); return 0; 可以看出，实际上ULT是在模拟KLT的实现思想，其调度和上下文切换都是用户程序自己显式实现的，但对于系统来说这仅仅是一个进程而已。那看来多对多的模型就是先申请多个内核，再在每个内核内使用ULT编程。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/npee_learning_log.github.io/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/npee_learning_log.github.io/img/shiki_hu_20273a3af6c00ff3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🌸</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/npee_learning_log.github.io">Shyの考研日志</a></h1>
+            <h2 class="site-description">Operating system is responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interact with devices, and other fun stuff like that.</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/' >
+                
+                
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/diary' >
+                
+                
+                
+                <span>日记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/log' >
+                
+                
+                
+                <span>日志</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/memo' >
+                
+                
+                
+                <span>笔记</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#朝花夕拾">朝花夕拾</a></li>
+    <li><a href="#数学">数学</a>
+      <ul>
+        <li><a href="#三角函数大家族">三角函数大家族</a></li>
+        <li><a href="#双曲正弦余弦函数">双曲正弦/余弦函数</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/npee_learning_log.github.io/categories/memo/" >
+                Memo
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/npee_learning_log.github.io/memo/0714/">0714学习笔记</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 14, 2025</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="朝花夕拾">朝花夕拾
+</h2><p>先回答一下昨天的疑问：</p>
+<ol>
+<li>
+<p>什么是用户级线程和内核级线程？</p>
+<p>以下是chatgpt编写的ULT和KLT的示例c代码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;ucontext.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define STACK_SIZE 1024*64
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ucontext_t</span> ctx_main, ctx_thread1, ctx_thread2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">thread_func1</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Thread 1: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, i);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">swapcontext</span>(<span style="color:#f92672">&amp;</span>ctx_thread1, <span style="color:#f92672">&amp;</span>ctx_thread2);  <span style="color:#75715e">// 切换到线程2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Thread 1 finished</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setcontext</span>(<span style="color:#f92672">&amp;</span>ctx_main);  <span style="color:#75715e">// 结束返回主程序
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">thread_func2</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Thread 2: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, i);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">swapcontext</span>(<span style="color:#f92672">&amp;</span>ctx_thread2, <span style="color:#f92672">&amp;</span>ctx_thread1);  <span style="color:#75715e">// 切换到线程1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Thread 2 finished</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setcontext</span>(<span style="color:#f92672">&amp;</span>ctx_main);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> stack1[STACK_SIZE];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> stack2[STACK_SIZE];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 初始化线程1上下文
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">getcontext</span>(<span style="color:#f92672">&amp;</span>ctx_thread1);
+</span></span><span style="display:flex;"><span>    ctx_thread1.uc_stack.ss_sp <span style="color:#f92672">=</span> stack1;
+</span></span><span style="display:flex;"><span>    ctx_thread1.uc_stack.ss_size <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(stack1);
+</span></span><span style="display:flex;"><span>    ctx_thread1.uc_link <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>ctx_main;  <span style="color:#75715e">// 线程结束返回主上下文
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">makecontext</span>(<span style="color:#f92672">&amp;</span>ctx_thread1, thread_func1, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 初始化线程2上下文
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">getcontext</span>(<span style="color:#f92672">&amp;</span>ctx_thread2);
+</span></span><span style="display:flex;"><span>    ctx_thread2.uc_stack.ss_sp <span style="color:#f92672">=</span> stack2;
+</span></span><span style="display:flex;"><span>    ctx_thread2.uc_stack.ss_size <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(stack2);
+</span></span><span style="display:flex;"><span>    ctx_thread2.uc_link <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>ctx_main;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">makecontext</span>(<span style="color:#f92672">&amp;</span>ctx_thread2, thread_func2, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 从主线程切换到线程1开始执行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">swapcontext</span>(<span style="color:#f92672">&amp;</span>ctx_main, <span style="color:#f92672">&amp;</span>ctx_thread1);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Main finished</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;pthread.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">func1</span>(<span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> arg) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;pthread func1: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, i);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">sleep</span>(<span style="color:#ae81ff">1</span>);  <span style="color:#75715e">// 模拟阻塞
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> NULL;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">func2</span>(<span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> arg) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;pthread func2: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, i);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">sleep</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> NULL;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pthread_t</span> t1, t2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>t1, NULL, func1, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>t2, NULL, func2, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(t1, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pthread_join</span>(t2, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;All pthreads finished</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span></code></pre></div><p>可以看出，实际上ULT是在模拟KLT的实现思想，其调度和上下文切换都是用户程序自己显式实现的，但对于系统来说这仅仅是一个进程而已。那看来多对多的模型就是先申请多个内核，再在每个内核内使用ULT编程。</p>
+</li>
+<li>
+<p>PCB都包含什么？</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th><strong>类别</strong></th>
+          <th><strong>信息</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>进程标识信息</strong></td>
+          <td>PID（进程ID）、PPID（父进程ID）、UID（用户ID）、GID（组ID）</td>
+      </tr>
+      <tr>
+          <td><strong>进程状态</strong></td>
+          <td>就绪、运行、等待、终止等</td>
+      </tr>
+      <tr>
+          <td><strong>寄存器现场</strong></td>
+          <td>程序计数器（PC）、栈指针（SP）、通用寄存器等</td>
+      </tr>
+      <tr>
+          <td><strong>内存管理信息</strong></td>
+          <td>代码段、数据段、堆、栈、页表指针</td>
+      </tr>
+      <tr>
+          <td><strong>调度信息</strong></td>
+          <td>优先级、时间片、调度队列信息、调度策略（如 SCHED_NORMAL）</td>
+      </tr>
+      <tr>
+          <td><strong>文件系统信息</strong></td>
+          <td>文件描述符表、当前工作目录、打开文件列表</td>
+      </tr>
+      <tr>
+          <td><strong>会计信息</strong></td>
+          <td>CPU时间、用户时间、系统时间、起始时间</td>
+      </tr>
+      <tr>
+          <td><strong>信号处理信息</strong></td>
+          <td>信号屏蔽字、信号处理函数</td>
+      </tr>
+      <tr>
+          <td><strong>其他资源信息</strong></td>
+          <td>IPC 资源（消息队列、共享内存）、网络信息等</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>等配一个linux docker 用命令行敲一下。</p>
+</li>
+<li>
+<p>访管中断和自陷指令有和关系？</p>
+</li>
+</ol>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>自陷指令</th>
+          <th>访管中断</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>CPU 支持的汇编指令</strong>，用于产生陷入</td>
+          <td><strong>操作系统级的概念</strong>，指的是进程通过自陷调用系统服务</td>
+      </tr>
+      <tr>
+          <td>比如：<code>int 0x80</code>（x86）、<code>svc</code>（ARM）、<code>ecall</code>（RISC-V）</td>
+          <td>访管中断就是<strong>自陷指令触发的中断，用来“访问管态（内核态）”服务</strong></td>
+      </tr>
+      <tr>
+          <td>本质是硬件机制</td>
+          <td>本质是软件设计</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>“访管中断”是</strong></p>
+<blockquote>
+<p><strong>“用自陷指令引发的，主动请求操作系统服务的中断”。</strong></p></blockquote>
+<h2 id="数学">数学
+</h2><h3 id="三角函数大家族">三角函数大家族
+</h3><p>一些恒等式
+$$
+\sin^2{\theta} + \cos^2{\theta} = 1
+$$
+$$
+1 + \tan^2{\theta} = \sec^2{\theta}
+$$
+$$
+1 + \cot^2{\theta} = \csc^2{\theta}
+$$
+$$
+\sin(\arcsin{x}) = x(x\in[-1,1])
+$$
+$$
+\sin(\arccos{x}) = \sqrt{1-x^2}(x\in[-1,1])
+$$
+$$
+\cos(\arccos{x}) = x(x\in[-1,1])
+$$
+$$
+\cos(\arcsin{x}) = \sqrt{1-x^2}(x\in[-1,1])
+$$</p>
+<h3 id="双曲正弦余弦函数">双曲正弦/余弦函数
+</h3><p>双曲正弦函数
+$$
+\sinh{x} = \frac{e^x-e^{-x}}{2}
+$$
+反双曲正弦函数
+$$
+\text{arcsinh}\ {x} = \ln(x+\sqrt{1+x^2})
+$$
+$$
+\text{arcsinh}&rsquo;\ {x} = \frac{1}{\sqrt{1+x^2}}
+$$
+双曲余弦函数
+$$
+\cosh{x} = \frac{e^x+e^{-x}}{2}
+$$
+反双曲余弦函数
+$$
+\text{arccosh}\ {x} = \ln(x+\sqrt{x^2-1}),\ x\geq 1\
+$$</p>
+<p>$$
+\text{arccosh}&rsquo;\ {x} = \frac{1}{\sqrt{x^2-1}},\ x&gt;1
+$$</p>
+<p>双曲正切函数
+$$
+\tanh{x} = \frac{\sinh{x}}{\cosh{x}}=\frac{e^x-e^{-x}}{e^x+e^{-x}}
+$$
+反双曲正切函数
+$$
+\text{arctanh}\ {x} = \frac{1}{2}\ln(\frac{1+x}{1-x}),\ x\in(-1,1)
+$$</p>
+<p>$$
+\text{arctanh}&rsquo;\ {x} = \frac{1}{1-x^2}
+$$</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/npee_learning_log.github.io/tags/ult/">ULT</a>
+        
+            <a href="/npee_learning_log.github.io/tags/klt/">KLT</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E4%B8%89%E8%A7%92%E6%81%92%E7%AD%89%E5%BC%8F/">三角恒等式</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E5%8F%8C%E6%9B%B2%E5%87%BD%E6%95%B0/">双曲函数</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 Shyの考研日志
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.d3ce7388ef5941233a2fd0541c1324f59fa8d8764f59d9721e2c172354121bcf.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/npee_learning_log.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=npee_learning_log.github.io/livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Operating system is responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interact with devices, and other fun stuff like that.">
+<title>Memoes</title>
+
+<link rel='canonical' href='http://localhost:1313/npee_learning_log.github.io/memo/'>
+
+<link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="Memoes">
+<meta property='og:description' content="Operating system is responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interact with devices, and other fun stuff like that.">
+<meta property='og:url' content='http://localhost:1313/npee_learning_log.github.io/memo/'>
+<meta property='og:site_name' content='Shyの考研日志'>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-07-17T22:04:43&#43;08:00 '/>
+<meta name="twitter:title" content="Memoes">
+<meta name="twitter:description" content="Operating system is responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interact with devices, and other fun stuff like that."><link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/npee_learning_log.github.io/memo/index.xml">
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/npee_learning_log.github.io/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/npee_learning_log.github.io/img/shiki_hu_20273a3af6c00ff3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🌸</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/npee_learning_log.github.io">Shyの考研日志</a></h1>
+            <h2 class="site-description">Operating system is responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interact with devices, and other fun stuff like that.</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/' >
+                
+                
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/diary' >
+                
+                
+                
+                <span>日记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/log' >
+                
+                
+                
+                <span>日志</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/memo' >
+                
+                
+                
+                <span>笔记</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+            
+        
+            
+                <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">Categories</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/npee_learning_log.github.io/categories/log/" class="font_size_6">
+                Log
+            </a>
+        
+            <a href="/npee_learning_log.github.io/categories/memo/" class="font_size_3">
+                Memo
+            </a>
+        
+            <a href="/npee_learning_log.github.io/categories/diary/" class="font_size_2">
+                Diary
+            </a>
+        
+    </div>
+</section>
+
+            
+        
+            
+                <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">Tags</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="font_size_7">
+                操作系统
+            </a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E5%90%8C%E6%AD%A5/" class="font_size_3">
+                同步
+            </a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="font_size_3">
+                数据结构
+            </a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E4%BA%92%E6%96%A5/" class="font_size_2">
+                互斥
+            </a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%95%B0%E5%AD%A6/" class="font_size_2">
+                数学
+            </a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E7%AE%A1%E7%A8%8B/" class="font_size_2">
+                管程
+            </a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E7%BA%BF%E7%A8%8B/" class="font_size_2">
+                线程
+            </a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E8%BF%9B%E7%A8%8B/" class="font_size_2">
+                进程
+            </a>
+        
+            <a href="/npee_learning_log.github.io/tags/klt/" class="font_size_1">
+                KLT
+            </a>
+        
+            <a href="/npee_learning_log.github.io/tags/process/" class="font_size_1">
+                Process
+            </a>
+        
+    </div>
+</section>
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <header>
+        <h3 class="section-title">
+            
+                Section
+            
+        </h3>
+
+        <div class="section-card">
+            <div class="section-details">
+                <h3 class="section-count">3 pages</h3>
+                <h1 class="section-term">Memoes</h1>
+                
+            </div>
+        </div>
+    </header>
+    
+    <section class="article-list--compact">
+        
+            <article>
+    <a href="/npee_learning_log.github.io/memo/0714/">
+        <div class="article-details">
+            <h2 class="article-title">0714学习笔记</h2>
+            <footer class="article-time">
+                <time datetime='2025-07-14T21:15:16&#43;08:00'>Jul 14, 2025</time>
+            </footer>
+        </div>
+    </a>
+</article>
+        
+            <article>
+    <a href="/npee_learning_log.github.io/memo/0713/">
+        <div class="article-details">
+            <h2 class="article-title">0713学习笔记</h2>
+            <footer class="article-time">
+                <time datetime='2025-07-13T23:27:16&#43;08:00'>Jul 13, 2025</time>
+            </footer>
+        </div>
+    </a>
+</article>
+        
+            <article>
+    <a href="/npee_learning_log.github.io/memo/0712/">
+        <div class="article-details">
+            <h2 class="article-title">0712学习笔记</h2>
+            <footer class="article-time">
+                <time datetime='2025-07-12T23:17:40&#43;08:00'>Jul 12, 2025</time>
+            </footer>
+        </div>
+    </a>
+</article>
+        
+    </section>
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 Shyの考研日志
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.d3ce7388ef5941233a2fd0541c1324f59fa8d8764f59d9721e2c172354121bcf.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
