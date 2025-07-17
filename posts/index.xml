@@ -6,7 +6,125 @@
         <description>Recent content in Posts on Shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Tue, 15 Jul 2025 21:43:17 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 17 Jul 2025 22:04:43 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0717学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0717/</link>
+        <pubDate>Thu, 17 Jul 2025 22:04:43 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0717/</guid>
+        <description>&lt;h2 id=&#34;数学-纸上得来终觉浅&#34;&gt;数学-纸上得来终觉浅
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;函数极限的定义($\epsilon,\delta$语言)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;函数极限的性质&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;唯一性&lt;/li&gt;
+&lt;li&gt;局部有界性&lt;/li&gt;
+&lt;li&gt;局部保号性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;无穷小(let $\alpha$ be infinitesimal)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;性质
+&lt;ul&gt;
+&lt;li&gt;$\sum\limits_{k}^{N}{\alpha_k}=\alpha,(N \text{ is finite})$&lt;/li&gt;
+&lt;li&gt;$\alpha&amp;rsquo;\cdot f(x)=\alpha $,where $f(x)$ is limited at the interval&lt;/li&gt;
+&lt;li&gt;$\prod\limits_{k}^{N}{\alpha_k}=\alpha,(N \text{ is finite})$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;比阶($\lim\alpha(x)=0$,$\lim\beta(x)=0$,$\beta(x)\neq0$)
+&lt;ul&gt;
+&lt;li&gt;$\alpha(x)$是$\beta(x)$的高阶无穷小$\Leftrightarrow\lim{\frac{\alpha(x)}{\beta(x)}}=0$&lt;/li&gt;
+&lt;li&gt;$\alpha(x)$是$\beta(x)$的低阶无穷小$\Leftrightarrow\lim{\frac{\alpha(x)}{\beta(x)}}=\infty$&lt;/li&gt;
+&lt;li&gt;$\alpha(x)$是$\beta(x)$的同阶无穷小$\Leftrightarrow\lim{\frac{\alpha(x)}{\beta(x)}}=c,(\text{constant }c\neq 0)$&lt;/li&gt;
+&lt;li&gt;$\alpha(x)$是$\beta(x)$的等价无穷小$\Leftrightarrow\lim{\frac{\alpha(x)}{\beta(x)}}=1$&lt;/li&gt;
+&lt;li&gt;$\alpha(x)$是$\beta(x)$的$k$阶无穷小$\Leftrightarrow\lim{\frac{\alpha(x)}{\beta^k(x)}}=0$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;极限的运算&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;四则运算&lt;/li&gt;
+&lt;li&gt;洛必达法则&lt;/li&gt;
+&lt;li&gt;泰勒展开&lt;/li&gt;
+&lt;li&gt;夹逼准则&lt;/li&gt;
+&lt;li&gt;七种未定式：$\frac{0}{0},\frac{\infty}{\infty},0\cdot\infty,\infty-\infty,\infty^0,0^0,1^{\infty}$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;函数的连续和两类间断点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;超实数(&lt;a class=&#34;link&#34; href=&#34;https://people.math.wisc.edu/~hkeisler/keislercalc-06-18-25.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;hyperreal number&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;操作系统-three-easy-piece&#34;&gt;操作系统-&lt;a class=&#34;link&#34; href=&#34;https://pages.cs.wisc.edu/~remzi/OSTEP/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;three easy piece&lt;/a&gt;
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;cpu-intro
+&lt;ul&gt;
+&lt;li&gt;the Process&lt;/li&gt;
+&lt;li&gt;Process API
+&lt;ol&gt;
+&lt;li&gt;create&lt;/li&gt;
+&lt;li&gt;Destory&lt;/li&gt;
+&lt;li&gt;Wait&lt;/li&gt;
+&lt;li&gt;Miscellaneous Control&lt;/li&gt;
+&lt;li&gt;Status&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Process status&lt;/li&gt;
+&lt;li&gt;Proc data structure:(PCB)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;cpu-api
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;fork()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;wait()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;exec()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;spawn()&lt;/code&gt;*&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;cpu-mechanisms
+&lt;ol&gt;
+&lt;li&gt;from Directed Execution to Limited Directed Execution:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;user mode and kernel mode&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;system call&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;switch between Processes,Os need to retain CPU from process
+&lt;ul&gt;
+&lt;li&gt;A Cooperative Approach: Wait For System Calls&lt;/li&gt;
+&lt;li&gt;A Non-Cooperative Approach: The OS Takes Control&lt;/li&gt;
+&lt;li&gt;reboot (x&lt;/li&gt;
+&lt;li&gt;timer interrupt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Saving and Restoring Context&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;cpu-sched(reading)&lt;/li&gt;
+&lt;li&gt;cpu-sched-mlfq(reading)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;数据结构-排好队一个一个fifo&#34;&gt;数据结构-排好队一个一个FIFO
+&lt;/h2&gt;&lt;h3 id=&#34;队列&#34;&gt;队列
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;顺序队列的性质和操作&lt;/li&gt;
+&lt;li&gt;循环队列的性质和操作&lt;/li&gt;
+&lt;li&gt;链式队列的性质和操作&lt;/li&gt;
+&lt;li&gt;双端队列&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号018-027&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>0715学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0715/</link>
         <pubDate>Tue, 15 Jul 2025 21:43:17 +0800</pubDate>
@@ -78,12 +196,8 @@
 &lt;p&gt;&lt;code&gt;课程编号016-018&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;数学-什么超实数&#34;&gt;数学-什么？！超实数？
 &lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;函数极限的概念与性质&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;超实数&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;函数极限的概念与性质&lt;/li&gt;
+&lt;li&gt;超实数&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;code&gt;课程编号第一讲&lt;/code&gt;&lt;/p&gt;
 </description>
