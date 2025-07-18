@@ -2,16 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Shyの考研日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/</link>
         <description>Recent content on Shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Thu, 17 Jul 2025 23:07:05 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 18 Jul 2025 19:23:00 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0718学习笔记</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0718/</link>
+        <pubDate>Fri, 18 Jul 2025 19:23:00 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0718/</guid>
+        <description>&lt;h2 id=&#34;数学&#34;&gt;数学
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;若$\lim\limits_{x\to0}f(x) = A\neq0,\lim\limits_{x\to0}h(x)=0$,且在$x\to 0$时，$h(x)\neq 0$,则
+$$
+\int^{h(x)}_0f(t)dt\sim Ah(x),(x\to0)
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;当$x\to 0$时，$f(x) \sim ax^m,g(x)\sim bx^n,ab\neq0,m,n\in N^*$,则
+$$
+\int^{g(x)}_0f(t)dt\sim \int^{bx^n}_0at^mdt,(x\to0)
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以$\frac{x}{\cos x} $为例计算分式的泰勒展开：
+$$
+\cos x = 1 - \frac{1}{2!}x^2 + \frac{1}{4!}x^4 + &amp;hellip;
+$$
+随着对分子和分母进行多项式除法，取需要的项即可&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;时不时看看这道题：
+$$
+\lim\limits_{x\to0}\frac{\int_{0}^{x}{[e^{{(t-x)}^2}-1]\sin t}\text{d} t}{x
+^2(e^{x^2}-1)}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>0717学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0717/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0717/</link>
         <pubDate>Thu, 17 Jul 2025 23:07:05 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0717/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0717/</guid>
         <description>&lt;h2 id=&#34;关于数学cool-stuff&#34;&gt;关于数学，cool stuff
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;
@@ -54,10 +91,10 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>0717学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0717/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0717/</link>
         <pubDate>Thu, 17 Jul 2025 22:04:43 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0717/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0717/</guid>
         <description>&lt;h2 id=&#34;数学-纸上得来终觉浅&#34;&gt;数学-纸上得来终觉浅
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;
@@ -172,10 +209,10 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>0715学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0715/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0715/</link>
         <pubDate>Tue, 15 Jul 2025 21:43:17 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0715/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0715/</guid>
         <description>&lt;h2 id=&#34;操作系统-jyy的map永远的噩梦&#34;&gt;操作系统-jyy的map永远的噩梦
 &lt;/h2&gt;&lt;h3 id=&#34;死锁&#34;&gt;死锁
 &lt;/h3&gt;&lt;ol&gt;
@@ -250,10 +287,10 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>0714学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0714/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0714/</link>
         <pubDate>Mon, 14 Jul 2025 21:15:16 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0714/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0714/</guid>
         <description>&lt;h2 id=&#34;朝花夕拾&#34;&gt;朝花夕拾
 &lt;/h2&gt;&lt;p&gt;先回答一下昨天的疑问：&lt;/p&gt;
 &lt;ol&gt;
@@ -484,10 +521,10 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>0714学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0714/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0714/</link>
         <pubDate>Mon, 14 Jul 2025 21:15:02 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0714/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0714/</guid>
         <description>&lt;h2 id=&#34;操作系统-这什么查一下这什么查一下&#34;&gt;操作系统-这什么查一下这什么查一下
 &lt;/h2&gt;&lt;h3 id=&#34;经典同步问题&#34;&gt;经典同步问题
 &lt;/h3&gt;&lt;ol&gt;
@@ -727,10 +764,10 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>0713学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0713/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0713/</link>
         <pubDate>Sun, 13 Jul 2025 23:27:16 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0713/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0713/</guid>
         <description>&lt;h2 id=&#34;数据结构-喜欢在头指针存数据的扣1&#34;&gt;数据结构-喜欢在头指针存数据的扣1
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;线性表的链式存储&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -836,10 +873,10 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>0713学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0713/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0713/</link>
         <pubDate>Sun, 13 Jul 2025 23:27:16 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0713/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0713/</guid>
         <description>&lt;p&gt;今天看来是无法解决所有当下的疑问了，故先列出清单：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;什么是用户级线程和内核级线程？&lt;/li&gt;
@@ -850,10 +887,10 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>0712学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0712/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0712/</link>
         <pubDate>Sat, 12 Jul 2025 23:17:40 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0712/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0712/</guid>
         <description>&lt;h2 id=&#34;操作系统&#34;&gt;操作系统
 &lt;/h2&gt;&lt;h3 id=&#34;系统调用&#34;&gt;系统调用
 &lt;/h3&gt;&lt;ol&gt;
@@ -878,11 +915,11 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>暴雨西湖</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/diary/westlake-with-haruko/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/diary/westlake-with-haruko/</link>
         <pubDate>Sat, 12 Jul 2025 22:27:55 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/diary/westlake-with-haruko/</guid>
-        <description>&lt;img src="http://localhost:1313/npee_learning_log.github.io/diary/westlake-with-haruko/westlake_in_strom.jpg" alt="Featured image of post 暴雨西湖" /&gt;&lt;p&gt;今天带刚来杭州的&lt;strong&gt;太阳&lt;/strong&gt;(应当事人的要求使用该昵称)去西湖游玩。其实天气预报有雨，但东坡先生有诗为证：&lt;/p&gt;
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/diary/westlake-with-haruko/</guid>
+        <description>&lt;img src="https://auroraemiya.github.io/npee_learning_log.github.io/diary/westlake-with-haruko/westlake_in_strom.jpg" alt="Featured image of post 暴雨西湖" /&gt;&lt;p&gt;今天带刚来杭州的&lt;strong&gt;太阳&lt;/strong&gt;(应当事人的要求使用该昵称)去西湖游玩。其实天气预报有雨，但东坡先生有诗为证：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;水光潋滟晴方好，山色空蒙雨亦奇。
 欲把西湖比西子，淡妆浓抹总相宜。&lt;/p&gt;&lt;/blockquote&gt;
@@ -901,10 +938,10 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>0712学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0712/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0712/</link>
         <pubDate>Sat, 12 Jul 2025 22:05:39 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0712/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0712/</guid>
         <description>&lt;h2 id=&#34;操作系统-int-0x80&#34;&gt;操作系统-int 0x80
 &lt;/h2&gt;&lt;p&gt;操作系统的运行环境&lt;/p&gt;
 &lt;ol&gt;
@@ -954,18 +991,18 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>0711学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0711/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/</link>
         <pubDate>Fri, 11 Jul 2025 20:29:14 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0711/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/</guid>
         <description>&lt;h2 id=&#34;数据结构-太好了是死记硬背&#34;&gt;数据结构-太好了是死记硬背
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;数据的逻辑和物理结构&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/npee_learning_log.github.io/posts/0711/QQ20250711-202720.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/QQ20250711-202720.png&#34;
 	width=&#34;1702&#34;
 	height=&#34;743&#34;
-	srcset=&#34;http://localhost:1313/npee_learning_log.github.io/posts/0711/QQ20250711-202720_hu_ab8a865d16a46851.png 480w, http://localhost:1313/npee_learning_log.github.io/posts/0711/QQ20250711-202720_hu_5cae573c8a98f94d.png 1024w&#34;
+	srcset=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/QQ20250711-202720_hu_ab8a865d16a46851.png 480w, https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/QQ20250711-202720_hu_5cae573c8a98f94d.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1010,10 +1047,10 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>Intro-全部の始まり</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/diary/intro/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/diary/intro/</link>
         <pubDate>Fri, 11 Jul 2025 16:35:21 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/diary/intro/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/diary/intro/</guid>
         <description>&lt;h2 id=&#34;写在一切的前面&#34;&gt;写在一切的前面
 &lt;/h2&gt;&lt;p&gt;欢迎来到我的博客，这是我 （笔者自称小shy)为了记录参加2026考研全过程而开始的新栏目。&lt;/p&gt;
 &lt;p&gt;我准备参加今年年底的2026NPEE(The national entrance examination for postgraduate)，科目是11408。&lt;/p&gt;
