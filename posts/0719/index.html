@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="数学-是不动点的味道 数列的极限 概念 数列极限的定义 数列收敛的性质 唯一性 有界性 保号性 海涅定理（归结原则） 夹逼准则 单调有界准则 ${x_n}$收敛于$a$的速度问题 数据结构-前序中序后序blablabla 树的性质 let $T_m$ denote a tree with degree $m$.\nlet $D(n)$ denote the out degree of the node $x$ in the tree $T_m$.\nlet $n_i$ denote the number of notes with degree $i$.\nlet $H$ denote the depth/height of the tree $T_m$.\nlet $N$ denote the total number of nodes in tree.$N=\\sum\\limits_{i=0}^mn_i$.\nlet $N_i$ denote the number of nodes at layer $i\\in \\mathcal{N^*}$\n">
+<title>0719学习日志</title>
+
+<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/'>
+
+<link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="0719学习日志">
+<meta property='og:description' content="数学-是不动点的味道 数列的极限 概念 数列极限的定义 数列收敛的性质 唯一性 有界性 保号性 海涅定理（归结原则） 夹逼准则 单调有界准则 ${x_n}$收敛于$a$的速度问题 数据结构-前序中序后序blablabla 树的性质 let $T_m$ denote a tree with degree $m$.\nlet $D(n)$ denote the out degree of the node $x$ in the tree $T_m$.\nlet $n_i$ denote the number of notes with degree $i$.\nlet $H$ denote the depth/height of the tree $T_m$.\nlet $N$ denote the total number of nodes in tree.$N=\\sum\\limits_{i=0}^mn_i$.\nlet $N_i$ denote the number of nodes at layer $i\\in \\mathcal{N^*}$\n">
+<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/'>
+<meta property='og:site_name' content='Shyの考研日志'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='数列极限' /><meta property='article:tag' content='二叉树' /><meta property='article:tag' content='多级反馈队列' /><meta property='article:tag' content='proportional share' /><meta property='article:tag' content='数学' /><meta property='article:tag' content='数据结构' /><meta property='article:tag' content='操作系统' /><meta property='article:published_time' content='2025-07-19T22:41:19&#43;08:00'/><meta property='article:modified_time' content='2025-07-19T22:41:19&#43;08:00'/>
+<meta name="twitter:title" content="0719学习日志">
+<meta name="twitter:description" content="数学-是不动点的味道 数列的极限 概念 数列极限的定义 数列收敛的性质 唯一性 有界性 保号性 海涅定理（归结原则） 夹逼准则 单调有界准则 ${x_n}$收敛于$a$的速度问题 数据结构-前序中序后序blablabla 树的性质 let $T_m$ denote a tree with degree $m$.\nlet $D(n)$ denote the out degree of the node $x$ in the tree $T_m$.\nlet $n_i$ denote the number of notes with degree $i$.\nlet $H$ denote the depth/height of the tree $T_m$.\nlet $N$ denote the total number of nodes in tree.$N=\\sum\\limits_{i=0}^mn_i$.\nlet $N_i$ denote the number of nodes at layer $i\\in \\mathcal{N^*}$\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/npee_learning_log.github.io/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/npee_learning_log.github.io/img/shiki_hu_20273a3af6c00ff3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🌸</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/npee_learning_log.github.io">Shyの考研日志</a></h1>
+            <h2 class="site-description">Operating system is responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interact with devices, and other fun stuff like that.</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/' >
+                
+                
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/diary' >
+                
+                
+                
+                <span>日记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/log' >
+                
+                
+                
+                <span>日志</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/memo' >
+                
+                
+                
+                <span>笔记</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#数学-是不动点的味道">数学-是不动点的味道</a>
+      <ul>
+        <li><a href="#数列的极限">数列的极限</a></li>
+      </ul>
+    </li>
+    <li><a href="#数据结构-前序中序后序blablabla">数据结构-前序中序后序blablabla</a>
+      <ul>
+        <li><a href="#树的性质">树的性质</a></li>
+        <li><a href="#二叉树">二叉树</a></li>
+      </ul>
+    </li>
+    <li><a href="#操作系统-nice-of-linux">操作系统-nice of linux</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/npee_learning_log.github.io/categories/log/" >
+                Log
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/npee_learning_log.github.io/posts/0719/">0719学习日志</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 19, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="数学-是不动点的味道">数学-是不动点的味道
+</h2><h3 id="数列的极限">数列的极限
+</h3><ol>
+<li>概念</li>
+<li>数列极限的定义</li>
+<li>数列收敛的性质
+<ul>
+<li>唯一性</li>
+<li>有界性</li>
+<li>保号性</li>
+</ul>
+</li>
+<li>海涅定理（归结原则）</li>
+<li>夹逼准则</li>
+<li>单调有界准则</li>
+<li>${x_n}$收敛于$a$的速度问题</li>
+</ol>
+<h2 id="数据结构-前序中序后序blablabla">数据结构-前序中序后序blablabla
+</h2><h3 id="树的性质">树的性质
+</h3><p>let $T_m$ denote a tree with degree $m$.</p>
+<p>let $D(n)$ denote the out degree of the node $x$ in the tree $T_m$.</p>
+<p>let $n_i$ denote the number of notes with degree $i$.</p>
+<p>let $H$ denote the depth/height of the tree $T_m$.</p>
+<p>let $N$ denote the total number of nodes in tree.$N=\sum\limits_{i=0}^mn_i$.</p>
+<p>let $N_i$ denote the number of nodes at layer $i\in \mathcal{N^*}$</p>
+<ol>
+<li>$N=1 + \sum\limits_{i=1}^mi\cdot n_i$.</li>
+<li>$n_0 =1 + \sum\limits_{i=2}^m(i-1)\cdot n_i$</li>
+<li>$N_i\leq m^{i-1}$ if not an <strong>empty tree</strong> with degree m.</li>
+<li>$N\leq \frac{m^H-1}{m-1}$</li>
+<li>$H\geq \lceil\log_{m}\left((N(m-1))+1\right)\rceil$</li>
+</ol>
+<h3 id="二叉树">二叉树
+</h3><ol>
+<li>二叉树的性质
+<ol>
+<li>$N_i\leq 2^{i-1}$ if not an <strong>empty tree</strong>.</li>
+<li>$N\leq 2^H-1$</li>
+<li>$n_0 =1 + n_2$</li>
+<li>$H\geq \lceil\log_{2}(N+1)\rceil$</li>
+</ol>
+</li>
+<li>完全二叉树</li>
+<li>满二叉树</li>
+<li>二叉树的构造
+<ol>
+<li>前序加中序</li>
+<li>后序加中序</li>
+<li>层次加中序</li>
+<li>前序加树形结构</li>
+<li>中序加树形结构</li>
+<li>后序加树形结构</li>
+<li>层次加树形结构</li>
+</ol>
+</li>
+<li>二叉树的遍历
+<ol>
+<li>前序</li>
+<li>中序</li>
+<li>后序</li>
+<li>层次</li>
+</ol>
+</li>
+</ol>
+<h2 id="操作系统-nice-of-linux">操作系统-nice of linux
+</h2><ol>
+<li>Multi-Level Feedback Queue (cpu-sched-mlfq)
+<ol>
+<li>Basic Rules
+<ul>
+<li><strong>Rule 1</strong>:If Priority(A) $&gt;$ Priority(B), A runs (B doesn’t).</li>
+<li><strong>Rule 2</strong>:If Priority(A) $=$ Priority(B), A &amp; B run in RR(Round Robin).</li>
+<li><strong>However</strong>: Those with low Priority will get starved!</li>
+<li><strong>Therefore</strong>: We need to change the Priority over time.</li>
+</ul>
+</li>
+<li>To change Priority
+<ul>
+<li><strong>Rule 3</strong>: When a job enters the system, it is placed at the highest priority (the topmost queue).</li>
+<li><strong>Rule 4a</strong>: If a job uses up its allotment while running, its priority is reduced (i.e., it moves down one queue).</li>
+<li><strong>Rule 4b</strong>: If a job gives up the CPU (for example, by performing an I/O operation) before the allotment is up, it stays at the same priority level (i.e., its allotment is reset).</li>
+<li><strong>However</strong>:
+<ol>
+<li>Those with long cpu-time will get starved as them move down to the lowest!</li>
+<li>Those with smart heart will game the scheduler as they I/O at the last ms of the allotment.</li>
+</ol>
+</li>
+<li><strong>Therefore</strong>: We need to change <strong>rule4a,b</strong> and boost periodically.</li>
+</ul>
+</li>
+<li>The Priority Boost
+<ul>
+<li><strong>Rule 5</strong>: After some time period S, move all the jobs in the system to the topmost queue.</li>
+</ul>
+</li>
+<li>Better Accounting
+<ul>
+<li><strong>Rule 4</strong>: Once a job uses up its time allotment at a given level (re gardless of how many times it has given up the CPU), its priority is reduced (i.e., it moves down one queue).</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Proportional share(cpu-sched-lottery)
+<ol>
+<li>Basic Concept: Tickets Represent Your Share</li>
+<li>Stride Scheduling</li>
+<li>The Linux Completely Fair Scheduler (CFS)</li>
+</ol>
+</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90/">数列极限</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E5%A4%9A%E7%BA%A7%E5%8F%8D%E9%A6%88%E9%98%9F%E5%88%97/">多级反馈队列</a>
+        
+            <a href="/npee_learning_log.github.io/tags/proportional-share/">Proportional Share</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0714/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0714学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0717/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0717学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0711/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0711学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0715/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0715学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0713/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0713学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 Shyの考研日志
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
