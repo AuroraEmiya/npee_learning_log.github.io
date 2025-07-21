@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/npee_learning_log.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=npee_learning_log.github.io/livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="操作系统\r系统调用\r功能 设备管理：设备的启动、请求和释放等。 文件管理：文件的读写、创建和删除等。 进程管理：进程的创建、撤销、阻塞和唤醒等。 进程通信：进程之间的消息或信号的传递等。 内存管理：内存的分配、回收以及获取作业占用内存区大小和起始地址等。 处理过程 用户程序将系统调用号和所需的参数压入堆栈；接着，调用实际的调用指令，然后执行一个陷入指令，将CPU从用户态转为核心态；再由硬件和操作系统内核程序保护被中断进程的现场。将程序计数器PC、程序状态字PSW及通用寄存器内容压入堆栈。 分析系统调用类型，转入相应的系统调用处理子程序。在系统中配置了一张系统调用入口表，表中的每个表项都对应一个系统调用，根据系统调用号找到该系统调用处理子程序的入口地址。 在系统调用处理子程序执行结束后，恢复被中断的或设置新进程的CPU现场，然后返回被中断进程或新进程，继续往下执行。 ">
 <title>0712学习笔记</title>
 
-<link rel='canonical' href='http://localhost:1313/npee_learning_log.github.io/memo/0712/'>
+<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/memo/0712/'>
 
 <link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0712学习笔记">
 <meta property='og:description' content="操作系统\r系统调用\r功能 设备管理：设备的启动、请求和释放等。 文件管理：文件的读写、创建和删除等。 进程管理：进程的创建、撤销、阻塞和唤醒等。 进程通信：进程之间的消息或信号的传递等。 内存管理：内存的分配、回收以及获取作业占用内存区大小和起始地址等。 处理过程 用户程序将系统调用号和所需的参数压入堆栈；接着，调用实际的调用指令，然后执行一个陷入指令，将CPU从用户态转为核心态；再由硬件和操作系统内核程序保护被中断进程的现场。将程序计数器PC、程序状态字PSW及通用寄存器内容压入堆栈。 分析系统调用类型，转入相应的系统调用处理子程序。在系统中配置了一张系统调用入口表，表中的每个表项都对应一个系统调用，根据系统调用号找到该系统调用处理子程序的入口地址。 在系统调用处理子程序执行结束后，恢复被中断的或设置新进程的CPU现场，然后返回被中断进程或新进程，继续往下执行。 ">
-<meta property='og:url' content='http://localhost:1313/npee_learning_log.github.io/memo/0712/'>
+<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/memo/0712/'>
 <meta property='og:site_name' content='Shyの考研日志'>
 <meta property='og:type' content='article'><meta property='article:section' content='Memo' /><meta property='article:tag' content='操作系统' /><meta property='article:tag' content='系统调用' /><meta property='article:published_time' content='2025-07-12T23:17:40&#43;08:00'/><meta property='article:modified_time' content='2025-07-12T23:17:40&#43;08:00'/>
 <meta name="twitter:title" content="0712学习笔记">
@@ -70,7 +70,7 @@
         
         <div class="site-meta">
             <h1 class="site-name"><a href="/npee_learning_log.github.io">Shyの考研日志</a></h1>
-            <h2 class="site-description">Operating system is responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interact with devices, and other fun stuff like that.</h2>
+            <h2 class="site-description">貴方は水際一人微笑むだけ</h2>
         </div>
     </header><ol class="menu" id="main-menu">
         
@@ -459,7 +459,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.d3ce7388ef5941233a2fd0541c1324f59fa8d8764f59d9721e2c172354121bcf.js" defer></script>
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

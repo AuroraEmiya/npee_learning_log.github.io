@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>线索二叉树 on Shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+        <description>Recent content in 线索二叉树 on Shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Mon, 21 Jul 2025 17:53:02 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0721学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0721/</link>
+        <pubDate>Mon, 21 Jul 2025 17:53:02 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0721/</guid>
+        <description>&lt;h2 id=&#34;英语-vocabulary-builder&#34;&gt;英语-vocabulary builder
+&lt;/h2&gt;&lt;p&gt;使用 &lt;code&gt;The Merriam-Webster Vocabulary Builder&lt;/code&gt;作为词根法扩充词汇量的工具书(由网友canon提供)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;BENE , latin for &lt;code&gt;well&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;benediction&lt;/li&gt;
+&lt;li&gt;benefactor&lt;/li&gt;
+&lt;li&gt;benefaciary&lt;/li&gt;
+&lt;li&gt;benevolence&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;AM, comes form the latin &lt;code&gt;admare&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;amicable&lt;/li&gt;
+&lt;li&gt;enamored&lt;/li&gt;
+&lt;li&gt;amorous&lt;/li&gt;
+&lt;li&gt;paramour&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;BELL,comes from the latin word meaning &lt;code&gt;war&lt;/code&gt;.Bellona was the little-known goddess of war .
+&lt;ul&gt;
+&lt;li&gt;antebellum&lt;/li&gt;
+&lt;li&gt;belligerence&lt;/li&gt;
+&lt;li&gt;bellicose&lt;/li&gt;
+&lt;li&gt;rebellion&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;PAC,is related to the Latin words for &amp;ldquo;agree&amp;rdquo; and &amp;ldquo;peace&amp;rdquo;
+&lt;ul&gt;
+&lt;li&gt;pacify&lt;/li&gt;
+&lt;li&gt;pacifist&lt;/li&gt;
+&lt;li&gt;pact&lt;/li&gt;
+&lt;li&gt;pace&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;操作系统-page--segment&#34;&gt;操作系统-page &amp;amp; segment
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;基本分页内存&lt;/li&gt;
+&lt;li&gt;基本分段内存管理&lt;/li&gt;
+&lt;li&gt;虚拟存储器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号：019-021&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;数据结构-二叉树&#34;&gt;数据结构-二叉树
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;线索二叉树&lt;/li&gt;
+&lt;li&gt;树、森林与二叉树&lt;/li&gt;
+&lt;li&gt;哈夫曼树&lt;/li&gt;
+&lt;li&gt;并查集&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号：033-037&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
