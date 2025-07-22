@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>KLT on Shyの考研日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/tags/klt/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/klt/</link>
         <description>Recent content in KLT on Shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 14 Jul 2025 21:15:16 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/tags/klt/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 14 Jul 2025 21:15:16 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/klt/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>0714学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0714/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0714/</link>
         <pubDate>Mon, 14 Jul 2025 21:15:16 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0714/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0714/</guid>
         <description>&lt;h2 id=&#34;朝花夕拾&#34;&gt;朝花夕拾
 &lt;/h2&gt;&lt;p&gt;先回答一下昨天的疑问：&lt;/p&gt;
 &lt;ol&gt;
@@ -183,62 +183,71 @@
 &lt;h2 id=&#34;数学&#34;&gt;数学
 &lt;/h2&gt;&lt;h3 id=&#34;三角函数大家族&#34;&gt;三角函数大家族
 &lt;/h3&gt;&lt;p&gt;一些恒等式
+&lt;/p&gt;
 $$
 \sin^2{\theta} + \cos^2{\theta} = 1
-$$
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
 1 + \tan^2{\theta} = \sec^2{\theta}
-$$
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
 1 + \cot^2{\theta} = \csc^2{\theta}
-$$
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
 \sin(\arcsin{x}) = x(x\in[-1,1])
-$$
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
 \sin(\arccos{x}) = \sqrt{1-x^2}(x\in[-1,1])
-$$
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
 \cos(\arccos{x}) = x(x\in[-1,1])
-$$
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
 \cos(\arcsin{x}) = \sqrt{1-x^2}(x\in[-1,1])
-$$&lt;/p&gt;
-&lt;h3 id=&#34;双曲正弦余弦函数&#34;&gt;双曲正弦/余弦函数
+$$&lt;h3 id=&#34;双曲正弦余弦函数&#34;&gt;双曲正弦/余弦函数
 &lt;/h3&gt;&lt;p&gt;双曲正弦函数
+&lt;/p&gt;
 $$
 \sinh{x} = \frac{e^x-e^{-x}}{2}
-$$
+$$&lt;p&gt;
 反双曲正弦函数
+&lt;/p&gt;
 $$
-\text{arcsinh}\ {x} = \ln(x+\sqrt{1+x^2})
+	\text{arcsinh}\ {x} = \ln(x+\sqrt{1+x^2})
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
-$$
-\text{arcsinh}&amp;rsquo;\ {x} = \frac{1}{\sqrt{1+x^2}}
-$$
+\text{arcsinh}&#39;\ {x} = \frac{1}{\sqrt{1+x^2}}
+$$&lt;p&gt;
 双曲余弦函数
+&lt;/p&gt;
 $$
 \cosh{x} = \frac{e^x+e^{-x}}{2}
-$$
+$$&lt;p&gt;
 反双曲余弦函数
+&lt;/p&gt;
 $$
-\text{arccosh}\ {x} = \ln(x+\sqrt{x^2-1}),\ x\geq 1\
-$$&lt;/p&gt;
-&lt;p&gt;$$
-\text{arccosh}&amp;rsquo;\ {x} = \frac{1}{\sqrt{x^2-1}},\ x&amp;gt;1
-$$&lt;/p&gt;
-&lt;p&gt;双曲正切函数
+\text{arccosh}\ {x} = \ln(x+\sqrt{x^2-1}),\ x\geq 1\\
+$$$$
+	\text{arccosh}&#39;\ {x} = \frac{1}{\sqrt{x^2-1}},\ x&gt;1
+$$&lt;p&gt;双曲正切函数
+&lt;/p&gt;
 $$
 \tanh{x} = \frac{\sinh{x}}{\cosh{x}}=\frac{e^x-e^{-x}}{e^x+e^{-x}}
-$$
+$$&lt;p&gt;
 反双曲正切函数
+&lt;/p&gt;
 $$
 \text{arctanh}\ {x} = \frac{1}{2}\ln(\frac{1+x}{1-x}),\ x\in(-1,1)
-$$&lt;/p&gt;
-&lt;p&gt;$$
-\text{arctanh}&amp;rsquo;\ {x} = \frac{1}{1-x^2}
-$$&lt;/p&gt;
-</description>
+$$$$
+	\text{arctanh}&#39;\ {x} = \frac{1}{1-x^2}
+$$</description>
         </item>
         
     </channel>

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Memoes on Shyの考研日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/</link>
         <description>Recent content in Memoes on Shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 21 Jul 2025 22:59:30 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/memo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 21 Jul 2025 22:59:30 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/memo/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>0721学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0721/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0721/</link>
         <pubDate>Mon, 21 Jul 2025 22:59:30 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0721/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0721/</guid>
         <description>&lt;h2 id=&#34;数据结构-代码待完善&#34;&gt;数据结构-代码(待完善)
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;
@@ -152,56 +152,56 @@
         </item>
         <item>
         <title>0718学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0718/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0718/</link>
         <pubDate>Fri, 18 Jul 2025 19:23:00 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0718/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0718/</guid>
         <description>&lt;h2 id=&#34;数学&#34;&gt;数学
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;若$\lim\limits_{x\to0}f(x) = A\neq0,\lim\limits_{x\to0}h(x)=0$,且在$x\to 0$时，$h(x)\neq 0$,则
+&lt;/p&gt;
 $$
-\int^{h(x)}_0f(t)dt\sim Ah(x),(x\to0)
-$$&lt;/p&gt;
-&lt;/li&gt;
+   \int^{h(x)}_0f(t)dt\sim Ah(x),(x\to0)
+   $$&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;当$x\to 0$时，$f(x) \sim ax^m,g(x)\sim bx^n,ab\neq0,m,n\in N^*$,则
+&lt;/p&gt;
 $$
-\int^{g(x)}_0f(t)dt\sim \int^{bx^n}_0at^mdt,(x\to0)
-$$&lt;/p&gt;
-&lt;/li&gt;
+   \int^{g(x)}_0f(t)dt\sim \int^{bx^n}_0at^mdt,(x\to0)
+   $$&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;以$\frac{x}{\cos x} $为例计算分式的泰勒展开：
+&lt;/p&gt;
 $$
-\cos x = 1 - \frac{1}{2!}x^2 + \frac{1}{4!}x^4 + &amp;hellip;
-$$
+   \cos x = 1 - \frac{1}{2!}x^2 + \frac{1}{4!}x^4 + ... 
+   $$&lt;p&gt;
 随着对分子和分母进行多项式除法，取需要的项即可&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;时不时看看这道题：
+&lt;/p&gt;
 $$
-\lim\limits_{x\to0}\frac{\int_{0}^{x}{[e^{{(t-x)}^2}-1]\sin t}\text{d} t}{x
-^2(e^{x^2}-1)}
-$$&lt;/p&gt;
-&lt;/li&gt;
+   \lim\limits_{x\to0}\frac{\int_{0}^{x}{[e^{{(t-x)}^2}-1]\sin t}\text{d} t}{x
+   ^2(e^{x^2}-1)}
+   $$&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         </item>
         <item>
         <title>0717学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0717/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0717/</link>
         <pubDate>Thu, 17 Jul 2025 23:07:05 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0717/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0717/</guid>
         <description>&lt;h2 id=&#34;关于数学cool-stuff&#34;&gt;关于数学，cool stuff
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;首先，泰勒吧&lt;/p&gt;
 &lt;p&gt;设$f(x)$在点$x=0$处$n$阶可导，则存在$x=0$的一个领域，对于该领域内的任一点$x$，有&lt;/p&gt;
-&lt;p&gt;$$
-f(x) = f(0) + f{&amp;rsquo;}(0)x + \frac{f^{&amp;rsquo;&amp;rsquo;}(0)}{2!}x^2 + \frac{f^{&amp;rsquo;&amp;rsquo;&amp;rsquo;}(0)}{3!}x^3 + &amp;hellip;+ \frac{f^{(n)}(0)}{n!}x^n + o(x^n)
-$$&lt;/p&gt;
-&lt;/li&gt;
+$$
+   f(x) = f(0) + f{&#39;}(0)x + \frac{f^{&#39;&#39;}(0)}{2!}x^2 + \frac{f^{&#39;&#39;&#39;}(0)}{3!}x^3 + ...+ \frac{f^{(n)}(0)}{n!}x^n + o(x^n)
+   $$&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;其次，记住吧&lt;/p&gt;
 &lt;p&gt;一些食品级的等价无穷小&lt;/p&gt;
@@ -235,10 +235,10 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>0714学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0714/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0714/</link>
         <pubDate>Mon, 14 Jul 2025 21:15:16 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0714/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0714/</guid>
         <description>&lt;h2 id=&#34;朝花夕拾&#34;&gt;朝花夕拾
 &lt;/h2&gt;&lt;p&gt;先回答一下昨天的疑问：&lt;/p&gt;
 &lt;ol&gt;
@@ -410,69 +410,78 @@ $$&lt;/p&gt;
 &lt;h2 id=&#34;数学&#34;&gt;数学
 &lt;/h2&gt;&lt;h3 id=&#34;三角函数大家族&#34;&gt;三角函数大家族
 &lt;/h3&gt;&lt;p&gt;一些恒等式
+&lt;/p&gt;
 $$
 \sin^2{\theta} + \cos^2{\theta} = 1
-$$
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
 1 + \tan^2{\theta} = \sec^2{\theta}
-$$
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
 1 + \cot^2{\theta} = \csc^2{\theta}
-$$
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
 \sin(\arcsin{x}) = x(x\in[-1,1])
-$$
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
 \sin(\arccos{x}) = \sqrt{1-x^2}(x\in[-1,1])
-$$
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
 \cos(\arccos{x}) = x(x\in[-1,1])
-$$
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
 \cos(\arcsin{x}) = \sqrt{1-x^2}(x\in[-1,1])
-$$&lt;/p&gt;
-&lt;h3 id=&#34;双曲正弦余弦函数&#34;&gt;双曲正弦/余弦函数
+$$&lt;h3 id=&#34;双曲正弦余弦函数&#34;&gt;双曲正弦/余弦函数
 &lt;/h3&gt;&lt;p&gt;双曲正弦函数
+&lt;/p&gt;
 $$
 \sinh{x} = \frac{e^x-e^{-x}}{2}
-$$
+$$&lt;p&gt;
 反双曲正弦函数
+&lt;/p&gt;
 $$
-\text{arcsinh}\ {x} = \ln(x+\sqrt{1+x^2})
+	\text{arcsinh}\ {x} = \ln(x+\sqrt{1+x^2})
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
-$$
-\text{arcsinh}&amp;rsquo;\ {x} = \frac{1}{\sqrt{1+x^2}}
-$$
+\text{arcsinh}&#39;\ {x} = \frac{1}{\sqrt{1+x^2}}
+$$&lt;p&gt;
 双曲余弦函数
+&lt;/p&gt;
 $$
 \cosh{x} = \frac{e^x+e^{-x}}{2}
-$$
+$$&lt;p&gt;
 反双曲余弦函数
+&lt;/p&gt;
 $$
-\text{arccosh}\ {x} = \ln(x+\sqrt{x^2-1}),\ x\geq 1\
-$$&lt;/p&gt;
-&lt;p&gt;$$
-\text{arccosh}&amp;rsquo;\ {x} = \frac{1}{\sqrt{x^2-1}},\ x&amp;gt;1
-$$&lt;/p&gt;
-&lt;p&gt;双曲正切函数
+\text{arccosh}\ {x} = \ln(x+\sqrt{x^2-1}),\ x\geq 1\\
+$$$$
+	\text{arccosh}&#39;\ {x} = \frac{1}{\sqrt{x^2-1}},\ x&gt;1
+$$&lt;p&gt;双曲正切函数
+&lt;/p&gt;
 $$
 \tanh{x} = \frac{\sinh{x}}{\cosh{x}}=\frac{e^x-e^{-x}}{e^x+e^{-x}}
-$$
+$$&lt;p&gt;
 反双曲正切函数
+&lt;/p&gt;
 $$
 \text{arctanh}\ {x} = \frac{1}{2}\ln(\frac{1+x}{1-x}),\ x\in(-1,1)
-$$&lt;/p&gt;
-&lt;p&gt;$$
-\text{arctanh}&amp;rsquo;\ {x} = \frac{1}{1-x^2}
-$$&lt;/p&gt;
-</description>
+$$$$
+	\text{arctanh}&#39;\ {x} = \frac{1}{1-x^2}
+$$</description>
         </item>
         <item>
         <title>0713学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0713/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0713/</link>
         <pubDate>Sun, 13 Jul 2025 23:27:16 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0713/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0713/</guid>
         <description>&lt;p&gt;今天看来是无法解决所有当下的疑问了，故先列出清单：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;什么是用户级线程和内核级线程？&lt;/li&gt;
@@ -483,10 +492,10 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>0712学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0712/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0712/</link>
         <pubDate>Sat, 12 Jul 2025 23:17:40 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0712/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0712/</guid>
         <description>&lt;h2 id=&#34;操作系统&#34;&gt;操作系统
 &lt;/h2&gt;&lt;h3 id=&#34;系统调用&#34;&gt;系统调用
 &lt;/h3&gt;&lt;ol&gt;

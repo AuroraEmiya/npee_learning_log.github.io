@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/npee_learning_log.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=npee_learning_log.github.io/livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="数学\r若$\\lim\\limits_{x\\to0}f(x) = A\\neq0,\\lim\\limits_{x\\to0}h(x)=0$,且在$x\\to 0$时，$h(x)\\neq 0$,则 $$ \\int^{h(x)}_0f(t)dt\\sim Ah(x),(x\\to0) $$\n当$x\\to 0$时，$f(x) \\sim ax^m,g(x)\\sim bx^n,ab\\neq0,m,n\\in N^*$,则 $$ \\int^{g(x)}_0f(t)dt\\sim \\int^{bx^n}_0at^mdt,(x\\to0) $$\n以$\\frac{x}{\\cos x} $为例计算分式的泰勒展开： $$ \\cos x = 1 - \\frac{1}{2!}x^2 + \\frac{1}{4!}x^4 + &hellip; $$ 随着对分子和分母进行多项式除法，取需要的项即可\n时不时看看这道题： $$ \\lim\\limits_{x\\to0}\\frac{\\int_{0}^{x}{[e^{{(t-x)}^2}-1]\\sin t}\\text{d} t}{x ^2(e^{x^2}-1)} $$\n">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="数学\r若$\\lim\\limits_{x\\to0}f(x) = A\\neq0,\\lim\\limits_{x\\to0}h(x)=0$,且在$x\\to 0$时，$h(x)\\neq 0$,则 $$ \\int^{h(x)}_0f(t)dt\\sim Ah(x),(x\\to0) $$ 当$x\\to 0$时，$f(x) \\sim ax^m,g(x)\\sim bx^n,ab\\neq0,m,n\\in N^*$,则 $$ \\int^{g(x)}_0f(t)dt\\sim \\int^{bx^n}_0at^mdt,(x\\to0) $$ 以$\\frac{x}{\\cos x} $为例计算分式的泰勒展开： $$ \\cos x = 1 - \\frac{1}{2!}x^2 + \\frac{1}{4!}x^4 + ... $$ 随着对分子和分母进行多项式除法，取需要的项即可\n时不时看看这道题： $$ \\lim\\limits_{x\\to0}\\frac{\\int_{0}^{x}{[e^{{(t-x)}^2}-1]\\sin t}\\text{d} t}{x ^2(e^{x^2}-1)} $$ ">
 <title>0718学习笔记</title>
 
-<link rel='canonical' href='http://localhost:1313/npee_learning_log.github.io/memo/0718/'>
+<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/memo/0718/'>
 
 <link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0718学习笔记">
-<meta property='og:description' content="数学\r若$\\lim\\limits_{x\\to0}f(x) = A\\neq0,\\lim\\limits_{x\\to0}h(x)=0$,且在$x\\to 0$时，$h(x)\\neq 0$,则 $$ \\int^{h(x)}_0f(t)dt\\sim Ah(x),(x\\to0) $$\n当$x\\to 0$时，$f(x) \\sim ax^m,g(x)\\sim bx^n,ab\\neq0,m,n\\in N^*$,则 $$ \\int^{g(x)}_0f(t)dt\\sim \\int^{bx^n}_0at^mdt,(x\\to0) $$\n以$\\frac{x}{\\cos x} $为例计算分式的泰勒展开： $$ \\cos x = 1 - \\frac{1}{2!}x^2 + \\frac{1}{4!}x^4 + &hellip; $$ 随着对分子和分母进行多项式除法，取需要的项即可\n时不时看看这道题： $$ \\lim\\limits_{x\\to0}\\frac{\\int_{0}^{x}{[e^{{(t-x)}^2}-1]\\sin t}\\text{d} t}{x ^2(e^{x^2}-1)} $$\n">
-<meta property='og:url' content='http://localhost:1313/npee_learning_log.github.io/memo/0718/'>
+<meta property='og:description' content="数学\r若$\\lim\\limits_{x\\to0}f(x) = A\\neq0,\\lim\\limits_{x\\to0}h(x)=0$,且在$x\\to 0$时，$h(x)\\neq 0$,则 $$ \\int^{h(x)}_0f(t)dt\\sim Ah(x),(x\\to0) $$ 当$x\\to 0$时，$f(x) \\sim ax^m,g(x)\\sim bx^n,ab\\neq0,m,n\\in N^*$,则 $$ \\int^{g(x)}_0f(t)dt\\sim \\int^{bx^n}_0at^mdt,(x\\to0) $$ 以$\\frac{x}{\\cos x} $为例计算分式的泰勒展开： $$ \\cos x = 1 - \\frac{1}{2!}x^2 + \\frac{1}{4!}x^4 + ... $$ 随着对分子和分母进行多项式除法，取需要的项即可\n时不时看看这道题： $$ \\lim\\limits_{x\\to0}\\frac{\\int_{0}^{x}{[e^{{(t-x)}^2}-1]\\sin t}\\text{d} t}{x ^2(e^{x^2}-1)} $$ ">
+<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/memo/0718/'>
 <meta property='og:site_name' content='Shyの考研日志'>
 <meta property='og:type' content='article'><meta property='article:section' content='Memo' /><meta property='article:tag' content='泰勒展开式' /><meta property='article:tag' content='极限' /><meta property='article:published_time' content='2025-07-18T19:23:00&#43;08:00'/><meta property='article:modified_time' content='2025-07-18T19:23:00&#43;08:00'/>
 <meta name="twitter:title" content="0718学习笔记">
-<meta name="twitter:description" content="数学\r若$\\lim\\limits_{x\\to0}f(x) = A\\neq0,\\lim\\limits_{x\\to0}h(x)=0$,且在$x\\to 0$时，$h(x)\\neq 0$,则 $$ \\int^{h(x)}_0f(t)dt\\sim Ah(x),(x\\to0) $$\n当$x\\to 0$时，$f(x) \\sim ax^m,g(x)\\sim bx^n,ab\\neq0,m,n\\in N^*$,则 $$ \\int^{g(x)}_0f(t)dt\\sim \\int^{bx^n}_0at^mdt,(x\\to0) $$\n以$\\frac{x}{\\cos x} $为例计算分式的泰勒展开： $$ \\cos x = 1 - \\frac{1}{2!}x^2 + \\frac{1}{4!}x^4 + &hellip; $$ 随着对分子和分母进行多项式除法，取需要的项即可\n时不时看看这道题： $$ \\lim\\limits_{x\\to0}\\frac{\\int_{0}^{x}{[e^{{(t-x)}^2}-1]\\sin t}\\text{d} t}{x ^2(e^{x^2}-1)} $$\n">
+<meta name="twitter:description" content="数学\r若$\\lim\\limits_{x\\to0}f(x) = A\\neq0,\\lim\\limits_{x\\to0}h(x)=0$,且在$x\\to 0$时，$h(x)\\neq 0$,则 $$ \\int^{h(x)}_0f(t)dt\\sim Ah(x),(x\\to0) $$ 当$x\\to 0$时，$f(x) \\sim ax^m,g(x)\\sim bx^n,ab\\neq0,m,n\\in N^*$,则 $$ \\int^{g(x)}_0f(t)dt\\sim \\int^{bx^n}_0at^mdt,(x\\to0) $$ 以$\\frac{x}{\\cos x} $为例计算分式的泰勒展开： $$ \\cos x = 1 - \\frac{1}{2!}x^2 + \\frac{1}{4!}x^4 + ... $$ 随着对分子和分母进行多项式除法，取需要的项即可\n时不时看看这道题： $$ \\lim\\limits_{x\\to0}\\frac{\\int_{0}^{x}{[e^{{(t-x)}^2}-1]\\sin t}\\text{d} t}{x ^2(e^{x^2}-1)} $$ ">
     </head>
     <body class="
     article-page
@@ -219,30 +219,31 @@
 </h2><ol>
 <li>
 <p>若$\lim\limits_{x\to0}f(x) = A\neq0,\lim\limits_{x\to0}h(x)=0$,且在$x\to 0$时，$h(x)\neq 0$,则
+</p>
 $$
-\int^{h(x)}_0f(t)dt\sim Ah(x),(x\to0)
-$$</p>
-</li>
+   \int^{h(x)}_0f(t)dt\sim Ah(x),(x\to0)
+   $$</li>
 <li>
 <p>当$x\to 0$时，$f(x) \sim ax^m,g(x)\sim bx^n,ab\neq0,m,n\in N^*$,则
+</p>
 $$
-\int^{g(x)}_0f(t)dt\sim \int^{bx^n}_0at^mdt,(x\to0)
-$$</p>
-</li>
+   \int^{g(x)}_0f(t)dt\sim \int^{bx^n}_0at^mdt,(x\to0)
+   $$</li>
 <li>
 <p>以$\frac{x}{\cos x} $为例计算分式的泰勒展开：
+</p>
 $$
-\cos x = 1 - \frac{1}{2!}x^2 + \frac{1}{4!}x^4 + &hellip;
-$$
+   \cos x = 1 - \frac{1}{2!}x^2 + \frac{1}{4!}x^4 + ... 
+   $$<p>
 随着对分子和分母进行多项式除法，取需要的项即可</p>
 </li>
 <li>
 <p>时不时看看这道题：
+</p>
 $$
-\lim\limits_{x\to0}\frac{\int_{0}^{x}{[e^{{(t-x)}^2}-1]\sin t}\text{d} t}{x
-^2(e^{x^2}-1)}
-$$</p>
-</li>
+   \lim\limits_{x\to0}\frac{\int_{0}^{x}{[e^{{(t-x)}^2}-1]\sin t}\text{d} t}{x
+   ^2(e^{x^2}-1)}
+   $$</li>
 </ol>
 
 </section>
@@ -420,7 +421,7 @@ $$</p>
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.d3ce7388ef5941233a2fd0541c1324f59fa8d8764f59d9721e2c172354121bcf.js" defer></script>
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
