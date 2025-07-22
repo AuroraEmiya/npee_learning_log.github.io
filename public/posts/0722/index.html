@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/npee_learning_log.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=npee_learning_log.github.io/livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="操作系统- (LA-PA-CA)\r带快表的两级系统的地址翻译过程 从逻辑地址映射到物理地址（虚拟存储器） 从物理地址映射到Cache地址（主存-Cache系统） 文件和文件系统 构成文件的基本单位 文件的定义 文件属性 文件的基本操作 文件的打开和关闭的操作 文件的逻辑结构 目录管理 目录的概念 文件控制块和索引节点 目录结构 英语-VocabularyBuilder\rCRIM,comes from the Latin words for &ldquo;fault or crime&rdquo; or &ldquo;accusation.&rdquo; criminology decriminalize incriminate recrimination PROB,comes from the Latin words for &ldquo;prove or proof &ldquo;and &ldquo;honesy or integrity.&rdquo; approbation probate probity reprobate GRAV, comes from the Latin word meaning &ldquo;heavy ,weighty ,serious&rdquo; grave gravitas gravitate aggravate LEV,comes from the Latin adjective $levis$,meaning &ldquo;light&rdquo;,and the verb $levare$,meaning &ldquo;to raise or lighten.&rdquo; alleviate elevation contilever levity 数学-行列式\r行列式的本质定义\n">
+<title>0722学习日志</title>
+
+<link rel='canonical' href='http://localhost:1313/npee_learning_log.github.io/posts/0722/'>
+
+<link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0722学习日志">
+<meta property='og:description' content="操作系统- (LA-PA-CA)\r带快表的两级系统的地址翻译过程 从逻辑地址映射到物理地址（虚拟存储器） 从物理地址映射到Cache地址（主存-Cache系统） 文件和文件系统 构成文件的基本单位 文件的定义 文件属性 文件的基本操作 文件的打开和关闭的操作 文件的逻辑结构 目录管理 目录的概念 文件控制块和索引节点 目录结构 英语-VocabularyBuilder\rCRIM,comes from the Latin words for &ldquo;fault or crime&rdquo; or &ldquo;accusation.&rdquo; criminology decriminalize incriminate recrimination PROB,comes from the Latin words for &ldquo;prove or proof &ldquo;and &ldquo;honesy or integrity.&rdquo; approbation probate probity reprobate GRAV, comes from the Latin word meaning &ldquo;heavy ,weighty ,serious&rdquo; grave gravitas gravitate aggravate LEV,comes from the Latin adjective $levis$,meaning &ldquo;light&rdquo;,and the verb $levare$,meaning &ldquo;to raise or lighten.&rdquo; alleviate elevation contilever levity 数学-行列式\r行列式的本质定义\n">
+<meta property='og:url' content='http://localhost:1313/npee_learning_log.github.io/posts/0722/'>
+<meta property='og:site_name' content='Shyの考研日志'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='操作系统' /><meta property='article:tag' content='英语' /><meta property='article:tag' content='数学' /><meta property='article:tag' content='文件系统' /><meta property='article:tag' content='虚拟地址' /><meta property='article:tag' content='行列式' /><meta property='article:published_time' content='2025-07-22T23:31:50&#43;08:00'/><meta property='article:modified_time' content='2025-07-22T23:31:50&#43;08:00'/>
+<meta name="twitter:title" content="0722学习日志">
+<meta name="twitter:description" content="操作系统- (LA-PA-CA)\r带快表的两级系统的地址翻译过程 从逻辑地址映射到物理地址（虚拟存储器） 从物理地址映射到Cache地址（主存-Cache系统） 文件和文件系统 构成文件的基本单位 文件的定义 文件属性 文件的基本操作 文件的打开和关闭的操作 文件的逻辑结构 目录管理 目录的概念 文件控制块和索引节点 目录结构 英语-VocabularyBuilder\rCRIM,comes from the Latin words for &ldquo;fault or crime&rdquo; or &ldquo;accusation.&rdquo; criminology decriminalize incriminate recrimination PROB,comes from the Latin words for &ldquo;prove or proof &ldquo;and &ldquo;honesy or integrity.&rdquo; approbation probate probity reprobate GRAV, comes from the Latin word meaning &ldquo;heavy ,weighty ,serious&rdquo; grave gravitas gravitate aggravate LEV,comes from the Latin adjective $levis$,meaning &ldquo;light&rdquo;,and the verb $levare$,meaning &ldquo;to raise or lighten.&rdquo; alleviate elevation contilever levity 数学-行列式\r行列式的本质定义\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/npee_learning_log.github.io/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/npee_learning_log.github.io/img/shiki_hu_20273a3af6c00ff3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🌸</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/npee_learning_log.github.io">Shyの考研日志</a></h1>
+            <h2 class="site-description">貴方は水際一人微笑むだけ</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/' >
+                
+                
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/diary' >
+                
+                
+                
+                <span>日记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/log' >
+                
+                
+                
+                <span>日志</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/memo' >
+                
+                
+                
+                <span>笔记</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#操作系统--la-pa-ca">操作系统- (LA-PA-CA)</a></li>
+    <li><a href="#英语-vocabularybuilder">英语-VocabularyBuilder</a></li>
+    <li><a href="#数学-行列式">数学-行列式</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/npee_learning_log.github.io/categories/log/" >
+                Log
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/npee_learning_log.github.io/posts/0722/">0722学习日志</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 22, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="操作系统--la-pa-ca">操作系统- (LA-PA-CA)
+</h2><ol>
+<li>带快表的两级系统的地址翻译过程
+<ol>
+<li>从逻辑地址映射到物理地址（虚拟存储器）</li>
+<li>从物理地址映射到Cache地址（主存-Cache系统）</li>
+</ol>
+</li>
+<li>文件和文件系统
+<ol>
+<li>构成文件的基本单位</li>
+<li>文件的定义</li>
+<li>文件属性</li>
+<li>文件的基本操作</li>
+<li>文件的打开和关闭的操作</li>
+</ol>
+</li>
+<li>文件的逻辑结构</li>
+<li>目录管理
+<ol>
+<li>目录的概念</li>
+<li>文件控制块和索引节点</li>
+<li>目录结构</li>
+</ol>
+</li>
+</ol>
+<h2 id="英语-vocabularybuilder">英语-VocabularyBuilder
+</h2><ol>
+<li>CRIM,comes from the Latin words for &ldquo;fault or crime&rdquo; or &ldquo;accusation.&rdquo;
+<ol>
+<li>criminology</li>
+<li>decriminalize</li>
+<li>incriminate</li>
+<li>recrimination</li>
+</ol>
+</li>
+<li>PROB,comes from the Latin words for  &ldquo;prove or proof &ldquo;and &ldquo;honesy or integrity.&rdquo;
+<ol>
+<li>approbation</li>
+<li>probate</li>
+<li>probity</li>
+<li>reprobate</li>
+</ol>
+</li>
+<li>GRAV, comes from the Latin word meaning &ldquo;heavy ,weighty ,serious&rdquo;
+<ol>
+<li>grave</li>
+<li>gravitas</li>
+<li>gravitate</li>
+<li>aggravate</li>
+</ol>
+</li>
+<li>LEV,comes from the Latin adjective $levis$,meaning &ldquo;light&rdquo;,and the verb $levare$,meaning &ldquo;to raise or lighten.&rdquo;
+<ol>
+<li>alleviate</li>
+<li>elevation</li>
+<li>contilever</li>
+<li>levity</li>
+</ol>
+</li>
+</ol>
+<h2 id="数学-行列式">数学-行列式
+</h2><ol>
+<li>
+<p>行列式的本质定义</p>
+</li>
+<li>
+<p>行列式的性质</p>
+<ol>
+<li>
+<h6 id="aat">$|A|=|A^T|$
+</h6></li>
+<li>
+<p>若行列式中某行(列)元素全为零，则行列式为零</p>
+</li>
+<li>
+<p>若行列式中某行(列) 元素有公因子$k\neq0$，则$k$可提到行列式外面</p>
+</li>
+<li>
+<p>行列式中某行(列)元素均是两个数之和，则可拆成两个行列式之和</p>
+</li>
+<li>
+<p>行列式中两行(列)互换，行列式变号</p>
+</li>
+<li>
+<p>行列式中的两行(列)元素相等或对应成比例，则行列式为零</p>
+</li>
+</ol>
+</li>
+<li>
+<p>行列式的逆序法定义
+$$
+\begin{vmatrix}
+a_{11} &amp; a_{12} &amp; \cdots&amp;a_{1n}\
+a_{21} &amp; a_{22} &amp; \cdots&amp;a_{2n}\
+\vdots &amp; \vdots &amp; &amp;\vdots\
+a_{n1} &amp; a_{n2} &amp; \cdots&amp;a_{nn}\
+\end{vmatrix}=\sum\limits_{j_1j_2\cdots j_n}{(-1)^{\tau(j_1j_2\cdots j_n)}}a_{j_1}a_{j_2}\cdots a_{j_n}
+$$</p>
+</li>
+<li>
+<p>行列式的展开定理
+$$
+|A| = \sum\limits_{j=1}^na_{ij}A_{ij}
+$$</p>
+</li>
+<li>
+<p>几个重要的行列式</p>
+<ol>
+<li>
+<p>主对角线行列式(上(下)三角形行列式)
+$$
+\begin{vmatrix}
+a_{11} &amp; a_{12} &amp; \cdots&amp;a_{1n}\
+0 &amp; a_{22} &amp; \cdots&amp;a_{2n}\
+\vdots &amp; \vdots &amp; &amp;\vdots\
+0 &amp; 0 &amp; \cdots&amp;a_{nn}\
+\end{vmatrix}=\begin{vmatrix}
+a_{11} &amp; 0 &amp; \cdots&amp;0\
+a_{21} &amp; a_{22} &amp; \cdots&amp;0\
+\vdots &amp; \vdots &amp; &amp;\vdots\
+a_{n1} &amp; a_{n2} &amp; \cdots&amp;a_{nn}\
+\end{vmatrix}=\begin{vmatrix}
+a_{11} &amp; 0 &amp; \cdots&amp;0\
+0 &amp; a_{22} &amp; \cdots&amp;0\
+\vdots &amp; \vdots &amp; &amp;\vdots\
+0 &amp; 0 &amp; \cdots&amp;a_{nn}\
+\end{vmatrix}=\prod\limits_{i=1}^n a_{ii}
+$$</p>
+</li>
+<li>
+<p>副对角线行列式
+$$
+\begin{vmatrix}
+a_{11} &amp; \cdots &amp; a_{1,n-1}&amp;a_{1n}\
+a_{21} &amp; \cdots &amp; a_{2,n-1}&amp;0\
+\vdots &amp;  &amp;\vdots &amp;\vdots\
+a_{n1} &amp;\cdots&amp;0 &amp;0\
+\end{vmatrix}=\begin{vmatrix}
+0 &amp; \cdots &amp; 0&amp;a_{1n}\
+0 &amp;\cdots &amp; a_{2,n-1}&amp;a_{2n}\
+\vdots &amp; &amp; \vdots &amp;\vdots\
+a_{n1} &amp;\cdots &amp; a_{n,n-1}&amp;a_{nn}\
+\end{vmatrix}=\begin{vmatrix}
+0 &amp; \cdots &amp; 0&amp;a_{1n}\
+0 &amp; \cdots &amp; a_{2,n-1}&amp;0\
+\vdots &amp; &amp;  \vdots&amp;\vdots\
+a_{n1} &amp; \cdots &amp; 0&amp;0\
+\end{vmatrix}=(-1)^{\frac{n(n-1)}{2}}\prod\limits_{i=1}^n a_{i(n+1-i)}
+$$</p>
+</li>
+<li>
+<p>拉普拉斯展开式($A\in R^{m\times m},B\in R^{n\times n}$)
+$$
+\begin{vmatrix}
+A&amp;O\
+O&amp;B
+\end{vmatrix}=\begin{vmatrix}
+A&amp;C\
+O&amp;B
+\end{vmatrix}=\begin{vmatrix}
+A&amp;O\
+C&amp;B
+\end{vmatrix}=|A||B|
+$$</p>
+<p>$$
+\begin{vmatrix}
+O&amp;A\
+B&amp;O
+\end{vmatrix}=\begin{vmatrix}
+C&amp;A\
+B&amp;O
+\end{vmatrix}=\begin{vmatrix}
+O&amp;A\
+B&amp;C
+\end{vmatrix}=(-1)^{mn}|A||B|
+$$</p>
+</li>
+<li>
+<p>范德蒙德行列式
+$$
+\begin{vmatrix}
+1&amp;1&amp;\cdots&amp;1\
+x_1&amp;x_2&amp;\cdots&amp;x_n\
+x_1^2&amp;x_2^2&amp;\cdots&amp;x_n^2\
+\vdots&amp;\vdots&amp;&amp;\vdots\
+x_1^n&amp;x_2^n&amp;\cdots&amp;x_n^n\
+\end{vmatrix}=\prod\limits_{1\leq i&lt;j\leq n}{(x_i-x_j)}
+$$</p>
+</li>
+</ol>
+</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E8%8B%B1%E8%AF%AD/">英语</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/">文件系统</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80/">虚拟地址</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E8%A1%8C%E5%88%97%E5%BC%8F/">行列式</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0721/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0721学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0719/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0719学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0714/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0714学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0712/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0712学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0717/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0717学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 Shyの考研日志
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.d3ce7388ef5941233a2fd0541c1324f59fa8d8764f59d9721e2c172354121bcf.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
