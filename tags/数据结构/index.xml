@@ -471,40 +471,34 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;CPU利用率&lt;/p&gt;
-&lt;p&gt;$$
-\frac{\text{worktime of CPU}}{\text{total time}}
-$$&lt;/p&gt;
-&lt;/li&gt;
+$$
+     \frac{\text{worktime of CPU}}{\text{total time}}
+     $$&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;系统吞吐量&lt;/p&gt;
-&lt;p&gt;$$
-\frac{\text{number of tasks}}{\text{total time}}
-$$&lt;/p&gt;
-&lt;/li&gt;
+$$
+     \frac{\text{number of tasks}}{\text{total time}}
+     $$&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;周转时间(Turnaround Time)&lt;/p&gt;
-&lt;p&gt;$$
-\text{Completion Time - Arrival Time}
-$$&lt;/p&gt;
-&lt;/li&gt;
+$$
+     \text{Completion Time - Arrival Time}
+     $$&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;平均周转时间&lt;/p&gt;
-&lt;p&gt;$$
-\frac{\sum\limits_{N}\text{Turnaround Time of all processes}}{N}
-$$&lt;/p&gt;
-&lt;/li&gt;
+$$
+     \frac{\sum\limits_{N}\text{Turnaround Time of all processes}}{N}
+     $$&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;带权周转时间&lt;/p&gt;
-&lt;p&gt;$$
-\frac{\text{Turnaround Time}}{\text{Service Time}}
-$$&lt;/p&gt;
-&lt;/li&gt;
+$$
+     \frac{\text{Turnaround Time}}{\text{Service Time}}
+     $$&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;平均带权周转时间&lt;/p&gt;
-&lt;p&gt;$$
-\frac{\sum\limits_{N}\text{Weighted Turnaround Time of all processes}}{N}
-$$&lt;/p&gt;
-&lt;/li&gt;
+$$
+     \frac{\sum\limits_{N}\text{Weighted Turnaround Time of all processes}}{N}
+     $$&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;等待时间&lt;/p&gt;
 &lt;/li&gt;

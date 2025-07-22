@@ -183,62 +183,71 @@
 &lt;h2 id=&#34;数学&#34;&gt;数学
 &lt;/h2&gt;&lt;h3 id=&#34;三角函数大家族&#34;&gt;三角函数大家族
 &lt;/h3&gt;&lt;p&gt;一些恒等式
+&lt;/p&gt;
 $$
 \sin^2{\theta} + \cos^2{\theta} = 1
-$$
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
 1 + \tan^2{\theta} = \sec^2{\theta}
-$$
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
 1 + \cot^2{\theta} = \csc^2{\theta}
-$$
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
 \sin(\arcsin{x}) = x(x\in[-1,1])
-$$
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
 \sin(\arccos{x}) = \sqrt{1-x^2}(x\in[-1,1])
-$$
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
 \cos(\arccos{x}) = x(x\in[-1,1])
-$$
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
 \cos(\arcsin{x}) = \sqrt{1-x^2}(x\in[-1,1])
-$$&lt;/p&gt;
-&lt;h3 id=&#34;双曲正弦余弦函数&#34;&gt;双曲正弦/余弦函数
+$$&lt;h3 id=&#34;双曲正弦余弦函数&#34;&gt;双曲正弦/余弦函数
 &lt;/h3&gt;&lt;p&gt;双曲正弦函数
+&lt;/p&gt;
 $$
 \sinh{x} = \frac{e^x-e^{-x}}{2}
-$$
+$$&lt;p&gt;
 反双曲正弦函数
+&lt;/p&gt;
 $$
-\text{arcsinh}\ {x} = \ln(x+\sqrt{1+x^2})
+	\text{arcsinh}\ {x} = \ln(x+\sqrt{1+x^2})
+$$&lt;p&gt;
+&lt;/p&gt;
 $$
-$$
-\text{arcsinh}&amp;rsquo;\ {x} = \frac{1}{\sqrt{1+x^2}}
-$$
+\text{arcsinh}&#39;\ {x} = \frac{1}{\sqrt{1+x^2}}
+$$&lt;p&gt;
 双曲余弦函数
+&lt;/p&gt;
 $$
 \cosh{x} = \frac{e^x+e^{-x}}{2}
-$$
+$$&lt;p&gt;
 反双曲余弦函数
+&lt;/p&gt;
 $$
-\text{arccosh}\ {x} = \ln(x+\sqrt{x^2-1}),\ x\geq 1\
-$$&lt;/p&gt;
-&lt;p&gt;$$
-\text{arccosh}&amp;rsquo;\ {x} = \frac{1}{\sqrt{x^2-1}},\ x&amp;gt;1
-$$&lt;/p&gt;
-&lt;p&gt;双曲正切函数
+\text{arccosh}\ {x} = \ln(x+\sqrt{x^2-1}),\ x\geq 1\\
+$$$$
+	\text{arccosh}&#39;\ {x} = \frac{1}{\sqrt{x^2-1}},\ x&gt;1
+$$&lt;p&gt;双曲正切函数
+&lt;/p&gt;
 $$
 \tanh{x} = \frac{\sinh{x}}{\cosh{x}}=\frac{e^x-e^{-x}}{e^x+e^{-x}}
-$$
+$$&lt;p&gt;
 反双曲正切函数
+&lt;/p&gt;
 $$
 \text{arctanh}\ {x} = \frac{1}{2}\ln(\frac{1+x}{1-x}),\ x\in(-1,1)
-$$&lt;/p&gt;
-&lt;p&gt;$$
-\text{arctanh}&amp;rsquo;\ {x} = \frac{1}{1-x^2}
-$$&lt;/p&gt;
-</description>
+$$$$
+	\text{arctanh}&#39;\ {x} = \frac{1}{1-x^2}
+$$</description>
         </item>
         
     </channel>

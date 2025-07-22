@@ -17,10 +17,9 @@
 &lt;li&gt;
 &lt;p&gt;首先，泰勒吧&lt;/p&gt;
 &lt;p&gt;设$f(x)$在点$x=0$处$n$阶可导，则存在$x=0$的一个领域，对于该领域内的任一点$x$，有&lt;/p&gt;
-&lt;p&gt;$$
-f(x) = f(0) + f{&amp;rsquo;}(0)x + \frac{f^{&amp;rsquo;&amp;rsquo;}(0)}{2!}x^2 + \frac{f^{&amp;rsquo;&amp;rsquo;&amp;rsquo;}(0)}{3!}x^3 + &amp;hellip;+ \frac{f^{(n)}(0)}{n!}x^n + o(x^n)
-$$&lt;/p&gt;
-&lt;/li&gt;
+$$
+   f(x) = f(0) + f{&#39;}(0)x + \frac{f^{&#39;&#39;}(0)}{2!}x^2 + \frac{f^{&#39;&#39;&#39;}(0)}{3!}x^3 + ...+ \frac{f^{(n)}(0)}{n!}x^n + o(x^n)
+   $$&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;其次，记住吧&lt;/p&gt;
 &lt;p&gt;一些食品级的等价无穷小&lt;/p&gt;
