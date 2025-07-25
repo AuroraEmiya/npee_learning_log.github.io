@@ -6,7 +6,47 @@
         <description>Recent content in 数列极限 on Shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 19 Jul 2025 22:41:19 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 25 Jul 2025 20:24:54 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0725学习笔记</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0725/</link>
+        <pubDate>Fri, 25 Jul 2025 20:24:54 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0725/</guid>
+        <description>&lt;h2 id=&#34;操作系统-易错小知识&#34;&gt;操作系统-易错小知识
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;在多个进程并发执行时，所有进程的页表大多数驻留在内存中，在系统中只设置一个页表寄存器（PTR），它存放页表在内存中的始址和长度&lt;/li&gt;
+&lt;li&gt;分段方式对低级语言程序员和编译器是可见的，对高级语言程序员是透明的&lt;/li&gt;
+&lt;li&gt;在这四种动态分区分配算法中，（首次适应，最坏适应，最佳适应，循环首次适应），最佳适应由于其总是会选择和待分配空间“最接近”的空闲区，因此总是会产生难以利用的小的内存块。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;数学-数列极限&#34;&gt;数学-数列极限
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;一个积分小技巧,似乎跟傅里叶级数有关系，但是我没看出来（插个眼）
+$$
+   \begin{align*}
+   \int_{0}^{\frac{\pi}{2}}{\sin^{n+1} t \text{d} t} &amp;= \left.(-\sin^nt\cdot \cos t)\right|_{0}^{\frac{\pi}{2}} - \int_{0}^{\frac{\pi}{2}}{-\cos t \text{d} \sin^n t}\\
+   &amp;=n\int_{0}^{\frac{\pi}{2}}{\cos^2 t \sin^{n-1} \text{d}  t}\\
+   &amp;=n\int_{0}^{\frac{\pi}{2}}{(1-\sin^2t) \sin^{n-1} \text{d}  t}\\
+   \\
+   \int_{0}^{\frac{\pi}{2}}{\sin^{n+1} t \text{d} t}&amp;=\frac{n}{n+1}\int_{0}^{\frac{\pi}{2}}{\sin^{n-1} t \text{d} t}
+   \end{align*}
+   $$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;英语-即使是认识的单词也有不认识的词根词缀&#34;&gt;英语-即使是认识的单词也有不认识的词根词缀
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;ac company&lt;/li&gt;
+&lt;li&gt;mono poly&lt;/li&gt;
+&lt;li&gt;di lute&lt;/li&gt;
+&lt;li&gt;trans action&lt;/li&gt;
+&lt;li&gt;re sent&lt;/li&gt;
+&lt;li&gt;con temporary&lt;/li&gt;
+&lt;li&gt;spec u late&lt;/li&gt;
+&lt;li&gt;in cur&lt;/li&gt;
+&lt;li&gt;im plement&lt;/li&gt;
+&lt;li&gt;pro ce dure&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>0719学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/</link>
         <pubDate>Sat, 19 Jul 2025 22:41:19 +0800</pubDate>
