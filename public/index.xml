@@ -2,16 +2,256 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>shyの考研日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/</link>
         <description>Recent content on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 26 Jul 2025 11:19:57 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 27 Jul 2025 02:31:05 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>网页更新日志.0727</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/update/0727/</link>
+        <pubDate>Sun, 27 Jul 2025 02:31:05 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/update/0727/</guid>
+        <description>&lt;h2 id=&#34;hello-world&#34;&gt;Hello World
+&lt;/h2&gt;&lt;p&gt;这是博主在某个深夜对着自己的博客网页捣鼓后，突然做出的决定：当网站有重大版本更新的时候，记录新版本的变化。&lt;/p&gt;
+&lt;p&gt;其实这个博客页面已经长期维护了2周，一直没有认真上手去学习&lt;code&gt;hugo&lt;/code&gt;和&lt;code&gt;stack&lt;/code&gt;的相关配置，主页的样子也是主打一个能用就行。但是这就是我的网站，我认为有必要记录它和我的成长变化，也好在日后回忆中逐渐鲜活这一路走来的历程，现在博主锐意备战今年（2025）的考研，因此这个网站主要还是记录自己的学习进度和笔记。以后&amp;hellip;&amp;hellip;也许会变成一个更丰富的网站（吧？雾！）&lt;/p&gt;
+&lt;p&gt;总之，姑且用一句计算机的经典开场白标志着这一切的开始！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hello World！&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;目前网站版本已经进入2.0时代，下面简单说明一下1.0版本&lt;/p&gt;
+&lt;h3 id=&#34;version10&#34;&gt;Version.1.0
+&lt;/h3&gt;&lt;p&gt;这个版本主要更新了以下特性：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用&lt;a class=&#34;link&#34; href=&#34;https://github.com/CaiJimmy/hugo-theme-stack&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;stack&lt;/a&gt;默认模板作为主题&lt;/li&gt;
+&lt;li&gt;使用github 的Action 功能生成博客挂载到github上的个人网站&lt;/li&gt;
+&lt;li&gt;确定了三种主要的博客文章种类，即日志，日记，笔记&lt;/li&gt;
+&lt;li&gt;使用&lt;a class=&#34;link&#34; href=&#34;https://katex.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;Katex&lt;/code&gt;&lt;/a&gt;作为数学公式的latex生成引擎&lt;/li&gt;
+&lt;li&gt;简单设计了个人主页的形式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;version20&#34;&gt;Version.2.0
+&lt;/h3&gt;&lt;p&gt;这个版本完成于07-27凌晨，目的是“让博客更有个人的风格”，因此不免要修改原来的模板，总的来说，这个版本进行了如下的变化&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;主页右边的工具栏新增“Safari”(文章关键字检索),&amp;ldquo;Archive&amp;rdquo;(文章按照YY-MM进行分类汇总)&lt;/li&gt;
+&lt;li&gt;主页页脚添加友链，目前有大学舍友的个人网站&lt;/li&gt;
+&lt;li&gt;新增栏目：更新日志！&lt;/li&gt;
+&lt;li&gt;丰富了主页左侧的目录显示风格&lt;/li&gt;
+&lt;li&gt;更新了新的个人签名（时不时会因为心情、中二病、心血来潮、喜欢某一句歌词怎么怎么的更新一下），之后也会在例行的更新中添加历史签名。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;git-commit-历史&#34;&gt;Git Commit 历史
+&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Commit Hash&lt;/th&gt;
+          &lt;th&gt;Author&lt;/th&gt;
+          &lt;th&gt;Date&lt;/th&gt;
+          &lt;th&gt;Message&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;7d23d05&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-27&lt;/td&gt;
+          &lt;td&gt;delete the example page of the theme&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;363db66&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-27&lt;/td&gt;
+          &lt;td&gt;copy the partials dir into personal layout dir to make the theme customized&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0b7f124&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-27&lt;/td&gt;
+          &lt;td&gt;refresh the outlook of the home page, add searching wiget: SAFARI, archives widget: ARCHIVES sorted by YY-MM and so on&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ffcc3ad&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-27&lt;/td&gt;
+          &lt;td&gt;Added some supplementary notes to the original 0726 memo content&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;b30977c&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-26&lt;/td&gt;
+          &lt;td&gt;upload 0726 memo with OS and English part&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;f0be782&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-25&lt;/td&gt;
+          &lt;td&gt;upload 0725 memo with new contents [tips]&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;d2c2623&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-25&lt;/td&gt;
+          &lt;td&gt;upload 0725 memo&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;73ee5ce&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-24&lt;/td&gt;
+          &lt;td&gt;upload 0723 log&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;774320b&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-23&lt;/td&gt;
+          &lt;td&gt;success to adjusting the outlook of the equations&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;cd814b0&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-23&lt;/td&gt;
+          &lt;td&gt;upload 0722.md but need to adjust the outlook of the equations&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;7020417&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-22&lt;/td&gt;
+          &lt;td&gt;upload 0721 memo about stack data structure&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;326f71e&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-21&lt;/td&gt;
+          &lt;td&gt;upload 0721 log with more details&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4f5c09e&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-21&lt;/td&gt;
+          &lt;td&gt;upload 0721 log&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;c96a603&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-19&lt;/td&gt;
+          &lt;td&gt;update my subtitle with a song of my favorite team YORUSHIKA&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;6166a2e&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-19&lt;/td&gt;
+          &lt;td&gt;upload 0719 log&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;43e7c0c&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-18&lt;/td&gt;
+          &lt;td&gt;upload 0718 memo&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;8c131da&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-17&lt;/td&gt;
+          &lt;td&gt;upload 0717 memo&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;459dd19&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-17&lt;/td&gt;
+          &lt;td&gt;upload 0717 log&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;9c3b26b&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-15&lt;/td&gt;
+          &lt;td&gt;upload 0715 log&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3fa4544&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-14&lt;/td&gt;
+          &lt;td&gt;add the code of courses&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ad32158&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-14&lt;/td&gt;
+          &lt;td&gt;upload 0714 memo and make a Katex math environment available&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;d665354&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-14&lt;/td&gt;
+          &lt;td&gt;upload 0714 log&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;f465180&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-14&lt;/td&gt;
+          &lt;td&gt;upload the log and memo of 0713&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;f11a353&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-13&lt;/td&gt;
+          &lt;td&gt;fix some bugs&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;77f102e&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-12&lt;/td&gt;
+          &lt;td&gt;upload a new memo about system call&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;51baa47&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-12&lt;/td&gt;
+          &lt;td&gt;just display the posts at the first page&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;b2f1bce&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-12&lt;/td&gt;
+          &lt;td&gt;forget to remove the draft tag&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;8338f47&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-12&lt;/td&gt;
+          &lt;td&gt;upload 0712 diary and log&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;c11d079&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-12&lt;/td&gt;
+          &lt;td&gt;renew a theme of stack&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4cce612&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-12&lt;/td&gt;
+          &lt;td&gt;renew a theme with stack&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0859e5b&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-11&lt;/td&gt;
+          &lt;td&gt;upload 0711 OS&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;c639077&lt;/td&gt;
+          &lt;td&gt;Shy&lt;/td&gt;
+          &lt;td&gt;2025-07-1&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        </item>
+        <item>
         <title>0726学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0726/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0726/</link>
         <pubDate>Sat, 26 Jul 2025 11:19:57 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0726/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0726/</guid>
         <description>&lt;h2 id=&#34;操作系统-一些易错知识点&#34;&gt;操作系统-一些易错知识点
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;在计算平均访存时间时要注意快表TLB和页表的访问是&lt;strong&gt;串行&lt;/strong&gt;还是并行的，也要注意页表是&lt;strong&gt;单级&lt;/strong&gt;还是多级的&lt;/li&gt;
@@ -197,10 +437,10 @@ $$
         </item>
         <item>
         <title>0725学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0725/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0725/</link>
         <pubDate>Fri, 25 Jul 2025 20:24:54 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0725/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0725/</guid>
         <description>&lt;h2 id=&#34;操作系统-易错小知识&#34;&gt;操作系统-易错小知识
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;在多个进程并发执行时，所有进程的页表大多数驻留在内存中，在系统中只设置一个页表寄存器（PTR），它存放页表在内存中的始址和长度&lt;/li&gt;
@@ -238,10 +478,10 @@ $$
         </item>
         <item>
         <title>0723学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0723/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0723/</link>
         <pubDate>Wed, 23 Jul 2025 23:53:15 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0723/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0723/</guid>
         <description>&lt;h2 id=&#34;数学-1000题&#34;&gt;数学-1000题
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;对于$x_{n+1}=f(x_n)$的数列极限的判定的过程
@@ -310,10 +550,10 @@ $$
         </item>
         <item>
         <title>0722学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0722/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0722/</link>
         <pubDate>Tue, 22 Jul 2025 23:31:50 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0722/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0722/</guid>
         <description>&lt;h2 id=&#34;操作系统--la-pa-ca&#34;&gt;操作系统- (LA-PA-CA)
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;带快表的两级系统的地址翻译过程
@@ -510,10 +750,10 @@ $$
         </item>
         <item>
         <title>0721学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0721/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0721/</link>
         <pubDate>Mon, 21 Jul 2025 22:59:30 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0721/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0721/</guid>
         <description>&lt;h2 id=&#34;数据结构-代码待完善&#34;&gt;数据结构-代码(待完善)
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;
@@ -654,10 +894,10 @@ $$
         </item>
         <item>
         <title>0721学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0721/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0721/</link>
         <pubDate>Mon, 21 Jul 2025 17:53:02 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0721/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0721/</guid>
         <description>&lt;h2 id=&#34;英语-vocabulary-builder&#34;&gt;英语-vocabulary builder
 &lt;/h2&gt;&lt;p&gt;使用 &lt;code&gt;The Merriam-Webster Vocabulary Builder&lt;/code&gt;作为词根法扩充词汇量的工具书(由网友canon提供)&lt;/p&gt;
 &lt;ol&gt;
@@ -817,10 +1057,10 @@ $$
         </item>
         <item>
         <title>0719学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0719/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/</link>
         <pubDate>Sat, 19 Jul 2025 22:41:19 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0719/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/</guid>
         <description>&lt;h2 id=&#34;数学-是不动点的味道&#34;&gt;数学-是不动点的味道
 &lt;/h2&gt;&lt;h3 id=&#34;数列的极限&#34;&gt;数列的极限
 &lt;/h3&gt;&lt;ol&gt;
@@ -935,10 +1175,10 @@ $$
         </item>
         <item>
         <title>0718学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0718/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0718/</link>
         <pubDate>Fri, 18 Jul 2025 19:23:00 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0718/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0718/</guid>
         <description>&lt;h2 id=&#34;数学&#34;&gt;数学
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;
@@ -973,10 +1213,10 @@ $$
         </item>
         <item>
         <title>0717学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0717/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0717/</link>
         <pubDate>Thu, 17 Jul 2025 23:07:05 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0717/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0717/</guid>
         <description>&lt;h2 id=&#34;关于数学cool-stuff&#34;&gt;关于数学，cool stuff
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;
@@ -1018,10 +1258,10 @@ $$
         </item>
         <item>
         <title>0717学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0717/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0717/</link>
         <pubDate>Thu, 17 Jul 2025 22:04:43 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0717/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0717/</guid>
         <description>&lt;h2 id=&#34;数学-纸上得来终觉浅&#34;&gt;数学-纸上得来终觉浅
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;
@@ -1136,10 +1376,10 @@ $$
         </item>
         <item>
         <title>0715学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0715/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0715/</link>
         <pubDate>Tue, 15 Jul 2025 21:43:17 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0715/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0715/</guid>
         <description>&lt;h2 id=&#34;操作系统-jyy的map永远的噩梦&#34;&gt;操作系统-jyy的map永远的噩梦
 &lt;/h2&gt;&lt;h3 id=&#34;死锁&#34;&gt;死锁
 &lt;/h3&gt;&lt;ol&gt;
@@ -1214,10 +1454,10 @@ $$
         </item>
         <item>
         <title>0714学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0714/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0714/</link>
         <pubDate>Mon, 14 Jul 2025 21:15:16 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0714/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0714/</guid>
         <description>&lt;h2 id=&#34;朝花夕拾&#34;&gt;朝花夕拾
 &lt;/h2&gt;&lt;p&gt;先回答一下昨天的疑问：&lt;/p&gt;
 &lt;ol&gt;
@@ -1457,10 +1697,10 @@ $$</description>
         </item>
         <item>
         <title>0714学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0714/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0714/</link>
         <pubDate>Mon, 14 Jul 2025 21:15:02 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0714/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0714/</guid>
         <description>&lt;h2 id=&#34;操作系统-这什么查一下这什么查一下&#34;&gt;操作系统-这什么查一下这什么查一下
 &lt;/h2&gt;&lt;h3 id=&#34;经典同步问题&#34;&gt;经典同步问题
 &lt;/h3&gt;&lt;ol&gt;
@@ -1694,10 +1934,10 @@ $$
         </item>
         <item>
         <title>0713学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0713/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0713/</link>
         <pubDate>Sun, 13 Jul 2025 23:27:16 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0713/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0713/</guid>
         <description>&lt;h2 id=&#34;数据结构-喜欢在头指针存数据的扣1&#34;&gt;数据结构-喜欢在头指针存数据的扣1
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;线性表的链式存储&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -1803,10 +2043,10 @@ $$
         </item>
         <item>
         <title>0713学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0713/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0713/</link>
         <pubDate>Sun, 13 Jul 2025 23:27:16 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0713/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0713/</guid>
         <description>&lt;p&gt;今天看来是无法解决所有当下的疑问了，故先列出清单：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;什么是用户级线程和内核级线程？&lt;/li&gt;
@@ -1817,10 +2057,10 @@ $$
         </item>
         <item>
         <title>0712学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0712/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0712/</link>
         <pubDate>Sat, 12 Jul 2025 23:17:40 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0712/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0712/</guid>
         <description>&lt;h2 id=&#34;操作系统&#34;&gt;操作系统
 &lt;/h2&gt;&lt;h3 id=&#34;系统调用&#34;&gt;系统调用
 &lt;/h3&gt;&lt;ol&gt;
@@ -1845,11 +2085,11 @@ $$
         </item>
         <item>
         <title>暴雨西湖</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/diary/westlake-with-haruko/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/diary/westlake-with-haruko/</link>
         <pubDate>Sat, 12 Jul 2025 22:27:55 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/diary/westlake-with-haruko/</guid>
-        <description>&lt;img src="http://localhost:1313/npee_learning_log.github.io/diary/westlake-with-haruko/westlake_in_strom.jpg" alt="Featured image of post 暴雨西湖" /&gt;&lt;p&gt;今天带刚来杭州的&lt;strong&gt;太阳&lt;/strong&gt;(应当事人的要求使用该昵称)去西湖游玩。其实天气预报有雨，但东坡先生有诗为证：&lt;/p&gt;
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/diary/westlake-with-haruko/</guid>
+        <description>&lt;img src="https://auroraemiya.github.io/npee_learning_log.github.io/diary/westlake-with-haruko/westlake_in_strom.jpg" alt="Featured image of post 暴雨西湖" /&gt;&lt;p&gt;今天带刚来杭州的&lt;strong&gt;太阳&lt;/strong&gt;(应当事人的要求使用该昵称)去西湖游玩。其实天气预报有雨，但东坡先生有诗为证：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;水光潋滟晴方好，山色空蒙雨亦奇。
 欲把西湖比西子，淡妆浓抹总相宜。&lt;/p&gt;&lt;/blockquote&gt;
@@ -1868,10 +2108,10 @@ $$
         </item>
         <item>
         <title>0712学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0712/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0712/</link>
         <pubDate>Sat, 12 Jul 2025 22:05:39 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0712/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0712/</guid>
         <description>&lt;h2 id=&#34;操作系统-int-0x80&#34;&gt;操作系统-int 0x80
 &lt;/h2&gt;&lt;p&gt;操作系统的运行环境&lt;/p&gt;
 &lt;ol&gt;
@@ -1921,18 +2161,18 @@ $$
         </item>
         <item>
         <title>0711学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0711/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/</link>
         <pubDate>Fri, 11 Jul 2025 20:29:14 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0711/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/</guid>
         <description>&lt;h2 id=&#34;数据结构-太好了是死记硬背&#34;&gt;数据结构-太好了是死记硬背
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;数据的逻辑和物理结构&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/npee_learning_log.github.io/posts/0711/QQ20250711-202720.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/QQ20250711-202720.png&#34;
 	width=&#34;1702&#34;
 	height=&#34;743&#34;
-	srcset=&#34;http://localhost:1313/npee_learning_log.github.io/posts/0711/QQ20250711-202720_hu_ab8a865d16a46851.png 480w, http://localhost:1313/npee_learning_log.github.io/posts/0711/QQ20250711-202720_hu_5cae573c8a98f94d.png 1024w&#34;
+	srcset=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/QQ20250711-202720_hu_ab8a865d16a46851.png 480w, https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/QQ20250711-202720_hu_5cae573c8a98f94d.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1977,10 +2217,10 @@ $$
         </item>
         <item>
         <title>Intro-全部の始まり</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/diary/intro/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/diary/intro/</link>
         <pubDate>Fri, 11 Jul 2025 16:35:21 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/diary/intro/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/diary/intro/</guid>
         <description>&lt;h2 id=&#34;写在一切的前面&#34;&gt;写在一切的前面
 &lt;/h2&gt;&lt;p&gt;欢迎来到我的博客，这是我 （笔者自称小shy)为了记录参加2026考研全过程而开始的新栏目。&lt;/p&gt;
 &lt;p&gt;我准备参加今年年底的2026NPEE(The national entrance examination for postgraduate)，科目是11408。&lt;/p&gt;
@@ -1996,18 +2236,18 @@ $$
         </item>
         <item>
         <title>Archives</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/page/archives/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/page/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/page/archives/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/page/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>Search</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/page/search/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/page/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/page/search/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/page/search/</guid>
         <description></description>
         </item>
         

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Hello World\r这是博主在某个深夜对着自己的博客网页捣鼓后，突然做出的决定：当网站有重大版本更新的时候，记录新版本的变化。\n其实这个博客页面已经长期维护了2周，一直没有认真上手去学习hugo和stack的相关配置，主页的样子也是主打一个能用就行。但是这就是我的网站，我认为有必要记录它和我的成长变化，也好在日后回忆中逐渐鲜活这一路走来的历程，现在博主锐意备战今年（2025）的考研，因此这个网站主要还是记录自己的学习进度和笔记。以后&hellip;&hellip;也许会变成一个更丰富的网站（吧？雾！）\n总之，姑且用一句计算机的经典开场白标志着这一切的开始！\nHello World！\n目前网站版本已经进入2.0时代，下面简单说明一下1.0版本\nVersion.1.0\r这个版本主要更新了以下特性：\n使用stack默认模板作为主题 使用github 的Action 功能生成博客挂载到github上的个人网站 确定了三种主要的博客文章种类，即日志，日记，笔记 使用Katex作为数学公式的latex生成引擎 简单设计了个人主页的形式 Version.2.0\r这个版本完成于07-27凌晨，目的是“让博客更有个人的风格”，因此不免要修改原来的模板，总的来说，这个版本进行了如下的变化\n主页右边的工具栏新增“Safari”(文章关键字检索),&ldquo;Archive&rdquo;(文章按照YY-MM进行分类汇总) 主页页脚添加友链，目前有大学舍友的个人网站 新增栏目：更新日志！ 丰富了主页左侧的目录显示风格 更新了新的个人签名（时不时会因为心情、中二病、心血来潮、喜欢某一句歌词怎么怎么的更新一下），之后也会在例行的更新中添加历史签名。 Git Commit 历史\rCommit Hash Author Date Message 7d23d05 Shy 2025-07-27 delete the example page of the theme 363db66 Shy 2025-07-27 copy the partials dir into personal layout dir to make the theme customized 0b7f124 Shy 2025-07-27 refresh the outlook of the home page, add searching wiget: SAFARI, archives widget: ARCHIVES sorted by YY-MM and so on ffcc3ad Shy 2025-07-27 Added some supplementary notes to the original 0726 memo content b30977c Shy 2025-07-26 upload 0726 memo with OS and English part f0be782 Shy 2025-07-25 upload 0725 memo with new contents [tips] d2c2623 Shy 2025-07-25 upload 0725 memo 73ee5ce Shy 2025-07-24 upload 0723 log 774320b Shy 2025-07-23 success to adjusting the outlook of the equations cd814b0 Shy 2025-07-23 upload 0722.md but need to adjust the outlook of the equations 7020417 Shy 2025-07-22 upload 0721 memo about stack data structure 326f71e Shy 2025-07-21 upload 0721 log with more details 4f5c09e Shy 2025-07-21 upload 0721 log c96a603 Shy 2025-07-19 update my subtitle with a song of my favorite team YORUSHIKA 6166a2e Shy 2025-07-19 upload 0719 log 43e7c0c Shy 2025-07-18 upload 0718 memo 8c131da Shy 2025-07-17 upload 0717 memo 459dd19 Shy 2025-07-17 upload 0717 log 9c3b26b Shy 2025-07-15 upload 0715 log 3fa4544 Shy 2025-07-14 add the code of courses ad32158 Shy 2025-07-14 upload 0714 memo and make a Katex math environment available d665354 Shy 2025-07-14 upload 0714 log f465180 Shy 2025-07-14 upload the log and memo of 0713 f11a353 Shy 2025-07-13 fix some bugs 77f102e Shy 2025-07-12 upload a new memo about system call 51baa47 Shy 2025-07-12 just display the posts at the first page b2f1bce Shy 2025-07-12 forget to remove the draft tag 8338f47 Shy 2025-07-12 upload 0712 diary and log c11d079 Shy 2025-07-12 renew a theme of stack 4cce612 Shy 2025-07-12 renew a theme with stack 0859e5b Shy 2025-07-11 upload 0711 OS c639077 Shy 2025-07-1 ">
+<title>网页更新日志.0727</title>
+
+<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/update/0727/'>
+
+<link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="网页更新日志.0727">
+<meta property='og:description' content="Hello World\r这是博主在某个深夜对着自己的博客网页捣鼓后，突然做出的决定：当网站有重大版本更新的时候，记录新版本的变化。\n其实这个博客页面已经长期维护了2周，一直没有认真上手去学习hugo和stack的相关配置，主页的样子也是主打一个能用就行。但是这就是我的网站，我认为有必要记录它和我的成长变化，也好在日后回忆中逐渐鲜活这一路走来的历程，现在博主锐意备战今年（2025）的考研，因此这个网站主要还是记录自己的学习进度和笔记。以后&hellip;&hellip;也许会变成一个更丰富的网站（吧？雾！）\n总之，姑且用一句计算机的经典开场白标志着这一切的开始！\nHello World！\n目前网站版本已经进入2.0时代，下面简单说明一下1.0版本\nVersion.1.0\r这个版本主要更新了以下特性：\n使用stack默认模板作为主题 使用github 的Action 功能生成博客挂载到github上的个人网站 确定了三种主要的博客文章种类，即日志，日记，笔记 使用Katex作为数学公式的latex生成引擎 简单设计了个人主页的形式 Version.2.0\r这个版本完成于07-27凌晨，目的是“让博客更有个人的风格”，因此不免要修改原来的模板，总的来说，这个版本进行了如下的变化\n主页右边的工具栏新增“Safari”(文章关键字检索),&ldquo;Archive&rdquo;(文章按照YY-MM进行分类汇总) 主页页脚添加友链，目前有大学舍友的个人网站 新增栏目：更新日志！ 丰富了主页左侧的目录显示风格 更新了新的个人签名（时不时会因为心情、中二病、心血来潮、喜欢某一句歌词怎么怎么的更新一下），之后也会在例行的更新中添加历史签名。 Git Commit 历史\rCommit Hash Author Date Message 7d23d05 Shy 2025-07-27 delete the example page of the theme 363db66 Shy 2025-07-27 copy the partials dir into personal layout dir to make the theme customized 0b7f124 Shy 2025-07-27 refresh the outlook of the home page, add searching wiget: SAFARI, archives widget: ARCHIVES sorted by YY-MM and so on ffcc3ad Shy 2025-07-27 Added some supplementary notes to the original 0726 memo content b30977c Shy 2025-07-26 upload 0726 memo with OS and English part f0be782 Shy 2025-07-25 upload 0725 memo with new contents [tips] d2c2623 Shy 2025-07-25 upload 0725 memo 73ee5ce Shy 2025-07-24 upload 0723 log 774320b Shy 2025-07-23 success to adjusting the outlook of the equations cd814b0 Shy 2025-07-23 upload 0722.md but need to adjust the outlook of the equations 7020417 Shy 2025-07-22 upload 0721 memo about stack data structure 326f71e Shy 2025-07-21 upload 0721 log with more details 4f5c09e Shy 2025-07-21 upload 0721 log c96a603 Shy 2025-07-19 update my subtitle with a song of my favorite team YORUSHIKA 6166a2e Shy 2025-07-19 upload 0719 log 43e7c0c Shy 2025-07-18 upload 0718 memo 8c131da Shy 2025-07-17 upload 0717 memo 459dd19 Shy 2025-07-17 upload 0717 log 9c3b26b Shy 2025-07-15 upload 0715 log 3fa4544 Shy 2025-07-14 add the code of courses ad32158 Shy 2025-07-14 upload 0714 memo and make a Katex math environment available d665354 Shy 2025-07-14 upload 0714 log f465180 Shy 2025-07-14 upload the log and memo of 0713 f11a353 Shy 2025-07-13 fix some bugs 77f102e Shy 2025-07-12 upload a new memo about system call 51baa47 Shy 2025-07-12 just display the posts at the first page b2f1bce Shy 2025-07-12 forget to remove the draft tag 8338f47 Shy 2025-07-12 upload 0712 diary and log c11d079 Shy 2025-07-12 renew a theme of stack 4cce612 Shy 2025-07-12 renew a theme with stack 0859e5b Shy 2025-07-11 upload 0711 OS c639077 Shy 2025-07-1 ">
+<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/update/0727/'>
+<meta property='og:site_name' content='shyの考研日志'>
+<meta property='og:type' content='article'><meta property='article:section' content='Update' /><meta property='article:tag' content='网页更新日志' /><meta property='article:published_time' content='2025-07-27T02:31:05&#43;08:00'/><meta property='article:modified_time' content='2025-07-27T02:31:05&#43;08:00'/>
+<meta name="twitter:title" content="网页更新日志.0727">
+<meta name="twitter:description" content="Hello World\r这是博主在某个深夜对着自己的博客网页捣鼓后，突然做出的决定：当网站有重大版本更新的时候，记录新版本的变化。\n其实这个博客页面已经长期维护了2周，一直没有认真上手去学习hugo和stack的相关配置，主页的样子也是主打一个能用就行。但是这就是我的网站，我认为有必要记录它和我的成长变化，也好在日后回忆中逐渐鲜活这一路走来的历程，现在博主锐意备战今年（2025）的考研，因此这个网站主要还是记录自己的学习进度和笔记。以后&hellip;&hellip;也许会变成一个更丰富的网站（吧？雾！）\n总之，姑且用一句计算机的经典开场白标志着这一切的开始！\nHello World！\n目前网站版本已经进入2.0时代，下面简单说明一下1.0版本\nVersion.1.0\r这个版本主要更新了以下特性：\n使用stack默认模板作为主题 使用github 的Action 功能生成博客挂载到github上的个人网站 确定了三种主要的博客文章种类，即日志，日记，笔记 使用Katex作为数学公式的latex生成引擎 简单设计了个人主页的形式 Version.2.0\r这个版本完成于07-27凌晨，目的是“让博客更有个人的风格”，因此不免要修改原来的模板，总的来说，这个版本进行了如下的变化\n主页右边的工具栏新增“Safari”(文章关键字检索),&ldquo;Archive&rdquo;(文章按照YY-MM进行分类汇总) 主页页脚添加友链，目前有大学舍友的个人网站 新增栏目：更新日志！ 丰富了主页左侧的目录显示风格 更新了新的个人签名（时不时会因为心情、中二病、心血来潮、喜欢某一句歌词怎么怎么的更新一下），之后也会在例行的更新中添加历史签名。 Git Commit 历史\rCommit Hash Author Date Message 7d23d05 Shy 2025-07-27 delete the example page of the theme 363db66 Shy 2025-07-27 copy the partials dir into personal layout dir to make the theme customized 0b7f124 Shy 2025-07-27 refresh the outlook of the home page, add searching wiget: SAFARI, archives widget: ARCHIVES sorted by YY-MM and so on ffcc3ad Shy 2025-07-27 Added some supplementary notes to the original 0726 memo content b30977c Shy 2025-07-26 upload 0726 memo with OS and English part f0be782 Shy 2025-07-25 upload 0725 memo with new contents [tips] d2c2623 Shy 2025-07-25 upload 0725 memo 73ee5ce Shy 2025-07-24 upload 0723 log 774320b Shy 2025-07-23 success to adjusting the outlook of the equations cd814b0 Shy 2025-07-23 upload 0722.md but need to adjust the outlook of the equations 7020417 Shy 2025-07-22 upload 0721 memo about stack data structure 326f71e Shy 2025-07-21 upload 0721 log with more details 4f5c09e Shy 2025-07-21 upload 0721 log c96a603 Shy 2025-07-19 update my subtitle with a song of my favorite team YORUSHIKA 6166a2e Shy 2025-07-19 upload 0719 log 43e7c0c Shy 2025-07-18 upload 0718 memo 8c131da Shy 2025-07-17 upload 0717 memo 459dd19 Shy 2025-07-17 upload 0717 log 9c3b26b Shy 2025-07-15 upload 0715 log 3fa4544 Shy 2025-07-14 add the code of courses ad32158 Shy 2025-07-14 upload 0714 memo and make a Katex math environment available d665354 Shy 2025-07-14 upload 0714 log f465180 Shy 2025-07-14 upload the log and memo of 0713 f11a353 Shy 2025-07-13 fix some bugs 77f102e Shy 2025-07-12 upload a new memo about system call 51baa47 Shy 2025-07-12 just display the posts at the first page b2f1bce Shy 2025-07-12 forget to remove the draft tag 8338f47 Shy 2025-07-12 upload 0712 diary and log c11d079 Shy 2025-07-12 renew a theme of stack 4cce612 Shy 2025-07-12 renew a theme with stack 0859e5b Shy 2025-07-11 upload 0711 OS c639077 Shy 2025-07-1 ">
+    
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/npee_learning_log.github.io/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/npee_learning_log.github.io/img/shiki_hu_20273a3af6c00ff3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🎧</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/npee_learning_log.github.io">shyの考研日志</a></h1>
+            <h2 class="site-description">無職受験生 ～408に挑んだら本気だす～</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/diary' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                
+                <span>日记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/log' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>日志</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/memo' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>笔记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/update' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                
+                <span>更新</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/npee_learning_log.github.io/categories/update/" >
+                Update
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/npee_learning_log.github.io/update/0727/">网页更新日志.0727</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 27, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="hello-world">Hello World
+</h2><p>这是博主在某个深夜对着自己的博客网页捣鼓后，突然做出的决定：当网站有重大版本更新的时候，记录新版本的变化。</p>
+<p>其实这个博客页面已经长期维护了2周，一直没有认真上手去学习<code>hugo</code>和<code>stack</code>的相关配置，主页的样子也是主打一个能用就行。但是这就是我的网站，我认为有必要记录它和我的成长变化，也好在日后回忆中逐渐鲜活这一路走来的历程，现在博主锐意备战今年（2025）的考研，因此这个网站主要还是记录自己的学习进度和笔记。以后&hellip;&hellip;也许会变成一个更丰富的网站（吧？雾！）</p>
+<p>总之，姑且用一句计算机的经典开场白标志着这一切的开始！</p>
+<blockquote>
+<p>Hello World！</p></blockquote>
+<p>目前网站版本已经进入2.0时代，下面简单说明一下1.0版本</p>
+<h3 id="version10">Version.1.0
+</h3><p>这个版本主要更新了以下特性：</p>
+<ol>
+<li>使用<a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack"  target="_blank" rel="noopener"
+    >stack</a>默认模板作为主题</li>
+<li>使用github 的Action 功能生成博客挂载到github上的个人网站</li>
+<li>确定了三种主要的博客文章种类，即日志，日记，笔记</li>
+<li>使用<a class="link" href="https://katex.org/"  target="_blank" rel="noopener"
+    ><code>Katex</code></a>作为数学公式的latex生成引擎</li>
+<li>简单设计了个人主页的形式</li>
+</ol>
+<h3 id="version20">Version.2.0
+</h3><p>这个版本完成于07-27凌晨，目的是“让博客更有个人的风格”，因此不免要修改原来的模板，总的来说，这个版本进行了如下的变化</p>
+<ol>
+<li>主页右边的工具栏新增“Safari”(文章关键字检索),&ldquo;Archive&rdquo;(文章按照YY-MM进行分类汇总)</li>
+<li>主页页脚添加友链，目前有大学舍友的个人网站</li>
+<li>新增栏目：更新日志！</li>
+<li>丰富了主页左侧的目录显示风格</li>
+<li>更新了新的个人签名（时不时会因为心情、中二病、心血来潮、喜欢某一句歌词怎么怎么的更新一下），之后也会在例行的更新中添加历史签名。</li>
+</ol>
+<h3 id="git-commit-历史">Git Commit 历史
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>Commit Hash</th>
+          <th>Author</th>
+          <th>Date</th>
+          <th>Message</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>7d23d05</td>
+          <td>Shy</td>
+          <td>2025-07-27</td>
+          <td>delete the example page of the theme</td>
+      </tr>
+      <tr>
+          <td>363db66</td>
+          <td>Shy</td>
+          <td>2025-07-27</td>
+          <td>copy the partials dir into personal layout dir to make the theme customized</td>
+      </tr>
+      <tr>
+          <td>0b7f124</td>
+          <td>Shy</td>
+          <td>2025-07-27</td>
+          <td>refresh the outlook of the home page, add searching wiget: SAFARI, archives widget: ARCHIVES sorted by YY-MM and so on</td>
+      </tr>
+      <tr>
+          <td>ffcc3ad</td>
+          <td>Shy</td>
+          <td>2025-07-27</td>
+          <td>Added some supplementary notes to the original 0726 memo content</td>
+      </tr>
+      <tr>
+          <td>b30977c</td>
+          <td>Shy</td>
+          <td>2025-07-26</td>
+          <td>upload 0726 memo with OS and English part</td>
+      </tr>
+      <tr>
+          <td>f0be782</td>
+          <td>Shy</td>
+          <td>2025-07-25</td>
+          <td>upload 0725 memo with new contents [tips]</td>
+      </tr>
+      <tr>
+          <td>d2c2623</td>
+          <td>Shy</td>
+          <td>2025-07-25</td>
+          <td>upload 0725 memo</td>
+      </tr>
+      <tr>
+          <td>73ee5ce</td>
+          <td>Shy</td>
+          <td>2025-07-24</td>
+          <td>upload 0723 log</td>
+      </tr>
+      <tr>
+          <td>774320b</td>
+          <td>Shy</td>
+          <td>2025-07-23</td>
+          <td>success to adjusting the outlook of the equations</td>
+      </tr>
+      <tr>
+          <td>cd814b0</td>
+          <td>Shy</td>
+          <td>2025-07-23</td>
+          <td>upload 0722.md but need to adjust the outlook of the equations</td>
+      </tr>
+      <tr>
+          <td>7020417</td>
+          <td>Shy</td>
+          <td>2025-07-22</td>
+          <td>upload 0721 memo about stack data structure</td>
+      </tr>
+      <tr>
+          <td>326f71e</td>
+          <td>Shy</td>
+          <td>2025-07-21</td>
+          <td>upload 0721 log with more details</td>
+      </tr>
+      <tr>
+          <td>4f5c09e</td>
+          <td>Shy</td>
+          <td>2025-07-21</td>
+          <td>upload 0721 log</td>
+      </tr>
+      <tr>
+          <td>c96a603</td>
+          <td>Shy</td>
+          <td>2025-07-19</td>
+          <td>update my subtitle with a song of my favorite team YORUSHIKA</td>
+      </tr>
+      <tr>
+          <td>6166a2e</td>
+          <td>Shy</td>
+          <td>2025-07-19</td>
+          <td>upload 0719 log</td>
+      </tr>
+      <tr>
+          <td>43e7c0c</td>
+          <td>Shy</td>
+          <td>2025-07-18</td>
+          <td>upload 0718 memo</td>
+      </tr>
+      <tr>
+          <td>8c131da</td>
+          <td>Shy</td>
+          <td>2025-07-17</td>
+          <td>upload 0717 memo</td>
+      </tr>
+      <tr>
+          <td>459dd19</td>
+          <td>Shy</td>
+          <td>2025-07-17</td>
+          <td>upload 0717 log</td>
+      </tr>
+      <tr>
+          <td>9c3b26b</td>
+          <td>Shy</td>
+          <td>2025-07-15</td>
+          <td>upload 0715 log</td>
+      </tr>
+      <tr>
+          <td>3fa4544</td>
+          <td>Shy</td>
+          <td>2025-07-14</td>
+          <td>add the code of courses</td>
+      </tr>
+      <tr>
+          <td>ad32158</td>
+          <td>Shy</td>
+          <td>2025-07-14</td>
+          <td>upload 0714 memo and make a Katex math environment available</td>
+      </tr>
+      <tr>
+          <td>d665354</td>
+          <td>Shy</td>
+          <td>2025-07-14</td>
+          <td>upload 0714 log</td>
+      </tr>
+      <tr>
+          <td>f465180</td>
+          <td>Shy</td>
+          <td>2025-07-14</td>
+          <td>upload the log and memo of 0713</td>
+      </tr>
+      <tr>
+          <td>f11a353</td>
+          <td>Shy</td>
+          <td>2025-07-13</td>
+          <td>fix some bugs</td>
+      </tr>
+      <tr>
+          <td>77f102e</td>
+          <td>Shy</td>
+          <td>2025-07-12</td>
+          <td>upload a new memo about system call</td>
+      </tr>
+      <tr>
+          <td>51baa47</td>
+          <td>Shy</td>
+          <td>2025-07-12</td>
+          <td>just display the posts at the first page</td>
+      </tr>
+      <tr>
+          <td>b2f1bce</td>
+          <td>Shy</td>
+          <td>2025-07-12</td>
+          <td>forget to remove the draft tag</td>
+      </tr>
+      <tr>
+          <td>8338f47</td>
+          <td>Shy</td>
+          <td>2025-07-12</td>
+          <td>upload 0712 diary and log</td>
+      </tr>
+      <tr>
+          <td>c11d079</td>
+          <td>Shy</td>
+          <td>2025-07-12</td>
+          <td>renew a theme of stack</td>
+      </tr>
+      <tr>
+          <td>4cce612</td>
+          <td>Shy</td>
+          <td>2025-07-12</td>
+          <td>renew a theme with stack</td>
+      </tr>
+      <tr>
+          <td>0859e5b</td>
+          <td>Shy</td>
+          <td>2025-07-11</td>
+          <td>upload 0711 OS</td>
+      </tr>
+      <tr>
+          <td>c639077</td>
+          <td>Shy</td>
+          <td>2025-07-1</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table></div>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/npee_learning_log.github.io/tags/%E7%BD%91%E9%A1%B5%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/">网页更新日志</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 shyの考研日志
+    </section>
+    
+    <section class="powerby">
+        
+            Blogroll：<a href="https://void-island-site.vercel.app/">舍友的雾岛电台</a> <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+        
+    </body>
+</html>

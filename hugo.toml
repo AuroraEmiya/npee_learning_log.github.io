@@ -10,7 +10,7 @@ enableRobotsTXT = true
 
 
 [params]
-  mainSections = ["posts","diary","memo"]
+  mainSections = ["posts","diary","memo","update"]
   toc = true
 [params.article]
   math = true
@@ -73,6 +73,12 @@ enableRobotsTXT = true
   weight = 3
     [menu.main.params]
     icon = "messages"
+[[menu.main]]
+  name = "更新"
+  url = "/categories/update"
+  weight = 4
+    [menu.main.params]
+    icon = "clock"
 
 [params.footer]
   customText='Blogroll：<a href="https://void-island-site.vercel.app/">舍友的雾岛电台</a>'
