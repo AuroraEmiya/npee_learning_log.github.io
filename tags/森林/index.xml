@@ -1,19 +1,174 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>森林 on shyの考研日志</title>
-    <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%A3%AE%E6%9E%97/</link>
-    <description>Recent content in 森林 on shyの考研日志</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Mon, 21 Jul 2025 17:53:02 +0800</lastBuildDate>
-    <atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%A3%AE%E6%9E%97/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>0721学习日志</title>
-      <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0721/</link>
-      <pubDate>Mon, 21 Jul 2025 17:53:02 +0800</pubDate>
-      <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0721/</guid>
-      <description>&lt;h2 id=&#34;英语-vocabulary-builder&#34;&gt;英语-vocabulary builder&lt;/h2&gt;&#xA;&lt;p&gt;使用 &lt;code&gt;The Merriam-Webster Vocabulary Builder&lt;/code&gt;作为词根法扩充词汇量的工具书(由网友canon提供)&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;BENE , latin for &lt;code&gt;well&lt;/code&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;benediction&lt;/li&gt;&#xA;&lt;li&gt;benefactor&lt;/li&gt;&#xA;&lt;li&gt;benefaciary&lt;/li&gt;&#xA;&lt;li&gt;benevolence&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;AM, comes form the latin &lt;code&gt;admare&lt;/code&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;amicable&lt;/li&gt;&#xA;&lt;li&gt;enamored&lt;/li&gt;&#xA;&lt;li&gt;amorous&lt;/li&gt;&#xA;&lt;li&gt;paramour&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;BELL,comes from the latin word meaning &lt;code&gt;war&lt;/code&gt;.Bellona was the little-known goddess of war .&#xA;&lt;ul&gt;&#xA;&lt;li&gt;antebellum&lt;/li&gt;&#xA;&lt;li&gt;belligerence&lt;/li&gt;&#xA;&lt;li&gt;bellicose&lt;/li&gt;&#xA;&lt;li&gt;rebellion&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;PAC,is related to the Latin words for &amp;ldquo;agree&amp;rdquo; and &amp;ldquo;peace&amp;rdquo;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;pacify&lt;/li&gt;&#xA;&lt;li&gt;pacifist&lt;/li&gt;&#xA;&lt;li&gt;pact&lt;/li&gt;&#xA;&lt;li&gt;pace&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;操作系统-page--segment&#34;&gt;操作系统-page &amp;amp; segment&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;基本分页内存&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;page&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;page frame&lt;/li&gt;&#xA;&lt;li&gt;page table&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;页号&lt;/th&gt;&#xA;          &lt;th&gt;页内偏移量&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;ol start=&#34;3&#34;&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;虚拟地址 = 页号 + 页内偏移&lt;/p&gt;</description>
-    </item>
-  </channel>
+    <channel>
+        <title>森林 on shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%A3%AE%E6%9E%97/</link>
+        <description>Recent content in 森林 on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Mon, 21 Jul 2025 17:53:02 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%A3%AE%E6%9E%97/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0721学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0721/</link>
+        <pubDate>Mon, 21 Jul 2025 17:53:02 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0721/</guid>
+        <description>&lt;h2 id=&#34;英语-vocabulary-builder&#34;&gt;英语-vocabulary builder
+&lt;/h2&gt;&lt;p&gt;使用 &lt;code&gt;The Merriam-Webster Vocabulary Builder&lt;/code&gt;作为词根法扩充词汇量的工具书(由网友canon提供)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;BENE , latin for &lt;code&gt;well&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;benediction&lt;/li&gt;
+&lt;li&gt;benefactor&lt;/li&gt;
+&lt;li&gt;benefaciary&lt;/li&gt;
+&lt;li&gt;benevolence&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;AM, comes form the latin &lt;code&gt;admare&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;amicable&lt;/li&gt;
+&lt;li&gt;enamored&lt;/li&gt;
+&lt;li&gt;amorous&lt;/li&gt;
+&lt;li&gt;paramour&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;BELL,comes from the latin word meaning &lt;code&gt;war&lt;/code&gt;.Bellona was the little-known goddess of war .
+&lt;ul&gt;
+&lt;li&gt;antebellum&lt;/li&gt;
+&lt;li&gt;belligerence&lt;/li&gt;
+&lt;li&gt;bellicose&lt;/li&gt;
+&lt;li&gt;rebellion&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;PAC,is related to the Latin words for &amp;ldquo;agree&amp;rdquo; and &amp;ldquo;peace&amp;rdquo;
+&lt;ul&gt;
+&lt;li&gt;pacify&lt;/li&gt;
+&lt;li&gt;pacifist&lt;/li&gt;
+&lt;li&gt;pact&lt;/li&gt;
+&lt;li&gt;pace&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;操作系统-page--segment&#34;&gt;操作系统-page &amp;amp; segment
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;基本分页内存&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;page&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;page frame&lt;/li&gt;
+&lt;li&gt;page table&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;页号&lt;/th&gt;
+          &lt;th&gt;页内偏移量&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;虚拟地址 = 页号 + 页内偏移&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;LRU（最近最少使用）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;FIFO（先进先出）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;CLOCK（近似LRU）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;TLB（Translation Lookaside Buffer）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;两级以及多级页表&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;基本分段内存管理&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;基本原理&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;基本结构&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;段号&lt;/th&gt;
+          &lt;th&gt;段内地址&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;段表&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;地址变换机制&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;虚拟存储器&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;页表机制&lt;/li&gt;
+&lt;li&gt;缺页中断机制&lt;/li&gt;
+&lt;li&gt;地址变换机制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号：019-021&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;数据结构-二叉树&#34;&gt;数据结构-二叉树
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;线索二叉树&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;定义&lt;/li&gt;
+&lt;li&gt;构造&lt;/li&gt;
+&lt;li&gt;遍历&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;树、森林与二叉树&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;相互转换&lt;/li&gt;
+&lt;li&gt;遍历&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;哈夫曼树&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;WPL&lt;/li&gt;
+&lt;li&gt;构造&lt;/li&gt;
+&lt;li&gt;哈夫曼编码&lt;/li&gt;
+&lt;li&gt;哈夫曼树的特点&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;并查集&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;定义&lt;/li&gt;
+&lt;li&gt;操作&lt;/li&gt;
+&lt;li&gt;实现&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号：033-037&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

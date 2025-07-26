@@ -1,82 +1,1215 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Log on shyの考研日志</title>
-    <link>https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/</link>
-    <description>Recent content in Log on shyの考研日志</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Wed, 23 Jul 2025 23:53:15 +0800</lastBuildDate>
-    <atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>0723学习日志</title>
-      <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0723/</link>
-      <pubDate>Wed, 23 Jul 2025 23:53:15 +0800</pubDate>
-      <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0723/</guid>
-      <description>&lt;h2 id=&#34;数学-1000题&#34;&gt;数学-1000题&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;对于$x_{n+1}=f(x_n)$的数列极限的判定的过程&#xA;&lt;ol&gt;&#xA;&lt;li&gt;单调有界&lt;/li&gt;&#xA;&lt;li&gt;拉格朗日中值定理&lt;/li&gt;&#xA;&lt;li&gt;放缩&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;对于行列式的计算的方法&#xA;&lt;ol&gt;&#xA;&lt;li&gt;上下三角行列式&lt;/li&gt;&#xA;&lt;li&gt;反三角行列式&lt;/li&gt;&#xA;&lt;li&gt;范德蒙德行列式&lt;/li&gt;&#xA;&lt;li&gt;递推&lt;/li&gt;&#xA;&lt;li&gt;归纳&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;英语-不背单词&#34;&gt;英语-不背单词&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;twist&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ultimate&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;strike&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;crucial&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;subordinate&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;anguish&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;subtle&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;constitute&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;suffice&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;eminent&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;prudent&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;courtesy&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;harsh&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;indispensable&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
-    </item>
-    <item>
-      <title>0722学习日志</title>
-      <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0722/</link>
-      <pubDate>Tue, 22 Jul 2025 23:31:50 +0800</pubDate>
-      <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0722/</guid>
-      <description>&lt;h2 id=&#34;操作系统--la-pa-ca&#34;&gt;操作系统- (LA-PA-CA)&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;带快表的两级系统的地址翻译过程&#xA;&lt;ol&gt;&#xA;&lt;li&gt;从逻辑地址映射到物理地址（虚拟存储器）&lt;/li&gt;&#xA;&lt;li&gt;从物理地址映射到Cache地址（主存-Cache系统）&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;文件和文件系统&#xA;&lt;ol&gt;&#xA;&lt;li&gt;构成文件的基本单位&lt;/li&gt;&#xA;&lt;li&gt;文件的定义&lt;/li&gt;&#xA;&lt;li&gt;文件属性&lt;/li&gt;&#xA;&lt;li&gt;文件的基本操作&lt;/li&gt;&#xA;&lt;li&gt;文件的打开和关闭的操作&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;文件的逻辑结构&lt;/li&gt;&#xA;&lt;li&gt;目录管理&#xA;&lt;ol&gt;&#xA;&lt;li&gt;目录的概念&lt;/li&gt;&#xA;&lt;li&gt;文件控制块和索引节点&lt;/li&gt;&#xA;&lt;li&gt;目录结构&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;英语-vocabularybuilder&#34;&gt;英语-VocabularyBuilder&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;CRIM,comes from the Latin words for &amp;ldquo;fault or crime&amp;rdquo; or &amp;ldquo;accusation.&amp;rdquo;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;criminology&lt;/li&gt;&#xA;&lt;li&gt;decriminalize&lt;/li&gt;&#xA;&lt;li&gt;incriminate&lt;/li&gt;&#xA;&lt;li&gt;recrimination&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;PROB,comes from the Latin words for  &amp;ldquo;prove or proof &amp;ldquo;and &amp;ldquo;honesy or integrity.&amp;rdquo;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;approbation&lt;/li&gt;&#xA;&lt;li&gt;probate&lt;/li&gt;&#xA;&lt;li&gt;probity&lt;/li&gt;&#xA;&lt;li&gt;reprobate&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;GRAV, comes from the Latin word meaning &amp;ldquo;heavy ,weighty ,serious&amp;rdquo;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;grave&lt;/li&gt;&#xA;&lt;li&gt;gravitas&lt;/li&gt;&#xA;&lt;li&gt;gravitate&lt;/li&gt;&#xA;&lt;li&gt;aggravate&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;LEV,comes from the Latin adjective $levis$,meaning &amp;ldquo;light&amp;rdquo;,and the verb $levare$,meaning &amp;ldquo;to raise or lighten.&amp;rdquo;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;alleviate&lt;/li&gt;&#xA;&lt;li&gt;elevation&lt;/li&gt;&#xA;&lt;li&gt;contilever&lt;/li&gt;&#xA;&lt;li&gt;levity&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;数学-行列式&#34;&gt;数学-行列式&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;行列式的本质定义&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>0721学习日志</title>
-      <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0721/</link>
-      <pubDate>Mon, 21 Jul 2025 17:53:02 +0800</pubDate>
-      <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0721/</guid>
-      <description>&lt;h2 id=&#34;英语-vocabulary-builder&#34;&gt;英语-vocabulary builder&lt;/h2&gt;&#xA;&lt;p&gt;使用 &lt;code&gt;The Merriam-Webster Vocabulary Builder&lt;/code&gt;作为词根法扩充词汇量的工具书(由网友canon提供)&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;BENE , latin for &lt;code&gt;well&lt;/code&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;benediction&lt;/li&gt;&#xA;&lt;li&gt;benefactor&lt;/li&gt;&#xA;&lt;li&gt;benefaciary&lt;/li&gt;&#xA;&lt;li&gt;benevolence&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;AM, comes form the latin &lt;code&gt;admare&lt;/code&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;amicable&lt;/li&gt;&#xA;&lt;li&gt;enamored&lt;/li&gt;&#xA;&lt;li&gt;amorous&lt;/li&gt;&#xA;&lt;li&gt;paramour&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;BELL,comes from the latin word meaning &lt;code&gt;war&lt;/code&gt;.Bellona was the little-known goddess of war .&#xA;&lt;ul&gt;&#xA;&lt;li&gt;antebellum&lt;/li&gt;&#xA;&lt;li&gt;belligerence&lt;/li&gt;&#xA;&lt;li&gt;bellicose&lt;/li&gt;&#xA;&lt;li&gt;rebellion&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;PAC,is related to the Latin words for &amp;ldquo;agree&amp;rdquo; and &amp;ldquo;peace&amp;rdquo;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;pacify&lt;/li&gt;&#xA;&lt;li&gt;pacifist&lt;/li&gt;&#xA;&lt;li&gt;pact&lt;/li&gt;&#xA;&lt;li&gt;pace&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;操作系统-page--segment&#34;&gt;操作系统-page &amp;amp; segment&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;基本分页内存&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;page&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;page frame&lt;/li&gt;&#xA;&lt;li&gt;page table&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;页号&lt;/th&gt;&#xA;          &lt;th&gt;页内偏移量&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;ol start=&#34;3&#34;&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;虚拟地址 = 页号 + 页内偏移&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>0719学习日志</title>
-      <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/</link>
-      <pubDate>Sat, 19 Jul 2025 22:41:19 +0800</pubDate>
-      <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/</guid>
-      <description>&lt;h2 id=&#34;数学-是不动点的味道&#34;&gt;数学-是不动点的味道&lt;/h2&gt;&#xA;&lt;h3 id=&#34;数列的极限&#34;&gt;数列的极限&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;概念&lt;/li&gt;&#xA;&lt;li&gt;数列极限的定义&lt;/li&gt;&#xA;&lt;li&gt;数列收敛的性质&#xA;&lt;ul&gt;&#xA;&lt;li&gt;唯一性&lt;/li&gt;&#xA;&lt;li&gt;有界性&lt;/li&gt;&#xA;&lt;li&gt;保号性&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;海涅定理（归结原则）&lt;/li&gt;&#xA;&lt;li&gt;夹逼准则&lt;/li&gt;&#xA;&lt;li&gt;单调有界准则&lt;/li&gt;&#xA;&lt;li&gt;${x_n}$收敛于$a$的速度问题&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;数据结构-前序中序后序blablabla&#34;&gt;数据结构-前序中序后序blablabla&lt;/h2&gt;&#xA;&lt;h3 id=&#34;树的性质&#34;&gt;树的性质&lt;/h3&gt;&#xA;&lt;p&gt;let $T_m$ denote a tree with degree $m$.&lt;/p&gt;&#xA;&lt;p&gt;let $D(n)$ denote the out degree of the node $x$ in the tree $T_m$.&lt;/p&gt;&#xA;&lt;p&gt;let $n_i$ denote the number of notes with degree $i$.&lt;/p&gt;&#xA;&lt;p&gt;let $H$ denote the depth/height of the tree $T_m$.&lt;/p&gt;&#xA;&lt;p&gt;let $N$ denote the total number of nodes in tree.$N=\sum\limits_{i=0}^mn_i$.&lt;/p&gt;&#xA;&lt;p&gt;let $N_i$ denote the number of nodes at layer $i\in \mathcal{N^*}$&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>0717学习日志</title>
-      <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0717/</link>
-      <pubDate>Thu, 17 Jul 2025 22:04:43 +0800</pubDate>
-      <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0717/</guid>
-      <description>&lt;h2 id=&#34;数学-纸上得来终觉浅&#34;&gt;数学-纸上得来终觉浅&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;函数极限的定义($\epsilon,\delta$语言)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;函数极限的性质&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;唯一性&lt;/li&gt;&#xA;&lt;li&gt;局部有界性&lt;/li&gt;&#xA;&lt;li&gt;局部保号性&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;无穷小(let $\alpha$ be infinitesimal)&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;性质&#xA;&lt;ul&gt;&#xA;&lt;li&gt;$\sum\limits_{k}^{N}{\alpha_k}=\alpha,(N \text{ is finite})$&lt;/li&gt;&#xA;&lt;li&gt;$\alpha&amp;rsquo;\cdot f(x)=\alpha $,where $f(x)$ is limited at the interval&lt;/li&gt;&#xA;&lt;li&gt;$\prod\limits_{k}^{N}{\alpha_k}=\alpha,(N \text{ is finite})$&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;比阶($\lim\alpha(x)=0$,$\lim\beta(x)=0$,$\beta(x)\neq0$)&#xA;&lt;ul&gt;&#xA;&lt;li&gt;$\alpha(x)$是$\beta(x)$的高阶无穷小$\Leftrightarrow\lim{\frac{\alpha(x)}{\beta(x)}}=0$&lt;/li&gt;&#xA;&lt;li&gt;$\alpha(x)$是$\beta(x)$的低阶无穷小$\Leftrightarrow\lim{\frac{\alpha(x)}{\beta(x)}}=\infty$&lt;/li&gt;&#xA;&lt;li&gt;$\alpha(x)$是$\beta(x)$的同阶无穷小$\Leftrightarrow\lim{\frac{\alpha(x)}{\beta(x)}}=c,(\text{constant }c\neq 0)$&lt;/li&gt;&#xA;&lt;li&gt;$\alpha(x)$是$\beta(x)$的等价无穷小$\Leftrightarrow\lim{\frac{\alpha(x)}{\beta(x)}}=1$&lt;/li&gt;&#xA;&lt;li&gt;$\alpha(x)$是$\beta(x)$的$k$阶无穷小$\Leftrightarrow\lim{\frac{\alpha(x)}{\beta^k(x)}}=0$&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;极限的运算&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;四则运算&lt;/li&gt;&#xA;&lt;li&gt;洛必达法则&lt;/li&gt;&#xA;&lt;li&gt;泰勒展开&lt;/li&gt;&#xA;&lt;li&gt;夹逼准则&lt;/li&gt;&#xA;&lt;li&gt;七种未定式：$\frac{0}{0},\frac{\infty}{\infty},0\cdot\infty,\infty-\infty,\infty^0,0^0,1^{\infty}$&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;函数的连续和两类间断点&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;超实数(&lt;a href=&#34;https://people.math.wisc.edu/~hkeisler/keislercalc-06-18-25.pdf&#34;&gt;hyperreal number&lt;/a&gt;)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;操作系统-three-easy-piece&#34;&gt;操作系统-&lt;a href=&#34;https://pages.cs.wisc.edu/~remzi/OSTEP/&#34;&gt;three easy piece&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;cpu-intro&#xA;&lt;ul&gt;&#xA;&lt;li&gt;the Process&lt;/li&gt;&#xA;&lt;li&gt;Process API&#xA;&lt;ol&gt;&#xA;&lt;li&gt;create&lt;/li&gt;&#xA;&lt;li&gt;Destory&lt;/li&gt;&#xA;&lt;li&gt;Wait&lt;/li&gt;&#xA;&lt;li&gt;Miscellaneous Control&lt;/li&gt;&#xA;&lt;li&gt;Status&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Process status&lt;/li&gt;&#xA;&lt;li&gt;Proc data structure:(PCB)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;cpu-api&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;code&gt;fork()&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;wait()&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;exec()&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;spawn()&lt;/code&gt;*&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;cpu-mechanisms&#xA;&lt;ol&gt;&#xA;&lt;li&gt;from Directed Execution to Limited Directed Execution:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;user mode and kernel mode&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;system call&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;switch between Processes,Os need to retain CPU from process&#xA;&lt;ul&gt;&#xA;&lt;li&gt;A Cooperative Approach: Wait For System Calls&lt;/li&gt;&#xA;&lt;li&gt;A Non-Cooperative Approach: The OS Takes Control&lt;/li&gt;&#xA;&lt;li&gt;reboot (x&lt;/li&gt;&#xA;&lt;li&gt;timer interrupt&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Saving and Restoring Context&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;cpu-sched(reading)&lt;/li&gt;&#xA;&lt;li&gt;cpu-sched-mlfq(reading)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;数据结构-排好队一个一个fifo&#34;&gt;数据结构-排好队一个一个FIFO&lt;/h2&gt;&#xA;&lt;h3 id=&#34;队列&#34;&gt;队列&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;顺序队列的性质和操作&lt;/li&gt;&#xA;&lt;li&gt;循环队列的性质和操作&lt;/li&gt;&#xA;&lt;li&gt;链式队列的性质和操作&lt;/li&gt;&#xA;&lt;li&gt;双端队列&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;code&gt;课程编号018-027&lt;/code&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>0715学习日志</title>
-      <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0715/</link>
-      <pubDate>Tue, 15 Jul 2025 21:43:17 +0800</pubDate>
-      <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0715/</guid>
-      <description>&lt;h2 id=&#34;操作系统-jyy的map永远的噩梦&#34;&gt;操作系统-jyy的map永远的噩梦&lt;/h2&gt;&#xA;&lt;h3 id=&#34;死锁&#34;&gt;死锁&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;死锁的必要条件&#xA;&lt;ul&gt;&#xA;&lt;li&gt;互斥条件&lt;/li&gt;&#xA;&lt;li&gt;请求和保持条件&lt;/li&gt;&#xA;&lt;li&gt;不可剥夺条件&lt;/li&gt;&#xA;&lt;li&gt;循环等待条件&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;预防死锁的方法&#xA;&lt;ul&gt;&#xA;&lt;li&gt;破坏互斥：非但不能破坏还要保护&lt;/li&gt;&#xA;&lt;li&gt;破坏不可剥夺条件&lt;/li&gt;&#xA;&lt;li&gt;破坏请求和保持条件&lt;/li&gt;&#xA;&lt;li&gt;破坏循环等待条件&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;死锁避免&#xA;&lt;ol&gt;&#xA;&lt;li&gt;安全状态&lt;/li&gt;&#xA;&lt;li&gt;银行家算法&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;死锁检测和解除&#xA;&lt;ul&gt;&#xA;&lt;li&gt;资源分配图&lt;/li&gt;&#xA;&lt;li&gt;死锁定理&lt;/li&gt;&#xA;&lt;li&gt;死锁的解除&#xA;&lt;ul&gt;&#xA;&lt;li&gt;剥夺资源&lt;/li&gt;&#xA;&lt;li&gt;撤销进程&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;内存管理&#34;&gt;内存管理&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;基本概念&#xA;&lt;ol&gt;&#xA;&lt;li&gt;逻辑地址&lt;/li&gt;&#xA;&lt;li&gt;物理地址&lt;/li&gt;&#xA;&lt;li&gt;外部碎片&lt;/li&gt;&#xA;&lt;li&gt;内部碎片&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;内存连续分配管理方式&#xA;&lt;ol&gt;&#xA;&lt;li&gt;单一连续分配&lt;/li&gt;&#xA;&lt;li&gt;固定分区分配&lt;/li&gt;&#xA;&lt;li&gt;动态分区分配&#xA;&lt;ol&gt;&#xA;&lt;li&gt;首次适应FF&lt;/li&gt;&#xA;&lt;li&gt;循环首次适应NF&lt;/li&gt;&#xA;&lt;li&gt;最佳适应BF&lt;/li&gt;&#xA;&lt;li&gt;最坏适应WF&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;code&gt;课程编号016-018&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;数学-什么超实数&#34;&gt;数学-什么？！超实数？&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;函数极限的概念与性质&lt;/li&gt;&#xA;&lt;li&gt;超实数&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;code&gt;课程编号第一讲&lt;/code&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>0714学习日志</title>
-      <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0714/</link>
-      <pubDate>Mon, 14 Jul 2025 21:15:02 +0800</pubDate>
-      <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0714/</guid>
-      <description>&lt;h2 id=&#34;操作系统-这什么查一下这什么查一下&#34;&gt;操作系统-这什么查一下这什么查一下&lt;/h2&gt;&#xA;&lt;h3 id=&#34;经典同步问题&#34;&gt;经典同步问题&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;生产者消费者问题&lt;/li&gt;&#xA;&lt;li&gt;哲学家进餐问题&lt;/li&gt;&#xA;&lt;li&gt;读者-写者问题&lt;/li&gt;&#xA;&lt;li&gt;理发师问题&lt;/li&gt;&#xA;&lt;li&gt;抽烟者问题&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;处理机调度&#34;&gt;处理机调度&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;处理及调度的层次&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;高级调度（作业调度、长程调度）&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;作业选择&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;从**后备队列（外存中等待的作业）**中选择作业&lt;/li&gt;&#xA;&lt;li&gt;判断系统资源（内存、CPU、I/O）是否充足&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;资源分配&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;为选中的作业分配内存、I/O、文件等资源&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;进程创建&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;将作业转化为一个或多个&lt;strong&gt;进程&lt;/strong&gt;，放入就绪队列&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;中级调度（内存调度、中程调度）&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;选择部分进程挂起（移出内存到外存）&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;选择挂起的进程恢复（从外存调回内存）&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;低级调度（进程调度、线程调度、短程调度）&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;从&lt;strong&gt;就绪队列&lt;/strong&gt;中选择一个进程&lt;/li&gt;&#xA;&lt;li&gt;把 CPU 分配给选中的进程&lt;/li&gt;&#xA;&lt;li&gt;保存和恢复进程的上下文（&lt;strong&gt;进程切换 Context Switch&lt;/strong&gt;）&lt;/li&gt;&#xA;&lt;li&gt;控制 CPU 的执行顺序&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;处理机的调度方式&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;非抢占式&lt;/li&gt;&#xA;&lt;li&gt;抢占式&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;选择调度算法的若干准则&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CPU利用率&lt;/p&gt;&#xA;$$&#xA;     \frac{\text{worktime of CPU}}{\text{total time}}&#xA;     $$&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;系统吞吐量&lt;/p&gt;&#xA;$$&#xA;     \frac{\text{number of tasks}}{\text{total time}}&#xA;     $$&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;周转时间(Turnaround Time)&lt;/p&gt;&#xA;$$&#xA;     \text{Completion Time - Arrival Time}&#xA;     $$&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;平均周转时间&lt;/p&gt;&#xA;$$&#xA;     \frac{\sum\limits_{N}\text{Turnaround Time of all processes}}{N}&#xA;     $$&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;带权周转时间&lt;/p&gt;&#xA;$$&#xA;     \frac{\text{Turnaround Time}}{\text{Service Time}}&#xA;     $$&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;平均带权周转时间&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>0713学习日志</title>
-      <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0713/</link>
-      <pubDate>Sun, 13 Jul 2025 23:27:16 +0800</pubDate>
-      <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0713/</guid>
-      <description>&lt;h2 id=&#34;数据结构-喜欢在头指针存数据的扣1&#34;&gt;数据结构-喜欢在头指针存数据的扣1&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;线性表的链式存储&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;单链表&lt;/li&gt;&#xA;&lt;li&gt;静态链表&lt;/li&gt;&#xA;&lt;li&gt;其他链表&#xA;&lt;ul&gt;&#xA;&lt;li&gt;单向循环链表&lt;/li&gt;&#xA;&lt;li&gt;双向链表&lt;/li&gt;&#xA;&lt;li&gt;双向循环链表&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;code&gt;课程代码010-013&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;操作系统-谦让是美德&#34;&gt;操作系统-谦让是美德&lt;/h2&gt;&#xA;&lt;h3 id=&#34;进程与线程&#34;&gt;进程与线程&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;进程&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;PCB&lt;/li&gt;&#xA;&lt;li&gt;进程的特点：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;动态性&lt;/li&gt;&#xA;&lt;li&gt;并发性&lt;/li&gt;&#xA;&lt;li&gt;独立性&lt;/li&gt;&#xA;&lt;li&gt;异步性&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;进程的基本状态及管理切换&#xA;&lt;ul&gt;&#xA;&lt;li&gt;运行&lt;/li&gt;&#xA;&lt;li&gt;阻塞&lt;/li&gt;&#xA;&lt;li&gt;就绪&lt;/li&gt;&#xA;&lt;li&gt;创建&lt;/li&gt;&#xA;&lt;li&gt;终止&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;strong&gt;线程&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;线程的特性&lt;/li&gt;&#xA;&lt;li&gt;线程的状态&lt;/li&gt;&#xA;&lt;li&gt;线程与进程的联系和不同&lt;/li&gt;&#xA;&lt;li&gt;用户级线程与内核级线程的映射关系&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;互斥与同步&#34;&gt;互斥与同步&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;临界区实现互斥的原则&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;空闲让进&lt;/li&gt;&#xA;&lt;li&gt;忙则等待&lt;/li&gt;&#xA;&lt;li&gt;有限等待&lt;/li&gt;&#xA;&lt;li&gt;让权等待（非必须）&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;strong&gt;临界区实现互斥的基本方法&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;软件实现方法&#xA;&lt;ol&gt;&#xA;&lt;li&gt;单标志法&lt;/li&gt;&#xA;&lt;li&gt;双标志法&#xA;&lt;ul&gt;&#xA;&lt;li&gt;先检查法&lt;/li&gt;&#xA;&lt;li&gt;后检查法&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Peterson算法&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;硬件实现方法&#xA;&lt;ol&gt;&#xA;&lt;li&gt;中断屏蔽&lt;/li&gt;&#xA;&lt;li&gt;TestAndSet指令&lt;/li&gt;&#xA;&lt;li&gt;Swap指令&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;strong&gt;互斥锁（mutex lock）&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;LockOne类&lt;/li&gt;&#xA;&lt;li&gt;LockTwo类&lt;/li&gt;&#xA;&lt;li&gt;Peterson锁&lt;/li&gt;&#xA;&lt;li&gt;Barkley锁&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;strong&gt;信号量&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;整型信号量&lt;/li&gt;&#xA;&lt;li&gt;记录型信号量&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;管程&#34;&gt;管程&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;管程的定义&lt;/li&gt;&#xA;&lt;li&gt;管程的组成&lt;/li&gt;&#xA;&lt;li&gt;管程的特性&lt;/li&gt;&#xA;&lt;li&gt;管程与进程的异同&lt;/li&gt;&#xA;&lt;li&gt;条件变量&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;进程通信&#34;&gt;进程通信&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;管道通信&lt;/li&gt;&#xA;&lt;li&gt;消息传递系统&lt;/li&gt;&#xA;&lt;li&gt;共享存储器系统&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;code&gt;课程编号005-011&lt;/code&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>0712学习日志</title>
-      <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0712/</link>
-      <pubDate>Sat, 12 Jul 2025 22:05:39 +0800</pubDate>
-      <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0712/</guid>
-      <description>&lt;h2 id=&#34;操作系统-int-0x80&#34;&gt;操作系统-int 0x80&lt;/h2&gt;&#xA;&lt;p&gt;操作系统的运行环境&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;内核程序&#xA;&lt;ul&gt;&#xA;&lt;li&gt;特权指令&lt;/li&gt;&#xA;&lt;li&gt;核心态，管态&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;应用程序&#xA;&lt;ul&gt;&#xA;&lt;li&gt;非特权指令&lt;/li&gt;&#xA;&lt;li&gt;用户态，目态&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;操作系统的内核&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;时钟管理&lt;/li&gt;&#xA;&lt;li&gt;中断机制&#xA;&lt;ol&gt;&#xA;&lt;li&gt;内部异常&#xA;&lt;ol&gt;&#xA;&lt;li&gt;故障（Fault）（软件中断）&lt;/li&gt;&#xA;&lt;li&gt;自陷（Trap）（软件中断）&lt;/li&gt;&#xA;&lt;li&gt;终止（Abort）（硬件中断）&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;外部中断（硬件）&#xA;&lt;ol&gt;&#xA;&lt;li&gt;可屏蔽中断 INTR&lt;/li&gt;&#xA;&lt;li&gt;不可屏蔽中断 NMI&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;code&gt;课程编号 ：003-004&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;英语-英语构词法&#34;&gt;英语-英语构词法&lt;/h2&gt;&#xA;&lt;p&gt;前缀包含两种作用：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;方向&lt;/li&gt;&#xA;&lt;li&gt;性质&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;后缀一般表示词性，例外：able,&amp;hellip;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>0711学习日志</title>
-      <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/</link>
-      <pubDate>Fri, 11 Jul 2025 20:29:14 +0800</pubDate>
-      <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/</guid>
-      <description>&lt;h2 id=&#34;数据结构-太好了是死记硬背&#34;&gt;数据结构-太好了是死记硬背&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;数据的逻辑和物理结构&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;QQ20250711-202720.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;算法的时间空间复杂度&lt;/li&gt;&#xA;&lt;li&gt;线性表的顺序表以及相关算法&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;code&gt;课程编号001-009&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;操作系统-想念jyy的第n天&#34;&gt;操作系统-想念jyy的第n天&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;操作系统概述&#xA;&lt;ul&gt;&#xA;&lt;li&gt;并发&lt;/li&gt;&#xA;&lt;li&gt;共享&lt;/li&gt;&#xA;&lt;li&gt;虚拟&lt;/li&gt;&#xA;&lt;li&gt;异步&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;操作系统的发展历程&#xA;&lt;ul&gt;&#xA;&lt;li&gt;批处理器&#xA;&lt;ul&gt;&#xA;&lt;li&gt;单道&lt;/li&gt;&#xA;&lt;li&gt;多道&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;分时操作系统&lt;/li&gt;&#xA;&lt;li&gt;实时操作系统&lt;/li&gt;&#xA;&lt;li&gt;网络操作系统&lt;/li&gt;&#xA;&lt;li&gt;分布式操作系统&lt;/li&gt;&#xA;&lt;li&gt;&amp;hellip;&amp;hellip;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;code&gt;课程编号001-002&lt;/code&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
+    <channel>
+        <title>Log on shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/</link>
+        <description>Recent content in Log on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Wed, 23 Jul 2025 23:53:15 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0723学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0723/</link>
+        <pubDate>Wed, 23 Jul 2025 23:53:15 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0723/</guid>
+        <description>&lt;h2 id=&#34;数学-1000题&#34;&gt;数学-1000题
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;对于$x_{n+1}=f(x_n)$的数列极限的判定的过程
+&lt;ol&gt;
+&lt;li&gt;单调有界&lt;/li&gt;
+&lt;li&gt;拉格朗日中值定理&lt;/li&gt;
+&lt;li&gt;放缩&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;对于行列式的计算的方法
+&lt;ol&gt;
+&lt;li&gt;上下三角行列式&lt;/li&gt;
+&lt;li&gt;反三角行列式&lt;/li&gt;
+&lt;li&gt;范德蒙德行列式&lt;/li&gt;
+&lt;li&gt;递推&lt;/li&gt;
+&lt;li&gt;归纳&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;英语-不背单词&#34;&gt;英语-不背单词
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;twist&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ultimate&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;strike&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;crucial&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;subordinate&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;anguish&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;subtle&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;constitute&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;suffice&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eminent&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;prudent&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;courtesy&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;harsh&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;indispensable&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
+        <title>0722学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0722/</link>
+        <pubDate>Tue, 22 Jul 2025 23:31:50 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0722/</guid>
+        <description>&lt;h2 id=&#34;操作系统--la-pa-ca&#34;&gt;操作系统- (LA-PA-CA)
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;带快表的两级系统的地址翻译过程
+&lt;ol&gt;
+&lt;li&gt;从逻辑地址映射到物理地址（虚拟存储器）&lt;/li&gt;
+&lt;li&gt;从物理地址映射到Cache地址（主存-Cache系统）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;文件和文件系统
+&lt;ol&gt;
+&lt;li&gt;构成文件的基本单位&lt;/li&gt;
+&lt;li&gt;文件的定义&lt;/li&gt;
+&lt;li&gt;文件属性&lt;/li&gt;
+&lt;li&gt;文件的基本操作&lt;/li&gt;
+&lt;li&gt;文件的打开和关闭的操作&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;文件的逻辑结构&lt;/li&gt;
+&lt;li&gt;目录管理
+&lt;ol&gt;
+&lt;li&gt;目录的概念&lt;/li&gt;
+&lt;li&gt;文件控制块和索引节点&lt;/li&gt;
+&lt;li&gt;目录结构&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;英语-vocabularybuilder&#34;&gt;英语-VocabularyBuilder
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;CRIM,comes from the Latin words for &amp;ldquo;fault or crime&amp;rdquo; or &amp;ldquo;accusation.&amp;rdquo;
+&lt;ol&gt;
+&lt;li&gt;criminology&lt;/li&gt;
+&lt;li&gt;decriminalize&lt;/li&gt;
+&lt;li&gt;incriminate&lt;/li&gt;
+&lt;li&gt;recrimination&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;PROB,comes from the Latin words for  &amp;ldquo;prove or proof &amp;ldquo;and &amp;ldquo;honesy or integrity.&amp;rdquo;
+&lt;ol&gt;
+&lt;li&gt;approbation&lt;/li&gt;
+&lt;li&gt;probate&lt;/li&gt;
+&lt;li&gt;probity&lt;/li&gt;
+&lt;li&gt;reprobate&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;GRAV, comes from the Latin word meaning &amp;ldquo;heavy ,weighty ,serious&amp;rdquo;
+&lt;ol&gt;
+&lt;li&gt;grave&lt;/li&gt;
+&lt;li&gt;gravitas&lt;/li&gt;
+&lt;li&gt;gravitate&lt;/li&gt;
+&lt;li&gt;aggravate&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;LEV,comes from the Latin adjective $levis$,meaning &amp;ldquo;light&amp;rdquo;,and the verb $levare$,meaning &amp;ldquo;to raise or lighten.&amp;rdquo;
+&lt;ol&gt;
+&lt;li&gt;alleviate&lt;/li&gt;
+&lt;li&gt;elevation&lt;/li&gt;
+&lt;li&gt;contilever&lt;/li&gt;
+&lt;li&gt;levity&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;数学-行列式&#34;&gt;数学-行列式
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;行列式的本质定义&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;行列式的性质&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;h6 id=&#34;aat&#34;&gt;$|A|=|A^T|$
+&lt;/h6&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;若行列式中某行(列)元素全为零，则行列式为零&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;若行列式中某行(列) 元素有公因子$k\neq0$，则$k$可提到行列式外面&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;行列式中某行(列)元素均是两个数之和，则可拆成两个行列式之和&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;行列式中两行(列)互换，行列式变号&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;行列式中的两行(列)元素相等或对应成比例，则行列式为零&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;行列式的逆序法定义
+&lt;/p&gt;
+$$
+   \begin{vmatrix}
+   a_{11} &amp; a_{12} &amp; \cdots&amp;a_{1n}\\
+   a_{21} &amp; a_{22} &amp; \cdots&amp;a_{2n}\\
+   \vdots &amp; \vdots &amp; &amp;\vdots\\
+   a_{n1} &amp; a_{n2} &amp; \cdots&amp;a_{nn}\\
+   \end{vmatrix}=\sum\limits_{j_1j_2\cdots j_n}{(-1)^{\tau(j_1j_2\cdots j_n)}}a_{j_1}a_{j_2}\cdots a_{j_n}
+   $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;行列式的展开定理
+&lt;/p&gt;
+$$
+   |A| = \sum\limits_{j=1}^na_{ij}A_{ij}
+   $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;几个重要的行列式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;主对角线行列式(上(下)三角形行列式)
+&lt;/p&gt;
+$$
+      \begin{vmatrix}
+      a_{11} &amp; a_{12} &amp; \cdots&amp;a_{1n}\\
+      0 &amp; a_{22} &amp; \cdots&amp;a_{2n}\\
+      \vdots &amp; \vdots &amp; &amp;\vdots\\
+      0 &amp; 0 &amp; \cdots&amp;a_{nn}\\
+      \end{vmatrix}=\begin{vmatrix}
+      a_{11} &amp; 0 &amp; \cdots&amp;0\\
+      a_{21} &amp; a_{22} &amp; \cdots&amp;0\\
+      \vdots &amp; \vdots &amp; &amp;\vdots\\
+      a_{n1} &amp; a_{n2} &amp; \cdots&amp;a_{nn}\\
+      \end{vmatrix}=\begin{vmatrix}
+      a_{11} &amp; 0 &amp; \cdots&amp;0\\
+      0 &amp; a_{22} &amp; \cdots&amp;0\\
+      \vdots &amp; \vdots &amp; &amp;\vdots\\
+      0 &amp; 0 &amp; \cdots&amp;a_{nn}\\
+      \end{vmatrix}=\prod\limits_{i=1}^n a_{ii}
+      $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;副对角线行列式
+&lt;/p&gt;
+$$
+      \begin{vmatrix}
+      a_{11} &amp; \cdots &amp; a_{1,n-1}&amp;a_{1n}\\
+      a_{21} &amp; \cdots &amp; a_{2,n-1}&amp;0\\
+      \vdots &amp;  &amp;\vdots &amp;\vdots\\
+      a_{n1} &amp;\cdots&amp;0 &amp;0\\
+      \end{vmatrix}=\begin{vmatrix}
+      0 &amp; \cdots &amp; 0&amp;a_{1n}\\
+      0 &amp;\cdots &amp; a_{2,n-1}&amp;a_{2n}\\
+      \vdots &amp; &amp; \vdots &amp;\vdots\\
+      a_{n1} &amp;\cdots &amp; a_{n,n-1}&amp;a_{nn}\\
+      \end{vmatrix}=\begin{vmatrix}
+      0 &amp; \cdots &amp; 0&amp;a_{1n}\\
+      0 &amp; \cdots &amp; a_{2,n-1}&amp;0\\
+      \vdots &amp; &amp;  \vdots&amp;\vdots\\
+      a_{n1} &amp; \cdots &amp; 0&amp;0\\
+      \end{vmatrix}=(-1)^{\frac{n(n-1)}{2}}\prod\limits_{i=1}^n a_{i(n+1-i)}
+      $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;拉普拉斯展开式($A\in R^{m\times m},B\in R^{n\times n}$)
+&lt;/p&gt;
+$$
+      \begin{vmatrix}
+      A&amp;O\\
+      O&amp;B
+      \end{vmatrix}=\begin{vmatrix}
+      A&amp;C\\
+      O&amp;B
+      \end{vmatrix}=\begin{vmatrix}
+      A&amp;O\\
+      C&amp;B
+      \end{vmatrix}=|A||B|
+      $$$$
+      \begin{vmatrix}
+      O&amp;A\\
+      B&amp;O
+      \end{vmatrix}=\begin{vmatrix}
+      C&amp;A\\
+      B&amp;O
+      \end{vmatrix}=\begin{vmatrix}
+      O&amp;A\\
+      B&amp;C
+      \end{vmatrix}=(-1)^{mn}|A||B|
+      $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;范德蒙德行列式,$(1\leq i &amp;lt;j\leq n)$
+&lt;/p&gt;
+$$
+      \begin{vmatrix}
+      1&amp;1&amp;\cdots&amp;1\\
+      x_1&amp;x_2&amp;\cdots&amp;x_n\\
+      x_1^2&amp;x_2^2&amp;\cdots&amp;x_n^2\\
+      \vdots&amp;\vdots&amp;&amp;\vdots\\
+      x_1^n&amp;x_2^n&amp;\cdots&amp;x_n^n
+      \end{vmatrix}=\prod\limits_{i,j}{(x_i-x_j)}
+      $$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
+        <title>0721学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0721/</link>
+        <pubDate>Mon, 21 Jul 2025 17:53:02 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0721/</guid>
+        <description>&lt;h2 id=&#34;英语-vocabulary-builder&#34;&gt;英语-vocabulary builder
+&lt;/h2&gt;&lt;p&gt;使用 &lt;code&gt;The Merriam-Webster Vocabulary Builder&lt;/code&gt;作为词根法扩充词汇量的工具书(由网友canon提供)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;BENE , latin for &lt;code&gt;well&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;benediction&lt;/li&gt;
+&lt;li&gt;benefactor&lt;/li&gt;
+&lt;li&gt;benefaciary&lt;/li&gt;
+&lt;li&gt;benevolence&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;AM, comes form the latin &lt;code&gt;admare&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;amicable&lt;/li&gt;
+&lt;li&gt;enamored&lt;/li&gt;
+&lt;li&gt;amorous&lt;/li&gt;
+&lt;li&gt;paramour&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;BELL,comes from the latin word meaning &lt;code&gt;war&lt;/code&gt;.Bellona was the little-known goddess of war .
+&lt;ul&gt;
+&lt;li&gt;antebellum&lt;/li&gt;
+&lt;li&gt;belligerence&lt;/li&gt;
+&lt;li&gt;bellicose&lt;/li&gt;
+&lt;li&gt;rebellion&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;PAC,is related to the Latin words for &amp;ldquo;agree&amp;rdquo; and &amp;ldquo;peace&amp;rdquo;
+&lt;ul&gt;
+&lt;li&gt;pacify&lt;/li&gt;
+&lt;li&gt;pacifist&lt;/li&gt;
+&lt;li&gt;pact&lt;/li&gt;
+&lt;li&gt;pace&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;操作系统-page--segment&#34;&gt;操作系统-page &amp;amp; segment
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;基本分页内存&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;page&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;page frame&lt;/li&gt;
+&lt;li&gt;page table&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;页号&lt;/th&gt;
+          &lt;th&gt;页内偏移量&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;虚拟地址 = 页号 + 页内偏移&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;LRU（最近最少使用）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;FIFO（先进先出）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;CLOCK（近似LRU）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;TLB（Translation Lookaside Buffer）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;两级以及多级页表&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;基本分段内存管理&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;基本原理&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;基本结构&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;段号&lt;/th&gt;
+          &lt;th&gt;段内地址&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;段表&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;地址变换机制&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;虚拟存储器&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;页表机制&lt;/li&gt;
+&lt;li&gt;缺页中断机制&lt;/li&gt;
+&lt;li&gt;地址变换机制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号：019-021&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;数据结构-二叉树&#34;&gt;数据结构-二叉树
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;线索二叉树&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;定义&lt;/li&gt;
+&lt;li&gt;构造&lt;/li&gt;
+&lt;li&gt;遍历&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;树、森林与二叉树&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;相互转换&lt;/li&gt;
+&lt;li&gt;遍历&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;哈夫曼树&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;WPL&lt;/li&gt;
+&lt;li&gt;构造&lt;/li&gt;
+&lt;li&gt;哈夫曼编码&lt;/li&gt;
+&lt;li&gt;哈夫曼树的特点&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;并查集&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;定义&lt;/li&gt;
+&lt;li&gt;操作&lt;/li&gt;
+&lt;li&gt;实现&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号：033-037&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>0719学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/</link>
+        <pubDate>Sat, 19 Jul 2025 22:41:19 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/</guid>
+        <description>&lt;h2 id=&#34;数学-是不动点的味道&#34;&gt;数学-是不动点的味道
+&lt;/h2&gt;&lt;h3 id=&#34;数列的极限&#34;&gt;数列的极限
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;概念&lt;/li&gt;
+&lt;li&gt;数列极限的定义&lt;/li&gt;
+&lt;li&gt;数列收敛的性质
+&lt;ul&gt;
+&lt;li&gt;唯一性&lt;/li&gt;
+&lt;li&gt;有界性&lt;/li&gt;
+&lt;li&gt;保号性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;海涅定理（归结原则）&lt;/li&gt;
+&lt;li&gt;夹逼准则&lt;/li&gt;
+&lt;li&gt;单调有界准则&lt;/li&gt;
+&lt;li&gt;${x_n}$收敛于$a$的速度问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;数据结构-前序中序后序blablabla&#34;&gt;数据结构-前序中序后序blablabla
+&lt;/h2&gt;&lt;h3 id=&#34;树的性质&#34;&gt;树的性质
+&lt;/h3&gt;&lt;p&gt;let $T_m$ denote a tree with degree $m$.&lt;/p&gt;
+&lt;p&gt;let $D(n)$ denote the out degree of the node $x$ in the tree $T_m$.&lt;/p&gt;
+&lt;p&gt;let $n_i$ denote the number of notes with degree $i$.&lt;/p&gt;
+&lt;p&gt;let $H$ denote the depth/height of the tree $T_m$.&lt;/p&gt;
+&lt;p&gt;let $N$ denote the total number of nodes in tree.$N=\sum\limits_{i=0}^mn_i$.&lt;/p&gt;
+&lt;p&gt;let $N_i$ denote the number of nodes at layer $i\in \mathcal{N^*}$&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$N=1 + \sum\limits_{i=1}^mi\cdot n_i$.&lt;/li&gt;
+&lt;li&gt;$n_0 =1 + \sum\limits_{i=2}^m(i-1)\cdot n_i$&lt;/li&gt;
+&lt;li&gt;$N_i\leq m^{i-1}$ if not an &lt;strong&gt;empty tree&lt;/strong&gt; with degree m.&lt;/li&gt;
+&lt;li&gt;$N\leq \frac{m^H-1}{m-1}$&lt;/li&gt;
+&lt;li&gt;$H\geq \lceil\log_{m}\left((N(m-1))+1\right)\rceil$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;二叉树&#34;&gt;二叉树
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;二叉树的性质
+&lt;ol&gt;
+&lt;li&gt;$N_i\leq 2^{i-1}$ if not an &lt;strong&gt;empty tree&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;$N\leq 2^H-1$&lt;/li&gt;
+&lt;li&gt;$n_0 =1 + n_2$&lt;/li&gt;
+&lt;li&gt;$H\geq \lceil\log_{2}(N+1)\rceil$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;完全二叉树&lt;/li&gt;
+&lt;li&gt;满二叉树&lt;/li&gt;
+&lt;li&gt;二叉树的构造
+&lt;ol&gt;
+&lt;li&gt;前序加中序&lt;/li&gt;
+&lt;li&gt;后序加中序&lt;/li&gt;
+&lt;li&gt;层次加中序&lt;/li&gt;
+&lt;li&gt;前序加树形结构&lt;/li&gt;
+&lt;li&gt;中序加树形结构&lt;/li&gt;
+&lt;li&gt;后序加树形结构&lt;/li&gt;
+&lt;li&gt;层次加树形结构&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;二叉树的遍历
+&lt;ol&gt;
+&lt;li&gt;前序&lt;/li&gt;
+&lt;li&gt;中序&lt;/li&gt;
+&lt;li&gt;后序&lt;/li&gt;
+&lt;li&gt;层次&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;操作系统-nice-of-linux&#34;&gt;操作系统-nice of linux
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Multi-Level Feedback Queue (cpu-sched-mlfq)
+&lt;ol&gt;
+&lt;li&gt;Basic Rules
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rule 1&lt;/strong&gt;:If Priority(A) $&amp;gt;$ Priority(B), A runs (B doesn’t).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rule 2&lt;/strong&gt;:If Priority(A) $=$ Priority(B), A &amp;amp; B run in RR(Round Robin).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;However&lt;/strong&gt;: Those with low Priority will get starved!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Therefore&lt;/strong&gt;: We need to change the Priority over time.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;To change Priority
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rule 3&lt;/strong&gt;: When a job enters the system, it is placed at the highest priority (the topmost queue).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rule 4a&lt;/strong&gt;: If a job uses up its allotment while running, its priority is reduced (i.e., it moves down one queue).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rule 4b&lt;/strong&gt;: If a job gives up the CPU (for example, by performing an I/O operation) before the allotment is up, it stays at the same priority level (i.e., its allotment is reset).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;However&lt;/strong&gt;:
+&lt;ol&gt;
+&lt;li&gt;Those with long cpu-time will get starved as them move down to the lowest!&lt;/li&gt;
+&lt;li&gt;Those with smart heart will game the scheduler as they I/O at the last ms of the allotment.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Therefore&lt;/strong&gt;: We need to change &lt;strong&gt;rule4a,b&lt;/strong&gt; and boost periodically.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The Priority Boost
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rule 5&lt;/strong&gt;: After some time period S, move all the jobs in the system to the topmost queue.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Better Accounting
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rule 4&lt;/strong&gt;: Once a job uses up its time allotment at a given level (re gardless of how many times it has given up the CPU), its priority is reduced (i.e., it moves down one queue).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Proportional share(cpu-sched-lottery)
+&lt;ol&gt;
+&lt;li&gt;Basic Concept: Tickets Represent Your Share&lt;/li&gt;
+&lt;li&gt;Stride Scheduling&lt;/li&gt;
+&lt;li&gt;The Linux Completely Fair Scheduler (CFS)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
+        <title>0717学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0717/</link>
+        <pubDate>Thu, 17 Jul 2025 22:04:43 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0717/</guid>
+        <description>&lt;h2 id=&#34;数学-纸上得来终觉浅&#34;&gt;数学-纸上得来终觉浅
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;函数极限的定义($\epsilon,\delta$语言)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;函数极限的性质&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;唯一性&lt;/li&gt;
+&lt;li&gt;局部有界性&lt;/li&gt;
+&lt;li&gt;局部保号性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;无穷小(let $\alpha$ be infinitesimal)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;性质
+&lt;ul&gt;
+&lt;li&gt;$\sum\limits_{k}^{N}{\alpha_k}=\alpha,(N \text{ is finite})$&lt;/li&gt;
+&lt;li&gt;$\alpha&amp;rsquo;\cdot f(x)=\alpha $,where $f(x)$ is limited at the interval&lt;/li&gt;
+&lt;li&gt;$\prod\limits_{k}^{N}{\alpha_k}=\alpha,(N \text{ is finite})$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;比阶($\lim\alpha(x)=0$,$\lim\beta(x)=0$,$\beta(x)\neq0$)
+&lt;ul&gt;
+&lt;li&gt;$\alpha(x)$是$\beta(x)$的高阶无穷小$\Leftrightarrow\lim{\frac{\alpha(x)}{\beta(x)}}=0$&lt;/li&gt;
+&lt;li&gt;$\alpha(x)$是$\beta(x)$的低阶无穷小$\Leftrightarrow\lim{\frac{\alpha(x)}{\beta(x)}}=\infty$&lt;/li&gt;
+&lt;li&gt;$\alpha(x)$是$\beta(x)$的同阶无穷小$\Leftrightarrow\lim{\frac{\alpha(x)}{\beta(x)}}=c,(\text{constant }c\neq 0)$&lt;/li&gt;
+&lt;li&gt;$\alpha(x)$是$\beta(x)$的等价无穷小$\Leftrightarrow\lim{\frac{\alpha(x)}{\beta(x)}}=1$&lt;/li&gt;
+&lt;li&gt;$\alpha(x)$是$\beta(x)$的$k$阶无穷小$\Leftrightarrow\lim{\frac{\alpha(x)}{\beta^k(x)}}=0$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;极限的运算&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;四则运算&lt;/li&gt;
+&lt;li&gt;洛必达法则&lt;/li&gt;
+&lt;li&gt;泰勒展开&lt;/li&gt;
+&lt;li&gt;夹逼准则&lt;/li&gt;
+&lt;li&gt;七种未定式：$\frac{0}{0},\frac{\infty}{\infty},0\cdot\infty,\infty-\infty,\infty^0,0^0,1^{\infty}$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;函数的连续和两类间断点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;超实数(&lt;a class=&#34;link&#34; href=&#34;https://people.math.wisc.edu/~hkeisler/keislercalc-06-18-25.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;hyperreal number&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;操作系统-three-easy-piece&#34;&gt;操作系统-&lt;a class=&#34;link&#34; href=&#34;https://pages.cs.wisc.edu/~remzi/OSTEP/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;three easy piece&lt;/a&gt;
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;cpu-intro
+&lt;ul&gt;
+&lt;li&gt;the Process&lt;/li&gt;
+&lt;li&gt;Process API
+&lt;ol&gt;
+&lt;li&gt;create&lt;/li&gt;
+&lt;li&gt;Destory&lt;/li&gt;
+&lt;li&gt;Wait&lt;/li&gt;
+&lt;li&gt;Miscellaneous Control&lt;/li&gt;
+&lt;li&gt;Status&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Process status&lt;/li&gt;
+&lt;li&gt;Proc data structure:(PCB)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;cpu-api
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;fork()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;wait()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;exec()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;spawn()&lt;/code&gt;*&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;cpu-mechanisms
+&lt;ol&gt;
+&lt;li&gt;from Directed Execution to Limited Directed Execution:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;user mode and kernel mode&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;system call&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;switch between Processes,Os need to retain CPU from process
+&lt;ul&gt;
+&lt;li&gt;A Cooperative Approach: Wait For System Calls&lt;/li&gt;
+&lt;li&gt;A Non-Cooperative Approach: The OS Takes Control&lt;/li&gt;
+&lt;li&gt;reboot (x&lt;/li&gt;
+&lt;li&gt;timer interrupt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Saving and Restoring Context&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;cpu-sched(reading)&lt;/li&gt;
+&lt;li&gt;cpu-sched-mlfq(reading)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;数据结构-排好队一个一个fifo&#34;&gt;数据结构-排好队一个一个FIFO
+&lt;/h2&gt;&lt;h3 id=&#34;队列&#34;&gt;队列
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;顺序队列的性质和操作&lt;/li&gt;
+&lt;li&gt;循环队列的性质和操作&lt;/li&gt;
+&lt;li&gt;链式队列的性质和操作&lt;/li&gt;
+&lt;li&gt;双端队列&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号018-027&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>0715学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0715/</link>
+        <pubDate>Tue, 15 Jul 2025 21:43:17 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0715/</guid>
+        <description>&lt;h2 id=&#34;操作系统-jyy的map永远的噩梦&#34;&gt;操作系统-jyy的map永远的噩梦
+&lt;/h2&gt;&lt;h3 id=&#34;死锁&#34;&gt;死锁
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;死锁的必要条件
+&lt;ul&gt;
+&lt;li&gt;互斥条件&lt;/li&gt;
+&lt;li&gt;请求和保持条件&lt;/li&gt;
+&lt;li&gt;不可剥夺条件&lt;/li&gt;
+&lt;li&gt;循环等待条件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;预防死锁的方法
+&lt;ul&gt;
+&lt;li&gt;破坏互斥：非但不能破坏还要保护&lt;/li&gt;
+&lt;li&gt;破坏不可剥夺条件&lt;/li&gt;
+&lt;li&gt;破坏请求和保持条件&lt;/li&gt;
+&lt;li&gt;破坏循环等待条件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;死锁避免
+&lt;ol&gt;
+&lt;li&gt;安全状态&lt;/li&gt;
+&lt;li&gt;银行家算法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;死锁检测和解除
+&lt;ul&gt;
+&lt;li&gt;资源分配图&lt;/li&gt;
+&lt;li&gt;死锁定理&lt;/li&gt;
+&lt;li&gt;死锁的解除
+&lt;ul&gt;
+&lt;li&gt;剥夺资源&lt;/li&gt;
+&lt;li&gt;撤销进程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;内存管理&#34;&gt;内存管理
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;基本概念
+&lt;ol&gt;
+&lt;li&gt;逻辑地址&lt;/li&gt;
+&lt;li&gt;物理地址&lt;/li&gt;
+&lt;li&gt;外部碎片&lt;/li&gt;
+&lt;li&gt;内部碎片&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;内存连续分配管理方式
+&lt;ol&gt;
+&lt;li&gt;单一连续分配&lt;/li&gt;
+&lt;li&gt;固定分区分配&lt;/li&gt;
+&lt;li&gt;动态分区分配
+&lt;ol&gt;
+&lt;li&gt;首次适应FF&lt;/li&gt;
+&lt;li&gt;循环首次适应NF&lt;/li&gt;
+&lt;li&gt;最佳适应BF&lt;/li&gt;
+&lt;li&gt;最坏适应WF&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号016-018&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;数学-什么超实数&#34;&gt;数学-什么？！超实数？
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;函数极限的概念与性质&lt;/li&gt;
+&lt;li&gt;超实数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号第一讲&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>0714学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0714/</link>
+        <pubDate>Mon, 14 Jul 2025 21:15:02 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0714/</guid>
+        <description>&lt;h2 id=&#34;操作系统-这什么查一下这什么查一下&#34;&gt;操作系统-这什么查一下这什么查一下
+&lt;/h2&gt;&lt;h3 id=&#34;经典同步问题&#34;&gt;经典同步问题
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;生产者消费者问题&lt;/li&gt;
+&lt;li&gt;哲学家进餐问题&lt;/li&gt;
+&lt;li&gt;读者-写者问题&lt;/li&gt;
+&lt;li&gt;理发师问题&lt;/li&gt;
+&lt;li&gt;抽烟者问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;处理机调度&#34;&gt;处理机调度
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;处理及调度的层次&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;高级调度（作业调度、长程调度）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;作业选择&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;从**后备队列（外存中等待的作业）**中选择作业&lt;/li&gt;
+&lt;li&gt;判断系统资源（内存、CPU、I/O）是否充足&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;资源分配&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;为选中的作业分配内存、I/O、文件等资源&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;进程创建&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将作业转化为一个或多个&lt;strong&gt;进程&lt;/strong&gt;，放入就绪队列&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;中级调度（内存调度、中程调度）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;选择部分进程挂起（移出内存到外存）&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;选择挂起的进程恢复（从外存调回内存）&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;低级调度（进程调度、线程调度、短程调度）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;从&lt;strong&gt;就绪队列&lt;/strong&gt;中选择一个进程&lt;/li&gt;
+&lt;li&gt;把 CPU 分配给选中的进程&lt;/li&gt;
+&lt;li&gt;保存和恢复进程的上下文（&lt;strong&gt;进程切换 Context Switch&lt;/strong&gt;）&lt;/li&gt;
+&lt;li&gt;控制 CPU 的执行顺序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;处理机的调度方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;非抢占式&lt;/li&gt;
+&lt;li&gt;抢占式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选择调度算法的若干准则&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;CPU利用率&lt;/p&gt;
+$$
+     \frac{\text{worktime of CPU}}{\text{total time}}
+     $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;系统吞吐量&lt;/p&gt;
+$$
+     \frac{\text{number of tasks}}{\text{total time}}
+     $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;周转时间(Turnaround Time)&lt;/p&gt;
+$$
+     \text{Completion Time - Arrival Time}
+     $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;平均周转时间&lt;/p&gt;
+$$
+     \frac{\sum\limits_{N}\text{Turnaround Time of all processes}}{N}
+     $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;带权周转时间&lt;/p&gt;
+$$
+     \frac{\text{Turnaround Time}}{\text{Service Time}}
+     $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;平均带权周转时间&lt;/p&gt;
+$$
+     \frac{\sum\limits_{N}\text{Weighted Turnaround Time of all processes}}{N}
+     $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;等待时间&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;调度算法&#34;&gt;调度算法
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;FCFS（先来先服务）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SJF（最短作业优先）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;抢占&lt;/li&gt;
+&lt;li&gt;非抢占&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SRTF（最短剩余时间优先）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Priority Scheduling（高优先权优先调度）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;抢占&lt;/li&gt;
+&lt;li&gt;非抢占&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Highest Response Ratio Next (HRRN)（高响应比有点调度算法）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Round Robin（时间片轮转）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Multilevel Feedback Queue（多级反馈队列调度）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;上下文切换&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;CPU上下文切换&lt;/li&gt;
+&lt;li&gt;系统调用上下文切换&lt;/li&gt;
+&lt;li&gt;进程上下文切换
+&lt;ul&gt;
+&lt;li&gt;用户级&lt;/li&gt;
+&lt;li&gt;系统级&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;线程上下文切换&lt;/li&gt;
+&lt;li&gt;中断上下文切换&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号:012-015&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;数据结构-致敬传奇栈帧pc程序计数器&#34;&gt;数据结构-致敬传奇栈帧PC程序计数器
+&lt;/h2&gt;&lt;h3 id=&#34;栈&#34;&gt;栈
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;静态顺序栈&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;判空&lt;/li&gt;
+&lt;li&gt;判满&lt;/li&gt;
+&lt;li&gt;进栈&lt;/li&gt;
+&lt;li&gt;出栈&lt;/li&gt;
+&lt;li&gt;获取栈顶元素&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;动态顺序栈&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;判空&lt;/li&gt;
+&lt;li&gt;判满&lt;/li&gt;
+&lt;li&gt;进栈&lt;/li&gt;
+&lt;li&gt;出栈&lt;/li&gt;
+&lt;li&gt;获取栈顶元素&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;链栈&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;判空&lt;/li&gt;
+&lt;li&gt;判满&lt;/li&gt;
+&lt;li&gt;进栈&lt;/li&gt;
+&lt;li&gt;出栈&lt;/li&gt;
+&lt;li&gt;获取栈顶元素&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;栈的应用&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;括号匹配&lt;/li&gt;
+&lt;li&gt;进制转换（辗转相除）&lt;/li&gt;
+&lt;li&gt;函数递归调用&lt;/li&gt;
+&lt;li&gt;表达式求值
+&lt;ul&gt;
+&lt;li&gt;前缀&lt;/li&gt;
+&lt;li&gt;中缀（重要）&lt;/li&gt;
+&lt;li&gt;后缀&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号：014-017&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;数学-太好了是张宇老师我们有救了&#34;&gt;数学-太好了是张宇老师我们有救了！
+&lt;/h2&gt;&lt;h3 id=&#34;函数的概念与特性&#34;&gt;函数的概念与特性
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;函数&lt;/li&gt;
+&lt;li&gt;反函数&lt;/li&gt;
+&lt;li&gt;复合函数&lt;/li&gt;
+&lt;li&gt;隐函数&lt;/li&gt;
+&lt;li&gt;函数的四种特性
+&lt;ul&gt;
+&lt;li&gt;有界性&lt;/li&gt;
+&lt;li&gt;单调性&lt;/li&gt;
+&lt;li&gt;奇偶性&lt;/li&gt;
+&lt;li&gt;周期性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;基本初等函数与初等函数
+&lt;ul&gt;
+&lt;li&gt;常函数&lt;/li&gt;
+&lt;li&gt;幂函数&lt;/li&gt;
+&lt;li&gt;指数函数&lt;/li&gt;
+&lt;li&gt;对数函数&lt;/li&gt;
+&lt;li&gt;三角函数
+&lt;ol&gt;
+&lt;li&gt;sin x  cos x&lt;/li&gt;
+&lt;li&gt;csc x sec x&lt;/li&gt;
+&lt;li&gt;tan x cot x&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;反三角函数
+&lt;ol&gt;
+&lt;li&gt;arcsin x arccos x&lt;/li&gt;
+&lt;li&gt;arctanx arccot x&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;分段函数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;高数第一讲&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>0713学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0713/</link>
+        <pubDate>Sun, 13 Jul 2025 23:27:16 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0713/</guid>
+        <description>&lt;h2 id=&#34;数据结构-喜欢在头指针存数据的扣1&#34;&gt;数据结构-喜欢在头指针存数据的扣1
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;线性表的链式存储&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;单链表&lt;/li&gt;
+&lt;li&gt;静态链表&lt;/li&gt;
+&lt;li&gt;其他链表
+&lt;ul&gt;
+&lt;li&gt;单向循环链表&lt;/li&gt;
+&lt;li&gt;双向链表&lt;/li&gt;
+&lt;li&gt;双向循环链表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程代码010-013&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;操作系统-谦让是美德&#34;&gt;操作系统-谦让是美德
+&lt;/h2&gt;&lt;h3 id=&#34;进程与线程&#34;&gt;进程与线程
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;进程&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;PCB&lt;/li&gt;
+&lt;li&gt;进程的特点：
+&lt;ul&gt;
+&lt;li&gt;动态性&lt;/li&gt;
+&lt;li&gt;并发性&lt;/li&gt;
+&lt;li&gt;独立性&lt;/li&gt;
+&lt;li&gt;异步性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;进程的基本状态及管理切换
+&lt;ul&gt;
+&lt;li&gt;运行&lt;/li&gt;
+&lt;li&gt;阻塞&lt;/li&gt;
+&lt;li&gt;就绪&lt;/li&gt;
+&lt;li&gt;创建&lt;/li&gt;
+&lt;li&gt;终止&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;线程&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;线程的特性&lt;/li&gt;
+&lt;li&gt;线程的状态&lt;/li&gt;
+&lt;li&gt;线程与进程的联系和不同&lt;/li&gt;
+&lt;li&gt;用户级线程与内核级线程的映射关系&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;互斥与同步&#34;&gt;互斥与同步
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;临界区实现互斥的原则&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;空闲让进&lt;/li&gt;
+&lt;li&gt;忙则等待&lt;/li&gt;
+&lt;li&gt;有限等待&lt;/li&gt;
+&lt;li&gt;让权等待（非必须）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;临界区实现互斥的基本方法&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;软件实现方法
+&lt;ol&gt;
+&lt;li&gt;单标志法&lt;/li&gt;
+&lt;li&gt;双标志法
+&lt;ul&gt;
+&lt;li&gt;先检查法&lt;/li&gt;
+&lt;li&gt;后检查法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Peterson算法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;硬件实现方法
+&lt;ol&gt;
+&lt;li&gt;中断屏蔽&lt;/li&gt;
+&lt;li&gt;TestAndSet指令&lt;/li&gt;
+&lt;li&gt;Swap指令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;互斥锁（mutex lock）&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;LockOne类&lt;/li&gt;
+&lt;li&gt;LockTwo类&lt;/li&gt;
+&lt;li&gt;Peterson锁&lt;/li&gt;
+&lt;li&gt;Barkley锁&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;信号量&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;整型信号量&lt;/li&gt;
+&lt;li&gt;记录型信号量&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;管程&#34;&gt;管程
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;管程的定义&lt;/li&gt;
+&lt;li&gt;管程的组成&lt;/li&gt;
+&lt;li&gt;管程的特性&lt;/li&gt;
+&lt;li&gt;管程与进程的异同&lt;/li&gt;
+&lt;li&gt;条件变量&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;进程通信&#34;&gt;进程通信
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;管道通信&lt;/li&gt;
+&lt;li&gt;消息传递系统&lt;/li&gt;
+&lt;li&gt;共享存储器系统&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号005-011&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>0712学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0712/</link>
+        <pubDate>Sat, 12 Jul 2025 22:05:39 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0712/</guid>
+        <description>&lt;h2 id=&#34;操作系统-int-0x80&#34;&gt;操作系统-int 0x80
+&lt;/h2&gt;&lt;p&gt;操作系统的运行环境&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;内核程序
+&lt;ul&gt;
+&lt;li&gt;特权指令&lt;/li&gt;
+&lt;li&gt;核心态，管态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;应用程序
+&lt;ul&gt;
+&lt;li&gt;非特权指令&lt;/li&gt;
+&lt;li&gt;用户态，目态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;操作系统的内核&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;时钟管理&lt;/li&gt;
+&lt;li&gt;中断机制
+&lt;ol&gt;
+&lt;li&gt;内部异常
+&lt;ol&gt;
+&lt;li&gt;故障（Fault）（软件中断）&lt;/li&gt;
+&lt;li&gt;自陷（Trap）（软件中断）&lt;/li&gt;
+&lt;li&gt;终止（Abort）（硬件中断）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;外部中断（硬件）
+&lt;ol&gt;
+&lt;li&gt;可屏蔽中断 INTR&lt;/li&gt;
+&lt;li&gt;不可屏蔽中断 NMI&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号 ：003-004&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;英语-英语构词法&#34;&gt;英语-英语构词法
+&lt;/h2&gt;&lt;p&gt;前缀包含两种作用：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;方向&lt;/li&gt;
+&lt;li&gt;性质&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;后缀一般表示词性，例外：able,&amp;hellip;.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>0711学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/</link>
+        <pubDate>Fri, 11 Jul 2025 20:29:14 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/</guid>
+        <description>&lt;h2 id=&#34;数据结构-太好了是死记硬背&#34;&gt;数据结构-太好了是死记硬背
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;数据的逻辑和物理结构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/QQ20250711-202720.png&#34;
+	width=&#34;1702&#34;
+	height=&#34;743&#34;
+	srcset=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/QQ20250711-202720_hu_ab8a865d16a46851.png 480w, https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/QQ20250711-202720_hu_5cae573c8a98f94d.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;229&#34;
+		data-flex-basis=&#34;549px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;算法的时间空间复杂度&lt;/li&gt;
+&lt;li&gt;线性表的顺序表以及相关算法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;课程编号001-009&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;操作系统-想念jyy的第n天&#34;&gt;操作系统-想念jyy的第n天
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;操作系统概述
+&lt;ul&gt;
+&lt;li&gt;并发&lt;/li&gt;
+&lt;li&gt;共享&lt;/li&gt;
+&lt;li&gt;虚拟&lt;/li&gt;
+&lt;li&gt;异步&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;操作系统的发展历程
+&lt;ul&gt;
+&lt;li&gt;批处理器
+&lt;ul&gt;
+&lt;li&gt;单道&lt;/li&gt;
+&lt;li&gt;多道&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;分时操作系统&lt;/li&gt;
+&lt;li&gt;实时操作系统&lt;/li&gt;
+&lt;li&gt;网络操作系统&lt;/li&gt;
+&lt;li&gt;分布式操作系统&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;课程编号001-002&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

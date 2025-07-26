@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="操作系统-一些易错知识点 在计算平均访存时间时要注意快表TLB和页表的访问是串行还是并行的，也要注意页表是单级还是多级的 虚拟存储器的最大容量只和计算机的地址结构决定，实际容量和内存和外存有关 工作集不是驻留集的子集，只是数量要小于（不大于）驻留集的大小 一些你需要搞明白的概念：\n链接，包括静态和动态\n链接是将不同编译单元及其依赖库整合到一个统一逻辑地址空间的过程。根据发生时间不同，链接分为：\n静态链接：在编译阶段将所有代码打包进可执行文件中； 动态链接： 加载时链接（Load-Time Linking）：程序加载时操作系统自动加载依赖库； 运行时链接（Run-Time Linking）：程序运行过程中手动加载库，例如通过 dlopen() 等函数调用。 类别 链接时间 控制方式 示例函数 静态链接 编译/链接阶段 编译器自动处理 - 动态链接（加载时） 程序加载阶段 操作系统自动处理 - 动态链接（运行时） 程序运行阶段 程序员手动调用 dlopen, dlsym 等 $&gt;dive into the procedure of linking of a C code program(Gemini 2.5 pro)\nThe Final Step: Unraveling the Linking Process of a C Program The journey from human-readable C code to an executable program culminates in a crucial, often-overlooked stage: linking. This final step in the compilation process is where all the disparate pieces of your program are brought together to create a single, functional executable file. The linker, a key component of the C toolchain, orchestrates this assembly, resolving references between different parts of your code and incorporating necessary library functions.\n">
+<title>0726学习笔记</title>
+
+<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/memo/0726/'>
+
+<link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="0726学习笔记">
+<meta property='og:description' content="操作系统-一些易错知识点 在计算平均访存时间时要注意快表TLB和页表的访问是串行还是并行的，也要注意页表是单级还是多级的 虚拟存储器的最大容量只和计算机的地址结构决定，实际容量和内存和外存有关 工作集不是驻留集的子集，只是数量要小于（不大于）驻留集的大小 一些你需要搞明白的概念：\n链接，包括静态和动态\n链接是将不同编译单元及其依赖库整合到一个统一逻辑地址空间的过程。根据发生时间不同，链接分为：\n静态链接：在编译阶段将所有代码打包进可执行文件中； 动态链接： 加载时链接（Load-Time Linking）：程序加载时操作系统自动加载依赖库； 运行时链接（Run-Time Linking）：程序运行过程中手动加载库，例如通过 dlopen() 等函数调用。 类别 链接时间 控制方式 示例函数 静态链接 编译/链接阶段 编译器自动处理 - 动态链接（加载时） 程序加载阶段 操作系统自动处理 - 动态链接（运行时） 程序运行阶段 程序员手动调用 dlopen, dlsym 等 $&gt;dive into the procedure of linking of a C code program(Gemini 2.5 pro)\nThe Final Step: Unraveling the Linking Process of a C Program The journey from human-readable C code to an executable program culminates in a crucial, often-overlooked stage: linking. This final step in the compilation process is where all the disparate pieces of your program are brought together to create a single, functional executable file. The linker, a key component of the C toolchain, orchestrates this assembly, resolving references between different parts of your code and incorporating necessary library functions.\n">
+<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/memo/0726/'>
+<meta property='og:site_name' content='shyの考研日志'>
+<meta property='og:type' content='article'><meta property='article:section' content='Memo' /><meta property='article:tag' content='操作系统' /><meta property='article:tag' content='虚拟存储系统' /><meta property='article:tag' content='链接' /><meta property='article:tag' content='英语' /><meta property='article:published_time' content='2025-07-26T11:19:57&#43;08:00'/><meta property='article:modified_time' content='2025-07-26T11:19:57&#43;08:00'/>
+<meta name="twitter:title" content="0726学习笔记">
+<meta name="twitter:description" content="操作系统-一些易错知识点 在计算平均访存时间时要注意快表TLB和页表的访问是串行还是并行的，也要注意页表是单级还是多级的 虚拟存储器的最大容量只和计算机的地址结构决定，实际容量和内存和外存有关 工作集不是驻留集的子集，只是数量要小于（不大于）驻留集的大小 一些你需要搞明白的概念：\n链接，包括静态和动态\n链接是将不同编译单元及其依赖库整合到一个统一逻辑地址空间的过程。根据发生时间不同，链接分为：\n静态链接：在编译阶段将所有代码打包进可执行文件中； 动态链接： 加载时链接（Load-Time Linking）：程序加载时操作系统自动加载依赖库； 运行时链接（Run-Time Linking）：程序运行过程中手动加载库，例如通过 dlopen() 等函数调用。 类别 链接时间 控制方式 示例函数 静态链接 编译/链接阶段 编译器自动处理 - 动态链接（加载时） 程序加载阶段 操作系统自动处理 - 动态链接（运行时） 程序运行阶段 程序员手动调用 dlopen, dlsym 等 $&gt;dive into the procedure of linking of a C code program(Gemini 2.5 pro)\nThe Final Step: Unraveling the Linking Process of a C Program The journey from human-readable C code to an executable program culminates in a crucial, often-overlooked stage: linking. This final step in the compilation process is where all the disparate pieces of your program are brought together to create a single, functional executable file. The linker, a key component of the C toolchain, orchestrates this assembly, resolving references between different parts of your code and incorporating necessary library functions.\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/npee_learning_log.github.io/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/npee_learning_log.github.io/img/shiki_hu_20273a3af6c00ff3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🎧</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/npee_learning_log.github.io">shyの考研日志</a></h1>
+            <h2 class="site-description">無職受験生 ～408に挑んだら本気だす～</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/diary' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                
+                <span>日记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/log' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>日志</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/memo' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>笔记</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/npee_learning_log.github.io/categories/memo/" >
+                Memo
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/npee_learning_log.github.io/memo/0726/">0726学习笔记</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 26, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    8 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="操作系统-一些易错知识点">操作系统-一些易错知识点
+</h2><ol>
+<li>在计算平均访存时间时要注意快表TLB和页表的访问是<strong>串行</strong>还是并行的，也要注意页表是<strong>单级</strong>还是多级的</li>
+<li>虚拟存储器的<strong>最大容量</strong>只和计算机的地址结构决定，<strong>实际容量</strong>和内存和外存有关</li>
+<li>工作集不是驻留集的子集，只是数量要小于（不大于）驻留集的大小</li>
+</ol>
+<p>一些你需要搞明白的概念：</p>
+<ol>
+<li>
+<p>链接，包括静态和动态</p>
+<p>链接是将不同编译单元及其依赖库整合到一个统一逻辑地址空间的过程。根据发生时间不同，链接分为：</p>
+<ol>
+<li><strong>静态链接</strong>：在编译阶段将所有代码打包进可执行文件中；</li>
+<li><strong>动态链接</strong>：
+<ul>
+<li><strong>加载时链接（Load-Time Linking）</strong>：程序加载时操作系统自动加载依赖库；</li>
+<li><strong>运行时链接（Run-Time Linking）</strong>：程序运行过程中手动加载库，例如通过 <code>dlopen()</code> 等函数调用。</li>
+</ul>
+</li>
+</ol>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>类别</th>
+          <th>链接时间</th>
+          <th>控制方式</th>
+          <th>示例函数</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>静态链接</td>
+          <td>编译/链接阶段</td>
+          <td>编译器自动处理</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>动态链接（加载时）</td>
+          <td>程序加载阶段</td>
+          <td>操作系统自动处理</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>动态链接（运行时）</td>
+          <td>程序运行阶段</td>
+          <td>程序员手动调用</td>
+          <td><code>dlopen</code>, <code>dlsym</code> 等</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>$&gt;dive into the procedure of linking of a C code program(Gemini 2.5 pro)</p>
+<h3 id="the-final-step-unraveling-the-linking-process-of-a-c-program">The Final Step: Unraveling the Linking Process of a C Program
+</h3><p>The journey from human-readable C code to an executable program culminates in a crucial, often-overlooked stage: linking. This final step in the compilation process is where all the disparate pieces of your program are brought together to create a single, functional executable file. The linker, a key component of the C toolchain, orchestrates this assembly, resolving references between different parts of your code and incorporating necessary library functions.</p>
+<p>The compilation of a C program is a multi-stage process. First, the preprocessor handles directives like <code>#include</code> and <code>#define</code>. The preprocessed code is then compiled into assembly language, which is subsequently converted into machine-readable object files. These object files, however, are not yet ready to run. They are incomplete pieces of a larger puzzle, and it is the linker&rsquo;s job to put them together.</p>
+<p>The primary role of the linker is to take one or more object files, along with any necessary libraries, and combine them into a single executable file. A key function of the linker is <strong>symbol resolution</strong>. When you call a function in one C file that is defined in another, the compiler leaves a placeholder, or a reference, in the object file. The linker&rsquo;s job is to find the actual memory address of that function in the other object file and replace the placeholder with this address. This ensures that when the program runs, the function call correctly jumps to the right location in memory.</p>
+<h3 id="static-vs-dynamic-linking-two-approaches-to-integration">Static vs. Dynamic Linking: Two Approaches to Integration
+</h3><p>There are two fundamental ways a linker can incorporate external code into your program: static linking and dynamic linking.</p>
+<p><strong>Static Linking:</strong> In this approach, all the required library code is copied directly into the final executable file. This creates a self-contained program that does not rely on external libraries to be present on the system where it is run.</p>
+<ul>
+<li>
+<p><strong>Advantages of Static Linking:</strong></p>
+<ul>
+<li><strong>Portability:</strong> The executable can be run on systems that do not have the required libraries installed.</li>
+<li><strong>Potentially Faster Execution:</strong> Since all the code is in one place, it can sometimes lead to faster execution as there is no need to load external libraries at runtime.</li>
+</ul>
+</li>
+<li>
+<p><strong>Disadvantages of Static Linking:</strong></p>
+<ul>
+<li><strong>Larger Executable Size:</strong> Because all library code is included, the resulting executable file is larger.</li>
+<li><strong>Inefficient Memory and Disk Space Usage:</strong> If multiple programs on a system use the same statically linked library, each will have its own copy, leading to redundant use of disk space and memory.</li>
+<li><strong>Difficult to Update:</strong> To update a library, every program that uses it must be re-linked.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Dynamic Linking:</strong> In contrast, dynamic linking does not copy the library code into the executable. Instead, it only includes the names of the shared libraries that the program needs. The actual linking of the library code happens at runtime when the program is loaded into memory.</p>
+<ul>
+<li>
+<p><strong>Advantages of Dynamic Linking:</strong></p>
+<ul>
+<li><strong>Smaller Executable Size:</strong> The executables are smaller as they only contain references to the shared libraries.</li>
+<li><strong>Efficient Memory and Disk Space Usage:</strong> A single copy of a shared library in memory can be used by multiple programs.</li>
+<li><strong>Easier Updates:</strong> To update a library, you only need to replace the shared library file; all programs that use it will automatically benefit from the update without needing to be re-linked.</li>
+</ul>
+</li>
+<li>
+<p><strong>Disadvantages of Dynamic Linking:</strong></p>
+<ul>
+<li><strong>Dependencies:</strong> The program will not run if the required shared libraries are not present on the system or if the version is incompatible.</li>
+<li><strong>Slightly Slower Startup:</strong> There can be a minor performance overhead at startup as the dynamic linker needs to find and load the necessary shared libraries.</li>
+</ul>
+</li>
+</ul>
+<h3 id="the-linking-process-in-action-with-gcc">The Linking Process in Action with GCC
+</h3><p>The GNU Compiler Collection (GCC) is a popular toolchain for compiling and linking C programs. The linking process can be performed as a separate step or combined with compilation.</p>
+<p>To compile a C source file (<code>.c</code>) into an object file (<code>.o</code>), you can use the <code>-c</code> flag with <code>gcc</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcc -c my_program.c
+</span></span></code></pre></div><p>This will create an object file named <code>my_program.o</code>. If your program is split across multiple source files, you would compile each one into an object file.</p>
+<p>Once you have all the necessary object files, you can link them together to create an executable file using the <code>-o</code> flag to specify the output file name:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcc -o my_executable my_program.o another_file.o
+</span></span></code></pre></div><p>This command tells <code>gcc</code> to link <code>my_program.o</code> and <code>another_file.o</code> and create an executable file named <code>my_executable</code>.</p>
+<h3 id="common-linker-errors">Common Linker Errors
+</h3><p>Errors that occur during the linking phase are known as linker errors. Some of the most common linker errors include:</p>
+<ul>
+<li><strong>Undefined Symbol/Undefined Reference:</strong> This is the most frequent linker error. It occurs when the linker cannot find the definition for a function or variable that has been declared and used in the code. This often happens when you forget to link an object file that contains the definition or mistype a function name.</li>
+<li><strong>Multiple Definitions:</strong> This error arises when the linker finds more than one definition for the same function or variable. This can happen if you define a function in a header file that gets included in multiple source files or if you link the same object file multiple times.</li>
+</ul>
+<p>In conclusion, the linking process is the essential final act in the creation of a C program. By understanding how the linker works, the differences between static and dynamic linking, and how to use tools like <code>gcc</code> to control the linking process, developers can gain a deeper insight into how their code is transformed into a runnable application and more effectively troubleshoot common errors.</p>
+<p>$&gt;are there different categories of dynamic linking technique?(Gemini 2.5 pro)</p>
+<p>Yes, there are different categories of dynamic linking techniques, each with its own timing and mechanism for connecting a program to the shared libraries it needs. The main distinctions lie in <em>when</em> the linking happens and <em>who</em> initiates it.</p>
+<p>Here&rsquo;s a breakdown of the primary categories of dynamic linking:</p>
+<h3 id="1-load-time-dynamic-linking-implicit-linking">1. Load-Time Dynamic Linking (Implicit Linking)
+</h3><p>This is the most common form of dynamic linking. When you compile and link your program against a shared library, the linker embeds references to that library directly into the executable file.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li><strong>At compile time:</strong> The linker records the names of the shared libraries the program depends on and the symbols (functions and variables) it uses from them.</li>
+<li><strong>At load time:</strong> When you run the executable, the operating system&rsquo;s program loader (also known as the dynamic linker or runtime linker) reads this dependency information. It then locates the necessary shared libraries on the system, loads them into the process&rsquo;s address space, and resolves all the symbol references before the program&rsquo;s main function begins to execute.</li>
+</ul>
+<p><strong>Key Characteristics:</strong></p>
+<ul>
+<li><strong>Automatic:</strong> The entire process is handled automatically by the operating system.</li>
+<li><strong>Dependencies are required at startup:</strong> If any of the required shared libraries are missing or incompatible, the program will fail to start.</li>
+<li><strong>Slight startup overhead:</strong> There is a small performance cost at program launch while the dynamic linker does its work.</li>
+</ul>
+<h3 id="2-run-time-dynamic-linking-explicit-linking-or-dynamic-loading">2. Run-Time Dynamic Linking (Explicit Linking or Dynamic Loading)
+</h3><p>This technique gives the programmer more control over the linking process. Instead of the operating system automatically loading libraries at startup, the program itself can explicitly load and unload libraries at any point during its execution.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li><strong>Programmatic Control:</strong> The program uses specific API calls (like <code>dlopen()</code>, <code>dlsym()</code>, and <code>dlclose()</code> on POSIX systems, or <code>LoadLibrary()</code>, <code>GetProcAddress()</code>, and <code>FreeLibrary()</code> on Windows) to manage shared libraries.
+<ul>
+<li><code>dlopen()</code> or <code>LoadLibrary()</code>: Loads a specified library into memory.</li>
+<li><code>dlsym()</code> or <code>GetProcAddress()</code>: Retrieves the address of a specific function or variable within the loaded library.</li>
+<li><code>dlclose()</code> or <code>FreeLibrary()</code>: Unloads the library from memory.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Key Characteristics:</strong></p>
+<ul>
+<li><strong>Flexibility:</strong> Programs can decide which libraries to load based on runtime conditions. This is the foundation for a &ldquo;plugin&rdquo; architecture, where new functionality can be added to a running application by loading new shared libraries.</li>
+<li><strong>No startup dependency:</strong> The program can start even if the optional libraries are not present. It can then check for their availability and load them if needed.</li>
+<li><strong>More complex to implement:</strong> The programmer is responsible for managing the loading, symbol lookup, and unloading of libraries, which requires more code and error handling.</li>
+</ul>
+<h3 id="a-special-case-lazy-linking">A Special Case: Lazy Linking
+</h3><p>Lazy linking is an optimization often used with load-time dynamic linking to improve program startup time.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Instead of resolving all function addresses when the program is first loaded, the dynamic linker defers the resolution of each function until it is actually called for the first time.</li>
+<li>The first time a function in a shared library is called, a small piece of code (a &ldquo;trampoline&rdquo; or &ldquo;stub&rdquo;) in the program&rsquo;s Procedure Linkage Table (PLT) transfers control to the dynamic linker. The dynamic linker then looks up the real address of the function, patches the PLT entry to point directly to it, and then calls the function.</li>
+<li>Subsequent calls to that same function will then go directly to the function&rsquo;s address without involving the dynamic linker, resulting in minimal overhead.</li>
+</ul>
+<p><strong>Key Characteristics:</strong></p>
+<ul>
+<li><strong>Faster startup:</strong> By avoiding the upfront cost of resolving every single function, the program can start executing more quickly.</li>
+<li><strong>Minimal overhead on first call:</strong> There is a small performance penalty the very first time each dynamically linked function is called.</li>
+<li><strong>Transparent to the developer:</strong> This is typically a default behavior of the dynamic linker and doesn&rsquo;t require any special coding by the programmer.</li>
+</ul>
+<p>In essence, while <strong>load-time</strong> and <strong>run-time</strong> dynamic linking are the two main strategies, <strong>lazy linking</strong> is a common optimization that fine-tunes the performance of load-time linking. The choice between these techniques depends on the specific needs of the application, balancing ease of use, startup performance, and the flexibility to load code on demand.</p>
+</li>
+<li>
+<p>卡特兰数，用于计算给定输入栈序列，所有可能的输出排列
+</p>
+$$
+   \frac{1}{n+1}\binom{2n}{n}=\frac{2n!}{(n+1)!n!}
+   $$</li>
+</ol>
+<h2 id="英语-单词词根词缀分开">英语-单词（词根词缀分开）
+</h2><ol>
+<li>a vail</li>
+<li>mock</li>
+<li>gigantic</li>
+<li>zoom</li>
+<li>speci fication</li>
+<li>pa nel</li>
+<li>pre mise</li>
+<li>sovereign</li>
+<li>utter</li>
+<li>deem</li>
+<li>mono poly</li>
+<li>spec ulate</li>
+<li>con form</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/">虚拟存储系统</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E9%93%BE%E6%8E%A5/">链接</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E8%8B%B1%E8%AF%AD/">英语</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0722/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0722学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0721/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0721学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0712/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0712学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/memo/0725/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0725学习笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0723/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0723学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 shyの考研日志
+    </section>
+    
+    <section class="powerby">
+        
+            Blogroll：<a href="https://void-island-site.vercel.app/">舍友的雾岛电台</a> <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

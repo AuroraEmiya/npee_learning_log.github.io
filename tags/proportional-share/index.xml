@@ -1,19 +1,129 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Proportional Share on shyの考研日志</title>
-    <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/proportional-share/</link>
-    <description>Recent content in Proportional Share on shyの考研日志</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Sat, 19 Jul 2025 22:41:19 +0800</lastBuildDate>
-    <atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/proportional-share/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>0719学习日志</title>
-      <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/</link>
-      <pubDate>Sat, 19 Jul 2025 22:41:19 +0800</pubDate>
-      <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/</guid>
-      <description>&lt;h2 id=&#34;数学-是不动点的味道&#34;&gt;数学-是不动点的味道&lt;/h2&gt;&#xA;&lt;h3 id=&#34;数列的极限&#34;&gt;数列的极限&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;概念&lt;/li&gt;&#xA;&lt;li&gt;数列极限的定义&lt;/li&gt;&#xA;&lt;li&gt;数列收敛的性质&#xA;&lt;ul&gt;&#xA;&lt;li&gt;唯一性&lt;/li&gt;&#xA;&lt;li&gt;有界性&lt;/li&gt;&#xA;&lt;li&gt;保号性&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;海涅定理（归结原则）&lt;/li&gt;&#xA;&lt;li&gt;夹逼准则&lt;/li&gt;&#xA;&lt;li&gt;单调有界准则&lt;/li&gt;&#xA;&lt;li&gt;${x_n}$收敛于$a$的速度问题&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;数据结构-前序中序后序blablabla&#34;&gt;数据结构-前序中序后序blablabla&lt;/h2&gt;&#xA;&lt;h3 id=&#34;树的性质&#34;&gt;树的性质&lt;/h3&gt;&#xA;&lt;p&gt;let $T_m$ denote a tree with degree $m$.&lt;/p&gt;&#xA;&lt;p&gt;let $D(n)$ denote the out degree of the node $x$ in the tree $T_m$.&lt;/p&gt;&#xA;&lt;p&gt;let $n_i$ denote the number of notes with degree $i$.&lt;/p&gt;&#xA;&lt;p&gt;let $H$ denote the depth/height of the tree $T_m$.&lt;/p&gt;&#xA;&lt;p&gt;let $N$ denote the total number of nodes in tree.$N=\sum\limits_{i=0}^mn_i$.&lt;/p&gt;&#xA;&lt;p&gt;let $N_i$ denote the number of nodes at layer $i\in \mathcal{N^*}$&lt;/p&gt;</description>
-    </item>
-  </channel>
+    <channel>
+        <title>Proportional Share on shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/proportional-share/</link>
+        <description>Recent content in Proportional Share on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Sat, 19 Jul 2025 22:41:19 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/proportional-share/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0719学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/</link>
+        <pubDate>Sat, 19 Jul 2025 22:41:19 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/</guid>
+        <description>&lt;h2 id=&#34;数学-是不动点的味道&#34;&gt;数学-是不动点的味道
+&lt;/h2&gt;&lt;h3 id=&#34;数列的极限&#34;&gt;数列的极限
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;概念&lt;/li&gt;
+&lt;li&gt;数列极限的定义&lt;/li&gt;
+&lt;li&gt;数列收敛的性质
+&lt;ul&gt;
+&lt;li&gt;唯一性&lt;/li&gt;
+&lt;li&gt;有界性&lt;/li&gt;
+&lt;li&gt;保号性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;海涅定理（归结原则）&lt;/li&gt;
+&lt;li&gt;夹逼准则&lt;/li&gt;
+&lt;li&gt;单调有界准则&lt;/li&gt;
+&lt;li&gt;${x_n}$收敛于$a$的速度问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;数据结构-前序中序后序blablabla&#34;&gt;数据结构-前序中序后序blablabla
+&lt;/h2&gt;&lt;h3 id=&#34;树的性质&#34;&gt;树的性质
+&lt;/h3&gt;&lt;p&gt;let $T_m$ denote a tree with degree $m$.&lt;/p&gt;
+&lt;p&gt;let $D(n)$ denote the out degree of the node $x$ in the tree $T_m$.&lt;/p&gt;
+&lt;p&gt;let $n_i$ denote the number of notes with degree $i$.&lt;/p&gt;
+&lt;p&gt;let $H$ denote the depth/height of the tree $T_m$.&lt;/p&gt;
+&lt;p&gt;let $N$ denote the total number of nodes in tree.$N=\sum\limits_{i=0}^mn_i$.&lt;/p&gt;
+&lt;p&gt;let $N_i$ denote the number of nodes at layer $i\in \mathcal{N^*}$&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$N=1 + \sum\limits_{i=1}^mi\cdot n_i$.&lt;/li&gt;
+&lt;li&gt;$n_0 =1 + \sum\limits_{i=2}^m(i-1)\cdot n_i$&lt;/li&gt;
+&lt;li&gt;$N_i\leq m^{i-1}$ if not an &lt;strong&gt;empty tree&lt;/strong&gt; with degree m.&lt;/li&gt;
+&lt;li&gt;$N\leq \frac{m^H-1}{m-1}$&lt;/li&gt;
+&lt;li&gt;$H\geq \lceil\log_{m}\left((N(m-1))+1\right)\rceil$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;二叉树&#34;&gt;二叉树
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;二叉树的性质
+&lt;ol&gt;
+&lt;li&gt;$N_i\leq 2^{i-1}$ if not an &lt;strong&gt;empty tree&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;$N\leq 2^H-1$&lt;/li&gt;
+&lt;li&gt;$n_0 =1 + n_2$&lt;/li&gt;
+&lt;li&gt;$H\geq \lceil\log_{2}(N+1)\rceil$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;完全二叉树&lt;/li&gt;
+&lt;li&gt;满二叉树&lt;/li&gt;
+&lt;li&gt;二叉树的构造
+&lt;ol&gt;
+&lt;li&gt;前序加中序&lt;/li&gt;
+&lt;li&gt;后序加中序&lt;/li&gt;
+&lt;li&gt;层次加中序&lt;/li&gt;
+&lt;li&gt;前序加树形结构&lt;/li&gt;
+&lt;li&gt;中序加树形结构&lt;/li&gt;
+&lt;li&gt;后序加树形结构&lt;/li&gt;
+&lt;li&gt;层次加树形结构&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;二叉树的遍历
+&lt;ol&gt;
+&lt;li&gt;前序&lt;/li&gt;
+&lt;li&gt;中序&lt;/li&gt;
+&lt;li&gt;后序&lt;/li&gt;
+&lt;li&gt;层次&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;操作系统-nice-of-linux&#34;&gt;操作系统-nice of linux
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Multi-Level Feedback Queue (cpu-sched-mlfq)
+&lt;ol&gt;
+&lt;li&gt;Basic Rules
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rule 1&lt;/strong&gt;:If Priority(A) $&amp;gt;$ Priority(B), A runs (B doesn’t).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rule 2&lt;/strong&gt;:If Priority(A) $=$ Priority(B), A &amp;amp; B run in RR(Round Robin).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;However&lt;/strong&gt;: Those with low Priority will get starved!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Therefore&lt;/strong&gt;: We need to change the Priority over time.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;To change Priority
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rule 3&lt;/strong&gt;: When a job enters the system, it is placed at the highest priority (the topmost queue).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rule 4a&lt;/strong&gt;: If a job uses up its allotment while running, its priority is reduced (i.e., it moves down one queue).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rule 4b&lt;/strong&gt;: If a job gives up the CPU (for example, by performing an I/O operation) before the allotment is up, it stays at the same priority level (i.e., its allotment is reset).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;However&lt;/strong&gt;:
+&lt;ol&gt;
+&lt;li&gt;Those with long cpu-time will get starved as them move down to the lowest!&lt;/li&gt;
+&lt;li&gt;Those with smart heart will game the scheduler as they I/O at the last ms of the allotment.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Therefore&lt;/strong&gt;: We need to change &lt;strong&gt;rule4a,b&lt;/strong&gt; and boost periodically.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The Priority Boost
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rule 5&lt;/strong&gt;: After some time period S, move all the jobs in the system to the topmost queue.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Better Accounting
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rule 4&lt;/strong&gt;: Once a job uses up its time allotment at a given level (re gardless of how many times it has given up the CPU), its priority is reduced (i.e., it moves down one queue).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Proportional share(cpu-sched-lottery)
+&lt;ol&gt;
+&lt;li&gt;Basic Concept: Tickets Represent Your Share&lt;/li&gt;
+&lt;li&gt;Stride Scheduling&lt;/li&gt;
+&lt;li&gt;The Linux Completely Fair Scheduler (CFS)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

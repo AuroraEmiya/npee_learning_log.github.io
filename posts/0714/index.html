@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="操作系统-这什么查一下这什么查一下 经典同步问题 生产者消费者问题 哲学家进餐问题 读者-写者问题 理发师问题 抽烟者问题 处理机调度 处理及调度的层次\n高级调度（作业调度、长程调度）\n作业选择\n从**后备队列（外存中等待的作业）**中选择作业 判断系统资源（内存、CPU、I/O）是否充足 资源分配\n为选中的作业分配内存、I/O、文件等资源 进程创建\n将作业转化为一个或多个进程，放入就绪队列 中级调度（内存调度、中程调度）\n选择部分进程挂起（移出内存到外存） 选择挂起的进程恢复（从外存调回内存） 低级调度（进程调度、线程调度、短程调度）\n从就绪队列中选择一个进程 把 CPU 分配给选中的进程 保存和恢复进程的上下文（进程切换 Context Switch） 控制 CPU 的执行顺序 处理机的调度方式\n非抢占式 抢占式 选择调度算法的若干准则\nCPU利用率\n$$ \\frac{\\text{worktime of CPU}}{\\text{total time}} $$ 系统吞吐量\n$$ \\frac{\\text{number of tasks}}{\\text{total time}} $$ 周转时间(Turnaround Time)\n$$ \\text{Completion Time - Arrival Time} $$ 平均周转时间\n$$ \\frac{\\sum\\limits_{N}\\text{Turnaround Time of all processes}}{N} $$ 带权周转时间\n$$ \\frac{\\text{Turnaround Time}}{\\text{Service Time}} $$ 平均带权周转时间\n">
+<title>0714学习日志</title>
+
+<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0714/'>
+
+<link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="0714学习日志">
+<meta property='og:description' content="操作系统-这什么查一下这什么查一下 经典同步问题 生产者消费者问题 哲学家进餐问题 读者-写者问题 理发师问题 抽烟者问题 处理机调度 处理及调度的层次\n高级调度（作业调度、长程调度）\n作业选择\n从**后备队列（外存中等待的作业）**中选择作业 判断系统资源（内存、CPU、I/O）是否充足 资源分配\n为选中的作业分配内存、I/O、文件等资源 进程创建\n将作业转化为一个或多个进程，放入就绪队列 中级调度（内存调度、中程调度）\n选择部分进程挂起（移出内存到外存） 选择挂起的进程恢复（从外存调回内存） 低级调度（进程调度、线程调度、短程调度）\n从就绪队列中选择一个进程 把 CPU 分配给选中的进程 保存和恢复进程的上下文（进程切换 Context Switch） 控制 CPU 的执行顺序 处理机的调度方式\n非抢占式 抢占式 选择调度算法的若干准则\nCPU利用率\n$$ \\frac{\\text{worktime of CPU}}{\\text{total time}} $$ 系统吞吐量\n$$ \\frac{\\text{number of tasks}}{\\text{total time}} $$ 周转时间(Turnaround Time)\n$$ \\text{Completion Time - Arrival Time} $$ 平均周转时间\n$$ \\frac{\\sum\\limits_{N}\\text{Turnaround Time of all processes}}{N} $$ 带权周转时间\n$$ \\frac{\\text{Turnaround Time}}{\\text{Service Time}} $$ 平均带权周转时间\n">
+<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0714/'>
+<meta property='og:site_name' content='shyの考研日志'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='操作系统' /><meta property='article:tag' content='数据结构' /><meta property='article:tag' content='数学' /><meta property='article:tag' content='同步' /><meta property='article:tag' content='上下文' /><meta property='article:tag' content='调度' /><meta property='article:tag' content='栈' /><meta property='article:tag' content='函数' /><meta property='article:published_time' content='2025-07-14T21:15:02&#43;08:00'/><meta property='article:modified_time' content='2025-07-14T21:15:02&#43;08:00'/>
+<meta name="twitter:title" content="0714学习日志">
+<meta name="twitter:description" content="操作系统-这什么查一下这什么查一下 经典同步问题 生产者消费者问题 哲学家进餐问题 读者-写者问题 理发师问题 抽烟者问题 处理机调度 处理及调度的层次\n高级调度（作业调度、长程调度）\n作业选择\n从**后备队列（外存中等待的作业）**中选择作业 判断系统资源（内存、CPU、I/O）是否充足 资源分配\n为选中的作业分配内存、I/O、文件等资源 进程创建\n将作业转化为一个或多个进程，放入就绪队列 中级调度（内存调度、中程调度）\n选择部分进程挂起（移出内存到外存） 选择挂起的进程恢复（从外存调回内存） 低级调度（进程调度、线程调度、短程调度）\n从就绪队列中选择一个进程 把 CPU 分配给选中的进程 保存和恢复进程的上下文（进程切换 Context Switch） 控制 CPU 的执行顺序 处理机的调度方式\n非抢占式 抢占式 选择调度算法的若干准则\nCPU利用率\n$$ \\frac{\\text{worktime of CPU}}{\\text{total time}} $$ 系统吞吐量\n$$ \\frac{\\text{number of tasks}}{\\text{total time}} $$ 周转时间(Turnaround Time)\n$$ \\text{Completion Time - Arrival Time} $$ 平均周转时间\n$$ \\frac{\\sum\\limits_{N}\\text{Turnaround Time of all processes}}{N} $$ 带权周转时间\n$$ \\frac{\\text{Turnaround Time}}{\\text{Service Time}} $$ 平均带权周转时间\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/npee_learning_log.github.io/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/npee_learning_log.github.io/img/shiki_hu_20273a3af6c00ff3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🎧</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/npee_learning_log.github.io">shyの考研日志</a></h1>
+            <h2 class="site-description">無職受験生 ～408に挑んだら本気だす～</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/diary' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                
+                <span>日记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/log' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>日志</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/memo' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>笔记</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/npee_learning_log.github.io/categories/log/" >
+                Log
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/npee_learning_log.github.io/posts/0714/">0714学习日志</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 14, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="操作系统-这什么查一下这什么查一下">操作系统-这什么查一下这什么查一下
+</h2><h3 id="经典同步问题">经典同步问题
+</h3><ol>
+<li>生产者消费者问题</li>
+<li>哲学家进餐问题</li>
+<li>读者-写者问题</li>
+<li>理发师问题</li>
+<li>抽烟者问题</li>
+</ol>
+<h3 id="处理机调度">处理机调度
+</h3><ol>
+<li>
+<p>处理及调度的层次</p>
+<ol>
+<li>
+<p>高级调度（作业调度、长程调度）</p>
+<p><strong>作业选择</strong></p>
+<ul>
+<li>从**后备队列（外存中等待的作业）**中选择作业</li>
+<li>判断系统资源（内存、CPU、I/O）是否充足</li>
+</ul>
+<p><strong>资源分配</strong></p>
+<ul>
+<li>为选中的作业分配内存、I/O、文件等资源</li>
+</ul>
+<p><strong>进程创建</strong></p>
+<ul>
+<li>将作业转化为一个或多个<strong>进程</strong>，放入就绪队列</li>
+</ul>
+</li>
+<li>
+<p>中级调度（内存调度、中程调度）</p>
+<ul>
+<li><strong>选择部分进程挂起（移出内存到外存）</strong></li>
+<li><strong>选择挂起的进程恢复（从外存调回内存）</strong></li>
+</ul>
+</li>
+<li>
+<p>低级调度（进程调度、线程调度、短程调度）</p>
+<ul>
+<li>从<strong>就绪队列</strong>中选择一个进程</li>
+<li>把 CPU 分配给选中的进程</li>
+<li>保存和恢复进程的上下文（<strong>进程切换 Context Switch</strong>）</li>
+<li>控制 CPU 的执行顺序</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>处理机的调度方式</p>
+<ul>
+<li>非抢占式</li>
+<li>抢占式</li>
+</ul>
+</li>
+<li>
+<p>选择调度算法的若干准则</p>
+<ul>
+<li>
+<p>CPU利用率</p>
+$$
+     \frac{\text{worktime of CPU}}{\text{total time}}
+     $$</li>
+<li>
+<p>系统吞吐量</p>
+$$
+     \frac{\text{number of tasks}}{\text{total time}}
+     $$</li>
+<li>
+<p>周转时间(Turnaround Time)</p>
+$$
+     \text{Completion Time - Arrival Time}
+     $$</li>
+<li>
+<p>平均周转时间</p>
+$$
+     \frac{\sum\limits_{N}\text{Turnaround Time of all processes}}{N}
+     $$</li>
+<li>
+<p>带权周转时间</p>
+$$
+     \frac{\text{Turnaround Time}}{\text{Service Time}}
+     $$</li>
+<li>
+<p>平均带权周转时间</p>
+$$
+     \frac{\sum\limits_{N}\text{Weighted Turnaround Time of all processes}}{N}
+     $$</li>
+<li>
+<p>等待时间</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="调度算法">调度算法
+</h3><ol>
+<li>
+<p>FCFS（先来先服务）</p>
+</li>
+<li>
+<p>SJF（最短作业优先）</p>
+<ul>
+<li>抢占</li>
+<li>非抢占</li>
+</ul>
+</li>
+<li>
+<p>SRTF（最短剩余时间优先）</p>
+</li>
+<li>
+<p>Priority Scheduling（高优先权优先调度）</p>
+<ul>
+<li>抢占</li>
+<li>非抢占</li>
+</ul>
+</li>
+<li>
+<p>Highest Response Ratio Next (HRRN)（高响应比有点调度算法）</p>
+</li>
+<li>
+<p>Round Robin（时间片轮转）</p>
+</li>
+<li>
+<p>Multilevel Feedback Queue（多级反馈队列调度）</p>
+</li>
+</ol>
+<p>上下文切换</p>
+<ol>
+<li>CPU上下文切换</li>
+<li>系统调用上下文切换</li>
+<li>进程上下文切换
+<ul>
+<li>用户级</li>
+<li>系统级</li>
+</ul>
+</li>
+<li>线程上下文切换</li>
+<li>中断上下文切换</li>
+</ol>
+<p><code>课程编号:012-015</code></p>
+<h2 id="数据结构-致敬传奇栈帧pc程序计数器">数据结构-致敬传奇栈帧PC程序计数器
+</h2><h3 id="栈">栈
+</h3><ol>
+<li>
+<p>静态顺序栈</p>
+<ul>
+<li>判空</li>
+<li>判满</li>
+<li>进栈</li>
+<li>出栈</li>
+<li>获取栈顶元素</li>
+</ul>
+</li>
+<li>
+<p>动态顺序栈</p>
+<ul>
+<li>判空</li>
+<li>判满</li>
+<li>进栈</li>
+<li>出栈</li>
+<li>获取栈顶元素</li>
+</ul>
+</li>
+<li>
+<p>链栈</p>
+<ul>
+<li>判空</li>
+<li>判满</li>
+<li>进栈</li>
+<li>出栈</li>
+<li>获取栈顶元素</li>
+</ul>
+</li>
+<li>
+<p>栈的应用</p>
+<ol>
+<li>括号匹配</li>
+<li>进制转换（辗转相除）</li>
+<li>函数递归调用</li>
+<li>表达式求值
+<ul>
+<li>前缀</li>
+<li>中缀（重要）</li>
+<li>后缀</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p><code>课程编号：014-017</code></p>
+<h2 id="数学-太好了是张宇老师我们有救了">数学-太好了是张宇老师我们有救了！
+</h2><h3 id="函数的概念与特性">函数的概念与特性
+</h3><ol>
+<li>函数</li>
+<li>反函数</li>
+<li>复合函数</li>
+<li>隐函数</li>
+<li>函数的四种特性
+<ul>
+<li>有界性</li>
+<li>单调性</li>
+<li>奇偶性</li>
+<li>周期性</li>
+</ul>
+</li>
+<li>基本初等函数与初等函数
+<ul>
+<li>常函数</li>
+<li>幂函数</li>
+<li>指数函数</li>
+<li>对数函数</li>
+<li>三角函数
+<ol>
+<li>sin x  cos x</li>
+<li>csc x sec x</li>
+<li>tan x cot x</li>
+</ol>
+</li>
+<li>反三角函数
+<ol>
+<li>arcsin x arccos x</li>
+<li>arctanx arccot x</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>分段函数</li>
+</ol>
+<p><code>高数第一讲</code></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E5%90%8C%E6%AD%A5/">同步</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/">上下文</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E8%B0%83%E5%BA%A6/">调度</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%A0%88/">栈</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E5%87%BD%E6%95%B0/">函数</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0713/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0713学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/memo/0713/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0713学习笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0711/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0711学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/memo/0712/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0712学习笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0712/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0712学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 shyの考研日志
+    </section>
+    
+    <section class="powerby">
+        
+            Blogroll：<a href="https://void-island-site.vercel.app/">舍友的雾岛电台</a> <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
