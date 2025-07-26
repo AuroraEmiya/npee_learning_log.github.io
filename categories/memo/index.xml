@@ -6,7 +6,41 @@
         <description>Recent content in Memo on Shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 25 Jul 2025 20:24:54 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/memo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 26 Jul 2025 11:19:57 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/memo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0726学习笔记</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0726/</link>
+        <pubDate>Sat, 26 Jul 2025 11:19:57 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0726/</guid>
+        <description>&lt;h2 id=&#34;操作系统-一些易错知识点&#34;&gt;操作系统-一些易错知识点
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;在计算平均访存时间时要注意快表TLB和页表的访问是&lt;strong&gt;串行&lt;/strong&gt;还是并行的，也要注意页表是&lt;strong&gt;单级&lt;/strong&gt;还是多级的&lt;/li&gt;
+&lt;li&gt;虚拟存储器的&lt;strong&gt;最大容量&lt;/strong&gt;只和计算机的地址结构决定，&lt;strong&gt;实际容量&lt;/strong&gt;和内存和外存有关&lt;/li&gt;
+&lt;li&gt;工作集不是驻留集的子集，只是数量要小于（不大于）驻留集的大小&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;一些你需要搞明白的概念：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;链接，包括静态和动态&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;英语-单词词根词缀分开&#34;&gt;英语-单词（词根词缀分开）
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;a vail&lt;/li&gt;
+&lt;li&gt;mock&lt;/li&gt;
+&lt;li&gt;gigantic&lt;/li&gt;
+&lt;li&gt;zoom&lt;/li&gt;
+&lt;li&gt;speci fication&lt;/li&gt;
+&lt;li&gt;pa nel&lt;/li&gt;
+&lt;li&gt;pre mise&lt;/li&gt;
+&lt;li&gt;sovereign&lt;/li&gt;
+&lt;li&gt;utter&lt;/li&gt;
+&lt;li&gt;deem&lt;/li&gt;
+&lt;li&gt;mono poly&lt;/li&gt;
+&lt;li&gt;spec ulate&lt;/li&gt;
+&lt;li&gt;con form&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>0725学习笔记</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0725/</link>
         <pubDate>Fri, 25 Jul 2025 20:24:54 +0800</pubDate>
