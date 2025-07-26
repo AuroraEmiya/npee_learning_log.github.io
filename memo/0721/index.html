@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="0721学习笔记">
 <meta property='og:description' content="数据结构-代码(待完善) 栈的定义\nstack.h #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; #include &lt;stdbool.h&gt; #define STATIC_STACK #define DYNAMIC_STACK #define DATATYPE void * #ifdef STATIC_STACK #define STACK_H 100 typedef struct StaticStack { DATATYPE stack[STACK_H]; int max_depth; int top; } StaticStack; bool initialize_static_stack(StaticStack * s); bool static_stack_push(StaticStack *s, DATATYPE value); bool static_stack_pop(StaticStack *s, DATATYPE *value); bool static_stack_top(StaticStack *s, DATATYPE *value); #endif #ifdef DYNAMIC_STACK typedef struct DynamicStack { DATATYPE data; DynamicStack *next; } DynamicStack; //returns a top-pointer to a new dynamic stack DynamicStack *initialize_dynamic_stack(); bool dynamic_stack_push(DynamicStack *top, DATATYPE value); bool dynamic_stack_pop(DynamicStack *top, DATATYPE *value); bool dynamic_stack_top(DynamicStack *top, DATATYPE *value); #endif stack.c #include &#34;stack.h&#34; #ifdef STATIC_STACK bool initialize_static_stack(StaticStack * s) { s-&gt;top = -1; s-&gt;max_depth = STACK_H; // Initialize depth to 0 return true; } bool static_stack_push(StaticStack *s, DATATYPE value) { if (s-&gt;top &gt;= s-&gt;max_depth - 1) { printf(&#34;Static stack overflow\\n&#34;); return false; // Stack is full } s-&gt;stack[++(s-&gt;top)] = value; return true; } bool static_stack_pop(StaticStack *s, DATATYPE *value) { if (s-&gt;top &lt; 0) { printf(&#34;Static stack underflow\\n&#34;); return false; // Stack is empty } *value = s-&gt;stack[(s-&gt;top)--]; return true; } bool static_stack_top(StaticStack *s, DATATYPE *value) { if (s-&gt;top &lt; 0) { printf(&#34;Static stack is empty\\n&#34;); return false; // Stack is empty } *value = s-&gt;stack[s-&gt;top]; // Get the top value return true; // Successfully retrieved the top value } #endif #ifdef DYNAMIC_STACK DynamicStack *initialize_dynamic_stack() { DynamicStack *new_stack = (DynamicStack *)malloc(sizeof(DynamicStack)); if(new_stack == NULL) { return NULL; // Memory allocation failed }else { new_stack-&gt;next = NULL; return new_stack; } } bool dynamic_stack_push(DynamicStack *top, DATATYPE value) { DynamicStack *new_item = (DynamicStack *)malloc(sizeof(DynamicStack)); if(!new_item) { printf(&#34;Failed to push %d onto dynamic stack\\n&#34;, value); return false; // Memory allocation failed } new_item-&gt;data = value; new_item-&gt;next = top-&gt;next; top-&gt;next = new_item; return true; } bool dynamic_stack_pop(DynamicStack *top, DATATYPE *value) { if(top-&gt;next == NULL) { printf(&#34;Dynamic stack is empty\\n&#34;); return false; // Stack is empty } DynamicStack *temp = top-&gt;next; *value = temp-&gt;data; top-&gt;next = temp-&gt;next; free(temp); return true; } bool dynamic_stack_top(DynamicStack *top, DATATYPE *value) { if(top-&gt;next == NULL) { printf(&#34;Dynamic stack is empty\\n&#34;); return false; // Stack is empty } *value = top-&gt;next-&gt;data; // Get the data from the top item return true; // Successfully retrieved the top value } #endif ">
 <meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/memo/0721/'>
-<meta property='og:site_name' content='Shyの考研日志'>
+<meta property='og:site_name' content='shyの考研日志'>
 <meta property='og:type' content='article'><meta property='article:section' content='Memo' /><meta property='article:tag' content='静态栈' /><meta property='article:tag' content='动态栈' /><meta property='article:published_time' content='2025-07-21T22:59:30&#43;08:00'/><meta property='article:modified_time' content='2025-07-21T22:59:30&#43;08:00'/>
 <meta name="twitter:title" content="0721学习笔记">
 <meta name="twitter:description" content="数据结构-代码(待完善) 栈的定义\nstack.h #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; #include &lt;stdbool.h&gt; #define STATIC_STACK #define DYNAMIC_STACK #define DATATYPE void * #ifdef STATIC_STACK #define STACK_H 100 typedef struct StaticStack { DATATYPE stack[STACK_H]; int max_depth; int top; } StaticStack; bool initialize_static_stack(StaticStack * s); bool static_stack_push(StaticStack *s, DATATYPE value); bool static_stack_pop(StaticStack *s, DATATYPE *value); bool static_stack_top(StaticStack *s, DATATYPE *value); #endif #ifdef DYNAMIC_STACK typedef struct DynamicStack { DATATYPE data; DynamicStack *next; } DynamicStack; //returns a top-pointer to a new dynamic stack DynamicStack *initialize_dynamic_stack(); bool dynamic_stack_push(DynamicStack *top, DATATYPE value); bool dynamic_stack_pop(DynamicStack *top, DATATYPE *value); bool dynamic_stack_top(DynamicStack *top, DATATYPE *value); #endif stack.c #include &#34;stack.h&#34; #ifdef STATIC_STACK bool initialize_static_stack(StaticStack * s) { s-&gt;top = -1; s-&gt;max_depth = STACK_H; // Initialize depth to 0 return true; } bool static_stack_push(StaticStack *s, DATATYPE value) { if (s-&gt;top &gt;= s-&gt;max_depth - 1) { printf(&#34;Static stack overflow\\n&#34;); return false; // Stack is full } s-&gt;stack[++(s-&gt;top)] = value; return true; } bool static_stack_pop(StaticStack *s, DATATYPE *value) { if (s-&gt;top &lt; 0) { printf(&#34;Static stack underflow\\n&#34;); return false; // Stack is empty } *value = s-&gt;stack[(s-&gt;top)--]; return true; } bool static_stack_top(StaticStack *s, DATATYPE *value) { if (s-&gt;top &lt; 0) { printf(&#34;Static stack is empty\\n&#34;); return false; // Stack is empty } *value = s-&gt;stack[s-&gt;top]; // Get the top value return true; // Successfully retrieved the top value } #endif #ifdef DYNAMIC_STACK DynamicStack *initialize_dynamic_stack() { DynamicStack *new_stack = (DynamicStack *)malloc(sizeof(DynamicStack)); if(new_stack == NULL) { return NULL; // Memory allocation failed }else { new_stack-&gt;next = NULL; return new_stack; } } bool dynamic_stack_push(DynamicStack *top, DATATYPE value) { DynamicStack *new_item = (DynamicStack *)malloc(sizeof(DynamicStack)); if(!new_item) { printf(&#34;Failed to push %d onto dynamic stack\\n&#34;, value); return false; // Memory allocation failed } new_item-&gt;data = value; new_item-&gt;next = top-&gt;next; top-&gt;next = new_item; return true; } bool dynamic_stack_pop(DynamicStack *top, DATATYPE *value) { if(top-&gt;next == NULL) { printf(&#34;Dynamic stack is empty\\n&#34;); return false; // Stack is empty } DynamicStack *temp = top-&gt;next; *value = temp-&gt;data; top-&gt;next = temp-&gt;next; free(temp); return true; } bool dynamic_stack_top(DynamicStack *top, DATATYPE *value) { if(top-&gt;next == NULL) { printf(&#34;Dynamic stack is empty\\n&#34;); return false; // Stack is empty } *value = top-&gt;next-&gt;data; // Get the data from the top item return true; // Successfully retrieved the top value } #endif ">
@@ -62,15 +62,15 @@
                 
                 </a>
                 
-                    <span class="emoji">🌸</span>
+                    <span class="emoji">🎧</span>
                 
             </figure>
             
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/npee_learning_log.github.io">Shyの考研日志</a></h1>
-            <h2 class="site-description">貴方は水際一人微笑むだけ</h2>
+            <h1 class="site-name"><a href="/npee_learning_log.github.io">shyの考研日志</a></h1>
+            <h2 class="site-description">無職受験生 ～408に挑んだら本気だす～</h2>
         </div>
     </header><ol class="menu" id="main-menu">
         
@@ -80,6 +80,16 @@
             <a href='/npee_learning_log.github.io/' >
                 
                 
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
                 
                 <span>主页</span>
             </a>
@@ -91,6 +101,16 @@
                 
                 
                 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                
                 <span>日记</span>
             </a>
         </li>
@@ -101,6 +121,16 @@
                 
                 
                 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
                 <span>日志</span>
             </a>
         </li>
@@ -110,6 +140,15 @@
             <a href='/npee_learning_log.github.io/categories/memo' >
                 
                 
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
                 
                 <span>笔记</span>
             </a>
@@ -144,38 +183,7 @@
     </ol>
 </aside>
 
-    <aside class="sidebar right-sidebar sticky">
-        
-            
-                
-    <section class="widget archives">
-        <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">Table of contents</h2>
-        
-        <div class="widget--toc">
-            <nav id="TableOfContents">
-  <ul>
-    <li><a href="#数据结构-代码待完善">数据结构-代码(待完善)</a></li>
-  </ul>
-</nav>
-        </div>
-    </section>
-
-            
-        
-    </aside>
-
+    
 
             <main class="main full-width">
     <article class="main-article">
@@ -442,10 +450,12 @@
     <section class="copyright">
         &copy; 
         
-        2025 Shyの考研日志
+        2025 shyの考研日志
     </section>
     
     <section class="powerby">
+        
+            Blogroll：<a href="https://void-island-site.vercel.app/">舍友的雾岛电台</a> <br/>
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>

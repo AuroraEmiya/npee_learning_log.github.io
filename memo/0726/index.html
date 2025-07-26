@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="0726学习笔记">
 <meta property='og:description' content="操作系统-一些易错知识点 在计算平均访存时间时要注意快表TLB和页表的访问是串行还是并行的，也要注意页表是单级还是多级的 虚拟存储器的最大容量只和计算机的地址结构决定，实际容量和内存和外存有关 工作集不是驻留集的子集，只是数量要小于（不大于）驻留集的大小 一些你需要搞明白的概念：\n链接，包括静态和动态\n链接是将不同编译单元及其依赖库整合到一个统一逻辑地址空间的过程。根据发生时间不同，链接分为：\n静态链接：在编译阶段将所有代码打包进可执行文件中； 动态链接： 加载时链接（Load-Time Linking）：程序加载时操作系统自动加载依赖库； 运行时链接（Run-Time Linking）：程序运行过程中手动加载库，例如通过 dlopen() 等函数调用。 类别 链接时间 控制方式 示例函数 静态链接 编译/链接阶段 编译器自动处理 - 动态链接（加载时） 程序加载阶段 操作系统自动处理 - 动态链接（运行时） 程序运行阶段 程序员手动调用 dlopen, dlsym 等 $&gt;dive into the procedure of linking of a C code program(Gemini 2.5 pro)\nThe Final Step: Unraveling the Linking Process of a C Program The journey from human-readable C code to an executable program culminates in a crucial, often-overlooked stage: linking. This final step in the compilation process is where all the disparate pieces of your program are brought together to create a single, functional executable file. The linker, a key component of the C toolchain, orchestrates this assembly, resolving references between different parts of your code and incorporating necessary library functions.\n">
 <meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/memo/0726/'>
-<meta property='og:site_name' content='Shyの考研日志'>
+<meta property='og:site_name' content='shyの考研日志'>
 <meta property='og:type' content='article'><meta property='article:section' content='Memo' /><meta property='article:tag' content='操作系统' /><meta property='article:tag' content='虚拟存储系统' /><meta property='article:tag' content='链接' /><meta property='article:tag' content='英语' /><meta property='article:published_time' content='2025-07-26T11:19:57&#43;08:00'/><meta property='article:modified_time' content='2025-07-26T11:19:57&#43;08:00'/>
 <meta name="twitter:title" content="0726学习笔记">
 <meta name="twitter:description" content="操作系统-一些易错知识点 在计算平均访存时间时要注意快表TLB和页表的访问是串行还是并行的，也要注意页表是单级还是多级的 虚拟存储器的最大容量只和计算机的地址结构决定，实际容量和内存和外存有关 工作集不是驻留集的子集，只是数量要小于（不大于）驻留集的大小 一些你需要搞明白的概念：\n链接，包括静态和动态\n链接是将不同编译单元及其依赖库整合到一个统一逻辑地址空间的过程。根据发生时间不同，链接分为：\n静态链接：在编译阶段将所有代码打包进可执行文件中； 动态链接： 加载时链接（Load-Time Linking）：程序加载时操作系统自动加载依赖库； 运行时链接（Run-Time Linking）：程序运行过程中手动加载库，例如通过 dlopen() 等函数调用。 类别 链接时间 控制方式 示例函数 静态链接 编译/链接阶段 编译器自动处理 - 动态链接（加载时） 程序加载阶段 操作系统自动处理 - 动态链接（运行时） 程序运行阶段 程序员手动调用 dlopen, dlsym 等 $&gt;dive into the procedure of linking of a C code program(Gemini 2.5 pro)\nThe Final Step: Unraveling the Linking Process of a C Program The journey from human-readable C code to an executable program culminates in a crucial, often-overlooked stage: linking. This final step in the compilation process is where all the disparate pieces of your program are brought together to create a single, functional executable file. The linker, a key component of the C toolchain, orchestrates this assembly, resolving references between different parts of your code and incorporating necessary library functions.\n">
@@ -62,15 +62,15 @@
                 
                 </a>
                 
-                    <span class="emoji">🌸</span>
+                    <span class="emoji">🎧</span>
                 
             </figure>
             
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/npee_learning_log.github.io">Shyの考研日志</a></h1>
-            <h2 class="site-description">貴方は水際一人微笑むだけ</h2>
+            <h1 class="site-name"><a href="/npee_learning_log.github.io">shyの考研日志</a></h1>
+            <h2 class="site-description">無職受験生 ～408に挑んだら本気だす～</h2>
         </div>
     </header><ol class="menu" id="main-menu">
         
@@ -80,6 +80,16 @@
             <a href='/npee_learning_log.github.io/' >
                 
                 
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
                 
                 <span>主页</span>
             </a>
@@ -91,6 +101,16 @@
                 
                 
                 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                
                 <span>日记</span>
             </a>
         </li>
@@ -101,6 +121,16 @@
                 
                 
                 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
                 <span>日志</span>
             </a>
         </li>
@@ -110,6 +140,15 @@
             <a href='/npee_learning_log.github.io/categories/memo' >
                 
                 
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
                 
                 <span>笔记</span>
             </a>
@@ -144,49 +183,7 @@
     </ol>
 </aside>
 
-    <aside class="sidebar right-sidebar sticky">
-        
-            
-                
-    <section class="widget archives">
-        <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">Table of contents</h2>
-        
-        <div class="widget--toc">
-            <nav id="TableOfContents">
-  <ul>
-    <li><a href="#操作系统-一些易错知识点">操作系统-一些易错知识点</a>
-      <ul>
-        <li><a href="#the-final-step-unraveling-the-linking-process-of-a-c-program">The Final Step: Unraveling the Linking Process of a C Program</a></li>
-        <li><a href="#static-vs-dynamic-linking-two-approaches-to-integration">Static vs. Dynamic Linking: Two Approaches to Integration</a></li>
-        <li><a href="#the-linking-process-in-action-with-gcc">The Linking Process in Action with GCC</a></li>
-        <li><a href="#common-linker-errors">Common Linker Errors</a></li>
-        <li><a href="#1-load-time-dynamic-linking-implicit-linking">1. Load-Time Dynamic Linking (Implicit Linking)</a></li>
-        <li><a href="#2-run-time-dynamic-linking-explicit-linking-or-dynamic-loading">2. Run-Time Dynamic Linking (Explicit Linking or Dynamic Loading)</a></li>
-        <li><a href="#a-special-case-lazy-linking">A Special Case: Lazy Linking</a></li>
-      </ul>
-    </li>
-    <li><a href="#英语-单词词根词缀分开">英语-单词（词根词缀分开）</a></li>
-  </ul>
-</nav>
-        </div>
-    </section>
-
-            
-        
-    </aside>
-
+    
 
             <main class="main full-width">
     <article class="main-article">
@@ -576,10 +573,12 @@ $$
     <section class="copyright">
         &copy; 
         
-        2025 Shyの考研日志
+        2025 shyの考研日志
     </section>
     
     <section class="powerby">
+        
+            Blogroll：<a href="https://void-island-site.vercel.app/">舍友的雾岛电台</a> <br/>
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
