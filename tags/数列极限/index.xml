@@ -1,170 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>数列极限 on shyの考研日志</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90/</link>
-        <description>Recent content in 数列极限 on shyの考研日志</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <lastBuildDate>Fri, 25 Jul 2025 20:24:54 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>0725学习笔记</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0725/</link>
-        <pubDate>Fri, 25 Jul 2025 20:24:54 +0800</pubDate>
-        
-        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0725/</guid>
-        <description>&lt;h2 id=&#34;操作系统-易错小知识&#34;&gt;操作系统-易错小知识
-&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;在多个进程并发执行时，所有进程的页表大多数驻留在内存中，在系统中只设置一个页表寄存器（PTR），它存放页表在内存中的始址和长度&lt;/li&gt;
-&lt;li&gt;分段方式对低级语言程序员和编译器是可见的，对高级语言程序员是透明的&lt;/li&gt;
-&lt;li&gt;在这四种动态分区分配算法中，（首次适应，最坏适应，最佳适应，循环首次适应），最佳适应由于其总是会选择和待分配空间“最接近”的空闲区，因此总是会产生难以利用的小的内存块。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[tips]&lt;/code&gt;页表项的数量最好刚好填满一整个页&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;数学-数列极限&#34;&gt;数学-数列极限
-&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;一个积分小技巧,似乎跟傅里叶级数有关系，但是我没看出来（插个眼）
-$$
-   \begin{align*}
-   \int_{0}^{\frac{\pi}{2}}{\sin^{n+1} t \text{d} t} &amp;= \left.(-\sin^nt\cdot \cos t)\right|_{0}^{\frac{\pi}{2}} - \int_{0}^{\frac{\pi}{2}}{-\cos t \text{d} \sin^n t}\\
-   &amp;=n\int_{0}^{\frac{\pi}{2}}{\cos^2 t \sin^{n-1} \text{d}  t}\\
-   &amp;=n\int_{0}^{\frac{\pi}{2}}{(1-\sin^2t) \sin^{n-1} \text{d}  t}\\
-   \\
-   \int_{0}^{\frac{\pi}{2}}{\sin^{n+1} t \text{d} t}&amp;=\frac{n}{n+1}\int_{0}^{\frac{\pi}{2}}{\sin^{n-1} t \text{d} t}
-   \end{align*}
-   $$&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;英语-即使是认识的单词也有不认识的词根词缀&#34;&gt;英语-即使是认识的单词也有不认识的词根词缀
-&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;ac company&lt;/li&gt;
-&lt;li&gt;mono poly&lt;/li&gt;
-&lt;li&gt;di lute&lt;/li&gt;
-&lt;li&gt;trans action&lt;/li&gt;
-&lt;li&gt;re sent&lt;/li&gt;
-&lt;li&gt;con temporary&lt;/li&gt;
-&lt;li&gt;spec u late&lt;/li&gt;
-&lt;li&gt;in cur&lt;/li&gt;
-&lt;li&gt;im plement&lt;/li&gt;
-&lt;li&gt;pro ce dure&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        </item>
-        <item>
-        <title>0719学习日志</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/</link>
-        <pubDate>Sat, 19 Jul 2025 22:41:19 +0800</pubDate>
-        
-        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/</guid>
-        <description>&lt;h2 id=&#34;数学-是不动点的味道&#34;&gt;数学-是不动点的味道
-&lt;/h2&gt;&lt;h3 id=&#34;数列的极限&#34;&gt;数列的极限
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;概念&lt;/li&gt;
-&lt;li&gt;数列极限的定义&lt;/li&gt;
-&lt;li&gt;数列收敛的性质
-&lt;ul&gt;
-&lt;li&gt;唯一性&lt;/li&gt;
-&lt;li&gt;有界性&lt;/li&gt;
-&lt;li&gt;保号性&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;海涅定理（归结原则）&lt;/li&gt;
-&lt;li&gt;夹逼准则&lt;/li&gt;
-&lt;li&gt;单调有界准则&lt;/li&gt;
-&lt;li&gt;${x_n}$收敛于$a$的速度问题&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;数据结构-前序中序后序blablabla&#34;&gt;数据结构-前序中序后序blablabla
-&lt;/h2&gt;&lt;h3 id=&#34;树的性质&#34;&gt;树的性质
-&lt;/h3&gt;&lt;p&gt;let $T_m$ denote a tree with degree $m$.&lt;/p&gt;
-&lt;p&gt;let $D(n)$ denote the out degree of the node $x$ in the tree $T_m$.&lt;/p&gt;
-&lt;p&gt;let $n_i$ denote the number of notes with degree $i$.&lt;/p&gt;
-&lt;p&gt;let $H$ denote the depth/height of the tree $T_m$.&lt;/p&gt;
-&lt;p&gt;let $N$ denote the total number of nodes in tree.$N=\sum\limits_{i=0}^mn_i$.&lt;/p&gt;
-&lt;p&gt;let $N_i$ denote the number of nodes at layer $i\in \mathcal{N^*}$&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;$N=1 + \sum\limits_{i=1}^mi\cdot n_i$.&lt;/li&gt;
-&lt;li&gt;$n_0 =1 + \sum\limits_{i=2}^m(i-1)\cdot n_i$&lt;/li&gt;
-&lt;li&gt;$N_i\leq m^{i-1}$ if not an &lt;strong&gt;empty tree&lt;/strong&gt; with degree m.&lt;/li&gt;
-&lt;li&gt;$N\leq \frac{m^H-1}{m-1}$&lt;/li&gt;
-&lt;li&gt;$H\geq \lceil\log_{m}\left((N(m-1))+1\right)\rceil$&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;二叉树&#34;&gt;二叉树
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;二叉树的性质
-&lt;ol&gt;
-&lt;li&gt;$N_i\leq 2^{i-1}$ if not an &lt;strong&gt;empty tree&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;$N\leq 2^H-1$&lt;/li&gt;
-&lt;li&gt;$n_0 =1 + n_2$&lt;/li&gt;
-&lt;li&gt;$H\geq \lceil\log_{2}(N+1)\rceil$&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;完全二叉树&lt;/li&gt;
-&lt;li&gt;满二叉树&lt;/li&gt;
-&lt;li&gt;二叉树的构造
-&lt;ol&gt;
-&lt;li&gt;前序加中序&lt;/li&gt;
-&lt;li&gt;后序加中序&lt;/li&gt;
-&lt;li&gt;层次加中序&lt;/li&gt;
-&lt;li&gt;前序加树形结构&lt;/li&gt;
-&lt;li&gt;中序加树形结构&lt;/li&gt;
-&lt;li&gt;后序加树形结构&lt;/li&gt;
-&lt;li&gt;层次加树形结构&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;二叉树的遍历
-&lt;ol&gt;
-&lt;li&gt;前序&lt;/li&gt;
-&lt;li&gt;中序&lt;/li&gt;
-&lt;li&gt;后序&lt;/li&gt;
-&lt;li&gt;层次&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;操作系统-nice-of-linux&#34;&gt;操作系统-nice of linux
-&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;Multi-Level Feedback Queue (cpu-sched-mlfq)
-&lt;ol&gt;
-&lt;li&gt;Basic Rules
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Rule 1&lt;/strong&gt;:If Priority(A) $&amp;gt;$ Priority(B), A runs (B doesn’t).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Rule 2&lt;/strong&gt;:If Priority(A) $=$ Priority(B), A &amp;amp; B run in RR(Round Robin).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;However&lt;/strong&gt;: Those with low Priority will get starved!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Therefore&lt;/strong&gt;: We need to change the Priority over time.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;To change Priority
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Rule 3&lt;/strong&gt;: When a job enters the system, it is placed at the highest priority (the topmost queue).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Rule 4a&lt;/strong&gt;: If a job uses up its allotment while running, its priority is reduced (i.e., it moves down one queue).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Rule 4b&lt;/strong&gt;: If a job gives up the CPU (for example, by performing an I/O operation) before the allotment is up, it stays at the same priority level (i.e., its allotment is reset).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;However&lt;/strong&gt;:
-&lt;ol&gt;
-&lt;li&gt;Those with long cpu-time will get starved as them move down to the lowest!&lt;/li&gt;
-&lt;li&gt;Those with smart heart will game the scheduler as they I/O at the last ms of the allotment.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Therefore&lt;/strong&gt;: We need to change &lt;strong&gt;rule4a,b&lt;/strong&gt; and boost periodically.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;The Priority Boost
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Rule 5&lt;/strong&gt;: After some time period S, move all the jobs in the system to the topmost queue.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Better Accounting
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Rule 4&lt;/strong&gt;: Once a job uses up its time allotment at a given level (re gardless of how many times it has given up the CPU), its priority is reduced (i.e., it moves down one queue).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Proportional share(cpu-sched-lottery)
-&lt;ol&gt;
-&lt;li&gt;Basic Concept: Tickets Represent Your Share&lt;/li&gt;
-&lt;li&gt;Stride Scheduling&lt;/li&gt;
-&lt;li&gt;The Linux Completely Fair Scheduler (CFS)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>数列极限 on shyの考研日志</title>
+    <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90/</link>
+    <description>Recent content in 数列极限 on shyの考研日志</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 25 Jul 2025 20:24:54 +0800</lastBuildDate>
+    <atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>0725学习笔记</title>
+      <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0725/</link>
+      <pubDate>Fri, 25 Jul 2025 20:24:54 +0800</pubDate>
+      <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0725/</guid>
+      <description>&lt;h2 id=&#34;操作系统-易错小知识&#34;&gt;操作系统-易错小知识&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;在多个进程并发执行时，所有进程的页表大多数驻留在内存中，在系统中只设置一个页表寄存器（PTR），它存放页表在内存中的始址和长度&lt;/li&gt;&#xA;&lt;li&gt;分段方式对低级语言程序员和编译器是可见的，对高级语言程序员是透明的&lt;/li&gt;&#xA;&lt;li&gt;在这四种动态分区分配算法中，（首次适应，最坏适应，最佳适应，循环首次适应），最佳适应由于其总是会选择和待分配空间“最接近”的空闲区，因此总是会产生难以利用的小的内存块。&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;[tips]&lt;/code&gt;页表项的数量最好刚好填满一整个页&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;数学-数列极限&#34;&gt;数学-数列极限&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;一个积分小技巧,似乎跟傅里叶级数有关系，但是我没看出来（插个眼）&#xA;$$&#xA;   \begin{align*}&#xA;   \int_{0}^{\frac{\pi}{2}}{\sin^{n+1} t \text{d} t} &amp;= \left.(-\sin^nt\cdot \cos t)\right|_{0}^{\frac{\pi}{2}} - \int_{0}^{\frac{\pi}{2}}{-\cos t \text{d} \sin^n t}\\&#xA;   &amp;=n\int_{0}^{\frac{\pi}{2}}{\cos^2 t \sin^{n-1} \text{d}  t}\\&#xA;   &amp;=n\int_{0}^{\frac{\pi}{2}}{(1-\sin^2t) \sin^{n-1} \text{d}  t}\\&#xA;   \\&#xA;   \int_{0}^{\frac{\pi}{2}}{\sin^{n+1} t \text{d} t}&amp;=\frac{n}{n+1}\int_{0}^{\frac{\pi}{2}}{\sin^{n-1} t \text{d} t}&#xA;   \end{align*}&#xA;   $$&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;英语-即使是认识的单词也有不认识的词根词缀&#34;&gt;英语-即使是认识的单词也有不认识的词根词缀&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;ac company&lt;/li&gt;&#xA;&lt;li&gt;mono poly&lt;/li&gt;&#xA;&lt;li&gt;di lute&lt;/li&gt;&#xA;&lt;li&gt;trans action&lt;/li&gt;&#xA;&lt;li&gt;re sent&lt;/li&gt;&#xA;&lt;li&gt;con temporary&lt;/li&gt;&#xA;&lt;li&gt;spec u late&lt;/li&gt;&#xA;&lt;li&gt;in cur&lt;/li&gt;&#xA;&lt;li&gt;im plement&lt;/li&gt;&#xA;&lt;li&gt;pro ce dure&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>0719学习日志</title>
+      <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/</link>
+      <pubDate>Sat, 19 Jul 2025 22:41:19 +0800</pubDate>
+      <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/</guid>
+      <description>&lt;h2 id=&#34;数学-是不动点的味道&#34;&gt;数学-是不动点的味道&lt;/h2&gt;&#xA;&lt;h3 id=&#34;数列的极限&#34;&gt;数列的极限&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;概念&lt;/li&gt;&#xA;&lt;li&gt;数列极限的定义&lt;/li&gt;&#xA;&lt;li&gt;数列收敛的性质&#xA;&lt;ul&gt;&#xA;&lt;li&gt;唯一性&lt;/li&gt;&#xA;&lt;li&gt;有界性&lt;/li&gt;&#xA;&lt;li&gt;保号性&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;海涅定理（归结原则）&lt;/li&gt;&#xA;&lt;li&gt;夹逼准则&lt;/li&gt;&#xA;&lt;li&gt;单调有界准则&lt;/li&gt;&#xA;&lt;li&gt;${x_n}$收敛于$a$的速度问题&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;数据结构-前序中序后序blablabla&#34;&gt;数据结构-前序中序后序blablabla&lt;/h2&gt;&#xA;&lt;h3 id=&#34;树的性质&#34;&gt;树的性质&lt;/h3&gt;&#xA;&lt;p&gt;let $T_m$ denote a tree with degree $m$.&lt;/p&gt;&#xA;&lt;p&gt;let $D(n)$ denote the out degree of the node $x$ in the tree $T_m$.&lt;/p&gt;&#xA;&lt;p&gt;let $n_i$ denote the number of notes with degree $i$.&lt;/p&gt;&#xA;&lt;p&gt;let $H$ denote the depth/height of the tree $T_m$.&lt;/p&gt;&#xA;&lt;p&gt;let $N$ denote the total number of nodes in tree.$N=\sum\limits_{i=0}^mn_i$.&lt;/p&gt;&#xA;&lt;p&gt;let $N_i$ denote the number of nodes at layer $i\in \mathcal{N^*}$&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

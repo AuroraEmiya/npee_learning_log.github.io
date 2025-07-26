@@ -1,39 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>系统调用 on shyの考研日志</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/</link>
-        <description>Recent content in 系统调用 on shyの考研日志</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <lastBuildDate>Sat, 12 Jul 2025 23:17:40 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>0712学习笔记</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0712/</link>
-        <pubDate>Sat, 12 Jul 2025 23:17:40 +0800</pubDate>
-        
-        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0712/</guid>
-        <description>&lt;h2 id=&#34;操作系统&#34;&gt;操作系统
-&lt;/h2&gt;&lt;h3 id=&#34;系统调用&#34;&gt;系统调用
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;功能
-&lt;ul&gt;
-&lt;li&gt;设备管理：设备的启动、请求和释放等。&lt;/li&gt;
-&lt;li&gt;文件管理：文件的读写、创建和删除等。&lt;/li&gt;
-&lt;li&gt;进程管理：进程的创建、撤销、阻塞和唤醒等。&lt;/li&gt;
-&lt;li&gt;进程通信：进程之间的消息或信号的传递等。&lt;/li&gt;
-&lt;li&gt;内存管理：内存的分配、回收以及获取作业占用内存区大小和起始地址等。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;处理过程
-&lt;ol&gt;
-&lt;li&gt;用户程序将系统调用号和所需的参数压入堆栈；接着，调用实际的调用指令，然后执行一个陷入指令，将CPU从用户态转为核心态；再由硬件和操作系统内核程序保护被中断进程的现场。将程序计数器PC、程序状态字PSW及通用寄存器内容压入堆栈。&lt;/li&gt;
-&lt;li&gt;分析系统调用类型，转入相应的系统调用处理子程序。在系统中配置了一张系统调用入口表，表中的每个表项都对应一个系统调用，根据系统调用号找到该系统调用处理子程序的入口地址。&lt;/li&gt;
-&lt;li&gt;在系统调用处理子程序执行结束后，恢复被中断的或设置新进程的CPU现场，然后返回被中断进程或新进程，继续往下执行。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>系统调用 on shyの考研日志</title>
+    <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/</link>
+    <description>Recent content in 系统调用 on shyの考研日志</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 12 Jul 2025 23:17:40 +0800</lastBuildDate>
+    <atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>0712学习笔记</title>
+      <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0712/</link>
+      <pubDate>Sat, 12 Jul 2025 23:17:40 +0800</pubDate>
+      <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0712/</guid>
+      <description>&lt;h2 id=&#34;操作系统&#34;&gt;操作系统&lt;/h2&gt;&#xA;&lt;h3 id=&#34;系统调用&#34;&gt;系统调用&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;功能&#xA;&lt;ul&gt;&#xA;&lt;li&gt;设备管理：设备的启动、请求和释放等。&lt;/li&gt;&#xA;&lt;li&gt;文件管理：文件的读写、创建和删除等。&lt;/li&gt;&#xA;&lt;li&gt;进程管理：进程的创建、撤销、阻塞和唤醒等。&lt;/li&gt;&#xA;&lt;li&gt;进程通信：进程之间的消息或信号的传递等。&lt;/li&gt;&#xA;&lt;li&gt;内存管理：内存的分配、回收以及获取作业占用内存区大小和起始地址等。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;处理过程&#xA;&lt;ol&gt;&#xA;&lt;li&gt;用户程序将系统调用号和所需的参数压入堆栈；接着，调用实际的调用指令，然后执行一个陷入指令，将CPU从用户态转为核心态；再由硬件和操作系统内核程序保护被中断进程的现场。将程序计数器PC、程序状态字PSW及通用寄存器内容压入堆栈。&lt;/li&gt;&#xA;&lt;li&gt;分析系统调用类型，转入相应的系统调用处理子程序。在系统中配置了一张系统调用入口表，表中的每个表项都对应一个系统调用，根据系统调用号找到该系统调用处理子程序的入口地址。&lt;/li&gt;&#xA;&lt;li&gt;在系统调用处理子程序执行结束后，恢复被中断的或设置新进程的CPU现场，然后返回被中断进程或新进程，继续往下执行。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+  </channel>
 </rss>
