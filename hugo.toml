@@ -1,6 +1,6 @@
 baseURL = "https://auroraemiya.github.io/npee_learning_log.github.io/"
 languageCode = 'zh-cn'
-title = 'Shyの考研日志'
+title = 'shyの考研日志'
 theme = "stack"
 enableRobotsTXT = true
 
@@ -16,8 +16,8 @@ enableRobotsTXT = true
   math = true
   readingTime = true
 [params.sidebar]
-  emoji = "🌸"
-  subtitle = "貴方は水際一人微笑むだけ"
+  emoji = "🎧"
+  subtitle = "無職受験生 ～408に挑んだら本気だす～"
   
 [markup]
   [markup.goldmark]
@@ -34,36 +34,46 @@ enableRobotsTXT = true
     src = "img/shiki.png"
 
 [params.widgets]
-  [[params.widgets.page]]
-    type = "toc"
+
   [[params.widgets.homepage]]
     type = "search"
-    [[params.widgets.homepage]]
-      type = "categories"
-      [params.widgets.homepage.params]
-        limit = 10
-    [[params.widgets.homepage]]
-      type = "tag-cloud"
-      [params.widgets.homepage.params]
-        limit = 10
+  [[params.widgets.homepage]]
+    type = "archives"
+
+  [[params.widgets.homepage]]
+    type = "tag-cloud"
+    [params.widgets.homepage.params]
+      limit = 10
 
 [[menu.main]]
   name = "主页"
   url = "/"
   weight = 1
+  [menu.main.params]
+    icon = "home"
+
 
 
 [[menu.main]]
   name = "日记"
   url = "/categories/diary"
   weight = 2
+    [menu.main.params]
+    icon = "date"
 
 [[menu.main]]
   name = "日志"
   url = "/categories/log"
   weight = 3
-
+  [menu.main.params]
+    icon = "archives"
 [[menu.main]]
   name = "笔记"
   url = "/categories/memo"
   weight = 3
+    [menu.main.params]
+    icon = "messages"
+
+[params.footer]
+  customText='Blogroll：<a href="https://void-island-site.vercel.app/">舍友的雾岛电台</a>'
+  since = 2025
