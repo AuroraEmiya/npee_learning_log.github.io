@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>导数 on shyの考研日志</title>
+        <link>http://localhost:1313/npee_learning_log.github.io/tags/%E5%AF%BC%E6%95%B0/</link>
+        <description>Recent content in 导数 on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Sun, 27 Jul 2025 18:55:08 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/tags/%E5%AF%BC%E6%95%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0727学习日志</title>
+        <link>http://localhost:1313/npee_learning_log.github.io/posts/0727/</link>
+        <pubDate>Sun, 27 Jul 2025 18:55:08 +0800</pubDate>
+        
+        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0727/</guid>
+        <description>&lt;h2 id=&#34;数学-一元函数微分学&#34;&gt;数学-一元函数微分学
+&lt;/h2&gt;&lt;h3 id=&#34;一元函数微分学的概念&#34;&gt;一元函数微分学的概念
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;导数&lt;/p&gt;
+$$
+   f&#39;(x_0) = \lim\limits_{x\to x_0}\frac{\Delta y}{\Delta x} = \lim\limits_{\Delta x\to 0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}
+   $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;导数的几何意义&lt;/p&gt;
+$$
+   \begin{align*}
+   	\text{切线方程：}y-y_0&amp;=f&#39;(x_0)(x-x_0) \\
+   	\text{发现方程：}y-y_0&amp;=-\frac{1}{f&#39;(x_0)}(x-x_0),(f&#39;(x_0)\neq0)
+   \end{align*}
+   $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;高阶导数&lt;/p&gt;
+$$
+   f^{(n)}(x_0) = \lim\limits_{\Delta x\to x_0}\frac{f^{(n-1)}(x)-f^{(n-1)}(x_0)}{x-x_0}
+   $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;微分概念&lt;/p&gt;
+&lt;p&gt;设函数$y=f(x)$在点$x_0$的某邻域内有定义，且$x_0+\Delta x$在该邻域内，对于函数增量&lt;/p&gt;
+$$
+   \Delta y = f(x_0+\Delta x)- f(x_0)
+   $$&lt;p&gt;若存在与$\Delta x$无关的常数$A$，使得&lt;/p&gt;
+$$
+   \Delta y = A\Delta x + o(\Delta x)
+   $$&lt;p&gt;则称$f(x)$在$x=x_0$处可微，且$A\Delta x$为线性主部也叫做$f(x) $在点$x_0$处的微分，记为&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+$$
+\left.dy\right|_{x=x_0}A\Delta x = f&#39;(x_0)\mathbf{d}x
+$$&lt;h3 id=&#34;一元函数微分学的计算&#34;&gt;一元函数微分学的计算
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;基本求导公式&lt;/p&gt;
+$$
+   \begin{align*}
+   	\left(x^{\alpha}\right)&#39; &amp;= \alpha x^{\alpha-1}\\
+   	\left(a^x\right)&#39; &amp;= a^x\ln{a},(a&gt;0,a\neq 1)\\
+   	\left(e^x\right)&#39; &amp;=e^x\\
+   		\left(\log_ax\right)&#39; &amp;=\frac{1}{x\ln a},(a&gt;0,a\neq 1)\\
+   	\left(\ln|x|\right)&#39; &amp;=\frac{1}{x}\\
+   	\left(\sin x \right)&#39; &amp;=\cos x \\
+   	\left(\cos x\right)&#39; &amp;=-\sin x \\
+   	\left(\arcsin x\right)&#39; &amp;=\frac{1}{\sqrt{1-x^2}}\\
+   	\left(\arccos x\right)&#39; &amp;=-\frac{1}{\sqrt{1-x^2}}\\
+   	\left(\tan x\right)&#39; &amp;=\sec^2 x\\
+   	\left(\cot x \right)&#39; &amp;=-\csc^2 x\\
+   	\left(\arctan x\right)&#39; &amp;=\frac{1}{1+x^2}\\
+   	\left(\text{arccot} x\right)&#39; &amp;=-\frac{1}{1+x^2}\\
+   	\left(\sec x\right)&#39; &amp;=\sec x\tan x\\
+   	\left(\csc x\right)&#39; &amp;=-\csc x \cot x\\
+   	\left(\ln(x+\sqrt{x^2+1})\right)&#39; &amp;=\frac{1}{x^2+1}\\
+   	\left(\ln(x+\sqrt{x^2-1})\right)&#39; &amp;=\frac{1}{x^2-1}\\
+   \end{align*}
+   $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;四则运算&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;和差&lt;/li&gt;
+&lt;li&gt;积&lt;/li&gt;
+&lt;li&gt;商&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;复合函数的导数与微分形式的不变性&lt;/p&gt;
+$$
+   \mathbf{d}f(u)=f&#39;(u)\mathbf{d}u
+   $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;分段函数的导数&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在分段点使用导数的定义&lt;/li&gt;
+&lt;li&gt;在非分段点使用导数公式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;反函数的导数&lt;/p&gt;
+&lt;p&gt;设$y=f(x)$单调、可导函数，且$f&amp;rsquo;(x)\neq 0$,则存在反函数$x=\varphi(y)$，且$\frac{dx}{dy} = \frac{1}{\frac{dy}{dx}}$&lt;/p&gt;
+$$
+   \varphi&#39;(x) =\dfrac{1}{ \dfrac{\mathbf{d} arc\varphi(\varphi(x)) }{\mathbf{d}\varphi(x)}}
+   $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;隐函数求导法&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;参数方程所确定的函数的导数&lt;/p&gt;
+$$
+   \begin{align}
+   \begin{cases}
+   x&amp;= \varphi(t)\\
+   y&amp;= \omega(t)\\
+   \end{cases}\\
+   \frac{dy}{dx} = \dfrac{\frac{dy}{dt}}{\frac{dx}{dt}} = \dfrac{\omega&#39;(t)}{\varphi&#39;(t)}
+   \end{align}
+   $$&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
