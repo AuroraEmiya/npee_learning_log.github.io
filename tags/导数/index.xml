@@ -111,7 +111,44 @@ $$
    \frac{dy}{dx} = \dfrac{\frac{dy}{dt}}{\frac{dx}{dt}} = \dfrac{\omega&#39;(t)}{\varphi&#39;(t)}
    \end{align}
    $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对数求导法
+&lt;/p&gt;
+$$
+   \begin{align*}
+   \ln y &amp;= \ln f(x)\\
+   y&#39; &amp;= \frac{yf&#39;(x)}{f(x)}\\
+   \end{align*}
+   $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;幂指数求导法
+&lt;/p&gt;
+$$
+   u(x)^{v(x)} = e^{v(x)\ln u(x)}
+   $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;高阶导数&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;归纳法&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;莱布尼茨公式
+&lt;/p&gt;
+$$
+       \begin{align*}
+       (u\pm v)^{(n)}&amp;= u^{(n)}\pm v^{(n)}\\
+       (u v)^{(n)}&amp;= \sum\limits_{k=0}^{n}C_{n}^{k}u^{(k)}v^{(n-k)}
+       \end{align*}
+       $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;泰勒展开式，利用展开唯一性&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号：第三、四讲&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;​&lt;/p&gt;
 </description>
         </item>
         
