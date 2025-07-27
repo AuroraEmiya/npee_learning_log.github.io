@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="数学-一元函数微分学 一元函数微分学的概念 导数 $$ f'(x_0) = \\lim\\limits_{x\\to x_0}\\frac{\\Delta y}{\\Delta x} = \\lim\\limits_{\\Delta x\\to 0}\\frac{f(x_0+\\Delta x)-f(x_0)}{\\Delta x} $$ 导数的几何意义 $$ \\begin{align*} \\text{切线方程：}y-y_0&=f'(x_0)(x-x_0) \\\\ \\text{发现方程：}y-y_0&=-\\frac{1}{f'(x_0)}(x-x_0),(f'(x_0)\\neq0) \\end{align*} $$ 高阶导数 $$ f^{(n)}(x_0) = \\lim\\limits_{\\Delta x\\to x_0}\\frac{f^{(n-1)}(x)-f^{(n-1)}(x_0)}{x-x_0} $$ 微分概念\n设函数$y=f(x)$在点$x_0$的某邻域内有定义，且$x_0+\\Deltax$在该邻域内，对于函数增量 $$ \\Delta y = f(x_0+\\Delta x)- f(x_0) $$ 若存在与$\\Delta x$无关的常数$A$，使得 $$ \\Delta y = A\\Delta x + o(\\Delta x) $$ \u200b\t则称$f(x)$在$x=x_0$处可微，且$A\\Delta x$为线性主部也叫做$f(x) $在点$x_0$处的微分，记为 $$ \\left.dy\\right|_{x=x_0}A\\Delta x = f'(x_0)\\mathbf{d}x $$一元函数微分学的计算 基本求导公式 $$ \\begin{align} \\left(x^{\\alpha}\\right)' &= \\alpha x^{\\alpha-1}\\\\ \\left(a^x\\right)' &= a^x\\ln{a},(a>0,a\\neq 1)\\\\ \\left(e^x\\right)' &=e^x\\\\ \\left(\\log_ax\\right)' &=\\frac{1}{x\\ln a},(a>0,a\\neq 1)\\\\ \\left(\\ln|x|\\right)' &=\\frac{1}{x}\\\\ \\left(\\sin x \\right)' &=\\cos x \\\\ \\left(\\cos x\\right)' &=-\\sin x \\\\ \\left(\\arcsin x\\right)' &=\\frac{1}{\\sqrt{1-x^2}}\\\\ \\left(\\arccos x\\right)' &=-\\frac{1}{\\sqrt{1-x^2}}\\\\ \\left(\\tan x\\right)' &=\\sec^2 x\\\\ \\left(\\cot x \\right)' &=-\\csc^2 x\\\\ \\left(\\arctan x\\right)' &=\\frac{1}{1+x^2}\\\\ \\left(\\arccot x\\right)' &=-\\frac{1}{1+x^2}\\\\ \\left(\\sec x\\right)' &=\\sec x\\tan x\\\\ \\left(\\csc x\\right)' &=-\\csc x \\cot x\\\\ \\left(\\ln(x+\\sqrt{x^2+1})\\right)' &=\\frac{1}{x^2+1}\\\\ \\left(\\ln(x+\\sqrt{x^2-1})\\right)' &=\\frac{1}{x^2-1}\\\\ \\end{align} $$ 四则运算\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="数学-一元函数微分学 一元函数微分学的概念 导数\n$$ f'(x_0) = \\lim\\limits_{x\\to x_0}\\frac{\\Delta y}{\\Delta x} = \\lim\\limits_{\\Delta x\\to 0}\\frac{f(x_0+\\Delta x)-f(x_0)}{\\Delta x} $$ 导数的几何意义\n$$ \\begin{align*} \\text{切线方程：}y-y_0&=f'(x_0)(x-x_0) \\\\ \\text{发现方程：}y-y_0&=-\\frac{1}{f'(x_0)}(x-x_0),(f'(x_0)\\neq0) \\end{align*} $$ 高阶导数\n$$ f^{(n)}(x_0) = \\lim\\limits_{\\Delta x\\to x_0}\\frac{f^{(n-1)}(x)-f^{(n-1)}(x_0)}{x-x_0} $$ 微分概念\n设函数$y=f(x)$在点$x_0$的某邻域内有定义，且$x_0+\\Delta x$在该邻域内，对于函数增量\n$$ \\Delta y = f(x_0+\\Delta x)- f(x_0) $$若存在与$\\Delta x$无关的常数$A$，使得\n$$ \\Delta y = A\\Delta x + o(\\Delta x) $$则称$f(x)$在$x=x_0$处可微，且$A\\Delta x$为线性主部也叫做$f(x) $在点$x_0$处的微分，记为\n$$ \\left.dy\\right|_{x=x_0}A\\Delta x = f'(x_0)\\mathbf{d}x $$一元函数微分学的计算 基本求导公式\n$$ \\begin{align*} \\left(x^{\\alpha}\\right)' &= \\alpha x^{\\alpha-1}\\\\ \\left(a^x\\right)' &= a^x\\ln{a},(a>0,a\\neq 1)\\\\ \\left(e^x\\right)' &=e^x\\\\ \\left(\\log_ax\\right)' &=\\frac{1}{x\\ln a},(a>0,a\\neq 1)\\\\ \\left(\\ln|x|\\right)' &=\\frac{1}{x}\\\\ \\left(\\sin x \\right)' &=\\cos x \\\\ \\left(\\cos x\\right)' &=-\\sin x \\\\ \\left(\\arcsin x\\right)' &=\\frac{1}{\\sqrt{1-x^2}}\\\\ \\left(\\arccos x\\right)' &=-\\frac{1}{\\sqrt{1-x^2}}\\\\ \\left(\\tan x\\right)' &=\\sec^2 x\\\\ \\left(\\cot x \\right)' &=-\\csc^2 x\\\\ \\left(\\arctan x\\right)' &=\\frac{1}{1+x^2}\\\\ \\left(\\text{arccot} x\\right)' &=-\\frac{1}{1+x^2}\\\\ \\left(\\sec x\\right)' &=\\sec x\\tan x\\\\ \\left(\\csc x\\right)' &=-\\csc x \\cot x\\\\ \\left(\\ln(x+\\sqrt{x^2+1})\\right)' &=\\frac{1}{x^2+1}\\\\ \\left(\\ln(x+\\sqrt{x^2-1})\\right)' &=\\frac{1}{x^2-1}\\\\ \\end{align*} $$ 四则运算\n">
 <title>0727学习日志</title>
 
 <link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0727/'>
 
 <link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="0727学习日志">
-<meta property='og:description' content="数学-一元函数微分学 一元函数微分学的概念 导数 $$ f'(x_0) = \\lim\\limits_{x\\to x_0}\\frac{\\Delta y}{\\Delta x} = \\lim\\limits_{\\Delta x\\to 0}\\frac{f(x_0+\\Delta x)-f(x_0)}{\\Delta x} $$ 导数的几何意义 $$ \\begin{align*} \\text{切线方程：}y-y_0&=f'(x_0)(x-x_0) \\\\ \\text{发现方程：}y-y_0&=-\\frac{1}{f'(x_0)}(x-x_0),(f'(x_0)\\neq0) \\end{align*} $$ 高阶导数 $$ f^{(n)}(x_0) = \\lim\\limits_{\\Delta x\\to x_0}\\frac{f^{(n-1)}(x)-f^{(n-1)}(x_0)}{x-x_0} $$ 微分概念\n设函数$y=f(x)$在点$x_0$的某邻域内有定义，且$x_0+\\Deltax$在该邻域内，对于函数增量 $$ \\Delta y = f(x_0+\\Delta x)- f(x_0) $$ 若存在与$\\Delta x$无关的常数$A$，使得 $$ \\Delta y = A\\Delta x + o(\\Delta x) $$ \u200b\t则称$f(x)$在$x=x_0$处可微，且$A\\Delta x$为线性主部也叫做$f(x) $在点$x_0$处的微分，记为 $$ \\left.dy\\right|_{x=x_0}A\\Delta x = f'(x_0)\\mathbf{d}x $$一元函数微分学的计算 基本求导公式 $$ \\begin{align} \\left(x^{\\alpha}\\right)' &= \\alpha x^{\\alpha-1}\\\\ \\left(a^x\\right)' &= a^x\\ln{a},(a>0,a\\neq 1)\\\\ \\left(e^x\\right)' &=e^x\\\\ \\left(\\log_ax\\right)' &=\\frac{1}{x\\ln a},(a>0,a\\neq 1)\\\\ \\left(\\ln|x|\\right)' &=\\frac{1}{x}\\\\ \\left(\\sin x \\right)' &=\\cos x \\\\ \\left(\\cos x\\right)' &=-\\sin x \\\\ \\left(\\arcsin x\\right)' &=\\frac{1}{\\sqrt{1-x^2}}\\\\ \\left(\\arccos x\\right)' &=-\\frac{1}{\\sqrt{1-x^2}}\\\\ \\left(\\tan x\\right)' &=\\sec^2 x\\\\ \\left(\\cot x \\right)' &=-\\csc^2 x\\\\ \\left(\\arctan x\\right)' &=\\frac{1}{1+x^2}\\\\ \\left(\\arccot x\\right)' &=-\\frac{1}{1+x^2}\\\\ \\left(\\sec x\\right)' &=\\sec x\\tan x\\\\ \\left(\\csc x\\right)' &=-\\csc x \\cot x\\\\ \\left(\\ln(x+\\sqrt{x^2+1})\\right)' &=\\frac{1}{x^2+1}\\\\ \\left(\\ln(x+\\sqrt{x^2-1})\\right)' &=\\frac{1}{x^2-1}\\\\ \\end{align} $$ 四则运算\n">
+<meta property='og:description' content="数学-一元函数微分学 一元函数微分学的概念 导数\n$$ f'(x_0) = \\lim\\limits_{x\\to x_0}\\frac{\\Delta y}{\\Delta x} = \\lim\\limits_{\\Delta x\\to 0}\\frac{f(x_0+\\Delta x)-f(x_0)}{\\Delta x} $$ 导数的几何意义\n$$ \\begin{align*} \\text{切线方程：}y-y_0&=f'(x_0)(x-x_0) \\\\ \\text{发现方程：}y-y_0&=-\\frac{1}{f'(x_0)}(x-x_0),(f'(x_0)\\neq0) \\end{align*} $$ 高阶导数\n$$ f^{(n)}(x_0) = \\lim\\limits_{\\Delta x\\to x_0}\\frac{f^{(n-1)}(x)-f^{(n-1)}(x_0)}{x-x_0} $$ 微分概念\n设函数$y=f(x)$在点$x_0$的某邻域内有定义，且$x_0+\\Delta x$在该邻域内，对于函数增量\n$$ \\Delta y = f(x_0+\\Delta x)- f(x_0) $$若存在与$\\Delta x$无关的常数$A$，使得\n$$ \\Delta y = A\\Delta x + o(\\Delta x) $$则称$f(x)$在$x=x_0$处可微，且$A\\Delta x$为线性主部也叫做$f(x) $在点$x_0$处的微分，记为\n$$ \\left.dy\\right|_{x=x_0}A\\Delta x = f'(x_0)\\mathbf{d}x $$一元函数微分学的计算 基本求导公式\n$$ \\begin{align*} \\left(x^{\\alpha}\\right)' &= \\alpha x^{\\alpha-1}\\\\ \\left(a^x\\right)' &= a^x\\ln{a},(a>0,a\\neq 1)\\\\ \\left(e^x\\right)' &=e^x\\\\ \\left(\\log_ax\\right)' &=\\frac{1}{x\\ln a},(a>0,a\\neq 1)\\\\ \\left(\\ln|x|\\right)' &=\\frac{1}{x}\\\\ \\left(\\sin x \\right)' &=\\cos x \\\\ \\left(\\cos x\\right)' &=-\\sin x \\\\ \\left(\\arcsin x\\right)' &=\\frac{1}{\\sqrt{1-x^2}}\\\\ \\left(\\arccos x\\right)' &=-\\frac{1}{\\sqrt{1-x^2}}\\\\ \\left(\\tan x\\right)' &=\\sec^2 x\\\\ \\left(\\cot x \\right)' &=-\\csc^2 x\\\\ \\left(\\arctan x\\right)' &=\\frac{1}{1+x^2}\\\\ \\left(\\text{arccot} x\\right)' &=-\\frac{1}{1+x^2}\\\\ \\left(\\sec x\\right)' &=\\sec x\\tan x\\\\ \\left(\\csc x\\right)' &=-\\csc x \\cot x\\\\ \\left(\\ln(x+\\sqrt{x^2+1})\\right)' &=\\frac{1}{x^2+1}\\\\ \\left(\\ln(x+\\sqrt{x^2-1})\\right)' &=\\frac{1}{x^2-1}\\\\ \\end{align*} $$ 四则运算\n">
 <meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0727/'>
 <meta property='og:site_name' content='shyの考研日志'>
-<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2025-07-27T18:55:08&#43;08:00'/><meta property='article:modified_time' content='2025-07-27T18:55:08&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='数学' /><meta property='article:tag' content='一元微分' /><meta property='article:tag' content='导数' /><meta property='article:published_time' content='2025-07-27T18:55:08&#43;08:00'/><meta property='article:modified_time' content='2025-07-27T18:55:08&#43;08:00'/>
 <meta name="twitter:title" content="0727学习日志">
-<meta name="twitter:description" content="数学-一元函数微分学 一元函数微分学的概念 导数 $$ f'(x_0) = \\lim\\limits_{x\\to x_0}\\frac{\\Delta y}{\\Delta x} = \\lim\\limits_{\\Delta x\\to 0}\\frac{f(x_0+\\Delta x)-f(x_0)}{\\Delta x} $$ 导数的几何意义 $$ \\begin{align*} \\text{切线方程：}y-y_0&=f'(x_0)(x-x_0) \\\\ \\text{发现方程：}y-y_0&=-\\frac{1}{f'(x_0)}(x-x_0),(f'(x_0)\\neq0) \\end{align*} $$ 高阶导数 $$ f^{(n)}(x_0) = \\lim\\limits_{\\Delta x\\to x_0}\\frac{f^{(n-1)}(x)-f^{(n-1)}(x_0)}{x-x_0} $$ 微分概念\n设函数$y=f(x)$在点$x_0$的某邻域内有定义，且$x_0+\\Deltax$在该邻域内，对于函数增量 $$ \\Delta y = f(x_0+\\Delta x)- f(x_0) $$ 若存在与$\\Delta x$无关的常数$A$，使得 $$ \\Delta y = A\\Delta x + o(\\Delta x) $$ \u200b\t则称$f(x)$在$x=x_0$处可微，且$A\\Delta x$为线性主部也叫做$f(x) $在点$x_0$处的微分，记为 $$ \\left.dy\\right|_{x=x_0}A\\Delta x = f'(x_0)\\mathbf{d}x $$一元函数微分学的计算 基本求导公式 $$ \\begin{align} \\left(x^{\\alpha}\\right)' &= \\alpha x^{\\alpha-1}\\\\ \\left(a^x\\right)' &= a^x\\ln{a},(a>0,a\\neq 1)\\\\ \\left(e^x\\right)' &=e^x\\\\ \\left(\\log_ax\\right)' &=\\frac{1}{x\\ln a},(a>0,a\\neq 1)\\\\ \\left(\\ln|x|\\right)' &=\\frac{1}{x}\\\\ \\left(\\sin x \\right)' &=\\cos x \\\\ \\left(\\cos x\\right)' &=-\\sin x \\\\ \\left(\\arcsin x\\right)' &=\\frac{1}{\\sqrt{1-x^2}}\\\\ \\left(\\arccos x\\right)' &=-\\frac{1}{\\sqrt{1-x^2}}\\\\ \\left(\\tan x\\right)' &=\\sec^2 x\\\\ \\left(\\cot x \\right)' &=-\\csc^2 x\\\\ \\left(\\arctan x\\right)' &=\\frac{1}{1+x^2}\\\\ \\left(\\arccot x\\right)' &=-\\frac{1}{1+x^2}\\\\ \\left(\\sec x\\right)' &=\\sec x\\tan x\\\\ \\left(\\csc x\\right)' &=-\\csc x \\cot x\\\\ \\left(\\ln(x+\\sqrt{x^2+1})\\right)' &=\\frac{1}{x^2+1}\\\\ \\left(\\ln(x+\\sqrt{x^2-1})\\right)' &=\\frac{1}{x^2-1}\\\\ \\end{align} $$ 四则运算\n">
+<meta name="twitter:description" content="数学-一元函数微分学 一元函数微分学的概念 导数\n$$ f'(x_0) = \\lim\\limits_{x\\to x_0}\\frac{\\Delta y}{\\Delta x} = \\lim\\limits_{\\Delta x\\to 0}\\frac{f(x_0+\\Delta x)-f(x_0)}{\\Delta x} $$ 导数的几何意义\n$$ \\begin{align*} \\text{切线方程：}y-y_0&=f'(x_0)(x-x_0) \\\\ \\text{发现方程：}y-y_0&=-\\frac{1}{f'(x_0)}(x-x_0),(f'(x_0)\\neq0) \\end{align*} $$ 高阶导数\n$$ f^{(n)}(x_0) = \\lim\\limits_{\\Delta x\\to x_0}\\frac{f^{(n-1)}(x)-f^{(n-1)}(x_0)}{x-x_0} $$ 微分概念\n设函数$y=f(x)$在点$x_0$的某邻域内有定义，且$x_0+\\Delta x$在该邻域内，对于函数增量\n$$ \\Delta y = f(x_0+\\Delta x)- f(x_0) $$若存在与$\\Delta x$无关的常数$A$，使得\n$$ \\Delta y = A\\Delta x + o(\\Delta x) $$则称$f(x)$在$x=x_0$处可微，且$A\\Delta x$为线性主部也叫做$f(x) $在点$x_0$处的微分，记为\n$$ \\left.dy\\right|_{x=x_0}A\\Delta x = f'(x_0)\\mathbf{d}x $$一元函数微分学的计算 基本求导公式\n$$ \\begin{align*} \\left(x^{\\alpha}\\right)' &= \\alpha x^{\\alpha-1}\\\\ \\left(a^x\\right)' &= a^x\\ln{a},(a>0,a\\neq 1)\\\\ \\left(e^x\\right)' &=e^x\\\\ \\left(\\log_ax\\right)' &=\\frac{1}{x\\ln a},(a>0,a\\neq 1)\\\\ \\left(\\ln|x|\\right)' &=\\frac{1}{x}\\\\ \\left(\\sin x \\right)' &=\\cos x \\\\ \\left(\\cos x\\right)' &=-\\sin x \\\\ \\left(\\arcsin x\\right)' &=\\frac{1}{\\sqrt{1-x^2}}\\\\ \\left(\\arccos x\\right)' &=-\\frac{1}{\\sqrt{1-x^2}}\\\\ \\left(\\tan x\\right)' &=\\sec^2 x\\\\ \\left(\\cot x \\right)' &=-\\csc^2 x\\\\ \\left(\\arctan x\\right)' &=\\frac{1}{1+x^2}\\\\ \\left(\\text{arccot} x\\right)' &=-\\frac{1}{1+x^2}\\\\ \\left(\\sec x\\right)' &=\\sec x\\tan x\\\\ \\left(\\csc x\\right)' &=-\\csc x \\cot x\\\\ \\left(\\ln(x+\\sqrt{x^2+1})\\right)' &=\\frac{1}{x^2+1}\\\\ \\left(\\ln(x+\\sqrt{x^2-1})\\right)' &=\\frac{1}{x^2-1}\\\\ \\end{align*} $$ 四则运算\n">
     
     </head>
     <body class="
@@ -278,14 +278,12 @@
 </h2><h3 id="一元函数微分学的概念">一元函数微分学的概念
 </h3><ol>
 <li>
-<p>导数
-</p>
+<p>导数</p>
 $$
    f'(x_0) = \lim\limits_{x\to x_0}\frac{\Delta y}{\Delta x} = \lim\limits_{\Delta x\to 0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}
    $$</li>
 <li>
-<p>导数的几何意义
-</p>
+<p>导数的几何意义</p>
 $$
    \begin{align*}
    	\text{切线方程：}y-y_0&=f'(x_0)(x-x_0) \\
@@ -293,35 +291,29 @@ $$
    \end{align*}
    $$</li>
 <li>
-<p>高阶导数
-</p>
+<p>高阶导数</p>
 $$
    f^{(n)}(x_0) = \lim\limits_{\Delta x\to x_0}\frac{f^{(n-1)}(x)-f^{(n-1)}(x_0)}{x-x_0}
    $$</li>
 <li>
 <p>微分概念</p>
-<p>设函数$y=f(x)$在点$x_0$的某邻域内有定义，且$x_0+\Deltax$在该邻域内，对于函数增量
-</p>
+<p>设函数$y=f(x)$在点$x_0$的某邻域内有定义，且$x_0+\Delta x$在该邻域内，对于函数增量</p>
 $$
    \Delta y = f(x_0+\Delta x)- f(x_0)
-   $$<p>
-若存在与$\Delta x$无关的常数$A$，使得
-</p>
+   $$<p>若存在与$\Delta x$无关的常数$A$，使得</p>
 $$
    \Delta y = A\Delta x + o(\Delta x)
-   $$</li>
+   $$<p>则称$f(x)$在$x=x_0$处可微，且$A\Delta x$为线性主部也叫做$f(x) $在点$x_0$处的微分，记为</p>
+</li>
 </ol>
-<p>​	则称$f(x)$在$x=x_0$处可微，且$A\Delta x$为线性主部也叫做$f(x) $在点$x_0$处的微分，记为
-</p>
 $$
 \left.dy\right|_{x=x_0}A\Delta x = f'(x_0)\mathbf{d}x
 $$<h3 id="一元函数微分学的计算">一元函数微分学的计算
 </h3><ol>
 <li>
-<p>基本求导公式
-</p>
+<p>基本求导公式</p>
 $$
-   \begin{align}
+   \begin{align*}
    	\left(x^{\alpha}\right)' &= \alpha x^{\alpha-1}\\
    	\left(a^x\right)' &= a^x\ln{a},(a>0,a\neq 1)\\
    	\left(e^x\right)' &=e^x\\
@@ -334,12 +326,12 @@ $$
    	\left(\tan x\right)' &=\sec^2 x\\
    	\left(\cot x \right)' &=-\csc^2 x\\
    	\left(\arctan x\right)' &=\frac{1}{1+x^2}\\
-   	\left(\arccot x\right)' &=-\frac{1}{1+x^2}\\
+   	\left(\text{arccot} x\right)' &=-\frac{1}{1+x^2}\\
    	\left(\sec x\right)' &=\sec x\tan x\\
    	\left(\csc x\right)' &=-\csc x \cot x\\
    	\left(\ln(x+\sqrt{x^2+1})\right)' &=\frac{1}{x^2+1}\\
    	\left(\ln(x+\sqrt{x^2-1})\right)' &=\frac{1}{x^2-1}\\
-   \end{align}
+   \end{align*}
    $$</li>
 <li>
 <p>四则运算</p>
@@ -350,8 +342,7 @@ $$
 </ol>
 </li>
 <li>
-<p>复合函数的导数与微分形式的不变性
-</p>
+<p>复合函数的导数与微分形式的不变性</p>
 $$
    \mathbf{d}f(u)=f'(u)\mathbf{d}u
    $$</li>
@@ -364,8 +355,7 @@ $$
 </li>
 <li>
 <p>反函数的导数</p>
-<p>设$y=f(x)$单调、可导函数，且$f&rsquo;(x)\neq 0$,则存在反函数$x=\varphi(y)$，且$\frac{dx}{dy} = \frac{1}{\frac{dy}{dx}}$
-</p>
+<p>设$y=f(x)$单调、可导函数，且$f&rsquo;(x)\neq 0$,则存在反函数$x=\varphi(y)$，且$\frac{dx}{dy} = \frac{1}{\frac{dy}{dx}}$</p>
 $$
    \varphi'(x) =\dfrac{1}{ \dfrac{\mathbf{d} arc\varphi(\varphi(x)) }{\mathbf{d}\varphi(x)}}
    $$</li>
@@ -373,8 +363,7 @@ $$
 <p>隐函数求导法</p>
 </li>
 <li>
-<p>参数方程所确定的函数的导数
-</p>
+<p>参数方程所确定的函数的导数</p>
 $$
    \begin{align}
    \begin{cases}
@@ -392,6 +381,12 @@ $$
     <footer class="article-footer">
     
     <section class="article-tags">
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86/">一元微分</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E5%AF%BC%E6%95%B0/">导数</a>
         
     </section>
 
@@ -431,6 +426,80 @@ $$
     
 
     
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0723/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0723学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0722/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0722学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0719/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0719学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0717/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0717学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0714/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0714学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
 
      
     
