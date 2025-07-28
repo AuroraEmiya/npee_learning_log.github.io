@@ -29,7 +29,34 @@
 &lt;p&gt;&lt;strong&gt;故四个全符合。&lt;/strong&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-</description>
+&lt;h3 id=&#34;一些重要的泰勒展开式&#34;&gt;一些重要的泰勒展开式
+&lt;/h3&gt;$$
+\begin{align*}
+\text{e}^x &amp;= \sum_{n=0}^{\infty} \frac{x^n}{n!} 
+            = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots \\[1ex]
+\sin x     &amp;= \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!} 
+            = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots \\[1ex]
+\cos x     &amp;= \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!} 
+            = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots \\[1ex]
+\ln(1+x)   &amp;= \sum_{n=1}^{\infty} (-1)^{n+1} \frac{x^n}{n} 
+            = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots \quad (|x| &lt; 1) \\[1ex]
+\frac{1}{1 - x} &amp;= \sum_{n=0}^{\infty} x^n 
+                 = 1 + x + x^2 + x^3 + \cdots \quad (|x| &lt; 1) \\[1ex]
+\frac{1}{1 + x} &amp;= \sum_{n=0}^{\infty} (-1)^n x^n 
+                 = 1 - x + x^2 - x^3 + \cdots \quad (|x| &lt; 1) \\[1ex]
+\arctan x  &amp;= \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{2n+1} 
+            = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots \quad (|x| \leq 1)
+\end{align*}
+$$&lt;h3 id=&#34;常用高阶导数&#34;&gt;常用高阶导数
+&lt;/h3&gt;$$
+\begin{align*}
+\left(e^{ax+b}\right)^{(n)}&amp;=a^ne^{ax+b}\\
+[\sin{(ax+b)}]^{(n)}&amp;=a^n\sin{\left(ax+b+\dfrac{n\pi}{2}\right)}\\
+[\cos{(ax+b)}]^{(n)}&amp;=a^n\cos{\left(ax+b+\dfrac{n\pi}{2}\right)}\\
+[\ln(ax+b)]^{(n)}&amp;=(-1)^{n-1}a^n\frac{(n-1)!}{(ax+b)^{n}}\\
+(\frac{1}{ax+b})^{(n)}&amp;=(-1)^na^n\frac{n!}{(ax+b)^{n+1}}
+\end{align*}
+$$</description>
         </item>
         <item>
         <title>0726学习笔记</title>
