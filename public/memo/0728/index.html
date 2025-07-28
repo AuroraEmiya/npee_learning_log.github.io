@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="操作系统-这什么查一下这什么查一下\r经典同步问题\r生产者消费者问题 哲学家进餐问题 读者-写者问题 理发师问题 抽烟者问题 处理机调度\r处理及调度的层次\n高级调度（作业调度、长程调度）\n作业选择\n从**后备队列（外存中等待的作业）**中选择作业 判断系统资源（内存、CPU、I/O）是否充足 资源分配\n为选中的作业分配内存、I/O、文件等资源 进程创建\n将作业转化为一个或多个进程，放入就绪队列 中级调度（内存调度、中程调度）\n选择部分进程挂起（移出内存到外存） 选择挂起的进程恢复（从外存调回内存） 低级调度（进程调度、线程调度、短程调度）\n从就绪队列中选择一个进程 把 CPU 分配给选中的进程 保存和恢复进程的上下文（进程切换 Context Switch） 控制 CPU 的执行顺序 处理机的调度方式\n非抢占式 抢占式 选择调度算法的若干准则\nCPU利用率\n$$ \\frac{\\text{worktime of CPU}}{\\text{total time}} $$ 系统吞吐量\n$$ \\frac{\\text{number of tasks}}{\\text{total time}} $$ 周转时间(Turnaround Time)\n$$ \\text{Completion Time - Arrival Time} $$ 平均周转时间\n$$ \\frac{\\sum\\limits_{N}\\text{Turnaround Time of all processes}}{N} $$ 带权周转时间\n$$ \\frac{\\text{Turnaround Time}}{\\text{Service Time}} $$ 平均带权周转时间\n">
-<title>0714学习日志</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="数学-微分学习题\r错题必刷榜\r设函数$f(x)$连续，给出下列条件\n(A) $\\lim\\limits_{x\\to 0}{\\dfrac{|f(x)|-f(0)}{x}}$存在\n(B) $\\lim\\limits_{x\\to 0}{\\dfrac{f(x)-|f(0)|}{x}}$存在\n(C) $\\lim\\limits_{x\\to 0}{\\dfrac{|f(x)|}{x}}$存在\n(D) $\\lim\\limits_{x\\to 0}{\\dfrac{|f(x)|-|f(0)|}{x}}$存在\n其中能得到&quot;$f(x)$在$x=0$处可导&quot;的条件为\n(C)$\\lim\\limits_{x\\to0}\\dfrac{|f(x)|}{x}=0\\Rightarrow\\forall \\epsilon&gt;0,\\left|\\dfrac{|f(x)|}{x}-0\\right|&lt;\\epsilon\\Rightarrow\\lim\\limits_{x\\to0}\\left|\\dfrac{f(x)}{x}\\right|=0\\Rightarrow f&rsquo;(0)=0$\n(A)$f(0)=\\lim\\limits_{x\\to0}{|f(x)|}\\geq0\\Rightarrow$if $f(0)=0$,the same as (C);else if $f(0)&gt;0$，保号性使得$\\exists \\delta&gt;0,f(x)&gt;0,x\\in(-\\delta,\\delta)$\n(B)$f(0)=\\lim\\limits_{x\\to0}{f(x)}=|f(0)|\\geq0\\Rightarrow$if $f(0)=0$,显然成立;else if $f(0)&gt;0$，也显然成立。\n(D)if $f(0)=0$,the same as (C);else 保号性使得两个绝对值内部同号\n故四个全符合。\n">
+<title>0728学习笔记</title>
 
-<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0714/'>
+<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/memo/0728/'>
 
-<link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0714学习日志">
-<meta property='og:description' content="操作系统-这什么查一下这什么查一下\r经典同步问题\r生产者消费者问题 哲学家进餐问题 读者-写者问题 理发师问题 抽烟者问题 处理机调度\r处理及调度的层次\n高级调度（作业调度、长程调度）\n作业选择\n从**后备队列（外存中等待的作业）**中选择作业 判断系统资源（内存、CPU、I/O）是否充足 资源分配\n为选中的作业分配内存、I/O、文件等资源 进程创建\n将作业转化为一个或多个进程，放入就绪队列 中级调度（内存调度、中程调度）\n选择部分进程挂起（移出内存到外存） 选择挂起的进程恢复（从外存调回内存） 低级调度（进程调度、线程调度、短程调度）\n从就绪队列中选择一个进程 把 CPU 分配给选中的进程 保存和恢复进程的上下文（进程切换 Context Switch） 控制 CPU 的执行顺序 处理机的调度方式\n非抢占式 抢占式 选择调度算法的若干准则\nCPU利用率\n$$ \\frac{\\text{worktime of CPU}}{\\text{total time}} $$ 系统吞吐量\n$$ \\frac{\\text{number of tasks}}{\\text{total time}} $$ 周转时间(Turnaround Time)\n$$ \\text{Completion Time - Arrival Time} $$ 平均周转时间\n$$ \\frac{\\sum\\limits_{N}\\text{Turnaround Time of all processes}}{N} $$ 带权周转时间\n$$ \\frac{\\text{Turnaround Time}}{\\text{Service Time}} $$ 平均带权周转时间\n">
-<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0714/'>
+<link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0728学习笔记">
+<meta property='og:description' content="数学-微分学习题\r错题必刷榜\r设函数$f(x)$连续，给出下列条件\n(A) $\\lim\\limits_{x\\to 0}{\\dfrac{|f(x)|-f(0)}{x}}$存在\n(B) $\\lim\\limits_{x\\to 0}{\\dfrac{f(x)-|f(0)|}{x}}$存在\n(C) $\\lim\\limits_{x\\to 0}{\\dfrac{|f(x)|}{x}}$存在\n(D) $\\lim\\limits_{x\\to 0}{\\dfrac{|f(x)|-|f(0)|}{x}}$存在\n其中能得到&quot;$f(x)$在$x=0$处可导&quot;的条件为\n(C)$\\lim\\limits_{x\\to0}\\dfrac{|f(x)|}{x}=0\\Rightarrow\\forall \\epsilon&gt;0,\\left|\\dfrac{|f(x)|}{x}-0\\right|&lt;\\epsilon\\Rightarrow\\lim\\limits_{x\\to0}\\left|\\dfrac{f(x)}{x}\\right|=0\\Rightarrow f&rsquo;(0)=0$\n(A)$f(0)=\\lim\\limits_{x\\to0}{|f(x)|}\\geq0\\Rightarrow$if $f(0)=0$,the same as (C);else if $f(0)&gt;0$，保号性使得$\\exists \\delta&gt;0,f(x)&gt;0,x\\in(-\\delta,\\delta)$\n(B)$f(0)=\\lim\\limits_{x\\to0}{f(x)}=|f(0)|\\geq0\\Rightarrow$if $f(0)=0$,显然成立;else if $f(0)&gt;0$，也显然成立。\n(D)if $f(0)=0$,the same as (C);else 保号性使得两个绝对值内部同号\n故四个全符合。\n">
+<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/memo/0728/'>
 <meta property='og:site_name' content='shyの考研日志'>
-<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='操作系统' /><meta property='article:tag' content='数据结构' /><meta property='article:tag' content='数学' /><meta property='article:tag' content='同步' /><meta property='article:tag' content='上下文' /><meta property='article:tag' content='调度' /><meta property='article:tag' content='栈' /><meta property='article:tag' content='函数' /><meta property='article:published_time' content='2025-07-14T21:15:02&#43;08:00'/><meta property='article:modified_time' content='2025-07-14T21:15:02&#43;08:00'/>
-<meta name="twitter:title" content="0714学习日志">
-<meta name="twitter:description" content="操作系统-这什么查一下这什么查一下\r经典同步问题\r生产者消费者问题 哲学家进餐问题 读者-写者问题 理发师问题 抽烟者问题 处理机调度\r处理及调度的层次\n高级调度（作业调度、长程调度）\n作业选择\n从**后备队列（外存中等待的作业）**中选择作业 判断系统资源（内存、CPU、I/O）是否充足 资源分配\n为选中的作业分配内存、I/O、文件等资源 进程创建\n将作业转化为一个或多个进程，放入就绪队列 中级调度（内存调度、中程调度）\n选择部分进程挂起（移出内存到外存） 选择挂起的进程恢复（从外存调回内存） 低级调度（进程调度、线程调度、短程调度）\n从就绪队列中选择一个进程 把 CPU 分配给选中的进程 保存和恢复进程的上下文（进程切换 Context Switch） 控制 CPU 的执行顺序 处理机的调度方式\n非抢占式 抢占式 选择调度算法的若干准则\nCPU利用率\n$$ \\frac{\\text{worktime of CPU}}{\\text{total time}} $$ 系统吞吐量\n$$ \\frac{\\text{number of tasks}}{\\text{total time}} $$ 周转时间(Turnaround Time)\n$$ \\text{Completion Time - Arrival Time} $$ 平均周转时间\n$$ \\frac{\\sum\\limits_{N}\\text{Turnaround Time of all processes}}{N} $$ 带权周转时间\n$$ \\frac{\\text{Turnaround Time}}{\\text{Service Time}} $$ 平均带权周转时间\n">
+<meta property='og:type' content='article'><meta property='article:section' content='Memo' /><meta property='article:tag' content='数学' /><meta property='article:tag' content='一元微分' /><meta property='article:published_time' content='2025-07-28T19:40:10&#43;08:00'/><meta property='article:modified_time' content='2025-07-28T19:40:10&#43;08:00'/>
+<meta name="twitter:title" content="0728学习笔记">
+<meta name="twitter:description" content="数学-微分学习题\r错题必刷榜\r设函数$f(x)$连续，给出下列条件\n(A) $\\lim\\limits_{x\\to 0}{\\dfrac{|f(x)|-f(0)}{x}}$存在\n(B) $\\lim\\limits_{x\\to 0}{\\dfrac{f(x)-|f(0)|}{x}}$存在\n(C) $\\lim\\limits_{x\\to 0}{\\dfrac{|f(x)|}{x}}$存在\n(D) $\\lim\\limits_{x\\to 0}{\\dfrac{|f(x)|-|f(0)|}{x}}$存在\n其中能得到&quot;$f(x)$在$x=0$处可导&quot;的条件为\n(C)$\\lim\\limits_{x\\to0}\\dfrac{|f(x)|}{x}=0\\Rightarrow\\forall \\epsilon&gt;0,\\left|\\dfrac{|f(x)|}{x}-0\\right|&lt;\\epsilon\\Rightarrow\\lim\\limits_{x\\to0}\\left|\\dfrac{f(x)}{x}\\right|=0\\Rightarrow f&rsquo;(0)=0$\n(A)$f(0)=\\lim\\limits_{x\\to0}{|f(x)|}\\geq0\\Rightarrow$if $f(0)=0$,the same as (C);else if $f(0)&gt;0$，保号性使得$\\exists \\delta&gt;0,f(x)&gt;0,x\\in(-\\delta,\\delta)$\n(B)$f(0)=\\lim\\limits_{x\\to0}{f(x)}=|f(0)|\\geq0\\Rightarrow$if $f(0)=0$,显然成立;else if $f(0)&gt;0$，也显然成立。\n(D)if $f(0)=0$,the same as (C);else 保号性使得两个绝对值内部同号\n故四个全符合。\n">
     
     </head>
     <body class="
@@ -222,7 +222,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/npee_learning_log.github.io/posts/0714/">0714学习日志</a>
+            <a href="/npee_learning_log.github.io/memo/0728/">0728学习笔记</a>
         </h2>
     
         
@@ -244,7 +244,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jul 14, 2025</time>
+                <time class="article-time--published">Jul 28, 2025</time>
             </div>
         
 
@@ -274,235 +274,23 @@
     <section class="article-content">
     
     
-    <h2 id="操作系统-这什么查一下这什么查一下">操作系统-这什么查一下这什么查一下
-</h2><h3 id="经典同步问题">经典同步问题
-</h3><ol>
-<li>生产者消费者问题</li>
-<li>哲学家进餐问题</li>
-<li>读者-写者问题</li>
-<li>理发师问题</li>
-<li>抽烟者问题</li>
-</ol>
-<h3 id="处理机调度">处理机调度
+    <h2 id="数学-微分学习题">数学-微分学习题
+</h2><h3 id="错题必刷榜">错题必刷榜
 </h3><ol>
 <li>
-<p>处理及调度的层次</p>
-<ol>
-<li>
-<p>高级调度（作业调度、长程调度）</p>
-<p><strong>作业选择</strong></p>
-<ul>
-<li>从**后备队列（外存中等待的作业）**中选择作业</li>
-<li>判断系统资源（内存、CPU、I/O）是否充足</li>
-</ul>
-<p><strong>资源分配</strong></p>
-<ul>
-<li>为选中的作业分配内存、I/O、文件等资源</li>
-</ul>
-<p><strong>进程创建</strong></p>
-<ul>
-<li>将作业转化为一个或多个<strong>进程</strong>，放入就绪队列</li>
-</ul>
-</li>
-<li>
-<p>中级调度（内存调度、中程调度）</p>
-<ul>
-<li><strong>选择部分进程挂起（移出内存到外存）</strong></li>
-<li><strong>选择挂起的进程恢复（从外存调回内存）</strong></li>
-</ul>
-</li>
-<li>
-<p>低级调度（进程调度、线程调度、短程调度）</p>
-<ul>
-<li>从<strong>就绪队列</strong>中选择一个进程</li>
-<li>把 CPU 分配给选中的进程</li>
-<li>保存和恢复进程的上下文（<strong>进程切换 Context Switch</strong>）</li>
-<li>控制 CPU 的执行顺序</li>
-</ul>
+<p>设函数$f(x)$连续，给出下列条件</p>
+<p>(A) $\lim\limits_{x\to 0}{\dfrac{|f(x)|-f(0)}{x}}$存在</p>
+<p>(B) $\lim\limits_{x\to 0}{\dfrac{f(x)-|f(0)|}{x}}$存在</p>
+<p>(C) $\lim\limits_{x\to 0}{\dfrac{|f(x)|}{x}}$存在</p>
+<p>(D) $\lim\limits_{x\to 0}{\dfrac{|f(x)|-|f(0)|}{x}}$存在</p>
+<p>其中能得到&quot;$f(x)$在$x=0$处可导&quot;的条件为</p>
+<p>(C)$\lim\limits_{x\to0}\dfrac{|f(x)|}{x}=0\Rightarrow\forall \epsilon&gt;0,\left|\dfrac{|f(x)|}{x}-0\right|&lt;\epsilon\Rightarrow\lim\limits_{x\to0}\left|\dfrac{f(x)}{x}\right|=0\Rightarrow f&rsquo;(0)=0$</p>
+<p>(A)$f(0)=\lim\limits_{x\to0}{|f(x)|}\geq0\Rightarrow$if $f(0)=0$,the same as (C);else if $f(0)&gt;0$，保号性使得$\exists \delta&gt;0,f(x)&gt;0,x\in(-\delta,\delta)$</p>
+<p>(B)$f(0)=\lim\limits_{x\to0}{f(x)}=|f(0)|\geq0\Rightarrow$if $f(0)=0$,显然成立;else if $f(0)&gt;0$，也显然成立。</p>
+<p>(D)if $f(0)=0$,the same as (C);else 保号性使得两个绝对值内部同号</p>
+<p><strong>故四个全符合。</strong></p>
 </li>
 </ol>
-</li>
-<li>
-<p>处理机的调度方式</p>
-<ul>
-<li>非抢占式</li>
-<li>抢占式</li>
-</ul>
-</li>
-<li>
-<p>选择调度算法的若干准则</p>
-<ul>
-<li>
-<p>CPU利用率</p>
-$$
-     \frac{\text{worktime of CPU}}{\text{total time}}
-     $$</li>
-<li>
-<p>系统吞吐量</p>
-$$
-     \frac{\text{number of tasks}}{\text{total time}}
-     $$</li>
-<li>
-<p>周转时间(Turnaround Time)</p>
-$$
-     \text{Completion Time - Arrival Time}
-     $$</li>
-<li>
-<p>平均周转时间</p>
-$$
-     \frac{\sum\limits_{N}\text{Turnaround Time of all processes}}{N}
-     $$</li>
-<li>
-<p>带权周转时间</p>
-$$
-     \frac{\text{Turnaround Time}}{\text{Service Time}}
-     $$</li>
-<li>
-<p>平均带权周转时间</p>
-$$
-     \frac{\sum\limits_{N}\text{Weighted Turnaround Time of all processes}}{N}
-     $$</li>
-<li>
-<p>等待时间</p>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="调度算法">调度算法
-</h3><ol>
-<li>
-<p>FCFS（先来先服务）</p>
-</li>
-<li>
-<p>SJF（最短作业优先）</p>
-<ul>
-<li>抢占</li>
-<li>非抢占</li>
-</ul>
-</li>
-<li>
-<p>SRTF（最短剩余时间优先）</p>
-</li>
-<li>
-<p>Priority Scheduling（高优先权优先调度）</p>
-<ul>
-<li>抢占</li>
-<li>非抢占</li>
-</ul>
-</li>
-<li>
-<p>Highest Response Ratio Next (HRRN)（高响应比有点调度算法）</p>
-</li>
-<li>
-<p>Round Robin（时间片轮转）</p>
-</li>
-<li>
-<p>Multilevel Feedback Queue（多级反馈队列调度）</p>
-</li>
-</ol>
-<p>上下文切换</p>
-<ol>
-<li>CPU上下文切换</li>
-<li>系统调用上下文切换</li>
-<li>进程上下文切换
-<ul>
-<li>用户级</li>
-<li>系统级</li>
-</ul>
-</li>
-<li>线程上下文切换</li>
-<li>中断上下文切换</li>
-</ol>
-<p><code>课程编号:012-015</code></p>
-<h2 id="数据结构-致敬传奇栈帧pc程序计数器">数据结构-致敬传奇栈帧PC程序计数器
-</h2><h3 id="栈">栈
-</h3><ol>
-<li>
-<p>静态顺序栈</p>
-<ul>
-<li>判空</li>
-<li>判满</li>
-<li>进栈</li>
-<li>出栈</li>
-<li>获取栈顶元素</li>
-</ul>
-</li>
-<li>
-<p>动态顺序栈</p>
-<ul>
-<li>判空</li>
-<li>判满</li>
-<li>进栈</li>
-<li>出栈</li>
-<li>获取栈顶元素</li>
-</ul>
-</li>
-<li>
-<p>链栈</p>
-<ul>
-<li>判空</li>
-<li>判满</li>
-<li>进栈</li>
-<li>出栈</li>
-<li>获取栈顶元素</li>
-</ul>
-</li>
-<li>
-<p>栈的应用</p>
-<ol>
-<li>括号匹配</li>
-<li>进制转换（辗转相除）</li>
-<li>函数递归调用</li>
-<li>表达式求值
-<ul>
-<li>前缀</li>
-<li>中缀（重要）</li>
-<li>后缀</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<p><code>课程编号：014-017</code></p>
-<h2 id="数学-太好了是张宇老师我们有救了">数学-太好了是张宇老师我们有救了！
-</h2><h3 id="函数的概念与特性">函数的概念与特性
-</h3><ol>
-<li>函数</li>
-<li>反函数</li>
-<li>复合函数</li>
-<li>隐函数</li>
-<li>函数的四种特性
-<ul>
-<li>有界性</li>
-<li>单调性</li>
-<li>奇偶性</li>
-<li>周期性</li>
-</ul>
-</li>
-<li>基本初等函数与初等函数
-<ul>
-<li>常函数</li>
-<li>幂函数</li>
-<li>指数函数</li>
-<li>对数函数</li>
-<li>三角函数
-<ol>
-<li>sin x  cos x</li>
-<li>csc x sec x</li>
-<li>tan x cot x</li>
-</ol>
-</li>
-<li>反三角函数
-<ol>
-<li>arcsin x arccos x</li>
-<li>arctanx arccot x</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>分段函数</li>
-</ol>
-<p><code>高数第一讲</code></p>
 
 </section>
 
@@ -511,21 +299,9 @@ $$
     
     <section class="article-tags">
         
-            <a href="/npee_learning_log.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
-        
-            <a href="/npee_learning_log.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
-        
             <a href="/npee_learning_log.github.io/tags/%E6%95%B0%E5%AD%A6/">数学</a>
         
-            <a href="/npee_learning_log.github.io/tags/%E5%90%8C%E6%AD%A5/">同步</a>
-        
-            <a href="/npee_learning_log.github.io/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/">上下文</a>
-        
-            <a href="/npee_learning_log.github.io/tags/%E8%B0%83%E5%BA%A6/">调度</a>
-        
-            <a href="/npee_learning_log.github.io/tags/%E6%A0%88/">栈</a>
-        
-            <a href="/npee_learning_log.github.io/tags/%E5%87%BD%E6%95%B0/">函数</a>
+            <a href="/npee_learning_log.github.io/tags/%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86/">一元微分</a>
         
     </section>
 
@@ -573,12 +349,12 @@ $$
             
                 
 <article class="">
-    <a href="/npee_learning_log.github.io/posts/0713/">
+    <a href="/npee_learning_log.github.io/posts/0727/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">0713学习日志</h2>
+            <h2 class="article-title">0727学习日志</h2>
         </div>
     </a>
 </article>
@@ -586,12 +362,12 @@ $$
             
                 
 <article class="">
-    <a href="/npee_learning_log.github.io/memo/0713/">
+    <a href="/npee_learning_log.github.io/posts/0723/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">0713学习笔记</h2>
+            <h2 class="article-title">0723学习日志</h2>
         </div>
     </a>
 </article>
@@ -599,12 +375,12 @@ $$
             
                 
 <article class="">
-    <a href="/npee_learning_log.github.io/posts/0711/">
+    <a href="/npee_learning_log.github.io/posts/0722/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">0711学习日志</h2>
+            <h2 class="article-title">0722学习日志</h2>
         </div>
     </a>
 </article>
@@ -612,12 +388,12 @@ $$
             
                 
 <article class="">
-    <a href="/npee_learning_log.github.io/memo/0712/">
+    <a href="/npee_learning_log.github.io/posts/0719/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">0712学习笔记</h2>
+            <h2 class="article-title">0719学习日志</h2>
         </div>
     </a>
 </article>
@@ -625,12 +401,12 @@ $$
             
                 
 <article class="">
-    <a href="/npee_learning_log.github.io/posts/0712/">
+    <a href="/npee_learning_log.github.io/posts/0717/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">0712学习日志</h2>
+            <h2 class="article-title">0717学习日志</h2>
         </div>
     </a>
 </article>
