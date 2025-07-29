@@ -153,58 +153,6 @@
 </description>
         </item>
         <item>
-        <title>0728学习笔记</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0728/</link>
-        <pubDate>Mon, 28 Jul 2025 19:40:10 +0800</pubDate>
-        
-        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0728/</guid>
-        <description>&lt;h2 id=&#34;数学-微分学习题&#34;&gt;数学-微分学习题
-&lt;/h2&gt;&lt;h3 id=&#34;错题必刷榜&#34;&gt;错题必刷榜
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;设函数$f(x)$连续，给出下列条件&lt;/p&gt;
-&lt;p&gt;(A) $\lim\limits_{x\to 0}{\dfrac{|f(x)|-f(0)}{x}}$存在&lt;/p&gt;
-&lt;p&gt;(B) $\lim\limits_{x\to 0}{\dfrac{f(x)-|f(0)|}{x}}$存在&lt;/p&gt;
-&lt;p&gt;(C) $\lim\limits_{x\to 0}{\dfrac{|f(x)|}{x}}$存在&lt;/p&gt;
-&lt;p&gt;(D) $\lim\limits_{x\to 0}{\dfrac{|f(x)|-|f(0)|}{x}}$存在&lt;/p&gt;
-&lt;p&gt;其中能得到&amp;quot;$f(x)$在$x=0$处可导&amp;quot;的条件为&lt;/p&gt;
-&lt;p&gt;(C)$\lim\limits_{x\to0}\dfrac{|f(x)|}{x}=0\Rightarrow\forall \epsilon&amp;gt;0,\left|\dfrac{|f(x)|}{x}-0\right|&amp;lt;\epsilon\Rightarrow\lim\limits_{x\to0}\left|\dfrac{f(x)}{x}\right|=0\Rightarrow f&amp;rsquo;(0)=0$&lt;/p&gt;
-&lt;p&gt;(A)$f(0)=\lim\limits_{x\to0}{|f(x)|}\geq0\Rightarrow$if $f(0)=0$,the same as (C);else if $f(0)&amp;gt;0$，保号性使得$\exists \delta&amp;gt;0,f(x)&amp;gt;0,x\in(-\delta,\delta)$&lt;/p&gt;
-&lt;p&gt;(B)$f(0)=\lim\limits_{x\to0}{f(x)}=|f(0)|\geq0\Rightarrow$if $f(0)=0$,显然成立;else if $f(0)&amp;gt;0$，也显然成立。&lt;/p&gt;
-&lt;p&gt;(D)if $f(0)=0$,the same as (C);else 保号性使得两个绝对值内部同号&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;故四个全符合。&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;一些重要的泰勒展开式&#34;&gt;一些重要的泰勒展开式
-&lt;/h3&gt;$$
-\begin{align*}
-\text{e}^x &amp;= \sum_{n=0}^{\infty} \frac{x^n}{n!} 
-            = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots \\[1ex]
-\sin x     &amp;= \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!} 
-            = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots \\[1ex]
-\cos x     &amp;= \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!} 
-            = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots \\[1ex]
-\ln(1+x)   &amp;= \sum_{n=1}^{\infty} (-1)^{n+1} \frac{x^n}{n} 
-            = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots \quad (|x| &lt; 1) \\[1ex]
-\frac{1}{1 - x} &amp;= \sum_{n=0}^{\infty} x^n 
-                 = 1 + x + x^2 + x^3 + \cdots \quad (|x| &lt; 1) \\[1ex]
-\frac{1}{1 + x} &amp;= \sum_{n=0}^{\infty} (-1)^n x^n 
-                 = 1 - x + x^2 - x^3 + \cdots \quad (|x| &lt; 1) \\[1ex]
-\arctan x  &amp;= \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{2n+1} 
-            = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots \quad (|x| \leq 1)
-\end{align*}
-$$&lt;h3 id=&#34;常用高阶导数&#34;&gt;常用高阶导数
-&lt;/h3&gt;$$
-\begin{align*}
-\left(e^{ax+b}\right)^{(n)}&amp;=a^ne^{ax+b}\\
-[\sin{(ax+b)}]^{(n)}&amp;=a^n\sin{\left(ax+b+\dfrac{n\pi}{2}\right)}\\
-[\cos{(ax+b)}]^{(n)}&amp;=a^n\cos{\left(ax+b+\dfrac{n\pi}{2}\right)}\\
-[\ln(ax+b)]^{(n)}&amp;=(-1)^{n-1}a^n\frac{(n-1)!}{(ax+b)^{n}}\\
-(\frac{1}{ax+b})^{(n)}&amp;=(-1)^na^n\frac{n!}{(ax+b)^{n+1}}
-\end{align*}
-$$</description>
-        </item>
-        <item>
         <title>0727学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0727/</link>
         <pubDate>Sun, 27 Jul 2025 18:55:08 +0800</pubDate>
