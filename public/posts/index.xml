@@ -6,7 +6,206 @@
         <description>Recent content in Posts on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Tue, 29 Jul 2025 23:17:02 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 30 Jul 2025 22:23:38 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0730学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0730/</link>
+        <pubDate>Wed, 30 Jul 2025 22:23:38 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0730/</guid>
+        <description>&lt;h2 id=&#34;操作系统-io&#34;&gt;操作系统-I/O
+&lt;/h2&gt;&lt;h3 id=&#34;文件系统&#34;&gt;文件系统
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;文件系统（自底向上）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;I/O控制层&lt;/li&gt;
+&lt;li&gt;基本文件系统&lt;/li&gt;
+&lt;li&gt;文件组织模块&lt;/li&gt;
+&lt;li&gt;逻辑文件系统&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文件系统布局&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;文件系统在磁盘中的结构
+&lt;ol&gt;
+&lt;li&gt;主引导记录&lt;/li&gt;
+&lt;li&gt;引导块&lt;/li&gt;
+&lt;li&gt;超级块&lt;/li&gt;
+&lt;li&gt;文件系统中空闲块的信息&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;文件系统在内存中的结构
+&lt;ol&gt;
+&lt;li&gt;内存中的安装表（mount table）&lt;/li&gt;
+&lt;li&gt;内存中的目录结构的缓存&lt;/li&gt;
+&lt;li&gt;整个系统的打开文件表&lt;/li&gt;
+&lt;li&gt;每个进程的打开文件表，包含进程打开文件的文件描述符&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;虚拟文件系统VFS
+&lt;ol&gt;
+&lt;li&gt;超级块对象&lt;/li&gt;
+&lt;li&gt;索引节点对象&lt;/li&gt;
+&lt;li&gt;目录项对象&lt;/li&gt;
+&lt;li&gt;文件对象&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;文件系统挂载&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;io&#34;&gt;I/O
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;I/O设备&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;信息交换单位分类
+&lt;ol&gt;
+&lt;li&gt;块设备&lt;/li&gt;
+&lt;li&gt;字符设备&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;传输速率分类
+&lt;ol&gt;
+&lt;li&gt;低速设备&lt;/li&gt;
+&lt;li&gt;中速设备&lt;/li&gt;
+&lt;li&gt;高速设备&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;使用特性
+&lt;ol&gt;
+&lt;li&gt;存储设备&lt;/li&gt;
+&lt;li&gt;输入/输出设备&lt;/li&gt;
+&lt;li&gt;共享属性
+&lt;ol&gt;
+&lt;li&gt;独占设备&lt;/li&gt;
+&lt;li&gt;共享设备&lt;/li&gt;
+&lt;li&gt;虚拟设备&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I/O接口&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;设备控制器与CPU的接口&lt;/li&gt;
+&lt;li&gt;设备控制器与设备的接口&lt;/li&gt;
+&lt;li&gt;I/O逻辑&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;类型：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;数据传送方式：并行接口、串行接口&lt;/li&gt;
+&lt;li&gt;主机访问I/O设备的控制方式：程序查询接口、终端接口、DMA接口&lt;/li&gt;
+&lt;li&gt;功能选择的灵活性：可编程接口、不可编程接口&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;端口：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;数据寄存器&lt;/li&gt;
+&lt;li&gt;状态寄存器&lt;/li&gt;
+&lt;li&gt;控制寄存器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I/O端口编址方式：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;独立编址&lt;/li&gt;
+&lt;li&gt;统一编址&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I/O控制方式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;程序直接控制方式&lt;/li&gt;
+&lt;li&gt;中断驱动方式&lt;/li&gt;
+&lt;li&gt;DMA方式（重要）&lt;/li&gt;
+&lt;li&gt;通道控制方式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I/O软件层次结构&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用户层软件&lt;/li&gt;
+&lt;li&gt;设备独立性软件&lt;/li&gt;
+&lt;li&gt;设备驱动软件&lt;/li&gt;
+&lt;li&gt;中断处理软件&lt;/li&gt;
+&lt;li&gt;硬件（非软件层次）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;数学-极值点拐点&#34;&gt;数学-极值点？拐点？
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;极值的定义&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;单调性与极值的判别&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;单调性的判别&lt;/li&gt;
+&lt;li&gt;判别极值的第一充分条件&lt;/li&gt;
+&lt;li&gt;判别极值的第二充分条件&lt;/li&gt;
+&lt;li&gt;判别极值的第三充分条件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;凹凸性与拐点的概念&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;凹凸性的定义&lt;/li&gt;
+&lt;li&gt;拐点的定义&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;凹凸性与拐点的判别&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;判别凹凸性&lt;/li&gt;
+&lt;li&gt;判别拐点的第一充分条件&lt;/li&gt;
+&lt;li&gt;判别拐点的第二充分条件&lt;/li&gt;
+&lt;li&gt;判别拐点的第三充分条件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;渐近线&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;铅直渐近线&lt;/li&gt;
+&lt;li&gt;水平渐近线&lt;/li&gt;
+&lt;li&gt;斜渐近线&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最值或取值范围&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;最值的定义&lt;/li&gt;
+&lt;li&gt;求区间[a,b]上的连续函数f(x)的最大值和最小值&lt;/li&gt;
+&lt;li&gt;求区间(a,b )上的连续函数f(x)的最值或取值范围&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;作函数图像&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;一般步骤
+&lt;ol&gt;
+&lt;li&gt;确定定义域、奇偶性、周期性等&lt;/li&gt;
+&lt;li&gt;用导数工具确定函数的单调区间、极值点、凹凸区间、拐点&lt;/li&gt;
+&lt;li&gt;考查渐近线&lt;/li&gt;
+&lt;li&gt;作出函数图像&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;曲率及曲率半径（证明放在下一期笔记中）
+&lt;/p&gt;
+$$
+   \begin{align*}
+   k &amp;= \dfrac{|y&#39;&#39;|}{{[1+{(y&#39;)}^2]}^{\frac{3}{2}}}\\
+   r &amp;= \frac{1}{k} = \dfrac{{[1+{(y&#39;)}^2]}^{\frac{3}{2}}}{|y&#39;&#39;|},{y}&#39;&#39;\neq0
+   \end{align*}
+   $$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;课程编号:第5讲&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>0729学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0729/</link>
         <pubDate>Tue, 29 Jul 2025 23:17:02 +0800</pubDate>

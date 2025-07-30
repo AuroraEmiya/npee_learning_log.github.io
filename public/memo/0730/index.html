@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="GCC manual-RTFM\r今天心血来潮想要拜读gccman page，学到很多。有时候会思考，AI确实帮助了我快速上手一个领域，比如使用Rust编写一个植物大战僵尸的游戏，比如从零开始认识一个代码，但是一旦结束之后，回头再想就很难说我仍然可以再举一反三地做另一个好玩的事情，事实上Rust的语法和特性我也几乎忘记。\njyy老师在课堂上曾经向我们展示了许多很好玩的代码，很有意思的命令行，也曾经嘱咐我们一定要RTFM(Read The Friendly Manual)，现在的我毕业了，同时仍然是AI的重度依赖者，只是心里一直有一个地方在不断的问自己：AI的回答能否坦然接受？\n我的答案一直是：NO\n我始终在拥抱AI的同时留有一丝怀疑和谨慎。\n这是man page的部分内容，权当记录，明天还要更新更多的笔记。\nNAME gcc - GNU project C and C++ compiler gcc [-c|-S|-E] [-std=standard] [-g] [-pg] [-Olevel] [-Wwarn...] [-Wpedantic] [-Idir...] [-Ldir...] [-Dmacro[=defn]...] [-Umacro] [-foption...] [-mmachine-option...] [-o outfile] [@file] infile... Only the most useful options are listed here; see below for the remainder. g++ accepts mostly the same options as gcc. DESCRIPTION When you invoke GCC, it normally does preprocessing, compilation, assembly and linking. The &#34;overall options&#34; allow you to stop this process at an intermediate stage. For example, the -c option says not to run the linker. Then the output consists of object files output by the assembler. Other options are passed on to one or more stages of processing. Some options control the preprocessor and others the compiler itself. Yet other options control the assembler and linker; most of these are not documented here, since you rarely need to use any of them. Most of the command-line options that you can use with GCC are useful for C programs; when an option is only useful with another language (usually C++), the explanation says so explicitly. If the description for a particular option does not mention a source language, you can use that option with all supported languages. The usual way to run GCC is to run the executable called gcc, or machine-gcc when cross-compiling, or machine-gcc-version to run a specific version of GCC. When you compile C++ programs, you should invoke GCC as g++ instead. The gcc program accepts options and file names as operands. Many options have multi-letter names; therefore multiple single-letter options may not be grouped: -dv is very different from -d -v. You can mix options and other arguments. For the most part, the order you use doesn&#39;t matter. Order does matter when you use several options of the same kind; for example, if you specify -L more than once, the directories are searched in the order specified. Also, the placement of the -l option is significant. Many options have long names starting with -f or with -W---for example, -fmove-loop-invariants, -Wformat and so on. Most of these have both positive and negative forms; the negative form of -ffoo is -fno-foo. This manual documents only one of these two forms, whichever one is not the default. Some options take one or more arguments typically separated either by a space or by the equals sign (=) from the option name. Unless documented otherwise, an argument can be either numeric or a string. Numeric arguments must typically be small unsigned decimal or hexadecimal integers. Hexadecimal arguments must begin with the 0x prefix. Arguments to options that specify a size threshold of some sort may be arbitrarily large decimal or hexadecimal integers followed by a byte size suffix designating a multiple of bytes such as &#34;kB&#34; and &#34;KiB&#34; for kilobyte and kibibyte, respectively, &#34;MB&#34; and &#34;MiB&#34; for megabyte and mebibyte, &#34;GB&#34; and &#34;GiB&#34; for gigabyte and gigibyte, and so on. Such arguments are designated by byte-size in the following text. Refer to the NIST, IEC, and other relevant national and international standards for the full listing and explanation of the binary and decimal byte size prefixes. Option Summary Here is a summary of all the options, grouped by type. Explanations are in the following sections. Overall Options -c -S -E -o file -x language -v -### --help[=class[,...]] --target-help --version -pass-exit-codes -pipe -specs=file -wrapper @file -ffile-prefix-map=old=new -fplugin=file -fplugin-arg-name=arg -fdump-ada-spec[-slim] -fada-spec-parent=unit -fdump-go-spec=file C Language Options -ansi -std=standard -fgnu89-inline -fpermitted-flt-eval-methods=standard -aux-info filename -fallow-parameterless-variadic-functions -fno-asm -fno-builtin -fno-builtin-function -fgimple -fhosted -ffreestanding -fopenacc -fopenacc-dim=geom -fopenmp -fopenmp-simd -fms-extensions -fplan9-extensions -fsso-struct=endianness -fallow-single-precision -fcond-mismatch -flax-vector-conversions -fsigned-bitfields -fsigned-char -funsigned-bitfields -funsigned-char C++ Language Options -fabi-version=n -fno-access-control -faligned-new=n -fargs-in-order=n -fchar8_t -fcheck-new -fconstexpr-depth=n -fconstexpr-loop-limit=n -fconstexpr-ops-limit=n -fno-elide-constructors -fno-enforce-eh-specs -fno-gnu-keywords -fno-implicit-templates -fno-implicit-inline-templates -fno-implement-inlines -fms-extensions -fnew-inheriting-ctors -fnew-ttp-matching -fno-nonansi-builtins -fnothrow-opt -fno-operator-names -fno-optional-diags -fpermissive -fno-pretty-templates -frepo -fno-rtti -fsized-deallocation -ftemplate-backtrace-limit=n -ftemplate-depth=n -fno-threadsafe-statics -fuse-cxa-atexit -fno-weak -nostdinc++ -fvisibility-inlines-hidden -fvisibility-ms-compat -fext-numeric-literals -Wabi=n -Wabi-tag -Wconversion-null -Wctor-dtor-privacy -Wdelete-non-virtual-dtor -Wdeprecated-copy -Wdeprecated-copy-dtor -Wliteral-suffix -Wmultiple-inheritance -Wno-init-list-lifetime -Wnamespaces -Wnarrowing -Wpessimizing-move -Wredundant-move -Wnoexcept -Wnoexcept-type -Wclass-memaccess -Wnon-virtual-dtor -Wreorder -Wregister -Weffc++ -Wstrict-null-sentinel -Wtemplates -Wno-non-template-friend -Wold-style-cast -Woverloaded-virtual -Wno-pmf-conversions -Wno-class-conversion -Wno-terminate -Wsign-promo -Wvirtual-inheritance Preprocessor Options -Aquestion=answer -A-question[=answer] -C -CC -Dmacro[=defn] -dD -dI -dM -dN -dU -fdebug-cpp -fdirectives-only -fdollars-in-identifiers -fexec-charset=charset -fextended-identifiers -finput-charset=charset -fmacro-prefix-map=old=new -fno-canonical-system-headers -fpch-deps -fpch-preprocess -fpreprocessed -ftabstop=width -ftrack-macro-expansion -fwide-exec-charset=charset -fworking-directory -H -imacros file -include file -M -MD -MF -MG -MM -MMD -MP -MQ -MT -no-integrated-cpp -P -pthread -remap -traditional -traditional-cpp -trigraphs -Umacro -undef -Wp,option -Xpreprocessor option Assembler Options -Wa,option -Xassembler option Linker Options object-file-name -fuse-ld=linker -llibrary -nostartfiles -nodefaultlibs -nolibc -nostdlib -e entry --entry=entry -pie -pthread -r -rdynamic -s -static -static-pie -static-libgcc -static-libstdc++ -static-libasan -static-libtsan -static-liblsan -static-libubsan -shared -shared-libgcc -symbolic -T script -Wl,option -Xlinker option -u symbol -z keyword Directory Options -Bprefix -Idir -I- -idirafter dir -imacros file -imultilib dir -iplugindir=dir -iprefix file -iquote dir -isysroot dir -isystem dir -iwithprefix dir -iwithprefixbefore dir -Ldir -no-canonical-prefixes --no-sysroot-suffix -nostdinc -nostdinc++ --sysroot=dir Code Generation Options -fcall-saved-reg -fcall-used-reg -ffixed-reg -fexceptions -fnon-call-exceptions -fdelete-dead-exceptions -funwind-tables -fasynchronous-unwind-tables -fno-gnu-unique -finhibit-size-directive -fno-common -fno-ident -fpcc-struct-return -fpic -fPIC -fpie -fPIE -fno-plt -fno-jump-tables -frecord-gcc-switches -freg-struct-return -fshort-enums -fshort-wchar -fverbose-asm -fpack-struct[=n] -fleading-underscore -ftls-model=model -fstack-reuse=reuse_level -ftrampolines -ftrapv -fwrapv -fvisibility=[default|internal|hidden|protected] -fstrict-volatile-bitfields -fsync-libcalls For any given input file, the file name suffix determines what kind of compilation is done: file.c C source code that must be preprocessed. file.i C source code that should not be preprocessed. file.ii C++ source code that should not be preprocessed. file.m Objective-C source code. Note that you must link with the libobjc library to make an Objective-C program work. file.mi Objective-C source code that should not be preprocessed. file.mm file.M Objective-C++ source code. Note that you must link with the libobjc library to make an Objective-C++ program work. Note that .M refers to a literal capital M. file.mii Objective-C++ source code that should not be preprocessed. file.h C, C++, Objective-C or Objective-C++ header file to be turned into a precompiled header (default), or C, C++ header file to be turned into an Ada spec (via the -fdump-ada-spec switch). file.cc file.cp file.cxx file.cpp file.CPP file.c++ file.C C++ source code that must be preprocessed. Note that in .cxx, the last two letters must both be literally x. Likewise, .C refers to a literal capital C. file.mm file.M Objective-C++ source code that must be preprocessed. file.mii Objective-C++ source code that should not be preprocessed. file.hh file.H file.hp file.hxx file.hpp file.HPP file.h++ file.tcc C++ header file to be turned into a precompiled header or Ada spec. file.f file.for file.ftn Fixed form Fortran source code that should not be preprocessed. file.F file.FOR file.fpp file.FPP file.FTN Fixed form Fortran source code that must be preprocessed (with the traditional preprocessor). file.f90 file.f95 file.f03 file.f08 Free form Fortran source code that should not be preprocessed. file.F90 file.F95 file.F03 file.F08 Free form Fortran source code that must be preprocessed (with the traditional preprocessor). file.go Go source code. file.brig BRIG files (binary representation of HSAIL). file.d D source code. file.di D interface file. file.dd D documentation code (Ddoc). file.ads Ada source code file that contains a library unit declaration (a declaration of a package, subprogram, or generic, or a generic instantiation), or a library unit renaming declaration (a package, generic, or subprogram renaming declaration). Such files are also called specs. file.adb Ada source code file containing a library unit body (a subprogram or package body). Such files are also called bodies. file.s Assembler code. file.S file.sx Assembler code that must be preprocessed. other An object file to be fed straight into linking. Any file name with no recognized suffix is treated this way. You can specify the input language explicitly with the -x option: -x language Specify explicitly the language for the following input files (rather than letting the compiler choose a default based on the file name suffix). This option applies to all following input files until the next -x option. Possible values for language are: c c-header cpp-output c++ c++-header c++-cpp-output objective-c objective-c-header objective-c-cpp-output objective-c++ objective-c++-header objective-c++-cpp-output assembler assembler-with-cpp ada d f77 f77-cpp-input f95 f95-cpp-input go brig -x none Turn off any specification of a language, so that subsequent files are handled according to their file name suffixes (as they are if -x has not been used at all). If you only want some of the stages of compilation, you can use -x (or filename suffixes) to tell gcc where to start, and one of the options -c, -S, or -E to say where gcc is to stop. Note that some combinations (for example, -x cpp-output -E) instruct gcc to do nothing at all. -c Compile or assemble the source files, but do not link. The linking stage simply is not done. The ultimate output is in the form of an object file for each source file. By default, the object file name for a source file is made by replacing the suffix .c, .i, .s, etc., with .o. Unrecognized input files, not requiring compilation or assembly, are ignored. -S Stop after the stage of compilation proper; do not assemble. The output is in the form of an assembler code file for each non-assembler input file specified. By default, the assembler file name for a source file is made by replacing the suffix .c, .i, etc., with .s. Input files that don&#39;t require compilation are ignored. -E Stop after the preprocessing stage; do not run the compiler proper. The output is in the form of preprocessed source code, which is sent to the standard output. Input files that don&#39;t require preprocessing are ignored. -o file Place output in file file. This applies to whatever sort of output is being produced, whether it be an executable file, an object file, an assembler file or preprocessed C code. If -o is not specified, the default is to put an executable file in a.out, the object file for source.suffix in source.o, its assembler file in source.s, a precompiled header file in source.suffix.gch, and all preprocessed C source on standard output. -v Print (on standard error output) the commands executed to run the stages of compilation. Also print the version number of the compiler driver program and of the preprocessor and the compiler proper. -### Like -v except the commands are not executed and arguments are quoted unless they contain only alphanumeric characters or &#34;./-_&#34;. This is useful for shell scripts to capture the driver-generated command lines. --help Print (on the standard output) a description of the command- line options understood by gcc. If the -v option is also specified then --help is also passed on to the various processes invoked by gcc, so that they can display the command-line options they accept. If the -Wextra option has also been specified (prior to the --help option), then command-line options that have no documentation associated with them are also displayed. --target-help Print (on the standard output) a description of target- specific command-line options for each tool. For some targets extra target-specific information may also be printed. --help={class|[^]qualifier}[,...] Print (on the standard output) a description of the command- line options understood by the compiler that fit into all specified classes and qualifiers. These are the supported classes: optimizers Display all of the optimization options supported by the compiler. warnings Display all of the options controlling warning messages produced by the compiler. target Display target-specific options. Unlike the --target-help option however, target-specific options of the linker and assembler are not displayed. This is because those tools do not currently support the extended --help= syntax. params Display the values recognized by the --param option. language Display the options supported for language, where language is the name of one of the languages supported in this version of GCC. common Display the options that are common to all languages. These are the supported qualifiers: undocumented Display only those options that are undocumented. joined Display options taking an argument that appears after an equal sign in the same continuous piece of text, such as: --help=target. separate Display options taking an argument that appears as a separate word following the original option, such as: -o output-file. Thus for example to display all the undocumented target- specific switches supported by the compiler, use: --help=target,undocumented The sense of a qualifier can be inverted by prefixing it with the ^ character, so for example to display all binary warning options (i.e., ones that are either on or off and that do not take an argument) that have a description, use: --help=warnings,^joined,^undocumented The argument to --help= should not consist solely of inverted qualifiers. Combining several classes is possible, although this usually restricts the output so much that there is nothing to display. One case where it does work, however, is when one of the classes is target. For example, to display all the target- specific optimization options, use: --help=target,optimizers The --help= option can be repeated on the command line. Each successive use displays its requested class of options, skipping those that have already been displayed. If --help is also specified anywhere on the command line then this takes precedence over any --help= option. If the -Q option appears on the command line before the --help= option, then the descriptive text displayed by --help= is changed. Instead of describing the displayed options, an indication is given as to whether the option is enabled, disabled or set to a specific value (assuming that the compiler knows this at the point where the --help= option is used). Here is a truncated example from the ARM port of gcc: % gcc -Q -mabi=2 --help=target -c The following options are target specific: -mabi= 2 -mabort-on-noreturn [disabled] -mapcs [disabled] The output is sensitive to the effects of previous command- line options, so for example it is possible to find out which optimizations are enabled at -O2 by using: -Q -O2 --help=optimizers Alternatively you can discover which binary optimizations are enabled by -O3 by using: gcc -c -Q -O3 --help=optimizers &gt; /tmp/O3-opts gcc -c -Q -O2 --help=optimizers &gt; /tmp/O2-opts diff /tmp/O2-opts /tmp/O3-opts | grep enabled --version Display the version number and copyrights of the invoked GCC. -pass-exit-codes Normally the gcc program exits with the code of 1 if any phase of the compiler returns a non-success return code. If you specify -pass-exit-codes, the gcc program instead returns with the numerically highest error produced by any phase returning an error indication. The C, C++, and Fortran front ends return 4 if an internal compiler error is encountered. -pipe Use pipes rather than temporary files for communication between the various stages of compilation. This fails to work on some systems where the assembler is unable to read from a pipe; but the GNU assembler has no trouble. -specs=file Process file after the compiler reads in the standard specs file, in order to override the defaults which the gcc driver program uses when determining what switches to pass to cc1, cc1plus, as, ld, etc. More than one -specs=file can be specified on the command line, and they are processed in order, from left to right. -wrapper Invoke all subcommands under a wrapper program. The name of the wrapper program and its parameters are passed as a comma separated list. gcc -c t.c -wrapper gdb,--args This invokes all subprograms of gcc under gdb --args, thus the invocation of cc1 is gdb --args cc1 .... -ffile-prefix-map=old=new When compiling files residing in directory old, record any references to them in the result of the compilation as if the files resided in directory new instead. Specifying this option is equivalent to specifying all the individual -f*-prefix-map options. This can be used to make reproducible builds that are location independent. See also -fmacro-prefix-map and -fdebug-prefix-map. -fplugin=name.so Load the plugin code in file name.so, assumed to be a shared object to be dlopen&#39;d by the compiler. The base name of the shared object file is used to identify the plugin for the purposes of argument parsing (See -fplugin-arg-name-key=value below). Each plugin should define the callback functions specified in the Plugins API. -fplugin-arg-name-key=value Define an argument called key with a value of value for the plugin called name. -fdump-ada-spec[-slim] For C and C++ source and include files, generate corresponding Ada specs. -fada-spec-parent=unit In conjunction with -fdump-ada-spec[-slim] above, generate Ada specs as child units of parent unit. -fdump-go-spec=file For input files in any language, generate corresponding Go declarations in file. This generates Go &#34;const&#34;, &#34;type&#34;, &#34;var&#34;, and &#34;func&#34; declarations which may be a useful way to start writing a Go interface to code written in some other language. @file Read command-line options from file. The options read are inserted in place of the original @file option. If file does not exist, or cannot be read, then the option will be treated literally, and not removed. Options in file are separated by whitespace. A whitespace character may be included in an option by surrounding the entire option in either single or double quotes. Any character (including a backslash) may be included by prefixing the character to be included with a backslash. The file may itself contain additional @file options; any such options will be processed recursively. ">
+<title>0730学习笔记</title>
+
+<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/memo/0730/'>
+
+<link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0730学习笔记">
+<meta property='og:description' content="GCC manual-RTFM\r今天心血来潮想要拜读gccman page，学到很多。有时候会思考，AI确实帮助了我快速上手一个领域，比如使用Rust编写一个植物大战僵尸的游戏，比如从零开始认识一个代码，但是一旦结束之后，回头再想就很难说我仍然可以再举一反三地做另一个好玩的事情，事实上Rust的语法和特性我也几乎忘记。\njyy老师在课堂上曾经向我们展示了许多很好玩的代码，很有意思的命令行，也曾经嘱咐我们一定要RTFM(Read The Friendly Manual)，现在的我毕业了，同时仍然是AI的重度依赖者，只是心里一直有一个地方在不断的问自己：AI的回答能否坦然接受？\n我的答案一直是：NO\n我始终在拥抱AI的同时留有一丝怀疑和谨慎。\n这是man page的部分内容，权当记录，明天还要更新更多的笔记。\nNAME gcc - GNU project C and C++ compiler gcc [-c|-S|-E] [-std=standard] [-g] [-pg] [-Olevel] [-Wwarn...] [-Wpedantic] [-Idir...] [-Ldir...] [-Dmacro[=defn]...] [-Umacro] [-foption...] [-mmachine-option...] [-o outfile] [@file] infile... Only the most useful options are listed here; see below for the remainder. g++ accepts mostly the same options as gcc. DESCRIPTION When you invoke GCC, it normally does preprocessing, compilation, assembly and linking. The &#34;overall options&#34; allow you to stop this process at an intermediate stage. For example, the -c option says not to run the linker. Then the output consists of object files output by the assembler. Other options are passed on to one or more stages of processing. Some options control the preprocessor and others the compiler itself. Yet other options control the assembler and linker; most of these are not documented here, since you rarely need to use any of them. Most of the command-line options that you can use with GCC are useful for C programs; when an option is only useful with another language (usually C++), the explanation says so explicitly. If the description for a particular option does not mention a source language, you can use that option with all supported languages. The usual way to run GCC is to run the executable called gcc, or machine-gcc when cross-compiling, or machine-gcc-version to run a specific version of GCC. When you compile C++ programs, you should invoke GCC as g++ instead. The gcc program accepts options and file names as operands. Many options have multi-letter names; therefore multiple single-letter options may not be grouped: -dv is very different from -d -v. You can mix options and other arguments. For the most part, the order you use doesn&#39;t matter. Order does matter when you use several options of the same kind; for example, if you specify -L more than once, the directories are searched in the order specified. Also, the placement of the -l option is significant. Many options have long names starting with -f or with -W---for example, -fmove-loop-invariants, -Wformat and so on. Most of these have both positive and negative forms; the negative form of -ffoo is -fno-foo. This manual documents only one of these two forms, whichever one is not the default. Some options take one or more arguments typically separated either by a space or by the equals sign (=) from the option name. Unless documented otherwise, an argument can be either numeric or a string. Numeric arguments must typically be small unsigned decimal or hexadecimal integers. Hexadecimal arguments must begin with the 0x prefix. Arguments to options that specify a size threshold of some sort may be arbitrarily large decimal or hexadecimal integers followed by a byte size suffix designating a multiple of bytes such as &#34;kB&#34; and &#34;KiB&#34; for kilobyte and kibibyte, respectively, &#34;MB&#34; and &#34;MiB&#34; for megabyte and mebibyte, &#34;GB&#34; and &#34;GiB&#34; for gigabyte and gigibyte, and so on. Such arguments are designated by byte-size in the following text. Refer to the NIST, IEC, and other relevant national and international standards for the full listing and explanation of the binary and decimal byte size prefixes. Option Summary Here is a summary of all the options, grouped by type. Explanations are in the following sections. Overall Options -c -S -E -o file -x language -v -### --help[=class[,...]] --target-help --version -pass-exit-codes -pipe -specs=file -wrapper @file -ffile-prefix-map=old=new -fplugin=file -fplugin-arg-name=arg -fdump-ada-spec[-slim] -fada-spec-parent=unit -fdump-go-spec=file C Language Options -ansi -std=standard -fgnu89-inline -fpermitted-flt-eval-methods=standard -aux-info filename -fallow-parameterless-variadic-functions -fno-asm -fno-builtin -fno-builtin-function -fgimple -fhosted -ffreestanding -fopenacc -fopenacc-dim=geom -fopenmp -fopenmp-simd -fms-extensions -fplan9-extensions -fsso-struct=endianness -fallow-single-precision -fcond-mismatch -flax-vector-conversions -fsigned-bitfields -fsigned-char -funsigned-bitfields -funsigned-char C++ Language Options -fabi-version=n -fno-access-control -faligned-new=n -fargs-in-order=n -fchar8_t -fcheck-new -fconstexpr-depth=n -fconstexpr-loop-limit=n -fconstexpr-ops-limit=n -fno-elide-constructors -fno-enforce-eh-specs -fno-gnu-keywords -fno-implicit-templates -fno-implicit-inline-templates -fno-implement-inlines -fms-extensions -fnew-inheriting-ctors -fnew-ttp-matching -fno-nonansi-builtins -fnothrow-opt -fno-operator-names -fno-optional-diags -fpermissive -fno-pretty-templates -frepo -fno-rtti -fsized-deallocation -ftemplate-backtrace-limit=n -ftemplate-depth=n -fno-threadsafe-statics -fuse-cxa-atexit -fno-weak -nostdinc++ -fvisibility-inlines-hidden -fvisibility-ms-compat -fext-numeric-literals -Wabi=n -Wabi-tag -Wconversion-null -Wctor-dtor-privacy -Wdelete-non-virtual-dtor -Wdeprecated-copy -Wdeprecated-copy-dtor -Wliteral-suffix -Wmultiple-inheritance -Wno-init-list-lifetime -Wnamespaces -Wnarrowing -Wpessimizing-move -Wredundant-move -Wnoexcept -Wnoexcept-type -Wclass-memaccess -Wnon-virtual-dtor -Wreorder -Wregister -Weffc++ -Wstrict-null-sentinel -Wtemplates -Wno-non-template-friend -Wold-style-cast -Woverloaded-virtual -Wno-pmf-conversions -Wno-class-conversion -Wno-terminate -Wsign-promo -Wvirtual-inheritance Preprocessor Options -Aquestion=answer -A-question[=answer] -C -CC -Dmacro[=defn] -dD -dI -dM -dN -dU -fdebug-cpp -fdirectives-only -fdollars-in-identifiers -fexec-charset=charset -fextended-identifiers -finput-charset=charset -fmacro-prefix-map=old=new -fno-canonical-system-headers -fpch-deps -fpch-preprocess -fpreprocessed -ftabstop=width -ftrack-macro-expansion -fwide-exec-charset=charset -fworking-directory -H -imacros file -include file -M -MD -MF -MG -MM -MMD -MP -MQ -MT -no-integrated-cpp -P -pthread -remap -traditional -traditional-cpp -trigraphs -Umacro -undef -Wp,option -Xpreprocessor option Assembler Options -Wa,option -Xassembler option Linker Options object-file-name -fuse-ld=linker -llibrary -nostartfiles -nodefaultlibs -nolibc -nostdlib -e entry --entry=entry -pie -pthread -r -rdynamic -s -static -static-pie -static-libgcc -static-libstdc++ -static-libasan -static-libtsan -static-liblsan -static-libubsan -shared -shared-libgcc -symbolic -T script -Wl,option -Xlinker option -u symbol -z keyword Directory Options -Bprefix -Idir -I- -idirafter dir -imacros file -imultilib dir -iplugindir=dir -iprefix file -iquote dir -isysroot dir -isystem dir -iwithprefix dir -iwithprefixbefore dir -Ldir -no-canonical-prefixes --no-sysroot-suffix -nostdinc -nostdinc++ --sysroot=dir Code Generation Options -fcall-saved-reg -fcall-used-reg -ffixed-reg -fexceptions -fnon-call-exceptions -fdelete-dead-exceptions -funwind-tables -fasynchronous-unwind-tables -fno-gnu-unique -finhibit-size-directive -fno-common -fno-ident -fpcc-struct-return -fpic -fPIC -fpie -fPIE -fno-plt -fno-jump-tables -frecord-gcc-switches -freg-struct-return -fshort-enums -fshort-wchar -fverbose-asm -fpack-struct[=n] -fleading-underscore -ftls-model=model -fstack-reuse=reuse_level -ftrampolines -ftrapv -fwrapv -fvisibility=[default|internal|hidden|protected] -fstrict-volatile-bitfields -fsync-libcalls For any given input file, the file name suffix determines what kind of compilation is done: file.c C source code that must be preprocessed. file.i C source code that should not be preprocessed. file.ii C++ source code that should not be preprocessed. file.m Objective-C source code. Note that you must link with the libobjc library to make an Objective-C program work. file.mi Objective-C source code that should not be preprocessed. file.mm file.M Objective-C++ source code. Note that you must link with the libobjc library to make an Objective-C++ program work. Note that .M refers to a literal capital M. file.mii Objective-C++ source code that should not be preprocessed. file.h C, C++, Objective-C or Objective-C++ header file to be turned into a precompiled header (default), or C, C++ header file to be turned into an Ada spec (via the -fdump-ada-spec switch). file.cc file.cp file.cxx file.cpp file.CPP file.c++ file.C C++ source code that must be preprocessed. Note that in .cxx, the last two letters must both be literally x. Likewise, .C refers to a literal capital C. file.mm file.M Objective-C++ source code that must be preprocessed. file.mii Objective-C++ source code that should not be preprocessed. file.hh file.H file.hp file.hxx file.hpp file.HPP file.h++ file.tcc C++ header file to be turned into a precompiled header or Ada spec. file.f file.for file.ftn Fixed form Fortran source code that should not be preprocessed. file.F file.FOR file.fpp file.FPP file.FTN Fixed form Fortran source code that must be preprocessed (with the traditional preprocessor). file.f90 file.f95 file.f03 file.f08 Free form Fortran source code that should not be preprocessed. file.F90 file.F95 file.F03 file.F08 Free form Fortran source code that must be preprocessed (with the traditional preprocessor). file.go Go source code. file.brig BRIG files (binary representation of HSAIL). file.d D source code. file.di D interface file. file.dd D documentation code (Ddoc). file.ads Ada source code file that contains a library unit declaration (a declaration of a package, subprogram, or generic, or a generic instantiation), or a library unit renaming declaration (a package, generic, or subprogram renaming declaration). Such files are also called specs. file.adb Ada source code file containing a library unit body (a subprogram or package body). Such files are also called bodies. file.s Assembler code. file.S file.sx Assembler code that must be preprocessed. other An object file to be fed straight into linking. Any file name with no recognized suffix is treated this way. You can specify the input language explicitly with the -x option: -x language Specify explicitly the language for the following input files (rather than letting the compiler choose a default based on the file name suffix). This option applies to all following input files until the next -x option. Possible values for language are: c c-header cpp-output c++ c++-header c++-cpp-output objective-c objective-c-header objective-c-cpp-output objective-c++ objective-c++-header objective-c++-cpp-output assembler assembler-with-cpp ada d f77 f77-cpp-input f95 f95-cpp-input go brig -x none Turn off any specification of a language, so that subsequent files are handled according to their file name suffixes (as they are if -x has not been used at all). If you only want some of the stages of compilation, you can use -x (or filename suffixes) to tell gcc where to start, and one of the options -c, -S, or -E to say where gcc is to stop. Note that some combinations (for example, -x cpp-output -E) instruct gcc to do nothing at all. -c Compile or assemble the source files, but do not link. The linking stage simply is not done. The ultimate output is in the form of an object file for each source file. By default, the object file name for a source file is made by replacing the suffix .c, .i, .s, etc., with .o. Unrecognized input files, not requiring compilation or assembly, are ignored. -S Stop after the stage of compilation proper; do not assemble. The output is in the form of an assembler code file for each non-assembler input file specified. By default, the assembler file name for a source file is made by replacing the suffix .c, .i, etc., with .s. Input files that don&#39;t require compilation are ignored. -E Stop after the preprocessing stage; do not run the compiler proper. The output is in the form of preprocessed source code, which is sent to the standard output. Input files that don&#39;t require preprocessing are ignored. -o file Place output in file file. This applies to whatever sort of output is being produced, whether it be an executable file, an object file, an assembler file or preprocessed C code. If -o is not specified, the default is to put an executable file in a.out, the object file for source.suffix in source.o, its assembler file in source.s, a precompiled header file in source.suffix.gch, and all preprocessed C source on standard output. -v Print (on standard error output) the commands executed to run the stages of compilation. Also print the version number of the compiler driver program and of the preprocessor and the compiler proper. -### Like -v except the commands are not executed and arguments are quoted unless they contain only alphanumeric characters or &#34;./-_&#34;. This is useful for shell scripts to capture the driver-generated command lines. --help Print (on the standard output) a description of the command- line options understood by gcc. If the -v option is also specified then --help is also passed on to the various processes invoked by gcc, so that they can display the command-line options they accept. If the -Wextra option has also been specified (prior to the --help option), then command-line options that have no documentation associated with them are also displayed. --target-help Print (on the standard output) a description of target- specific command-line options for each tool. For some targets extra target-specific information may also be printed. --help={class|[^]qualifier}[,...] Print (on the standard output) a description of the command- line options understood by the compiler that fit into all specified classes and qualifiers. These are the supported classes: optimizers Display all of the optimization options supported by the compiler. warnings Display all of the options controlling warning messages produced by the compiler. target Display target-specific options. Unlike the --target-help option however, target-specific options of the linker and assembler are not displayed. This is because those tools do not currently support the extended --help= syntax. params Display the values recognized by the --param option. language Display the options supported for language, where language is the name of one of the languages supported in this version of GCC. common Display the options that are common to all languages. These are the supported qualifiers: undocumented Display only those options that are undocumented. joined Display options taking an argument that appears after an equal sign in the same continuous piece of text, such as: --help=target. separate Display options taking an argument that appears as a separate word following the original option, such as: -o output-file. Thus for example to display all the undocumented target- specific switches supported by the compiler, use: --help=target,undocumented The sense of a qualifier can be inverted by prefixing it with the ^ character, so for example to display all binary warning options (i.e., ones that are either on or off and that do not take an argument) that have a description, use: --help=warnings,^joined,^undocumented The argument to --help= should not consist solely of inverted qualifiers. Combining several classes is possible, although this usually restricts the output so much that there is nothing to display. One case where it does work, however, is when one of the classes is target. For example, to display all the target- specific optimization options, use: --help=target,optimizers The --help= option can be repeated on the command line. Each successive use displays its requested class of options, skipping those that have already been displayed. If --help is also specified anywhere on the command line then this takes precedence over any --help= option. If the -Q option appears on the command line before the --help= option, then the descriptive text displayed by --help= is changed. Instead of describing the displayed options, an indication is given as to whether the option is enabled, disabled or set to a specific value (assuming that the compiler knows this at the point where the --help= option is used). Here is a truncated example from the ARM port of gcc: % gcc -Q -mabi=2 --help=target -c The following options are target specific: -mabi= 2 -mabort-on-noreturn [disabled] -mapcs [disabled] The output is sensitive to the effects of previous command- line options, so for example it is possible to find out which optimizations are enabled at -O2 by using: -Q -O2 --help=optimizers Alternatively you can discover which binary optimizations are enabled by -O3 by using: gcc -c -Q -O3 --help=optimizers &gt; /tmp/O3-opts gcc -c -Q -O2 --help=optimizers &gt; /tmp/O2-opts diff /tmp/O2-opts /tmp/O3-opts | grep enabled --version Display the version number and copyrights of the invoked GCC. -pass-exit-codes Normally the gcc program exits with the code of 1 if any phase of the compiler returns a non-success return code. If you specify -pass-exit-codes, the gcc program instead returns with the numerically highest error produced by any phase returning an error indication. The C, C++, and Fortran front ends return 4 if an internal compiler error is encountered. -pipe Use pipes rather than temporary files for communication between the various stages of compilation. This fails to work on some systems where the assembler is unable to read from a pipe; but the GNU assembler has no trouble. -specs=file Process file after the compiler reads in the standard specs file, in order to override the defaults which the gcc driver program uses when determining what switches to pass to cc1, cc1plus, as, ld, etc. More than one -specs=file can be specified on the command line, and they are processed in order, from left to right. -wrapper Invoke all subcommands under a wrapper program. The name of the wrapper program and its parameters are passed as a comma separated list. gcc -c t.c -wrapper gdb,--args This invokes all subprograms of gcc under gdb --args, thus the invocation of cc1 is gdb --args cc1 .... -ffile-prefix-map=old=new When compiling files residing in directory old, record any references to them in the result of the compilation as if the files resided in directory new instead. Specifying this option is equivalent to specifying all the individual -f*-prefix-map options. This can be used to make reproducible builds that are location independent. See also -fmacro-prefix-map and -fdebug-prefix-map. -fplugin=name.so Load the plugin code in file name.so, assumed to be a shared object to be dlopen&#39;d by the compiler. The base name of the shared object file is used to identify the plugin for the purposes of argument parsing (See -fplugin-arg-name-key=value below). Each plugin should define the callback functions specified in the Plugins API. -fplugin-arg-name-key=value Define an argument called key with a value of value for the plugin called name. -fdump-ada-spec[-slim] For C and C++ source and include files, generate corresponding Ada specs. -fada-spec-parent=unit In conjunction with -fdump-ada-spec[-slim] above, generate Ada specs as child units of parent unit. -fdump-go-spec=file For input files in any language, generate corresponding Go declarations in file. This generates Go &#34;const&#34;, &#34;type&#34;, &#34;var&#34;, and &#34;func&#34; declarations which may be a useful way to start writing a Go interface to code written in some other language. @file Read command-line options from file. The options read are inserted in place of the original @file option. If file does not exist, or cannot be read, then the option will be treated literally, and not removed. Options in file are separated by whitespace. A whitespace character may be included in an option by surrounding the entire option in either single or double quotes. Any character (including a backslash) may be included by prefixing the character to be included with a backslash. The file may itself contain additional @file options; any such options will be processed recursively. ">
+<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/memo/0730/'>
+<meta property='og:site_name' content='shyの考研日志'>
+<meta property='og:type' content='article'><meta property='article:section' content='Memo' /><meta property='article:tag' content='gcc man' /><meta property='article:published_time' content='2025-07-30T23:44:55&#43;08:00'/><meta property='article:modified_time' content='2025-07-30T23:44:55&#43;08:00'/>
+<meta name="twitter:title" content="0730学习笔记">
+<meta name="twitter:description" content="GCC manual-RTFM\r今天心血来潮想要拜读gccman page，学到很多。有时候会思考，AI确实帮助了我快速上手一个领域，比如使用Rust编写一个植物大战僵尸的游戏，比如从零开始认识一个代码，但是一旦结束之后，回头再想就很难说我仍然可以再举一反三地做另一个好玩的事情，事实上Rust的语法和特性我也几乎忘记。\njyy老师在课堂上曾经向我们展示了许多很好玩的代码，很有意思的命令行，也曾经嘱咐我们一定要RTFM(Read The Friendly Manual)，现在的我毕业了，同时仍然是AI的重度依赖者，只是心里一直有一个地方在不断的问自己：AI的回答能否坦然接受？\n我的答案一直是：NO\n我始终在拥抱AI的同时留有一丝怀疑和谨慎。\n这是man page的部分内容，权当记录，明天还要更新更多的笔记。\nNAME gcc - GNU project C and C++ compiler gcc [-c|-S|-E] [-std=standard] [-g] [-pg] [-Olevel] [-Wwarn...] [-Wpedantic] [-Idir...] [-Ldir...] [-Dmacro[=defn]...] [-Umacro] [-foption...] [-mmachine-option...] [-o outfile] [@file] infile... Only the most useful options are listed here; see below for the remainder. g++ accepts mostly the same options as gcc. DESCRIPTION When you invoke GCC, it normally does preprocessing, compilation, assembly and linking. The &#34;overall options&#34; allow you to stop this process at an intermediate stage. For example, the -c option says not to run the linker. Then the output consists of object files output by the assembler. Other options are passed on to one or more stages of processing. Some options control the preprocessor and others the compiler itself. Yet other options control the assembler and linker; most of these are not documented here, since you rarely need to use any of them. Most of the command-line options that you can use with GCC are useful for C programs; when an option is only useful with another language (usually C++), the explanation says so explicitly. If the description for a particular option does not mention a source language, you can use that option with all supported languages. The usual way to run GCC is to run the executable called gcc, or machine-gcc when cross-compiling, or machine-gcc-version to run a specific version of GCC. When you compile C++ programs, you should invoke GCC as g++ instead. The gcc program accepts options and file names as operands. Many options have multi-letter names; therefore multiple single-letter options may not be grouped: -dv is very different from -d -v. You can mix options and other arguments. For the most part, the order you use doesn&#39;t matter. Order does matter when you use several options of the same kind; for example, if you specify -L more than once, the directories are searched in the order specified. Also, the placement of the -l option is significant. Many options have long names starting with -f or with -W---for example, -fmove-loop-invariants, -Wformat and so on. Most of these have both positive and negative forms; the negative form of -ffoo is -fno-foo. This manual documents only one of these two forms, whichever one is not the default. Some options take one or more arguments typically separated either by a space or by the equals sign (=) from the option name. Unless documented otherwise, an argument can be either numeric or a string. Numeric arguments must typically be small unsigned decimal or hexadecimal integers. Hexadecimal arguments must begin with the 0x prefix. Arguments to options that specify a size threshold of some sort may be arbitrarily large decimal or hexadecimal integers followed by a byte size suffix designating a multiple of bytes such as &#34;kB&#34; and &#34;KiB&#34; for kilobyte and kibibyte, respectively, &#34;MB&#34; and &#34;MiB&#34; for megabyte and mebibyte, &#34;GB&#34; and &#34;GiB&#34; for gigabyte and gigibyte, and so on. Such arguments are designated by byte-size in the following text. Refer to the NIST, IEC, and other relevant national and international standards for the full listing and explanation of the binary and decimal byte size prefixes. Option Summary Here is a summary of all the options, grouped by type. Explanations are in the following sections. Overall Options -c -S -E -o file -x language -v -### --help[=class[,...]] --target-help --version -pass-exit-codes -pipe -specs=file -wrapper @file -ffile-prefix-map=old=new -fplugin=file -fplugin-arg-name=arg -fdump-ada-spec[-slim] -fada-spec-parent=unit -fdump-go-spec=file C Language Options -ansi -std=standard -fgnu89-inline -fpermitted-flt-eval-methods=standard -aux-info filename -fallow-parameterless-variadic-functions -fno-asm -fno-builtin -fno-builtin-function -fgimple -fhosted -ffreestanding -fopenacc -fopenacc-dim=geom -fopenmp -fopenmp-simd -fms-extensions -fplan9-extensions -fsso-struct=endianness -fallow-single-precision -fcond-mismatch -flax-vector-conversions -fsigned-bitfields -fsigned-char -funsigned-bitfields -funsigned-char C++ Language Options -fabi-version=n -fno-access-control -faligned-new=n -fargs-in-order=n -fchar8_t -fcheck-new -fconstexpr-depth=n -fconstexpr-loop-limit=n -fconstexpr-ops-limit=n -fno-elide-constructors -fno-enforce-eh-specs -fno-gnu-keywords -fno-implicit-templates -fno-implicit-inline-templates -fno-implement-inlines -fms-extensions -fnew-inheriting-ctors -fnew-ttp-matching -fno-nonansi-builtins -fnothrow-opt -fno-operator-names -fno-optional-diags -fpermissive -fno-pretty-templates -frepo -fno-rtti -fsized-deallocation -ftemplate-backtrace-limit=n -ftemplate-depth=n -fno-threadsafe-statics -fuse-cxa-atexit -fno-weak -nostdinc++ -fvisibility-inlines-hidden -fvisibility-ms-compat -fext-numeric-literals -Wabi=n -Wabi-tag -Wconversion-null -Wctor-dtor-privacy -Wdelete-non-virtual-dtor -Wdeprecated-copy -Wdeprecated-copy-dtor -Wliteral-suffix -Wmultiple-inheritance -Wno-init-list-lifetime -Wnamespaces -Wnarrowing -Wpessimizing-move -Wredundant-move -Wnoexcept -Wnoexcept-type -Wclass-memaccess -Wnon-virtual-dtor -Wreorder -Wregister -Weffc++ -Wstrict-null-sentinel -Wtemplates -Wno-non-template-friend -Wold-style-cast -Woverloaded-virtual -Wno-pmf-conversions -Wno-class-conversion -Wno-terminate -Wsign-promo -Wvirtual-inheritance Preprocessor Options -Aquestion=answer -A-question[=answer] -C -CC -Dmacro[=defn] -dD -dI -dM -dN -dU -fdebug-cpp -fdirectives-only -fdollars-in-identifiers -fexec-charset=charset -fextended-identifiers -finput-charset=charset -fmacro-prefix-map=old=new -fno-canonical-system-headers -fpch-deps -fpch-preprocess -fpreprocessed -ftabstop=width -ftrack-macro-expansion -fwide-exec-charset=charset -fworking-directory -H -imacros file -include file -M -MD -MF -MG -MM -MMD -MP -MQ -MT -no-integrated-cpp -P -pthread -remap -traditional -traditional-cpp -trigraphs -Umacro -undef -Wp,option -Xpreprocessor option Assembler Options -Wa,option -Xassembler option Linker Options object-file-name -fuse-ld=linker -llibrary -nostartfiles -nodefaultlibs -nolibc -nostdlib -e entry --entry=entry -pie -pthread -r -rdynamic -s -static -static-pie -static-libgcc -static-libstdc++ -static-libasan -static-libtsan -static-liblsan -static-libubsan -shared -shared-libgcc -symbolic -T script -Wl,option -Xlinker option -u symbol -z keyword Directory Options -Bprefix -Idir -I- -idirafter dir -imacros file -imultilib dir -iplugindir=dir -iprefix file -iquote dir -isysroot dir -isystem dir -iwithprefix dir -iwithprefixbefore dir -Ldir -no-canonical-prefixes --no-sysroot-suffix -nostdinc -nostdinc++ --sysroot=dir Code Generation Options -fcall-saved-reg -fcall-used-reg -ffixed-reg -fexceptions -fnon-call-exceptions -fdelete-dead-exceptions -funwind-tables -fasynchronous-unwind-tables -fno-gnu-unique -finhibit-size-directive -fno-common -fno-ident -fpcc-struct-return -fpic -fPIC -fpie -fPIE -fno-plt -fno-jump-tables -frecord-gcc-switches -freg-struct-return -fshort-enums -fshort-wchar -fverbose-asm -fpack-struct[=n] -fleading-underscore -ftls-model=model -fstack-reuse=reuse_level -ftrampolines -ftrapv -fwrapv -fvisibility=[default|internal|hidden|protected] -fstrict-volatile-bitfields -fsync-libcalls For any given input file, the file name suffix determines what kind of compilation is done: file.c C source code that must be preprocessed. file.i C source code that should not be preprocessed. file.ii C++ source code that should not be preprocessed. file.m Objective-C source code. Note that you must link with the libobjc library to make an Objective-C program work. file.mi Objective-C source code that should not be preprocessed. file.mm file.M Objective-C++ source code. Note that you must link with the libobjc library to make an Objective-C++ program work. Note that .M refers to a literal capital M. file.mii Objective-C++ source code that should not be preprocessed. file.h C, C++, Objective-C or Objective-C++ header file to be turned into a precompiled header (default), or C, C++ header file to be turned into an Ada spec (via the -fdump-ada-spec switch). file.cc file.cp file.cxx file.cpp file.CPP file.c++ file.C C++ source code that must be preprocessed. Note that in .cxx, the last two letters must both be literally x. Likewise, .C refers to a literal capital C. file.mm file.M Objective-C++ source code that must be preprocessed. file.mii Objective-C++ source code that should not be preprocessed. file.hh file.H file.hp file.hxx file.hpp file.HPP file.h++ file.tcc C++ header file to be turned into a precompiled header or Ada spec. file.f file.for file.ftn Fixed form Fortran source code that should not be preprocessed. file.F file.FOR file.fpp file.FPP file.FTN Fixed form Fortran source code that must be preprocessed (with the traditional preprocessor). file.f90 file.f95 file.f03 file.f08 Free form Fortran source code that should not be preprocessed. file.F90 file.F95 file.F03 file.F08 Free form Fortran source code that must be preprocessed (with the traditional preprocessor). file.go Go source code. file.brig BRIG files (binary representation of HSAIL). file.d D source code. file.di D interface file. file.dd D documentation code (Ddoc). file.ads Ada source code file that contains a library unit declaration (a declaration of a package, subprogram, or generic, or a generic instantiation), or a library unit renaming declaration (a package, generic, or subprogram renaming declaration). Such files are also called specs. file.adb Ada source code file containing a library unit body (a subprogram or package body). Such files are also called bodies. file.s Assembler code. file.S file.sx Assembler code that must be preprocessed. other An object file to be fed straight into linking. Any file name with no recognized suffix is treated this way. You can specify the input language explicitly with the -x option: -x language Specify explicitly the language for the following input files (rather than letting the compiler choose a default based on the file name suffix). This option applies to all following input files until the next -x option. Possible values for language are: c c-header cpp-output c++ c++-header c++-cpp-output objective-c objective-c-header objective-c-cpp-output objective-c++ objective-c++-header objective-c++-cpp-output assembler assembler-with-cpp ada d f77 f77-cpp-input f95 f95-cpp-input go brig -x none Turn off any specification of a language, so that subsequent files are handled according to their file name suffixes (as they are if -x has not been used at all). If you only want some of the stages of compilation, you can use -x (or filename suffixes) to tell gcc where to start, and one of the options -c, -S, or -E to say where gcc is to stop. Note that some combinations (for example, -x cpp-output -E) instruct gcc to do nothing at all. -c Compile or assemble the source files, but do not link. The linking stage simply is not done. The ultimate output is in the form of an object file for each source file. By default, the object file name for a source file is made by replacing the suffix .c, .i, .s, etc., with .o. Unrecognized input files, not requiring compilation or assembly, are ignored. -S Stop after the stage of compilation proper; do not assemble. The output is in the form of an assembler code file for each non-assembler input file specified. By default, the assembler file name for a source file is made by replacing the suffix .c, .i, etc., with .s. Input files that don&#39;t require compilation are ignored. -E Stop after the preprocessing stage; do not run the compiler proper. The output is in the form of preprocessed source code, which is sent to the standard output. Input files that don&#39;t require preprocessing are ignored. -o file Place output in file file. This applies to whatever sort of output is being produced, whether it be an executable file, an object file, an assembler file or preprocessed C code. If -o is not specified, the default is to put an executable file in a.out, the object file for source.suffix in source.o, its assembler file in source.s, a precompiled header file in source.suffix.gch, and all preprocessed C source on standard output. -v Print (on standard error output) the commands executed to run the stages of compilation. Also print the version number of the compiler driver program and of the preprocessor and the compiler proper. -### Like -v except the commands are not executed and arguments are quoted unless they contain only alphanumeric characters or &#34;./-_&#34;. This is useful for shell scripts to capture the driver-generated command lines. --help Print (on the standard output) a description of the command- line options understood by gcc. If the -v option is also specified then --help is also passed on to the various processes invoked by gcc, so that they can display the command-line options they accept. If the -Wextra option has also been specified (prior to the --help option), then command-line options that have no documentation associated with them are also displayed. --target-help Print (on the standard output) a description of target- specific command-line options for each tool. For some targets extra target-specific information may also be printed. --help={class|[^]qualifier}[,...] Print (on the standard output) a description of the command- line options understood by the compiler that fit into all specified classes and qualifiers. These are the supported classes: optimizers Display all of the optimization options supported by the compiler. warnings Display all of the options controlling warning messages produced by the compiler. target Display target-specific options. Unlike the --target-help option however, target-specific options of the linker and assembler are not displayed. This is because those tools do not currently support the extended --help= syntax. params Display the values recognized by the --param option. language Display the options supported for language, where language is the name of one of the languages supported in this version of GCC. common Display the options that are common to all languages. These are the supported qualifiers: undocumented Display only those options that are undocumented. joined Display options taking an argument that appears after an equal sign in the same continuous piece of text, such as: --help=target. separate Display options taking an argument that appears as a separate word following the original option, such as: -o output-file. Thus for example to display all the undocumented target- specific switches supported by the compiler, use: --help=target,undocumented The sense of a qualifier can be inverted by prefixing it with the ^ character, so for example to display all binary warning options (i.e., ones that are either on or off and that do not take an argument) that have a description, use: --help=warnings,^joined,^undocumented The argument to --help= should not consist solely of inverted qualifiers. Combining several classes is possible, although this usually restricts the output so much that there is nothing to display. One case where it does work, however, is when one of the classes is target. For example, to display all the target- specific optimization options, use: --help=target,optimizers The --help= option can be repeated on the command line. Each successive use displays its requested class of options, skipping those that have already been displayed. If --help is also specified anywhere on the command line then this takes precedence over any --help= option. If the -Q option appears on the command line before the --help= option, then the descriptive text displayed by --help= is changed. Instead of describing the displayed options, an indication is given as to whether the option is enabled, disabled or set to a specific value (assuming that the compiler knows this at the point where the --help= option is used). Here is a truncated example from the ARM port of gcc: % gcc -Q -mabi=2 --help=target -c The following options are target specific: -mabi= 2 -mabort-on-noreturn [disabled] -mapcs [disabled] The output is sensitive to the effects of previous command- line options, so for example it is possible to find out which optimizations are enabled at -O2 by using: -Q -O2 --help=optimizers Alternatively you can discover which binary optimizations are enabled by -O3 by using: gcc -c -Q -O3 --help=optimizers &gt; /tmp/O3-opts gcc -c -Q -O2 --help=optimizers &gt; /tmp/O2-opts diff /tmp/O2-opts /tmp/O3-opts | grep enabled --version Display the version number and copyrights of the invoked GCC. -pass-exit-codes Normally the gcc program exits with the code of 1 if any phase of the compiler returns a non-success return code. If you specify -pass-exit-codes, the gcc program instead returns with the numerically highest error produced by any phase returning an error indication. The C, C++, and Fortran front ends return 4 if an internal compiler error is encountered. -pipe Use pipes rather than temporary files for communication between the various stages of compilation. This fails to work on some systems where the assembler is unable to read from a pipe; but the GNU assembler has no trouble. -specs=file Process file after the compiler reads in the standard specs file, in order to override the defaults which the gcc driver program uses when determining what switches to pass to cc1, cc1plus, as, ld, etc. More than one -specs=file can be specified on the command line, and they are processed in order, from left to right. -wrapper Invoke all subcommands under a wrapper program. The name of the wrapper program and its parameters are passed as a comma separated list. gcc -c t.c -wrapper gdb,--args This invokes all subprograms of gcc under gdb --args, thus the invocation of cc1 is gdb --args cc1 .... -ffile-prefix-map=old=new When compiling files residing in directory old, record any references to them in the result of the compilation as if the files resided in directory new instead. Specifying this option is equivalent to specifying all the individual -f*-prefix-map options. This can be used to make reproducible builds that are location independent. See also -fmacro-prefix-map and -fdebug-prefix-map. -fplugin=name.so Load the plugin code in file name.so, assumed to be a shared object to be dlopen&#39;d by the compiler. The base name of the shared object file is used to identify the plugin for the purposes of argument parsing (See -fplugin-arg-name-key=value below). Each plugin should define the callback functions specified in the Plugins API. -fplugin-arg-name-key=value Define an argument called key with a value of value for the plugin called name. -fdump-ada-spec[-slim] For C and C++ source and include files, generate corresponding Ada specs. -fada-spec-parent=unit In conjunction with -fdump-ada-spec[-slim] above, generate Ada specs as child units of parent unit. -fdump-go-spec=file For input files in any language, generate corresponding Go declarations in file. This generates Go &#34;const&#34;, &#34;type&#34;, &#34;var&#34;, and &#34;func&#34; declarations which may be a useful way to start writing a Go interface to code written in some other language. @file Read command-line options from file. The options read are inserted in place of the original @file option. If file does not exist, or cannot be read, then the option will be treated literally, and not removed. Options in file are separated by whitespace. A whitespace character may be included in an option by surrounding the entire option in either single or double quotes. Any character (including a backslash) may be included by prefixing the character to be included with a backslash. The file may itself contain additional @file options; any such options will be processed recursively. ">
+    
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/npee_learning_log.github.io/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/npee_learning_log.github.io/img/shiki_hu_20273a3af6c00ff3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🎧</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/npee_learning_log.github.io">shyの考研日志</a></h1>
+            <h2 class="site-description">無職受験生 ～408に挑んだら本気だす～</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/diary' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                
+                <span>日记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/log' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>日志</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/memo' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>笔记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/update' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                
+                <span>更新</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/npee_learning_log.github.io/categories/memo/" >
+                Memo
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/npee_learning_log.github.io/memo/0730/">0730学习笔记</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 30, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    14 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="gcc-manual-rtfm">GCC manual-RTFM
+</h2><p>今天心血来潮想要拜读<code>gcc</code>man page，学到很多。有时候会思考，AI确实帮助了我快速上手一个领域，比如使用Rust编写一个植物大战僵尸的游戏，比如从零开始认识一个代码，但是一旦结束之后，回头再想就很难说我仍然可以再举一反三地做另一个好玩的事情，事实上Rust的语法和特性我也几乎忘记。</p>
+<p>jyy老师在课堂上曾经向我们展示了许多很好玩的代码，很有意思的命令行，也曾经嘱咐我们一定要RTFM(Read The Friendly Manual)，现在的我毕业了，同时仍然是AI的重度依赖者，只是心里一直有一个地方在不断的问自己：AI的回答能否坦然接受？</p>
+<p>我的答案一直是：NO</p>
+<p>我始终在拥抱AI的同时留有一丝怀疑和谨慎。</p>
+<p>这是man page的部分内容，权当记录，明天还要更新更多的笔记。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>NAME      
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       gcc <span style="color:#f92672">-</span> GNU project C and C<span style="color:#f92672">++</span> compiler
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       gcc [<span style="color:#f92672">-</span>c<span style="color:#f92672">|-</span>S<span style="color:#f92672">|-</span>E] [<span style="color:#f92672">-</span>std<span style="color:#f92672">=</span>standard]
+</span></span><span style="display:flex;"><span>           [<span style="color:#f92672">-</span>g] [<span style="color:#f92672">-</span>pg] [<span style="color:#f92672">-</span>Olevel]
+</span></span><span style="display:flex;"><span>           [<span style="color:#f92672">-</span>Wwarn...] [<span style="color:#f92672">-</span>Wpedantic]
+</span></span><span style="display:flex;"><span>           [<span style="color:#f92672">-</span>Idir...] [<span style="color:#f92672">-</span>Ldir...]
+</span></span><span style="display:flex;"><span>           [<span style="color:#f92672">-</span>Dmacro[<span style="color:#f92672">=</span>defn]...] [<span style="color:#f92672">-</span>Umacro]
+</span></span><span style="display:flex;"><span>           [<span style="color:#f92672">-</span>foption...] [<span style="color:#f92672">-</span>mmachine<span style="color:#f92672">-</span>option...]
+</span></span><span style="display:flex;"><span>           [<span style="color:#f92672">-</span>o outfile] [<span style="color:#960050;background-color:#1e0010">@</span>file] infile...
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       Only the most useful options are listed here; see below <span style="color:#66d9ef">for</span> the
+</span></span><span style="display:flex;"><span>       remainder.  g<span style="color:#f92672">++</span> accepts mostly the same options as gcc.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DESCRIPTION      
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       When you invoke GCC, it normally does preprocessing, compilation,
+</span></span><span style="display:flex;"><span>       assembly and linking.  The <span style="color:#e6db74">&#34;overall options&#34;</span> allow you to stop
+</span></span><span style="display:flex;"><span>       this process at an intermediate stage.  For example, the <span style="color:#f92672">-</span>c option
+</span></span><span style="display:flex;"><span>       says not to run the linker.  Then the output consists of object
+</span></span><span style="display:flex;"><span>       files output by the assembler.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       Other options are passed on to one or more stages of processing.
+</span></span><span style="display:flex;"><span>       Some options control the preprocessor and others the compiler
+</span></span><span style="display:flex;"><span>       itself.  Yet other options control the assembler and linker; most
+</span></span><span style="display:flex;"><span>       of these are not documented here, since you rarely need to use any
+</span></span><span style="display:flex;"><span>       of them.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       Most of the command<span style="color:#f92672">-</span>line options that you can use with GCC are
+</span></span><span style="display:flex;"><span>       useful <span style="color:#66d9ef">for</span> C programs; when an option is only useful with another
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">language</span> (usually C<span style="color:#f92672">++</span>), the explanation says so explicitly.  If
+</span></span><span style="display:flex;"><span>       the description <span style="color:#66d9ef">for</span> a particular option does not mention a source
+</span></span><span style="display:flex;"><span>       language, you can use that option with all supported languages.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       The usual way to run GCC is to run the executable called gcc, or
+</span></span><span style="display:flex;"><span>       machine<span style="color:#f92672">-</span>gcc when cross<span style="color:#f92672">-</span>compiling, or machine<span style="color:#f92672">-</span>gcc<span style="color:#f92672">-</span>version to run a
+</span></span><span style="display:flex;"><span>       specific version of GCC.  When you compile C<span style="color:#f92672">++</span> programs, you
+</span></span><span style="display:flex;"><span>       should invoke GCC as g<span style="color:#f92672">++</span> instead.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       The gcc program accepts options and file names as operands.  Many
+</span></span><span style="display:flex;"><span>       options have multi<span style="color:#f92672">-</span>letter names; therefore multiple single<span style="color:#f92672">-</span>letter
+</span></span><span style="display:flex;"><span>       options may not be grouped: <span style="color:#f92672">-</span>dv is very different from <span style="color:#f92672">-</span>d <span style="color:#f92672">-</span>v.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       You can mix options and other arguments.  For the most part, the
+</span></span><span style="display:flex;"><span>       order you use doesn<span style="color:#960050;background-color:#1e0010">&#39;</span>t matter.  Order does matter when you use
+</span></span><span style="display:flex;"><span>       several options of the same kind; <span style="color:#66d9ef">for</span> example, <span style="color:#66d9ef">if</span> you specify <span style="color:#f92672">-</span>L
+</span></span><span style="display:flex;"><span>       more than once, the directories are searched in the order
+</span></span><span style="display:flex;"><span>       specified.  Also, the placement of the <span style="color:#f92672">-</span>l option is significant.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       Many options have <span style="color:#66d9ef">long</span> names starting with <span style="color:#f92672">-</span>f or with <span style="color:#f92672">-</span>W<span style="color:#f92672">---</span><span style="color:#66d9ef">for</span>
+</span></span><span style="display:flex;"><span>       example, <span style="color:#f92672">-</span>fmove<span style="color:#f92672">-</span>loop<span style="color:#f92672">-</span>invariants, <span style="color:#f92672">-</span>Wformat and so on.  Most of
+</span></span><span style="display:flex;"><span>       these have both positive and negative forms; the negative form of
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span>ffoo is <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>foo.  This manual documents only one of these two
+</span></span><span style="display:flex;"><span>       forms, whichever one is not the <span style="color:#66d9ef">default</span>.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       Some options take one or more arguments typically separated either
+</span></span><span style="display:flex;"><span>       by a space or by the equals <span style="color:#a6e22e">sign</span> (<span style="color:#f92672">=</span>) from the option name.  Unless
+</span></span><span style="display:flex;"><span>       documented otherwise, an argument can be either numeric or a
+</span></span><span style="display:flex;"><span>       string.  Numeric arguments must typically be small <span style="color:#66d9ef">unsigned</span>
+</span></span><span style="display:flex;"><span>       decimal or hexadecimal integers.  Hexadecimal arguments must begin
+</span></span><span style="display:flex;"><span>       with the <span style="color:#ae81ff">0</span>x prefix.  Arguments to options that specify a size
+</span></span><span style="display:flex;"><span>       threshold of some sort may be arbitrarily large decimal or
+</span></span><span style="display:flex;"><span>       hexadecimal integers followed by a byte size suffix designating a
+</span></span><span style="display:flex;"><span>       multiple of bytes such as <span style="color:#e6db74">&#34;kB&#34;</span> and <span style="color:#e6db74">&#34;KiB&#34;</span> <span style="color:#66d9ef">for</span> kilobyte and
+</span></span><span style="display:flex;"><span>       kibibyte, respectively, <span style="color:#e6db74">&#34;MB&#34;</span> and <span style="color:#e6db74">&#34;MiB&#34;</span> <span style="color:#66d9ef">for</span> megabyte and mebibyte,
+</span></span><span style="display:flex;"><span>       <span style="color:#e6db74">&#34;GB&#34;</span> and <span style="color:#e6db74">&#34;GiB&#34;</span> <span style="color:#66d9ef">for</span> gigabyte and gigibyte, and so on.  Such
+</span></span><span style="display:flex;"><span>       arguments are designated by byte<span style="color:#f92672">-</span>size in the following text.
+</span></span><span style="display:flex;"><span>       Refer to the NIST, IEC, and other relevant national and
+</span></span><span style="display:flex;"><span>       international standards <span style="color:#66d9ef">for</span> the full listing and explanation of
+</span></span><span style="display:flex;"><span>       the binary and decimal byte size prefixes.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   Option Summary
+</span></span><span style="display:flex;"><span>       Here is a summary of all the options, grouped by type.
+</span></span><span style="display:flex;"><span>       Explanations are in the following sections.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       Overall Options
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>c  <span style="color:#f92672">-</span>S  <span style="color:#f92672">-</span>E  <span style="color:#f92672">-</span>o file  <span style="color:#f92672">-</span>x language <span style="color:#f92672">-</span>v  <span style="color:#f92672">-</span><span style="color:#960050;background-color:#1e0010">###</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">--</span>help[<span style="color:#f92672">=</span>class[,...]]  <span style="color:#f92672">--</span>target<span style="color:#f92672">-</span>help  <span style="color:#f92672">--</span>version
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>pass<span style="color:#f92672">-</span>exit<span style="color:#f92672">-</span>codes  <span style="color:#f92672">-</span>pipe  <span style="color:#f92672">-</span>specs<span style="color:#f92672">=</span>file  <span style="color:#f92672">-</span>wrapper <span style="color:#960050;background-color:#1e0010">@</span>file
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>ffile<span style="color:#f92672">-</span>prefix<span style="color:#f92672">-</span>map<span style="color:#f92672">=</span>old<span style="color:#f92672">=</span>new <span style="color:#f92672">-</span>fplugin<span style="color:#f92672">=</span>file  <span style="color:#f92672">-</span>fplugin<span style="color:#f92672">-</span>arg<span style="color:#f92672">-</span>name<span style="color:#f92672">=</span>arg
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fdump<span style="color:#f92672">-</span>ada<span style="color:#f92672">-</span>spec[<span style="color:#f92672">-</span>slim]  <span style="color:#f92672">-</span>fada<span style="color:#f92672">-</span>spec<span style="color:#f92672">-</span>parent<span style="color:#f92672">=</span>unit
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fdump<span style="color:#f92672">-</span>go<span style="color:#f92672">-</span>spec<span style="color:#f92672">=</span>file
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       C Language Options
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>ansi  <span style="color:#f92672">-</span>std<span style="color:#f92672">=</span>standard  <span style="color:#f92672">-</span>fgnu89<span style="color:#f92672">-</span><span style="color:#66d9ef">inline</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fpermitted<span style="color:#f92672">-</span>flt<span style="color:#f92672">-</span>eval<span style="color:#f92672">-</span>methods<span style="color:#f92672">=</span>standard <span style="color:#f92672">-</span>aux<span style="color:#f92672">-</span>info filename
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fallow<span style="color:#f92672">-</span>parameterless<span style="color:#f92672">-</span>variadic<span style="color:#f92672">-</span>functions <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span><span style="color:#66d9ef">asm</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>builtin  <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>builtin<span style="color:#f92672">-</span>function  <span style="color:#f92672">-</span>fgimple <span style="color:#f92672">-</span>fhosted
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>ffreestanding <span style="color:#f92672">-</span>fopenacc  <span style="color:#f92672">-</span>fopenacc<span style="color:#f92672">-</span>dim<span style="color:#f92672">=</span>geom <span style="color:#f92672">-</span>fopenmp
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fopenmp<span style="color:#f92672">-</span>simd <span style="color:#f92672">-</span>fms<span style="color:#f92672">-</span>extensions  <span style="color:#f92672">-</span>fplan9<span style="color:#f92672">-</span>extensions
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fsso<span style="color:#f92672">-</span><span style="color:#66d9ef">struct</span><span style="color:#f92672">=</span>endianness <span style="color:#f92672">-</span>fallow<span style="color:#f92672">-</span>single<span style="color:#f92672">-</span>precision
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fcond<span style="color:#f92672">-</span>mismatch  <span style="color:#f92672">-</span>flax<span style="color:#f92672">-</span>vector<span style="color:#f92672">-</span>conversions <span style="color:#f92672">-</span>fsigned<span style="color:#f92672">-</span>bitfields
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fsigned<span style="color:#f92672">-</span><span style="color:#66d9ef">char</span> <span style="color:#f92672">-</span>funsigned<span style="color:#f92672">-</span>bitfields  <span style="color:#f92672">-</span>funsigned<span style="color:#f92672">-</span><span style="color:#66d9ef">char</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       C<span style="color:#f92672">++</span> Language Options
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fabi<span style="color:#f92672">-</span>version<span style="color:#f92672">=</span>n  <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>access<span style="color:#f92672">-</span>control <span style="color:#f92672">-</span>faligned<span style="color:#f92672">-</span>new<span style="color:#f92672">=</span>n
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fargs<span style="color:#f92672">-</span>in<span style="color:#f92672">-</span>order<span style="color:#f92672">=</span>n  <span style="color:#f92672">-</span><span style="color:#66d9ef">fchar8_t</span>  <span style="color:#f92672">-</span>fcheck<span style="color:#f92672">-</span>new <span style="color:#f92672">-</span>fconstexpr<span style="color:#f92672">-</span>depth<span style="color:#f92672">=</span>n
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fconstexpr<span style="color:#f92672">-</span>loop<span style="color:#f92672">-</span>limit<span style="color:#f92672">=</span>n <span style="color:#f92672">-</span>fconstexpr<span style="color:#f92672">-</span>ops<span style="color:#f92672">-</span>limit<span style="color:#f92672">=</span>n
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>elide<span style="color:#f92672">-</span>constructors <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>enforce<span style="color:#f92672">-</span>eh<span style="color:#f92672">-</span>specs
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>gnu<span style="color:#f92672">-</span>keywords <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>implicit<span style="color:#f92672">-</span>templates
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>implicit<span style="color:#f92672">-</span><span style="color:#66d9ef">inline</span><span style="color:#f92672">-</span>templates <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>implement<span style="color:#f92672">-</span>inlines
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fms<span style="color:#f92672">-</span>extensions <span style="color:#f92672">-</span>fnew<span style="color:#f92672">-</span>inheriting<span style="color:#f92672">-</span>ctors <span style="color:#f92672">-</span>fnew<span style="color:#f92672">-</span>ttp<span style="color:#f92672">-</span>matching
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>nonansi<span style="color:#f92672">-</span>builtins  <span style="color:#f92672">-</span>fnothrow<span style="color:#f92672">-</span>opt  <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>operator<span style="color:#f92672">-</span>names
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>optional<span style="color:#f92672">-</span>diags  <span style="color:#f92672">-</span>fpermissive <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>pretty<span style="color:#f92672">-</span>templates <span style="color:#f92672">-</span>frepo
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>rtti  <span style="color:#f92672">-</span>fsized<span style="color:#f92672">-</span>deallocation <span style="color:#f92672">-</span>ftemplate<span style="color:#f92672">-</span>backtrace<span style="color:#f92672">-</span>limit<span style="color:#f92672">=</span>n
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>ftemplate<span style="color:#f92672">-</span>depth<span style="color:#f92672">=</span>n <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>threadsafe<span style="color:#f92672">-</span>statics  <span style="color:#f92672">-</span>fuse<span style="color:#f92672">-</span>cxa<span style="color:#f92672">-</span>atexit
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>weak  <span style="color:#f92672">-</span>nostdinc<span style="color:#f92672">++</span> <span style="color:#f92672">-</span>fvisibility<span style="color:#f92672">-</span>inlines<span style="color:#f92672">-</span>hidden
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fvisibility<span style="color:#f92672">-</span>ms<span style="color:#f92672">-</span>compat <span style="color:#f92672">-</span>fext<span style="color:#f92672">-</span>numeric<span style="color:#f92672">-</span>literals <span style="color:#f92672">-</span>Wabi<span style="color:#f92672">=</span>n
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>Wabi<span style="color:#f92672">-</span>tag  <span style="color:#f92672">-</span>Wconversion<span style="color:#f92672">-</span>null  <span style="color:#f92672">-</span>Wctor<span style="color:#f92672">-</span>dtor<span style="color:#f92672">-</span>privacy
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>Wdelete<span style="color:#f92672">-</span>non<span style="color:#f92672">-</span>virtual<span style="color:#f92672">-</span>dtor  <span style="color:#f92672">-</span>Wdeprecated<span style="color:#f92672">-</span>copy
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>Wdeprecated<span style="color:#f92672">-</span>copy<span style="color:#f92672">-</span>dtor <span style="color:#f92672">-</span>Wliteral<span style="color:#f92672">-</span>suffix <span style="color:#f92672">-</span>Wmultiple<span style="color:#f92672">-</span>inheritance
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>Wno<span style="color:#f92672">-</span>init<span style="color:#f92672">-</span>list<span style="color:#f92672">-</span>lifetime <span style="color:#f92672">-</span>Wnamespaces  <span style="color:#f92672">-</span>Wnarrowing
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>Wpessimizing<span style="color:#f92672">-</span>move  <span style="color:#f92672">-</span>Wredundant<span style="color:#f92672">-</span>move <span style="color:#f92672">-</span>Wnoexcept
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>Wnoexcept<span style="color:#f92672">-</span>type  <span style="color:#f92672">-</span>Wclass<span style="color:#f92672">-</span>memaccess <span style="color:#f92672">-</span>Wnon<span style="color:#f92672">-</span>virtual<span style="color:#f92672">-</span>dtor
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>Wreorder  <span style="color:#f92672">-</span>Wregister <span style="color:#f92672">-</span>Weffc<span style="color:#f92672">++</span>  <span style="color:#f92672">-</span>Wstrict<span style="color:#f92672">-</span>null<span style="color:#f92672">-</span>sentinel
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>Wtemplates <span style="color:#f92672">-</span>Wno<span style="color:#f92672">-</span>non<span style="color:#f92672">-</span>template<span style="color:#f92672">-</span>friend  <span style="color:#f92672">-</span>Wold<span style="color:#f92672">-</span>style<span style="color:#f92672">-</span>cast
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>Woverloaded<span style="color:#f92672">-</span>virtual  <span style="color:#f92672">-</span>Wno<span style="color:#f92672">-</span>pmf<span style="color:#f92672">-</span>conversions
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>Wno<span style="color:#f92672">-</span>class<span style="color:#f92672">-</span>conversion  <span style="color:#f92672">-</span>Wno<span style="color:#f92672">-</span>terminate <span style="color:#f92672">-</span>Wsign<span style="color:#f92672">-</span>promo
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>Wvirtual<span style="color:#f92672">-</span>inheritance
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       Preprocessor Options
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>Aquestion<span style="color:#f92672">=</span>answer <span style="color:#f92672">-</span>A<span style="color:#f92672">-</span>question[<span style="color:#f92672">=</span>answer] <span style="color:#f92672">-</span>C  <span style="color:#f92672">-</span>CC  <span style="color:#f92672">-</span>Dmacro[<span style="color:#f92672">=</span>defn]
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>dD  <span style="color:#f92672">-</span>dI  <span style="color:#f92672">-</span>dM  <span style="color:#f92672">-</span>dN  <span style="color:#f92672">-</span>dU <span style="color:#f92672">-</span>fdebug<span style="color:#f92672">-</span>cpp  <span style="color:#f92672">-</span>fdirectives<span style="color:#f92672">-</span>only
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fdollars<span style="color:#f92672">-</span>in<span style="color:#f92672">-</span>identifiers <span style="color:#f92672">-</span>fexec<span style="color:#f92672">-</span>charset<span style="color:#f92672">=</span>charset
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fextended<span style="color:#f92672">-</span>identifiers <span style="color:#f92672">-</span>finput<span style="color:#f92672">-</span>charset<span style="color:#f92672">=</span>charset
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fmacro<span style="color:#f92672">-</span>prefix<span style="color:#f92672">-</span>map<span style="color:#f92672">=</span>old<span style="color:#f92672">=</span>new <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>canonical<span style="color:#f92672">-</span>system<span style="color:#f92672">-</span>headers
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fpch<span style="color:#f92672">-</span>deps  <span style="color:#f92672">-</span>fpch<span style="color:#f92672">-</span>preprocess <span style="color:#f92672">-</span>fpreprocessed  <span style="color:#f92672">-</span>ftabstop<span style="color:#f92672">=</span>width
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>ftrack<span style="color:#f92672">-</span>macro<span style="color:#f92672">-</span>expansion <span style="color:#f92672">-</span>fwide<span style="color:#f92672">-</span>exec<span style="color:#f92672">-</span>charset<span style="color:#f92672">=</span>charset
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fworking<span style="color:#f92672">-</span>directory <span style="color:#f92672">-</span>H  <span style="color:#f92672">-</span>imacros file  <span style="color:#f92672">-</span>include file <span style="color:#f92672">-</span>M  <span style="color:#f92672">-</span>MD
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>MF  <span style="color:#f92672">-</span>MG  <span style="color:#f92672">-</span>MM  <span style="color:#f92672">-</span>MMD  <span style="color:#f92672">-</span>MP  <span style="color:#f92672">-</span>MQ  <span style="color:#f92672">-</span>MT <span style="color:#f92672">-</span>no<span style="color:#f92672">-</span>integrated<span style="color:#f92672">-</span>cpp  <span style="color:#f92672">-</span>P
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>pthread  <span style="color:#f92672">-</span>remap <span style="color:#f92672">-</span>traditional  <span style="color:#f92672">-</span>traditional<span style="color:#f92672">-</span>cpp  <span style="color:#f92672">-</span>trigraphs
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>Umacro  <span style="color:#f92672">-</span>undef <span style="color:#f92672">-</span>Wp,option  <span style="color:#f92672">-</span>Xpreprocessor option
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       Assembler Options
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>Wa,option  <span style="color:#f92672">-</span>Xassembler option
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       Linker Options
+</span></span><span style="display:flex;"><span>           object<span style="color:#f92672">-</span>file<span style="color:#f92672">-</span>name  <span style="color:#f92672">-</span>fuse<span style="color:#f92672">-</span>ld<span style="color:#f92672">=</span>linker  <span style="color:#f92672">-</span>llibrary <span style="color:#f92672">-</span>nostartfiles
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>nodefaultlibs  <span style="color:#f92672">-</span>nolibc  <span style="color:#f92672">-</span>nostdlib <span style="color:#f92672">-</span>e entry  <span style="color:#f92672">--</span>entry<span style="color:#f92672">=</span>entry
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>pie  <span style="color:#f92672">-</span>pthread  <span style="color:#f92672">-</span>r  <span style="color:#f92672">-</span>rdynamic <span style="color:#f92672">-</span>s  <span style="color:#f92672">-</span><span style="color:#66d9ef">static</span>  <span style="color:#f92672">-</span><span style="color:#66d9ef">static</span><span style="color:#f92672">-</span>pie
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span><span style="color:#66d9ef">static</span><span style="color:#f92672">-</span>libgcc  <span style="color:#f92672">-</span><span style="color:#66d9ef">static</span><span style="color:#f92672">-</span>libstdc<span style="color:#f92672">++</span> <span style="color:#f92672">-</span><span style="color:#66d9ef">static</span><span style="color:#f92672">-</span>libasan
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span><span style="color:#66d9ef">static</span><span style="color:#f92672">-</span>libtsan  <span style="color:#f92672">-</span><span style="color:#66d9ef">static</span><span style="color:#f92672">-</span>liblsan  <span style="color:#f92672">-</span><span style="color:#66d9ef">static</span><span style="color:#f92672">-</span>libubsan <span style="color:#f92672">-</span>shared
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>shared<span style="color:#f92672">-</span>libgcc  <span style="color:#f92672">-</span>symbolic <span style="color:#f92672">-</span>T script  <span style="color:#f92672">-</span>Wl,option  <span style="color:#f92672">-</span>Xlinker
+</span></span><span style="display:flex;"><span>           option <span style="color:#f92672">-</span>u symbol  <span style="color:#f92672">-</span>z keyword
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       Directory Options
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>Bprefix  <span style="color:#f92672">-</span>Idir  <span style="color:#f92672">-</span>I<span style="color:#f92672">-</span> <span style="color:#f92672">-</span>idirafter dir <span style="color:#f92672">-</span>imacros file  <span style="color:#f92672">-</span>imultilib
+</span></span><span style="display:flex;"><span>           dir <span style="color:#f92672">-</span>iplugindir<span style="color:#f92672">=</span>dir  <span style="color:#f92672">-</span>iprefix file <span style="color:#f92672">-</span>iquote dir  <span style="color:#f92672">-</span>isysroot dir
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>isystem dir <span style="color:#f92672">-</span>iwithprefix dir  <span style="color:#f92672">-</span>iwithprefixbefore dir <span style="color:#f92672">-</span>Ldir
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>no<span style="color:#f92672">-</span>canonical<span style="color:#f92672">-</span>prefixes  <span style="color:#f92672">--</span>no<span style="color:#f92672">-</span>sysroot<span style="color:#f92672">-</span>suffix <span style="color:#f92672">-</span>nostdinc
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>nostdinc<span style="color:#f92672">++</span>  <span style="color:#f92672">--</span>sysroot<span style="color:#f92672">=</span>dir
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       Code Generation Options
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fcall<span style="color:#f92672">-</span>saved<span style="color:#f92672">-</span>reg  <span style="color:#f92672">-</span>fcall<span style="color:#f92672">-</span>used<span style="color:#f92672">-</span>reg <span style="color:#f92672">-</span>ffixed<span style="color:#f92672">-</span>reg  <span style="color:#f92672">-</span>fexceptions
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fnon<span style="color:#f92672">-</span>call<span style="color:#f92672">-</span>exceptions  <span style="color:#f92672">-</span>fdelete<span style="color:#f92672">-</span>dead<span style="color:#f92672">-</span>exceptions
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>funwind<span style="color:#f92672">-</span>tables <span style="color:#f92672">-</span>fasynchronous<span style="color:#f92672">-</span>unwind<span style="color:#f92672">-</span>tables <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>gnu<span style="color:#f92672">-</span>unique
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>finhibit<span style="color:#f92672">-</span>size<span style="color:#f92672">-</span>directive  <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>common  <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>ident
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fpcc<span style="color:#f92672">-</span><span style="color:#66d9ef">struct</span><span style="color:#f92672">-</span><span style="color:#66d9ef">return</span>  <span style="color:#f92672">-</span>fpic  <span style="color:#f92672">-</span>fPIC  <span style="color:#f92672">-</span>fpie  <span style="color:#f92672">-</span>fPIE  <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>plt
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fno<span style="color:#f92672">-</span>jump<span style="color:#f92672">-</span>tables <span style="color:#f92672">-</span>frecord<span style="color:#f92672">-</span>gcc<span style="color:#f92672">-</span>switches <span style="color:#f92672">-</span>freg<span style="color:#f92672">-</span><span style="color:#66d9ef">struct</span><span style="color:#f92672">-</span><span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fshort<span style="color:#f92672">-</span>enums  <span style="color:#f92672">-</span>fshort<span style="color:#f92672">-</span>wchar <span style="color:#f92672">-</span>fverbose<span style="color:#f92672">-</span><span style="color:#66d9ef">asm</span>  <span style="color:#f92672">-</span>fpack<span style="color:#f92672">-</span><span style="color:#66d9ef">struct</span>[<span style="color:#f92672">=</span>n]
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fleading<span style="color:#f92672">-</span>underscore  <span style="color:#f92672">-</span>ftls<span style="color:#f92672">-</span>model<span style="color:#f92672">=</span>model
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fstack<span style="color:#f92672">-</span>reuse<span style="color:#f92672">=</span>reuse_level <span style="color:#f92672">-</span>ftrampolines  <span style="color:#f92672">-</span>ftrapv  <span style="color:#f92672">-</span>fwrapv
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fvisibility<span style="color:#f92672">=</span>[<span style="color:#66d9ef">default</span><span style="color:#f92672">|</span>internal<span style="color:#f92672">|</span>hidden<span style="color:#f92672">|</span>protected]
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fstrict<span style="color:#f92672">-</span><span style="color:#66d9ef">volatile</span><span style="color:#f92672">-</span>bitfields  <span style="color:#f92672">-</span>fsync<span style="color:#f92672">-</span>libcalls
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>      For any given input file, the file name suffix determines what
+</span></span><span style="display:flex;"><span>       kind of compilation is done:
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.c
+</span></span><span style="display:flex;"><span>           C source code that must be preprocessed.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.i
+</span></span><span style="display:flex;"><span>           C source code that should not be preprocessed.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.ii
+</span></span><span style="display:flex;"><span>           C<span style="color:#f92672">++</span> source code that should not be preprocessed.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.m
+</span></span><span style="display:flex;"><span>           Objective<span style="color:#f92672">-</span>C source code.  Note that you must link with the
+</span></span><span style="display:flex;"><span>           libobjc library to make an Objective<span style="color:#f92672">-</span>C program work.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.mi
+</span></span><span style="display:flex;"><span>           Objective<span style="color:#f92672">-</span>C source code that should not be preprocessed.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.mm
+</span></span><span style="display:flex;"><span>       file.M
+</span></span><span style="display:flex;"><span>           Objective<span style="color:#f92672">-</span>C<span style="color:#f92672">++</span> source code.  Note that you must link with the
+</span></span><span style="display:flex;"><span>           libobjc library to make an Objective<span style="color:#f92672">-</span>C<span style="color:#f92672">++</span> program work.  Note
+</span></span><span style="display:flex;"><span>           that .M refers to a literal capital M.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.mii
+</span></span><span style="display:flex;"><span>           Objective<span style="color:#f92672">-</span>C<span style="color:#f92672">++</span> source code that should not be preprocessed.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.h
+</span></span><span style="display:flex;"><span>           C, C<span style="color:#f92672">++</span>, Objective<span style="color:#f92672">-</span>C or Objective<span style="color:#f92672">-</span>C<span style="color:#f92672">++</span> header file to be turned
+</span></span><span style="display:flex;"><span>           into a precompiled <span style="color:#a6e22e">header</span> (<span style="color:#66d9ef">default</span>), or C, C<span style="color:#f92672">++</span> header file to
+</span></span><span style="display:flex;"><span>           be turned into an Ada <span style="color:#a6e22e">spec</span> (via the <span style="color:#f92672">-</span>fdump<span style="color:#f92672">-</span>ada<span style="color:#f92672">-</span>spec <span style="color:#66d9ef">switch</span>).
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.cc
+</span></span><span style="display:flex;"><span>       file.cp
+</span></span><span style="display:flex;"><span>       file.cxx
+</span></span><span style="display:flex;"><span>       file.cpp
+</span></span><span style="display:flex;"><span>       file.CPP
+</span></span><span style="display:flex;"><span>       file.c<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>       file.C
+</span></span><span style="display:flex;"><span>           C<span style="color:#f92672">++</span> source code that must be preprocessed.  Note that in .cxx,
+</span></span><span style="display:flex;"><span>           the last two letters must both be literally x.  Likewise, .C
+</span></span><span style="display:flex;"><span>           refers to a literal capital C.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.mm
+</span></span><span style="display:flex;"><span>       file.M
+</span></span><span style="display:flex;"><span>           Objective<span style="color:#f92672">-</span>C<span style="color:#f92672">++</span> source code that must be preprocessed.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.mii
+</span></span><span style="display:flex;"><span>           Objective<span style="color:#f92672">-</span>C<span style="color:#f92672">++</span> source code that should not be preprocessed.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.hh
+</span></span><span style="display:flex;"><span>       file.H
+</span></span><span style="display:flex;"><span>       file.hp
+</span></span><span style="display:flex;"><span>       file.hxx
+</span></span><span style="display:flex;"><span>       file.hpp
+</span></span><span style="display:flex;"><span>       file.HPP
+</span></span><span style="display:flex;"><span>       file.h<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>       file.tcc
+</span></span><span style="display:flex;"><span>           C<span style="color:#f92672">++</span> header file to be turned into a precompiled header or Ada
+</span></span><span style="display:flex;"><span>           spec.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.f
+</span></span><span style="display:flex;"><span>       file.<span style="color:#66d9ef">for</span>
+</span></span><span style="display:flex;"><span>       file.ftn
+</span></span><span style="display:flex;"><span>           Fixed form Fortran source code that should not be
+</span></span><span style="display:flex;"><span>           preprocessed.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.F
+</span></span><span style="display:flex;"><span>       file.FOR
+</span></span><span style="display:flex;"><span>       file.fpp
+</span></span><span style="display:flex;"><span>       file.FPP
+</span></span><span style="display:flex;"><span>       file.FTN
+</span></span><span style="display:flex;"><span>           Fixed form Fortran source code that must be <span style="color:#a6e22e">preprocessed</span> (with
+</span></span><span style="display:flex;"><span>           the traditional preprocessor).
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.f90
+</span></span><span style="display:flex;"><span>       file.f95
+</span></span><span style="display:flex;"><span>       file.f03
+</span></span><span style="display:flex;"><span>       file.f08
+</span></span><span style="display:flex;"><span>           Free form Fortran source code that should not be preprocessed.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.F90
+</span></span><span style="display:flex;"><span>       file.F95
+</span></span><span style="display:flex;"><span>       file.F03
+</span></span><span style="display:flex;"><span>       file.F08
+</span></span><span style="display:flex;"><span>           Free form Fortran source code that must be <span style="color:#a6e22e">preprocessed</span> (with
+</span></span><span style="display:flex;"><span>           the traditional preprocessor).
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.go
+</span></span><span style="display:flex;"><span>           Go source code.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.brig
+</span></span><span style="display:flex;"><span>           BRIG <span style="color:#a6e22e">files</span> (binary representation of HSAIL).
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.d
+</span></span><span style="display:flex;"><span>           D source code.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.di
+</span></span><span style="display:flex;"><span>           D interface file.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.dd
+</span></span><span style="display:flex;"><span>           D documentation <span style="color:#a6e22e">code</span> (Ddoc).
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.ads
+</span></span><span style="display:flex;"><span>           Ada source code file that contains a library unit <span style="color:#a6e22e">declaration</span>
+</span></span><span style="display:flex;"><span>           (a declaration of a package, subprogram, or generic, or a
+</span></span><span style="display:flex;"><span>           generic instantiation), or a library unit renaming <span style="color:#a6e22e">declaration</span>
+</span></span><span style="display:flex;"><span>           (a package, generic, or subprogram renaming declaration).
+</span></span><span style="display:flex;"><span>           Such files are also called specs.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.adb
+</span></span><span style="display:flex;"><span>           Ada source code file containing a library unit <span style="color:#a6e22e">body</span> (a
+</span></span><span style="display:flex;"><span>           subprogram or package body).  Such files are also called
+</span></span><span style="display:flex;"><span>           bodies.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.s
+</span></span><span style="display:flex;"><span>           Assembler code.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       file.S
+</span></span><span style="display:flex;"><span>       file.sx
+</span></span><span style="display:flex;"><span>           Assembler code that must be preprocessed.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       other
+</span></span><span style="display:flex;"><span>           An object file to be fed straight into linking.  Any file name
+</span></span><span style="display:flex;"><span>           with no recognized suffix is treated this way.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       You can specify the input language explicitly with the <span style="color:#f92672">-</span>x option:
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span>x language
+</span></span><span style="display:flex;"><span>           Specify explicitly the language <span style="color:#66d9ef">for</span> the following input <span style="color:#a6e22e">files</span>
+</span></span><span style="display:flex;"><span>           (rather than letting the compiler choose a <span style="color:#66d9ef">default</span> based on
+</span></span><span style="display:flex;"><span>           the file name suffix).  This option applies to all following
+</span></span><span style="display:flex;"><span>           input files until the next <span style="color:#f92672">-</span>x option.  Possible values <span style="color:#66d9ef">for</span>
+</span></span><span style="display:flex;"><span>           language are:
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>                   c  c<span style="color:#f92672">-</span>header  cpp<span style="color:#f92672">-</span>output
+</span></span><span style="display:flex;"><span>                   c<span style="color:#f92672">++</span>  c<span style="color:#f92672">++-</span>header  c<span style="color:#f92672">++-</span>cpp<span style="color:#f92672">-</span>output
+</span></span><span style="display:flex;"><span>                   objective<span style="color:#f92672">-</span>c  objective<span style="color:#f92672">-</span>c<span style="color:#f92672">-</span>header  objective<span style="color:#f92672">-</span>c<span style="color:#f92672">-</span>cpp<span style="color:#f92672">-</span>output
+</span></span><span style="display:flex;"><span>                   objective<span style="color:#f92672">-</span>c<span style="color:#f92672">++</span> objective<span style="color:#f92672">-</span>c<span style="color:#f92672">++-</span>header objective<span style="color:#f92672">-</span>c<span style="color:#f92672">++-</span>cpp<span style="color:#f92672">-</span>output
+</span></span><span style="display:flex;"><span>                   assembler  assembler<span style="color:#f92672">-</span>with<span style="color:#f92672">-</span>cpp
+</span></span><span style="display:flex;"><span>                   ada
+</span></span><span style="display:flex;"><span>                   d
+</span></span><span style="display:flex;"><span>                   f77  f77<span style="color:#f92672">-</span>cpp<span style="color:#f92672">-</span>input f95  f95<span style="color:#f92672">-</span>cpp<span style="color:#f92672">-</span>input
+</span></span><span style="display:flex;"><span>                   go
+</span></span><span style="display:flex;"><span>                   brig
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span>x none
+</span></span><span style="display:flex;"><span>           Turn off any specification of a language, so that subsequent
+</span></span><span style="display:flex;"><span>           files are handled according to their file name <span style="color:#a6e22e">suffixes</span> (as
+</span></span><span style="display:flex;"><span>           they are <span style="color:#66d9ef">if</span> <span style="color:#f92672">-</span>x has not been used at all).
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       If you only want some of the stages of compilation, you can use <span style="color:#f92672">-</span><span style="color:#a6e22e">x</span>
+</span></span><span style="display:flex;"><span>       (or filename suffixes) to tell gcc where to start, and one of the
+</span></span><span style="display:flex;"><span>       options <span style="color:#f92672">-</span>c, <span style="color:#f92672">-</span>S, or <span style="color:#f92672">-</span>E to say where gcc is to stop.  Note that some
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">combinations</span> (<span style="color:#66d9ef">for</span> example, <span style="color:#f92672">-</span>x cpp<span style="color:#f92672">-</span>output <span style="color:#f92672">-</span>E) instruct gcc to <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>       nothing at all.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span>c  Compile or assemble the source files, but <span style="color:#66d9ef">do</span> not link.  The
+</span></span><span style="display:flex;"><span>           linking stage simply is not done.  The ultimate output is in
+</span></span><span style="display:flex;"><span>           the form of an object file <span style="color:#66d9ef">for</span> each source file.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           By <span style="color:#66d9ef">default</span>, the object file name <span style="color:#66d9ef">for</span> a source file is made by
+</span></span><span style="display:flex;"><span>           replacing the suffix .c, .i, .s, etc., with .o.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           Unrecognized input files, not requiring compilation or
+</span></span><span style="display:flex;"><span>           assembly, are ignored.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span>S  Stop after the stage of compilation proper; <span style="color:#66d9ef">do</span> not assemble.
+</span></span><span style="display:flex;"><span>           The output is in the form of an assembler code file <span style="color:#66d9ef">for</span> each
+</span></span><span style="display:flex;"><span>           non<span style="color:#f92672">-</span>assembler input file specified.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           By <span style="color:#66d9ef">default</span>, the assembler file name <span style="color:#66d9ef">for</span> a source file is made
+</span></span><span style="display:flex;"><span>           by replacing the suffix .c, .i, etc., with .s.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           Input files that don<span style="color:#960050;background-color:#1e0010">&#39;</span>t require compilation are ignored.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span>E  Stop after the preprocessing stage; <span style="color:#66d9ef">do</span> not run the compiler
+</span></span><span style="display:flex;"><span>           proper.  The output is in the form of preprocessed source
+</span></span><span style="display:flex;"><span>           code, which is sent to the standard output.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           Input files that don<span style="color:#960050;background-color:#1e0010">&#39;</span>t require preprocessing are ignored.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span>o file
+</span></span><span style="display:flex;"><span>           Place output in file file.  This applies to whatever sort of
+</span></span><span style="display:flex;"><span>           output is being produced, whether it be an executable file, an
+</span></span><span style="display:flex;"><span>           object file, an assembler file or preprocessed C code.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           If <span style="color:#f92672">-</span>o is not specified, the <span style="color:#66d9ef">default</span> is to put an executable
+</span></span><span style="display:flex;"><span>           file in a.out, the object file <span style="color:#66d9ef">for</span> source.suffix in source.o,
+</span></span><span style="display:flex;"><span>           its assembler file in source.s, a precompiled header file in
+</span></span><span style="display:flex;"><span>           source.suffix.gch, and all preprocessed C source on standard
+</span></span><span style="display:flex;"><span>           output.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span>v  <span style="color:#a6e22e">Print</span> (on standard error output) the commands executed to run
+</span></span><span style="display:flex;"><span>           the stages of compilation.  Also print the version number of
+</span></span><span style="display:flex;"><span>           the compiler driver program and of the preprocessor and the
+</span></span><span style="display:flex;"><span>           compiler proper.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span><span style="color:#960050;background-color:#1e0010">###</span>
+</span></span><span style="display:flex;"><span>           Like <span style="color:#f92672">-</span>v except the commands are not executed and arguments are
+</span></span><span style="display:flex;"><span>           quoted unless they contain only alphanumeric characters or
+</span></span><span style="display:flex;"><span>           <span style="color:#e6db74">&#34;./-_&#34;</span>.  This is useful <span style="color:#66d9ef">for</span> shell scripts to capture the
+</span></span><span style="display:flex;"><span>           driver<span style="color:#f92672">-</span>generated command lines.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">--</span>help
+</span></span><span style="display:flex;"><span>           <span style="color:#a6e22e">Print</span> (on the standard output) a description of the command<span style="color:#f92672">-</span>
+</span></span><span style="display:flex;"><span>           line options understood by gcc.  If the <span style="color:#f92672">-</span>v option is also
+</span></span><span style="display:flex;"><span>           specified then <span style="color:#f92672">--</span>help is also passed on to the various
+</span></span><span style="display:flex;"><span>           processes invoked by gcc, so that they can display the
+</span></span><span style="display:flex;"><span>           command<span style="color:#f92672">-</span>line options they accept.  If the <span style="color:#f92672">-</span>Wextra option has
+</span></span><span style="display:flex;"><span>           also been <span style="color:#a6e22e">specified</span> (prior to the <span style="color:#f92672">--</span>help option), then
+</span></span><span style="display:flex;"><span>           command<span style="color:#f92672">-</span>line options that have no documentation associated
+</span></span><span style="display:flex;"><span>           with them are also displayed.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">--</span>target<span style="color:#f92672">-</span>help
+</span></span><span style="display:flex;"><span>           <span style="color:#a6e22e">Print</span> (on the standard output) a description of target<span style="color:#f92672">-</span>
+</span></span><span style="display:flex;"><span>           specific command<span style="color:#f92672">-</span>line options <span style="color:#66d9ef">for</span> each tool.  For some targets
+</span></span><span style="display:flex;"><span>           extra target<span style="color:#f92672">-</span>specific information may also be printed.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">--</span>help<span style="color:#f92672">=</span>{class<span style="color:#f92672">|</span>[<span style="color:#f92672">^</span>]qualifier}[,...]
+</span></span><span style="display:flex;"><span>           <span style="color:#a6e22e">Print</span> (on the standard output) a description of the command<span style="color:#f92672">-</span>
+</span></span><span style="display:flex;"><span>           line options understood by the compiler that fit into all
+</span></span><span style="display:flex;"><span>           specified classes and qualifiers.  These are the supported
+</span></span><span style="display:flex;"><span>           classes:
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           optimizers
+</span></span><span style="display:flex;"><span>               Display all of the optimization options supported by the
+</span></span><span style="display:flex;"><span>               compiler.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           warnings
+</span></span><span style="display:flex;"><span>               Display all of the options controlling warning messages
+</span></span><span style="display:flex;"><span>               produced by the compiler.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           target
+</span></span><span style="display:flex;"><span>               Display target<span style="color:#f92672">-</span>specific options.  Unlike the <span style="color:#f92672">--</span>target<span style="color:#f92672">-</span>help
+</span></span><span style="display:flex;"><span>               option however, target<span style="color:#f92672">-</span>specific options of the linker and
+</span></span><span style="display:flex;"><span>               assembler are not displayed.  This is because those tools
+</span></span><span style="display:flex;"><span>               <span style="color:#66d9ef">do</span> not currently support the extended <span style="color:#f92672">--</span>help<span style="color:#f92672">=</span> syntax.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           params
+</span></span><span style="display:flex;"><span>               Display the values recognized by the <span style="color:#f92672">--</span>param option.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           language
+</span></span><span style="display:flex;"><span>               Display the options supported <span style="color:#66d9ef">for</span> language, where language
+</span></span><span style="display:flex;"><span>               is the name of one of the languages supported in this
+</span></span><span style="display:flex;"><span>               version of GCC.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           common
+</span></span><span style="display:flex;"><span>               Display the options that are common to all languages.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           These are the supported qualifiers:
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           undocumented
+</span></span><span style="display:flex;"><span>               Display only those options that are undocumented.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           joined
+</span></span><span style="display:flex;"><span>               Display options taking an argument that appears after an
+</span></span><span style="display:flex;"><span>               equal sign in the same continuous piece of text, such as:
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">--</span>help<span style="color:#f92672">=</span>target.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           separate
+</span></span><span style="display:flex;"><span>               Display options taking an argument that appears as a
+</span></span><span style="display:flex;"><span>               separate word following the original option, such as: <span style="color:#f92672">-</span>o
+</span></span><span style="display:flex;"><span>               output<span style="color:#f92672">-</span>file.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           Thus <span style="color:#66d9ef">for</span> example to display all the undocumented target<span style="color:#f92672">-</span>
+</span></span><span style="display:flex;"><span>           specific switches supported by the compiler, use:
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>                   <span style="color:#f92672">--</span>help<span style="color:#f92672">=</span>target,undocumented
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           The sense of a qualifier can be inverted by prefixing it with
+</span></span><span style="display:flex;"><span>           the <span style="color:#f92672">^</span> character, so <span style="color:#66d9ef">for</span> example to display all binary warning
+</span></span><span style="display:flex;"><span>           <span style="color:#a6e22e">options</span> (i.e., ones that are either on or off and that <span style="color:#66d9ef">do</span> not
+</span></span><span style="display:flex;"><span>           take an argument) that have a description, use:
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>                   <span style="color:#f92672">--</span>help<span style="color:#f92672">=</span>warnings,<span style="color:#f92672">^</span>joined,<span style="color:#f92672">^</span>undocumented
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           The argument to <span style="color:#f92672">--</span>help<span style="color:#f92672">=</span> should not consist solely of inverted
+</span></span><span style="display:flex;"><span>           qualifiers.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           Combining several classes is possible, although this usually
+</span></span><span style="display:flex;"><span>           restricts the output so much that there is nothing to display.
+</span></span><span style="display:flex;"><span>           One <span style="color:#66d9ef">case</span> where it does work, however, is when one of the
+</span></span><span style="display:flex;"><span>           classes is target.  For example, to display all the target<span style="color:#f92672">-</span>
+</span></span><span style="display:flex;"><span>           specific optimization options, use:
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>                   <span style="color:#f92672">--</span>help<span style="color:#f92672">=</span>target,optimizers
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           The <span style="color:#f92672">--</span>help<span style="color:#f92672">=</span> option can be repeated on the command line.  Each
+</span></span><span style="display:flex;"><span>           successive use displays its requested class of options,
+</span></span><span style="display:flex;"><span>           skipping those that have already been displayed.  If <span style="color:#f92672">--</span>help is
+</span></span><span style="display:flex;"><span>           also specified anywhere on the command line then this takes
+</span></span><span style="display:flex;"><span>           precedence over any <span style="color:#f92672">--</span>help<span style="color:#f92672">=</span> option.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           If the <span style="color:#f92672">-</span>Q option appears on the command line before the
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">--</span>help<span style="color:#f92672">=</span> option, then the descriptive text displayed by <span style="color:#f92672">--</span>help<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>           is changed.  Instead of describing the displayed options, an
+</span></span><span style="display:flex;"><span>           indication is given as to whether the option is enabled,
+</span></span><span style="display:flex;"><span>           disabled or set to a specific <span style="color:#a6e22e">value</span> (assuming that the
+</span></span><span style="display:flex;"><span>           compiler knows this at the point where the <span style="color:#f92672">--</span>help<span style="color:#f92672">=</span> option is
+</span></span><span style="display:flex;"><span>           used).
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           Here is a truncated example from the ARM port of gcc:
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>                     <span style="color:#f92672">%</span> gcc <span style="color:#f92672">-</span>Q <span style="color:#f92672">-</span>mabi<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">--</span>help<span style="color:#f92672">=</span>target <span style="color:#f92672">-</span>c
+</span></span><span style="display:flex;"><span>                     The following options are target specific:
+</span></span><span style="display:flex;"><span>                     <span style="color:#f92672">-</span>mabi<span style="color:#f92672">=</span>                                <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#f92672">-</span>mabort<span style="color:#f92672">-</span>on<span style="color:#f92672">-</span>noreturn                   [disabled]
+</span></span><span style="display:flex;"><span>                     <span style="color:#f92672">-</span>mapcs                                [disabled]
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           The output is sensitive to the effects of previous command<span style="color:#f92672">-</span>
+</span></span><span style="display:flex;"><span>           line options, so <span style="color:#66d9ef">for</span> example it is possible to find out which
+</span></span><span style="display:flex;"><span>           optimizations are enabled at <span style="color:#f92672">-</span>O2 by using:
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>                   <span style="color:#f92672">-</span>Q <span style="color:#f92672">-</span>O2 <span style="color:#f92672">--</span>help<span style="color:#f92672">=</span>optimizers
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           Alternatively you can discover which binary optimizations are
+</span></span><span style="display:flex;"><span>           enabled by <span style="color:#f92672">-</span>O3 by using:
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>                   gcc <span style="color:#f92672">-</span>c <span style="color:#f92672">-</span>Q <span style="color:#f92672">-</span>O3 <span style="color:#f92672">--</span>help<span style="color:#f92672">=</span>optimizers <span style="color:#f92672">&gt;</span> <span style="color:#f92672">/</span>tmp<span style="color:#f92672">/</span>O3<span style="color:#f92672">-</span>opts
+</span></span><span style="display:flex;"><span>                   gcc <span style="color:#f92672">-</span>c <span style="color:#f92672">-</span>Q <span style="color:#f92672">-</span>O2 <span style="color:#f92672">--</span>help<span style="color:#f92672">=</span>optimizers <span style="color:#f92672">&gt;</span> <span style="color:#f92672">/</span>tmp<span style="color:#f92672">/</span>O2<span style="color:#f92672">-</span>opts
+</span></span><span style="display:flex;"><span>                   diff <span style="color:#f92672">/</span>tmp<span style="color:#f92672">/</span>O2<span style="color:#f92672">-</span>opts <span style="color:#f92672">/</span>tmp<span style="color:#f92672">/</span>O3<span style="color:#f92672">-</span>opts <span style="color:#f92672">|</span> grep enabled
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">--</span>version
+</span></span><span style="display:flex;"><span>           Display the version number and copyrights of the invoked GCC.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span>pass<span style="color:#f92672">-</span>exit<span style="color:#f92672">-</span>codes
+</span></span><span style="display:flex;"><span>           Normally the gcc program exits with the code of <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">if</span> any phase
+</span></span><span style="display:flex;"><span>           of the compiler returns a non<span style="color:#f92672">-</span>success <span style="color:#66d9ef">return</span> code.  If you
+</span></span><span style="display:flex;"><span>           specify <span style="color:#f92672">-</span>pass<span style="color:#f92672">-</span>exit<span style="color:#f92672">-</span>codes, the gcc program instead returns with
+</span></span><span style="display:flex;"><span>           the numerically highest error produced by any phase returning
+</span></span><span style="display:flex;"><span>           an error indication.  The C, C<span style="color:#f92672">++</span>, and Fortran front ends
+</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">if</span> an internal compiler error is encountered.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span>pipe
+</span></span><span style="display:flex;"><span>           Use pipes rather than temporary files <span style="color:#66d9ef">for</span> communication
+</span></span><span style="display:flex;"><span>           between the various stages of compilation.  This fails to work
+</span></span><span style="display:flex;"><span>           on some systems where the assembler is unable to read from a
+</span></span><span style="display:flex;"><span>           pipe; but the GNU assembler has no trouble.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span>specs<span style="color:#f92672">=</span>file
+</span></span><span style="display:flex;"><span>           Process file after the compiler reads in the standard specs
+</span></span><span style="display:flex;"><span>           file, in order to override the defaults which the gcc driver
+</span></span><span style="display:flex;"><span>           program uses when determining what switches to pass to cc1,
+</span></span><span style="display:flex;"><span>           cc1plus, as, ld, etc.  More than one <span style="color:#f92672">-</span>specs<span style="color:#f92672">=</span>file can be
+</span></span><span style="display:flex;"><span>           specified on the command line, and they are processed in
+</span></span><span style="display:flex;"><span>           order, from left to right.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span>wrapper
+</span></span><span style="display:flex;"><span>           Invoke all subcommands under a wrapper program.  The name of
+</span></span><span style="display:flex;"><span>           the wrapper program and its parameters are passed as a comma
+</span></span><span style="display:flex;"><span>           separated list.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>                   gcc <span style="color:#f92672">-</span>c t.c <span style="color:#f92672">-</span>wrapper gdb,<span style="color:#f92672">--</span>args
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           This invokes all subprograms of gcc under gdb <span style="color:#f92672">--</span>args, thus the
+</span></span><span style="display:flex;"><span>           invocation of cc1 is gdb <span style="color:#f92672">--</span>args cc1 ....
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span>ffile<span style="color:#f92672">-</span>prefix<span style="color:#f92672">-</span>map<span style="color:#f92672">=</span>old<span style="color:#f92672">=</span>new
+</span></span><span style="display:flex;"><span>           When compiling files residing in directory old, record any
+</span></span><span style="display:flex;"><span>           references to them in the result of the compilation as <span style="color:#66d9ef">if</span> the
+</span></span><span style="display:flex;"><span>           files resided in directory new instead.  Specifying this
+</span></span><span style="display:flex;"><span>           option is equivalent to specifying all the individual
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>f<span style="color:#f92672">*-</span>prefix<span style="color:#f92672">-</span>map options.  This can be used to make reproducible
+</span></span><span style="display:flex;"><span>           builds that are location independent.  See also
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">-</span>fmacro<span style="color:#f92672">-</span>prefix<span style="color:#f92672">-</span>map and <span style="color:#f92672">-</span>fdebug<span style="color:#f92672">-</span>prefix<span style="color:#f92672">-</span>map.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span>fplugin<span style="color:#f92672">=</span>name.so
+</span></span><span style="display:flex;"><span>           Load the plugin code in file name.so, assumed to be a shared
+</span></span><span style="display:flex;"><span>           object to be dlopen<span style="color:#960050;background-color:#1e0010">&#39;</span>d by the compiler.  The base name of the
+</span></span><span style="display:flex;"><span>           shared object file is used to identify the plugin <span style="color:#66d9ef">for</span> the
+</span></span><span style="display:flex;"><span>           purposes of argument <span style="color:#a6e22e">parsing</span> (See <span style="color:#f92672">-</span>fplugin<span style="color:#f92672">-</span>arg<span style="color:#f92672">-</span>name<span style="color:#f92672">-</span>key<span style="color:#f92672">=</span>value
+</span></span><span style="display:flex;"><span>           below).  Each plugin should define the callback functions
+</span></span><span style="display:flex;"><span>           specified in the Plugins API.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span>fplugin<span style="color:#f92672">-</span>arg<span style="color:#f92672">-</span>name<span style="color:#f92672">-</span>key<span style="color:#f92672">=</span>value
+</span></span><span style="display:flex;"><span>           Define an argument called key with a value of value <span style="color:#66d9ef">for</span> the
+</span></span><span style="display:flex;"><span>           plugin called name.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span>fdump<span style="color:#f92672">-</span>ada<span style="color:#f92672">-</span>spec[<span style="color:#f92672">-</span>slim]
+</span></span><span style="display:flex;"><span>           For C and C<span style="color:#f92672">++</span> source and include files, generate corresponding
+</span></span><span style="display:flex;"><span>           Ada specs.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span>fada<span style="color:#f92672">-</span>spec<span style="color:#f92672">-</span>parent<span style="color:#f92672">=</span>unit
+</span></span><span style="display:flex;"><span>           In conjunction with <span style="color:#f92672">-</span>fdump<span style="color:#f92672">-</span>ada<span style="color:#f92672">-</span>spec[<span style="color:#f92672">-</span>slim] above, generate Ada
+</span></span><span style="display:flex;"><span>           specs as child units of parent unit.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span>fdump<span style="color:#f92672">-</span>go<span style="color:#f92672">-</span>spec<span style="color:#f92672">=</span>file
+</span></span><span style="display:flex;"><span>           For input files in any language, generate corresponding Go
+</span></span><span style="display:flex;"><span>           declarations in file.  This generates Go <span style="color:#e6db74">&#34;const&#34;</span>, <span style="color:#e6db74">&#34;type&#34;</span>,
+</span></span><span style="display:flex;"><span>           <span style="color:#e6db74">&#34;var&#34;</span>, and <span style="color:#e6db74">&#34;func&#34;</span> declarations which may be a useful way to
+</span></span><span style="display:flex;"><span>           start writing a Go interface to code written in some other
+</span></span><span style="display:flex;"><span>           language.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>       <span style="color:#960050;background-color:#1e0010">@</span>file
+</span></span><span style="display:flex;"><span>           Read command<span style="color:#f92672">-</span>line options from file.  The options read are
+</span></span><span style="display:flex;"><span>           inserted in place of the original <span style="color:#960050;background-color:#1e0010">@</span>file option.  If file does
+</span></span><span style="display:flex;"><span>           not exist, or cannot be read, then the option will be treated
+</span></span><span style="display:flex;"><span>           literally, and not removed.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>           Options in file are separated by whitespace.  A whitespace
+</span></span><span style="display:flex;"><span>           character may be included in an option by surrounding the
+</span></span><span style="display:flex;"><span>           entire option in either single or <span style="color:#66d9ef">double</span> quotes.  Any
+</span></span><span style="display:flex;"><span>           <span style="color:#a6e22e">character</span> (including a backslash) may be included by prefixing
+</span></span><span style="display:flex;"><span>           the character to be included with a backslash.  The file may
+</span></span><span style="display:flex;"><span>           itself contain additional <span style="color:#960050;background-color:#1e0010">@</span>file options; any such options will
+</span></span><span style="display:flex;"><span>           be processed recursively.
+</span></span></code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/npee_learning_log.github.io/tags/gcc-man/">Gcc Man</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 shyの考研日志
+    </section>
+    
+    <section class="powerby">
+        
+            Blogroll：<a href="https://void-island-site.vercel.app/">舍友的雾岛电台</a> <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+        
+    </body>
+</html>
