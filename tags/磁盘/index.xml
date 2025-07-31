@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>磁盘 on shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E7%A3%81%E7%9B%98/</link>
+        <description>Recent content in 磁盘 on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Thu, 31 Jul 2025 20:04:32 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E7%A3%81%E7%9B%98/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0731学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0731/</link>
+        <pubDate>Thu, 31 Jul 2025 20:04:32 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0731/</guid>
+        <description>&lt;h2 id=&#34;操作系统&#34;&gt;操作系统
+&lt;/h2&gt;&lt;h3 id=&#34;设备独立性软件&#34;&gt;设备独立性软件
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;高速缓存与缓冲区&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;磁盘高速缓存&lt;/li&gt;
+&lt;li&gt;缓冲区
+&lt;ol&gt;
+&lt;li&gt;缓冲CPU与I/O设备间速度不匹配的矛盾&lt;/li&gt;
+&lt;li&gt;减少对CPU的中断频率，放宽对CPU中断响应时间的限制&lt;/li&gt;
+&lt;li&gt;解决基本数据单元大小（数据粒度）不匹配的问题&lt;/li&gt;
+&lt;li&gt;提高CPU和IO设备之间的并行性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;单缓冲&lt;/li&gt;
+&lt;li&gt;双缓冲&lt;/li&gt;
+&lt;li&gt;循环缓冲&lt;/li&gt;
+&lt;li&gt;缓冲池&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;设备分配与回收&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;设备分配的数据结构
+&lt;ol&gt;
+&lt;li&gt;设备控制表（DCT）
+&lt;ol&gt;
+&lt;li&gt;设备控制表&lt;/li&gt;
+&lt;li&gt;设备类型&lt;/li&gt;
+&lt;li&gt;设备标识符&lt;/li&gt;
+&lt;li&gt;设备状态&lt;/li&gt;
+&lt;li&gt;指向控制器表的指针&lt;/li&gt;
+&lt;li&gt;重复执行次数或时间&lt;/li&gt;
+&lt;li&gt;设备队列的队首指针&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;控制器控制表（COCT）&lt;/li&gt;
+&lt;li&gt;通道控制表（CHCT）&lt;/li&gt;
+&lt;li&gt;系统设备表（SDT）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;设备分配时应考虑的因素&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;设备的固有属性
+&lt;ol&gt;
+&lt;li&gt;独占设备&lt;/li&gt;
+&lt;li&gt;共享设备&lt;/li&gt;
+&lt;li&gt;虚拟设备&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;设备分配算法
+&lt;ol&gt;
+&lt;li&gt;FCFS&lt;/li&gt;
+&lt;li&gt;最高优先级优先算法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;设备分配中的安全性
+&lt;ol&gt;
+&lt;li&gt;安全分配方式&lt;/li&gt;
+&lt;li&gt;不安全分配方式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;设备分配步骤
+&lt;ol&gt;
+&lt;li&gt;分配设备&lt;/li&gt;
+&lt;li&gt;分配控制器&lt;/li&gt;
+&lt;li&gt;分配通道&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SPOOLing （假脱机技术）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;输入井和输出井&lt;/li&gt;
+&lt;li&gt;输入缓冲区和输出缓冲区&lt;/li&gt;
+&lt;li&gt;输入进程和输出进程&lt;/li&gt;
+&lt;li&gt;井管理程序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/posts/0731/SPOOLing.png&#34;
+	width=&#34;1531&#34;
+	height=&#34;734&#34;
+	srcset=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/posts/0731/SPOOLing_hu_402004d5932a64c9.png 480w, https://auroraemiya.github.io/npee_learning_log.github.io/posts/0731/SPOOLing_hu_3336df8fbee31f45.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;SPOOLing &amp; Buffering&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;208&#34;
+		data-flex-basis=&#34;500px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;磁盘和固态硬盘&#34;&gt;磁盘和固态硬盘
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;磁盘&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;概念&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;磁头&lt;/li&gt;
+&lt;li&gt;磁道&lt;/li&gt;
+&lt;li&gt;扇区&lt;/li&gt;
+&lt;li&gt;盘块&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;磁盘是一种主要的计算机辅助存储设备，它利用磁性记录来存储和检索数字信息。为了有效地组织和访问这些数据，磁盘被划分成多个层级的结构。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;物理结构：硬件层面&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;物理结构是磁盘驱动器本身的硬件构造，决定了数据是如何被物理存储的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;盘片 (Platter)&lt;/strong&gt;
+盘片是构成硬盘的核心部件，它是一个或多个坚硬的、通常由铝、玻璃或陶瓷制成的圆形盘片。盘片的双面都涂有磁性材料，用于存储数据。一个硬盘驱动器通常包含多个堆叠在一起的盘片。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;主轴 (Spindle)&lt;/strong&gt;
+主轴是一个马达，所有的盘片都围绕它以恒定且极高的速度旋转（例如，每分钟7200转）。主轴的稳定性和转速对硬盘的性能至关重要。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;磁头 (Read/Write Head)&lt;/strong&gt;
+每个盘片的每个磁性表面都有一个对应的磁头。磁头负责读取盘片上的磁性信息（转换为数据）或向盘片写入磁性信息（存储数据）。在工作时，磁头在一个微小的气垫上“飞行”，与盘片表面保持极近但又不接触的距离。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;磁道 (Track)&lt;/strong&gt;
+当盘片旋转时，磁头保持在某个固定位置，就会在盘片上划出一个看不见的同心圆，这个圆形的路径就是&lt;strong&gt;磁道&lt;/strong&gt;。数据就是沿着这些磁道存储的。每个盘面都有数千个磁道。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;柱面 (Cylinder)&lt;/strong&gt;
+在一个多盘片的硬盘中，所有盘片上半径相同的磁道共同构成了一个&lt;strong&gt;柱面&lt;/strong&gt;。想象一下，从上到下穿过所有盘片，将所有相同编号的磁道连接起来，就形成了一个空心的圆柱体。当磁头臂不移动时，它可以在同一个柱面上访问所有盘面上的数据，这比移动磁头臂去访问不同磁道要快得多。因此，相关的数据通常会存储在同一个柱面内以提高访问速度。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;扇区 (Sector)&lt;/strong&gt;
+为了进一步管理数据，每个磁道被划分为若干个小的弧段，这些弧段被称为&lt;strong&gt;扇区&lt;/strong&gt;。扇区是磁盘上进行数据读写的最小物理单位，传统上每个扇区的大小为512字节。在进行读写操作时，磁盘控制器一次至少会读取或写入一个扇区的数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;总结一下物理结构的层级关系：
+&lt;strong&gt;硬盘驱动器 &amp;gt; 盘片 &amp;gt; 磁道 &amp;gt; 扇区&lt;/strong&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;逻辑结构：操作系统层面&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;操作系统为了更方便、更高效地管理磁盘空间，引入了逻辑结构的概念。它在物理结构的基础上进行了抽象。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;盘块 (Block) / 块&lt;/strong&gt;
+操作系统与磁盘进行I/O操作时，并不会直接以物理扇区为单位。因为如果每次只读写512字节，对于今天的大文件来说效率太低，会产生大量的I/O请求。因此，操作系统将一个或多个连续的扇区组合在一起，形成一个&lt;strong&gt;盘块&lt;/strong&gt;或&lt;strong&gt;块&lt;/strong&gt;。盘块是操作系统进行文件I/O的基本（逻辑）单位。例如，一个盘块可能由8个扇区组成，那么它的大小就是 4KB (8 * 512B)。当程序请求读取文件时，操作系统会一次性读取至少一个盘块的数据到内存中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;簇 (Cluster)&lt;/strong&gt;
+簇是文件系统（如FAT32、NTFS）中用于分配磁盘空间的单位。它也是由一个或多个连续的盘块组成的。当你创建一个文件并写入数据时，文件系统会为这个文件分配一个或多个簇。即使一个文件非常小，比如只有1个字节，它也至少会占用一个完整的簇。这就导致了所谓的“空间浪费”，因为簇内未使用的空间无法被其他文件使用。簇的大小会影响磁盘空间的利用率和文件系统的性能。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;大簇&lt;/strong&gt;：对于存储大文件的磁盘，使用较大的簇可以减少文件碎片，提高读写性能（因为文件占用的簇是连续的），但会增加小文件的空间浪费。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;小簇&lt;/strong&gt;：可以更有效地利用磁盘空间来存储小文件，但对于大文件，可能会导致其被分割成更多的簇，增加寻址开销。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;总结与类比&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;为了更好地理解这些概念，我们可以用一个“图书馆”来类比：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;硬盘驱动器&lt;/strong&gt; 就像整个 &lt;strong&gt;图书馆大楼&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;盘片&lt;/strong&gt; 就像楼里的 &lt;strong&gt;某一层&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;磁道&lt;/strong&gt; 就像这一层书架上的 &lt;strong&gt;一排书架&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;扇区&lt;/strong&gt; 就像书架上的 &lt;strong&gt;一本书&lt;/strong&gt;（这是最小的物理单位）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;盘块 (Block)&lt;/strong&gt; 就像图书馆规定，你借书时不能只借一本，必须借走 &lt;strong&gt;一摞书&lt;/strong&gt;（比如5本）。这是操作系统I/O的最小单位。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;簇 (Cluster)&lt;/strong&gt; 就像图书管理员为了方便管理，把书架划分成很多个 &lt;strong&gt;隔间&lt;/strong&gt;，每个隔间放一摞或多摞书。当你要存放你的资料时，管理员会给你分配一个或多个隔间。这是文件分配的最小单位。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;通过这种分层结构，磁盘既能通过物理设计实现高密度存储，又能通过操作系统和文件系统的逻辑抽象，实现对数据高效、便捷的管理和访问。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;磁盘的管理&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;磁盘的初始化&lt;/p&gt;
+&lt;p&gt;低级格式化（物理格式化）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;分区&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;磁盘分区&lt;/li&gt;
+&lt;li&gt;逻辑格式化（高级格式化）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;引导块&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;坏块&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;磁盘调度算法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;磁盘的存取时间&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;寻道时间$T_S$：寻道时间是指将磁头臂（Read/Write Head）从当前所在的磁道移动到目标数据所在的磁道所需要的时间。这个时间除跨越$n$条磁道的时间外，还包括启动磁头臂的时间$s$&lt;/p&gt;
+$$
+            T_s = m\times n+ s
+            $$&lt;p&gt;其中$m$是与磁盘驱动器速度有关的常熟。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;旋转延迟时间$T_r$。当磁头已经成功定位到目标磁道后，等待盘片旋转，直到目标数据的起始扇区（Sector）转到磁头正下方所需要的时间。设磁盘的旋转速度为$r$&lt;/p&gt;
+$$
+            T_r = \frac{1}{2r}
+            $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;传输时间$T_t$。当目标扇区已经到达磁头下方后，实际从盘片上读取数据或向盘片写入数据所花费的时间。这个时间取决于每次所读/写的字节数$b$和磁盘的旋转速度$r$&lt;/p&gt;
+$$
+            T_t = \frac{b}{rN}
+            $$&lt;p&gt;式中，$r$为磁盘每秒的转数，$N$为一个磁道上的字节数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;磁盘调度算法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先来先服务算法：这是最简单的调度算法。它完全按照请求到达队列的先后顺序来处理请求。不考虑磁头当前的位置和请求磁道的远近。&lt;/li&gt;
+&lt;li&gt;最短寻道时间优先(SSTF)：SSTF算法选择与磁头当前位置最近的那个请求作为下一个服务对象。这是一种贪心算法，其目标是每次都执行寻道成本最小的操作。&lt;/li&gt;
+&lt;li&gt;扫描算法(SCAN)：SCAN算法模仿了电梯的运行方式。磁头在一个方向上移动，沿途服务所有该方向上的请求，直到到达磁盘的最后一个磁道，然后调转方向，继续服务反向的请求。&lt;/li&gt;
+&lt;li&gt;循环扫描(C-SCAN)：C-SCAN是SCAN算法的改进版，旨在解决SCAN算法对两端磁道不公平的问题。它规定磁头只在一个方向上扫描并服务请求（例如从0到199）。当到达一端后，它会立即返回到起始端，然后重新开始下一次扫描，返回途中不服务任何请求。
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;算法名称&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;优点 (Advantages)&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;缺点 (Disadvantages)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;先来先服务 (FCFS)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;绝对公平&lt;/strong&gt;：所有请求按到达顺序处理，不会有请求被无限期推迟（无饥饿现象）。&lt;strong&gt;实现简单&lt;/strong&gt;：算法逻辑是所有调度算法中最简单的。&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;效率低下&lt;/strong&gt;：磁头移动路径完全随机，平均寻道时间很长，导致磁盘整体性能差。`&lt;strong&gt;性能不稳定&lt;/strong&gt;：性能好坏完全取决于请求序列。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;最短寻道时间优先 (SSTF)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;性能好&lt;/strong&gt;：平均寻道时间显著短于FCFS，系统吞吐量高。&lt;strong&gt;效率高&lt;/strong&gt;：总是选择代价最小的移动，局部性能最优。&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;可能产生“饥饿”现象&lt;/strong&gt;：如果新请求总是在磁头当前位置附近产生，那么远离磁头的请求可能会长时间得不到服务。&lt;strong&gt;响应时间不均&lt;/strong&gt;：对不同位置请求的响应机会不均等。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;扫描算法 (SCAN) / 电梯算法&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;性能较好&lt;/strong&gt;：是SSTF和FCFS的一种折中，兼顾了性能和公平性。&lt;strong&gt;无饥饿问题&lt;/strong&gt;：磁头会规律地来回移动，确保所有位置的请求最终都能被处理。``&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;对两端磁道不公平&lt;/strong&gt;：位于磁盘中间区域的磁道比两端磁道的服务频率更高，响应更快。&lt;strong&gt;等待时间不均&lt;/strong&gt;：磁头刚经过的位置需要等待近一个来回周期才能再次被服务。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;循环扫描 (C-SCAN)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;等待时间更均匀&lt;/strong&gt;：通过单向服务和快速返回，使得所有请求的等待时间更加公平和可预测。&lt;strong&gt;解决了SCAN的不公平问题&lt;/strong&gt;：对所有磁道位置的请求都一视同仁，响应时间方差小。&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;额外的寻道开销&lt;/strong&gt;：磁头每次扫描到末端后，都需要一次长距离的“空载”返回（从一端直接跳到另一端），这部分移动不处理任何请求，增加了总的寻道距离。&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;减少延迟时间的方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;盘面扇区的交替编号&lt;/li&gt;
+&lt;li&gt;磁盘盘面的错位命名&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;提高磁盘IO速度的方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;采用磁盘高速缓存&lt;/li&gt;
+&lt;li&gt;调整磁盘请求顺序&lt;/li&gt;
+&lt;li&gt;提前读&lt;/li&gt;
+&lt;li&gt;延迟写&lt;/li&gt;
+&lt;li&gt;优化物理块的分布&lt;/li&gt;
+&lt;li&gt;虚拟盘&lt;/li&gt;
+&lt;li&gt;采用磁盘阵列RAID&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;固态硬盘&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;固态硬盘的特性&lt;/li&gt;
+&lt;li&gt;磨损均衡
+&lt;ol&gt;
+&lt;li&gt;动态磨损均衡&lt;/li&gt;
+&lt;li&gt;静态磨损均衡&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
