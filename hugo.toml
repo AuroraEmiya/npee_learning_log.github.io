@@ -11,10 +11,12 @@ enableRobotsTXT = true
 
 [params]
   mainSections = ["posts","diary","memo","update"]
+  toc = true 
 [params.article]
   math = true
   readingTime = true
   toc = true
+
 [params.sidebar]
   emoji = "🎧"
   subtitle = "無職受験生 ～408に挑んだら本気だす～"
@@ -34,7 +36,8 @@ enableRobotsTXT = true
     src = "img/shiki.png"
 
 [params.widgets]
-
+  [[params.widgets.page]]
+    type = "toc"
   [[params.widgets.homepage]]
     type = "search"
   [[params.widgets.homepage]]
