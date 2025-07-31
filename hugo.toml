@@ -15,6 +15,7 @@ enableRobotsTXT = true
 [params.article]
   math = true
   readingTime = true
+  toc = true
 [params.sidebar]
   emoji = "🎧"
   subtitle = "無職受験生 ～408に挑んだら本気だす～"
@@ -74,9 +75,16 @@ enableRobotsTXT = true
     [menu.main.params]
     icon = "messages"
 [[menu.main]]
+  name = "兴趣"
+  url = "/categories/interests"
+  weight = 4
+    [menu.main.params]
+    icon = "infinity"
+
+[[menu.main]]
   name = "更新"
   url = "/categories/update"
-  weight = 4
+  weight = 5
     [menu.main.params]
     icon = "clock"
 
