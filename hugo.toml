@@ -10,7 +10,7 @@ enableRobotsTXT = true
 
 
 [params]
-  mainSections = ["posts","diary","memo","update"]
+  mainSections = ["posts","diary","memo","update","interests"]
   toc = true 
 [params.article]
   math = true

@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="操作系统\r设备独立性软件\r高速缓存与缓冲区\n磁盘高速缓存 缓冲区 缓冲CPU与I/O设备间速度不匹配的矛盾 减少对CPU的中断频率，放宽对CPU中断响应时间的限制 解决基本数据单元大小（数据粒度）不匹配的问题 提高CPU和IO设备之间的并行性 单缓冲 双缓冲 循环缓冲 缓冲池 设备分配与回收\n设备分配的数据结构 设备控制表（DCT） 设备控制表 设备类型 设备标识符 设备状态 指向控制器表的指针 重复执行次数或时间 设备队列的队首指针 控制器控制表（COCT） 通道控制表（CHCT） 系统设备表（SDT） 设备分配时应考虑的因素\n设备的固有属性 独占设备 共享设备 虚拟设备 设备分配算法 FCFS 最高优先级优先算法 设备分配中的安全性 安全分配方式 不安全分配方式 设备分配步骤 分配设备 分配控制器 分配通道 SPOOLing （假脱机技术）\n输入井和输出井 输入缓冲区和输出缓冲区 输入进程和输出进程 井管理程序 磁盘和固态硬盘\r磁盘\n概念\n磁头 磁道 扇区 盘块 磁盘是一种主要的计算机辅助存储设备，它利用磁性记录来存储和检索数字信息。为了有效地组织和访问这些数据，磁盘被划分成多个层级的结构。\n物理结构：硬件层面 物理结构是磁盘驱动器本身的硬件构造，决定了数据是如何被物理存储的。\n盘片 (Platter) 盘片是构成硬盘的核心部件，它是一个或多个坚硬的、通常由铝、玻璃或陶瓷制成的圆形盘片。盘片的双面都涂有磁性材料，用于存储数据。一个硬盘驱动器通常包含多个堆叠在一起的盘片。 主轴 (Spindle) 主轴是一个马达，所有的盘片都围绕它以恒定且极高的速度旋转（例如，每分钟7200转）。主轴的稳定性和转速对硬盘的性能至关重要。 磁头 (Read/Write Head) 每个盘片的每个磁性表面都有一个对应的磁头。磁头负责读取盘片上的磁性信息（转换为数据）或向盘片写入磁性信息（存储数据）。在工作时，磁头在一个微小的气垫上“飞行”，与盘片表面保持极近但又不接触的距离。 磁道 (Track) 当盘片旋转时，磁头保持在某个固定位置，就会在盘片上划出一个看不见的同心圆，这个圆形的路径就是磁道。数据就是沿着这些磁道存储的。每个盘面都有数千个磁道。 柱面 (Cylinder) 在一个多盘片的硬盘中，所有盘片上半径相同的磁道共同构成了一个柱面。想象一下，从上到下穿过所有盘片，将所有相同编号的磁道连接起来，就形成了一个空心的圆柱体。当磁头臂不移动时，它可以在同一个柱面上访问所有盘面上的数据，这比移动磁头臂去访问不同磁道要快得多。因此，相关的数据通常会存储在同一个柱面内以提高访问速度。 扇区 (Sector) 为了进一步管理数据，每个磁道被划分为若干个小的弧段，这些弧段被称为扇区。扇区是磁盘上进行数据读写的最小物理单位，传统上每个扇区的大小为512字节。在进行读写操作时，磁盘控制器一次至少会读取或写入一个扇区的数据。 总结一下物理结构的层级关系： 硬盘驱动器 &gt; 盘片 &gt; 磁道 &gt; 扇区\n">
+<title>0731学习日志</title>
+
+<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0731/'>
+
+<link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0731学习日志">
+<meta property='og:description' content="操作系统\r设备独立性软件\r高速缓存与缓冲区\n磁盘高速缓存 缓冲区 缓冲CPU与I/O设备间速度不匹配的矛盾 减少对CPU的中断频率，放宽对CPU中断响应时间的限制 解决基本数据单元大小（数据粒度）不匹配的问题 提高CPU和IO设备之间的并行性 单缓冲 双缓冲 循环缓冲 缓冲池 设备分配与回收\n设备分配的数据结构 设备控制表（DCT） 设备控制表 设备类型 设备标识符 设备状态 指向控制器表的指针 重复执行次数或时间 设备队列的队首指针 控制器控制表（COCT） 通道控制表（CHCT） 系统设备表（SDT） 设备分配时应考虑的因素\n设备的固有属性 独占设备 共享设备 虚拟设备 设备分配算法 FCFS 最高优先级优先算法 设备分配中的安全性 安全分配方式 不安全分配方式 设备分配步骤 分配设备 分配控制器 分配通道 SPOOLing （假脱机技术）\n输入井和输出井 输入缓冲区和输出缓冲区 输入进程和输出进程 井管理程序 磁盘和固态硬盘\r磁盘\n概念\n磁头 磁道 扇区 盘块 磁盘是一种主要的计算机辅助存储设备，它利用磁性记录来存储和检索数字信息。为了有效地组织和访问这些数据，磁盘被划分成多个层级的结构。\n物理结构：硬件层面 物理结构是磁盘驱动器本身的硬件构造，决定了数据是如何被物理存储的。\n盘片 (Platter) 盘片是构成硬盘的核心部件，它是一个或多个坚硬的、通常由铝、玻璃或陶瓷制成的圆形盘片。盘片的双面都涂有磁性材料，用于存储数据。一个硬盘驱动器通常包含多个堆叠在一起的盘片。 主轴 (Spindle) 主轴是一个马达，所有的盘片都围绕它以恒定且极高的速度旋转（例如，每分钟7200转）。主轴的稳定性和转速对硬盘的性能至关重要。 磁头 (Read/Write Head) 每个盘片的每个磁性表面都有一个对应的磁头。磁头负责读取盘片上的磁性信息（转换为数据）或向盘片写入磁性信息（存储数据）。在工作时，磁头在一个微小的气垫上“飞行”，与盘片表面保持极近但又不接触的距离。 磁道 (Track) 当盘片旋转时，磁头保持在某个固定位置，就会在盘片上划出一个看不见的同心圆，这个圆形的路径就是磁道。数据就是沿着这些磁道存储的。每个盘面都有数千个磁道。 柱面 (Cylinder) 在一个多盘片的硬盘中，所有盘片上半径相同的磁道共同构成了一个柱面。想象一下，从上到下穿过所有盘片，将所有相同编号的磁道连接起来，就形成了一个空心的圆柱体。当磁头臂不移动时，它可以在同一个柱面上访问所有盘面上的数据，这比移动磁头臂去访问不同磁道要快得多。因此，相关的数据通常会存储在同一个柱面内以提高访问速度。 扇区 (Sector) 为了进一步管理数据，每个磁道被划分为若干个小的弧段，这些弧段被称为扇区。扇区是磁盘上进行数据读写的最小物理单位，传统上每个扇区的大小为512字节。在进行读写操作时，磁盘控制器一次至少会读取或写入一个扇区的数据。 总结一下物理结构的层级关系： 硬盘驱动器 &gt; 盘片 &gt; 磁道 &gt; 扇区\n">
+<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0731/'>
+<meta property='og:site_name' content='shyの考研日志'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='操作系统' /><meta property='article:tag' content='设备' /><meta property='article:tag' content='磁盘' /><meta property='article:tag' content='固态硬盘' /><meta property='article:published_time' content='2025-07-31T20:04:32&#43;08:00'/><meta property='article:modified_time' content='2025-07-31T20:04:32&#43;08:00'/>
+<meta name="twitter:title" content="0731学习日志">
+<meta name="twitter:description" content="操作系统\r设备独立性软件\r高速缓存与缓冲区\n磁盘高速缓存 缓冲区 缓冲CPU与I/O设备间速度不匹配的矛盾 减少对CPU的中断频率，放宽对CPU中断响应时间的限制 解决基本数据单元大小（数据粒度）不匹配的问题 提高CPU和IO设备之间的并行性 单缓冲 双缓冲 循环缓冲 缓冲池 设备分配与回收\n设备分配的数据结构 设备控制表（DCT） 设备控制表 设备类型 设备标识符 设备状态 指向控制器表的指针 重复执行次数或时间 设备队列的队首指针 控制器控制表（COCT） 通道控制表（CHCT） 系统设备表（SDT） 设备分配时应考虑的因素\n设备的固有属性 独占设备 共享设备 虚拟设备 设备分配算法 FCFS 最高优先级优先算法 设备分配中的安全性 安全分配方式 不安全分配方式 设备分配步骤 分配设备 分配控制器 分配通道 SPOOLing （假脱机技术）\n输入井和输出井 输入缓冲区和输出缓冲区 输入进程和输出进程 井管理程序 磁盘和固态硬盘\r磁盘\n概念\n磁头 磁道 扇区 盘块 磁盘是一种主要的计算机辅助存储设备，它利用磁性记录来存储和检索数字信息。为了有效地组织和访问这些数据，磁盘被划分成多个层级的结构。\n物理结构：硬件层面 物理结构是磁盘驱动器本身的硬件构造，决定了数据是如何被物理存储的。\n盘片 (Platter) 盘片是构成硬盘的核心部件，它是一个或多个坚硬的、通常由铝、玻璃或陶瓷制成的圆形盘片。盘片的双面都涂有磁性材料，用于存储数据。一个硬盘驱动器通常包含多个堆叠在一起的盘片。 主轴 (Spindle) 主轴是一个马达，所有的盘片都围绕它以恒定且极高的速度旋转（例如，每分钟7200转）。主轴的稳定性和转速对硬盘的性能至关重要。 磁头 (Read/Write Head) 每个盘片的每个磁性表面都有一个对应的磁头。磁头负责读取盘片上的磁性信息（转换为数据）或向盘片写入磁性信息（存储数据）。在工作时，磁头在一个微小的气垫上“飞行”，与盘片表面保持极近但又不接触的距离。 磁道 (Track) 当盘片旋转时，磁头保持在某个固定位置，就会在盘片上划出一个看不见的同心圆，这个圆形的路径就是磁道。数据就是沿着这些磁道存储的。每个盘面都有数千个磁道。 柱面 (Cylinder) 在一个多盘片的硬盘中，所有盘片上半径相同的磁道共同构成了一个柱面。想象一下，从上到下穿过所有盘片，将所有相同编号的磁道连接起来，就形成了一个空心的圆柱体。当磁头臂不移动时，它可以在同一个柱面上访问所有盘面上的数据，这比移动磁头臂去访问不同磁道要快得多。因此，相关的数据通常会存储在同一个柱面内以提高访问速度。 扇区 (Sector) 为了进一步管理数据，每个磁道被划分为若干个小的弧段，这些弧段被称为扇区。扇区是磁盘上进行数据读写的最小物理单位，传统上每个扇区的大小为512字节。在进行读写操作时，磁盘控制器一次至少会读取或写入一个扇区的数据。 总结一下物理结构的层级关系： 硬盘驱动器 &gt; 盘片 &gt; 磁道 &gt; 扇区\n">
+    
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/npee_learning_log.github.io/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/npee_learning_log.github.io/img/shiki_hu_20273a3af6c00ff3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🎧</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/npee_learning_log.github.io">shyの考研日志</a></h1>
+            <h2 class="site-description">無職受験生 ～408に挑んだら本気だす～</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/diary' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                
+                <span>日记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/log' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>日志</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/memo' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>笔记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/interests' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+                
+                <span>兴趣</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/update' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                
+                <span>更新</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#操作系统">操作系统</a>
+      <ul>
+        <li><a href="#设备独立性软件">设备独立性软件</a></li>
+        <li><a href="#磁盘和固态硬盘">磁盘和固态硬盘</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/npee_learning_log.github.io/categories/log/" >
+                Log
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/npee_learning_log.github.io/posts/0731/">0731学习日志</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 31, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="操作系统">操作系统
+</h2><h3 id="设备独立性软件">设备独立性软件
+</h3><ol>
+<li>
+<p>高速缓存与缓冲区</p>
+<ol>
+<li>磁盘高速缓存</li>
+<li>缓冲区
+<ol>
+<li>缓冲CPU与I/O设备间速度不匹配的矛盾</li>
+<li>减少对CPU的中断频率，放宽对CPU中断响应时间的限制</li>
+<li>解决基本数据单元大小（数据粒度）不匹配的问题</li>
+<li>提高CPU和IO设备之间的并行性</li>
+</ol>
+</li>
+<li>单缓冲</li>
+<li>双缓冲</li>
+<li>循环缓冲</li>
+<li>缓冲池</li>
+</ol>
+</li>
+<li>
+<p>设备分配与回收</p>
+<ol>
+<li>设备分配的数据结构
+<ol>
+<li>设备控制表（DCT）
+<ol>
+<li>设备控制表</li>
+<li>设备类型</li>
+<li>设备标识符</li>
+<li>设备状态</li>
+<li>指向控制器表的指针</li>
+<li>重复执行次数或时间</li>
+<li>设备队列的队首指针</li>
+</ol>
+</li>
+<li>控制器控制表（COCT）</li>
+<li>通道控制表（CHCT）</li>
+<li>系统设备表（SDT）</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>设备分配时应考虑的因素</p>
+<ol>
+<li>设备的固有属性
+<ol>
+<li>独占设备</li>
+<li>共享设备</li>
+<li>虚拟设备</li>
+</ol>
+</li>
+<li>设备分配算法
+<ol>
+<li>FCFS</li>
+<li>最高优先级优先算法</li>
+</ol>
+</li>
+<li>设备分配中的安全性
+<ol>
+<li>安全分配方式</li>
+<li>不安全分配方式</li>
+</ol>
+</li>
+<li>设备分配步骤
+<ol>
+<li>分配设备</li>
+<li>分配控制器</li>
+<li>分配通道</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>SPOOLing （假脱机技术）</p>
+<ul>
+<li>输入井和输出井</li>
+<li>输入缓冲区和输出缓冲区</li>
+<li>输入进程和输出进程</li>
+<li>井管理程序</li>
+</ul>
+<p><img src="/npee_learning_log.github.io/posts/0731/SPOOLing.png"
+	width="1531"
+	height="734"
+	srcset="/npee_learning_log.github.io/posts/0731/SPOOLing_hu_402004d5932a64c9.png 480w, /npee_learning_log.github.io/posts/0731/SPOOLing_hu_3336df8fbee31f45.png 1024w"
+	loading="lazy"
+	
+		alt="SPOOLing & Buffering"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="208"
+		data-flex-basis="500px"
+	
+></p>
+</li>
+</ol>
+<h3 id="磁盘和固态硬盘">磁盘和固态硬盘
+</h3><ol>
+<li>
+<p>磁盘</p>
+<ol>
+<li>
+<p>概念</p>
+<ul>
+<li>磁头</li>
+<li>磁道</li>
+<li>扇区</li>
+<li>盘块</li>
+</ul>
+<p>磁盘是一种主要的计算机辅助存储设备，它利用磁性记录来存储和检索数字信息。为了有效地组织和访问这些数据，磁盘被划分成多个层级的结构。</p>
+<ol>
+<li><strong>物理结构：硬件层面</strong></li>
+</ol>
+<p>物理结构是磁盘驱动器本身的硬件构造，决定了数据是如何被物理存储的。</p>
+<ul>
+<li><strong>盘片 (Platter)</strong>
+盘片是构成硬盘的核心部件，它是一个或多个坚硬的、通常由铝、玻璃或陶瓷制成的圆形盘片。盘片的双面都涂有磁性材料，用于存储数据。一个硬盘驱动器通常包含多个堆叠在一起的盘片。</li>
+<li><strong>主轴 (Spindle)</strong>
+主轴是一个马达，所有的盘片都围绕它以恒定且极高的速度旋转（例如，每分钟7200转）。主轴的稳定性和转速对硬盘的性能至关重要。</li>
+<li><strong>磁头 (Read/Write Head)</strong>
+每个盘片的每个磁性表面都有一个对应的磁头。磁头负责读取盘片上的磁性信息（转换为数据）或向盘片写入磁性信息（存储数据）。在工作时，磁头在一个微小的气垫上“飞行”，与盘片表面保持极近但又不接触的距离。</li>
+<li><strong>磁道 (Track)</strong>
+当盘片旋转时，磁头保持在某个固定位置，就会在盘片上划出一个看不见的同心圆，这个圆形的路径就是<strong>磁道</strong>。数据就是沿着这些磁道存储的。每个盘面都有数千个磁道。</li>
+<li><strong>柱面 (Cylinder)</strong>
+在一个多盘片的硬盘中，所有盘片上半径相同的磁道共同构成了一个<strong>柱面</strong>。想象一下，从上到下穿过所有盘片，将所有相同编号的磁道连接起来，就形成了一个空心的圆柱体。当磁头臂不移动时，它可以在同一个柱面上访问所有盘面上的数据，这比移动磁头臂去访问不同磁道要快得多。因此，相关的数据通常会存储在同一个柱面内以提高访问速度。</li>
+<li><strong>扇区 (Sector)</strong>
+为了进一步管理数据，每个磁道被划分为若干个小的弧段，这些弧段被称为<strong>扇区</strong>。扇区是磁盘上进行数据读写的最小物理单位，传统上每个扇区的大小为512字节。在进行读写操作时，磁盘控制器一次至少会读取或写入一个扇区的数据。</li>
+</ul>
+<p>总结一下物理结构的层级关系：
+<strong>硬盘驱动器 &gt; 盘片 &gt; 磁道 &gt; 扇区</strong></p>
+<ol start="2">
+<li><strong>逻辑结构：操作系统层面</strong></li>
+</ol>
+<p>操作系统为了更方便、更高效地管理磁盘空间，引入了逻辑结构的概念。它在物理结构的基础上进行了抽象。</p>
+<ul>
+<li>
+<p><strong>盘块 (Block) / 块</strong>
+操作系统与磁盘进行I/O操作时，并不会直接以物理扇区为单位。因为如果每次只读写512字节，对于今天的大文件来说效率太低，会产生大量的I/O请求。因此，操作系统将一个或多个连续的扇区组合在一起，形成一个<strong>盘块</strong>或<strong>块</strong>。盘块是操作系统进行文件I/O的基本（逻辑）单位。例如，一个盘块可能由8个扇区组成，那么它的大小就是 4KB (8 * 512B)。当程序请求读取文件时，操作系统会一次性读取至少一个盘块的数据到内存中。</p>
+</li>
+<li>
+<p><strong>簇 (Cluster)</strong>
+簇是文件系统（如FAT32、NTFS）中用于分配磁盘空间的单位。它也是由一个或多个连续的盘块组成的。当你创建一个文件并写入数据时，文件系统会为这个文件分配一个或多个簇。即使一个文件非常小，比如只有1个字节，它也至少会占用一个完整的簇。这就导致了所谓的“空间浪费”，因为簇内未使用的空间无法被其他文件使用。簇的大小会影响磁盘空间的利用率和文件系统的性能。</p>
+<ul>
+<li><strong>大簇</strong>：对于存储大文件的磁盘，使用较大的簇可以减少文件碎片，提高读写性能（因为文件占用的簇是连续的），但会增加小文件的空间浪费。</li>
+<li><strong>小簇</strong>：可以更有效地利用磁盘空间来存储小文件，但对于大文件，可能会导致其被分割成更多的簇，增加寻址开销。</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>
+<p><strong>总结与类比</strong></p>
+<p>为了更好地理解这些概念，我们可以用一个“图书馆”来类比：</p>
+<ol>
+<li><strong>硬盘驱动器</strong> 就像整个 <strong>图书馆大楼</strong>。</li>
+<li><strong>盘片</strong> 就像楼里的 <strong>某一层</strong>。</li>
+<li><strong>磁道</strong> 就像这一层书架上的 <strong>一排书架</strong>。</li>
+<li><strong>扇区</strong> 就像书架上的 <strong>一本书</strong>（这是最小的物理单位）。</li>
+<li><strong>盘块 (Block)</strong> 就像图书馆规定，你借书时不能只借一本，必须借走 <strong>一摞书</strong>（比如5本）。这是操作系统I/O的最小单位。</li>
+<li><strong>簇 (Cluster)</strong> 就像图书管理员为了方便管理，把书架划分成很多个 <strong>隔间</strong>，每个隔间放一摞或多摞书。当你要存放你的资料时，管理员会给你分配一个或多个隔间。这是文件分配的最小单位。</li>
+</ol>
+<p>通过这种分层结构，磁盘既能通过物理设计实现高密度存储，又能通过操作系统和文件系统的逻辑抽象，实现对数据高效、便捷的管理和访问。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>磁盘的管理</p>
+<ol>
+<li>
+<p>磁盘的初始化</p>
+<p>低级格式化（物理格式化）</p>
+</li>
+<li>
+<p>分区</p>
+<ol>
+<li>磁盘分区</li>
+<li>逻辑格式化（高级格式化）</li>
+</ol>
+</li>
+<li>
+<p>引导块</p>
+</li>
+<li>
+<p>坏块</p>
+</li>
+</ol>
+</li>
+<li>
+<p>磁盘调度算法</p>
+<ol>
+<li>
+<p>磁盘的存取时间</p>
+<ol>
+<li>
+<p>寻道时间$T_S$：寻道时间是指将磁头臂（Read/Write Head）从当前所在的磁道移动到目标数据所在的磁道所需要的时间。这个时间除跨越$n$条磁道的时间外，还包括启动磁头臂的时间$s$</p>
+$$
+            T_s = m\times n+ s
+            $$<p>其中$m$是与磁盘驱动器速度有关的常熟。</p>
+</li>
+<li>
+<p>旋转延迟时间$T_r$。当磁头已经成功定位到目标磁道后，等待盘片旋转，直到目标数据的起始扇区（Sector）转到磁头正下方所需要的时间。设磁盘的旋转速度为$r$</p>
+$$
+            T_r = \frac{1}{2r}
+            $$</li>
+<li>
+<p>传输时间$T_t$。当目标扇区已经到达磁头下方后，实际从盘片上读取数据或向盘片写入数据所花费的时间。这个时间取决于每次所读/写的字节数$b$和磁盘的旋转速度$r$</p>
+$$
+            T_t = \frac{b}{rN}
+            $$<p>式中，$r$为磁盘每秒的转数，$N$为一个磁道上的字节数。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>磁盘调度算法</p>
+<ol>
+<li>先来先服务算法：这是最简单的调度算法。它完全按照请求到达队列的先后顺序来处理请求。不考虑磁头当前的位置和请求磁道的远近。</li>
+<li>最短寻道时间优先(SSTF)：SSTF算法选择与磁头当前位置最近的那个请求作为下一个服务对象。这是一种贪心算法，其目标是每次都执行寻道成本最小的操作。</li>
+<li>扫描算法(SCAN)：SCAN算法模仿了电梯的运行方式。磁头在一个方向上移动，沿途服务所有该方向上的请求，直到到达磁盘的最后一个磁道，然后调转方向，继续服务反向的请求。</li>
+<li>循环扫描(C-SCAN)：C-SCAN是SCAN算法的改进版，旨在解决SCAN算法对两端磁道不公平的问题。它规定磁头只在一个方向上扫描并服务请求（例如从0到199）。当到达一端后，它会立即返回到起始端，然后重新开始下一次扫描，返回途中不服务任何请求。
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">算法名称</th>
+          <th style="text-align: left">优点 (Advantages)</th>
+          <th style="text-align: left">缺点 (Disadvantages)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>先来先服务 (FCFS)</strong></td>
+          <td style="text-align: left"><strong>绝对公平</strong>：所有请求按到达顺序处理，不会有请求被无限期推迟（无饥饿现象）。<strong>实现简单</strong>：算法逻辑是所有调度算法中最简单的。</td>
+          <td style="text-align: left"><strong>效率低下</strong>：磁头移动路径完全随机，平均寻道时间很长，导致磁盘整体性能差。`<strong>性能不稳定</strong>：性能好坏完全取决于请求序列。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>最短寻道时间优先 (SSTF)</strong></td>
+          <td style="text-align: left"><strong>性能好</strong>：平均寻道时间显著短于FCFS，系统吞吐量高。<strong>效率高</strong>：总是选择代价最小的移动，局部性能最优。</td>
+          <td style="text-align: left"><strong>可能产生“饥饿”现象</strong>：如果新请求总是在磁头当前位置附近产生，那么远离磁头的请求可能会长时间得不到服务。<strong>响应时间不均</strong>：对不同位置请求的响应机会不均等。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>扫描算法 (SCAN) / 电梯算法</strong></td>
+          <td style="text-align: left"><strong>性能较好</strong>：是SSTF和FCFS的一种折中，兼顾了性能和公平性。<strong>无饥饿问题</strong>：磁头会规律地来回移动，确保所有位置的请求最终都能被处理。``</td>
+          <td style="text-align: left"><strong>对两端磁道不公平</strong>：位于磁盘中间区域的磁道比两端磁道的服务频率更高，响应更快。<strong>等待时间不均</strong>：磁头刚经过的位置需要等待近一个来回周期才能再次被服务。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>循环扫描 (C-SCAN)</strong></td>
+          <td style="text-align: left"><strong>等待时间更均匀</strong>：通过单向服务和快速返回，使得所有请求的等待时间更加公平和可预测。<strong>解决了SCAN的不公平问题</strong>：对所有磁道位置的请求都一视同仁，响应时间方差小。</td>
+          <td style="text-align: left"><strong>额外的寻道开销</strong>：磁头每次扫描到末端后，都需要一次长距离的“空载”返回（从一端直接跳到另一端），这部分移动不处理任何请求，增加了总的寻道距离。</td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+</ol>
+</li>
+<li>
+<p>减少延迟时间的方法</p>
+<ol>
+<li>盘面扇区的交替编号</li>
+<li>磁盘盘面的错位命名</li>
+</ol>
+</li>
+<li>
+<p>提高磁盘IO速度的方法</p>
+<ol>
+<li>采用磁盘高速缓存</li>
+<li>调整磁盘请求顺序</li>
+<li>提前读</li>
+<li>延迟写</li>
+<li>优化物理块的分布</li>
+<li>虚拟盘</li>
+<li>采用磁盘阵列RAID</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>固态硬盘</p>
+<ol>
+<li>固态硬盘的特性</li>
+<li>磨损均衡
+<ol>
+<li>动态磨损均衡</li>
+<li>静态磨损均衡</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E8%AE%BE%E5%A4%87/">设备</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E7%A3%81%E7%9B%98/">磁盘</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/">固态硬盘</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0729/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0729学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/memo/0726/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0726学习笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0722/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0722学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0721/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0721学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0719/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0719学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 shyの考研日志
+    </section>
+    
+    <section class="powerby">
+        
+            Blogroll：<a href="https://void-island-site.vercel.app/">舍友的雾岛电台</a> <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+        
+    </body>
+</html>
