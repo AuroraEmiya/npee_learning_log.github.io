@@ -225,8 +225,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;ss_init&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;stack);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Btree &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;p &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; root;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Btree &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;last_visit &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; NULL;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; backtrack &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;// Flag to track if we are backtracking
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (p &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ss_is_empty&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;stack))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (p &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ss_is_empty&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;stack))
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (p)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
@@ -253,7 +252,73 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        }
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;数学-曲率证明&#34;&gt;数学-曲率证明
+&lt;/h2&gt;&lt;h3 id=&#34;数学证明过程&#34;&gt;数学证明过程
+&lt;/h3&gt;&lt;p&gt;曲率$\kappa$被定义为
+&lt;/p&gt;
+$$
+\kappa = \left| \frac{d\theta}{ds} \right|
+$$&lt;p&gt;
+同时
+&lt;/p&gt;
+$$
+\begin{align*}
+\tan \theta &amp;= \frac{dy}{dx} = f&#39;(x)\\
+\theta &amp;= \arctan{ f&#39;(x)}\\
+d\theta &amp;= \frac{f&#39;&#39;(x)}{1+{(f&#39;(x))}^2}dx
+\end{align*}
+$$&lt;p&gt;
+弧长微分
+&lt;/p&gt;
+$$
+ds = \sqrt{1+{(f&#39;(x))}^2}dx
+$$&lt;p&gt;
+于是
+&lt;/p&gt;
+$$
+\kappa = \left| \dfrac{\dfrac{d\theta}{dx}}{\dfrac{ds}{dx}} \right|= \frac{f&#39;&#39;(x)}{\left(1+{(f&#39;(x))}^2\right)^{\frac{3}{2}}}
+$$&lt;h3 id=&#34;物理证明视角参数方程&#34;&gt;物理证明视角&amp;ndash;参数方程
+&lt;/h3&gt;&lt;p&gt;给定某个质点沿xy轴方向的位移$\mathbf{x}(x,x)$参数方程
+&lt;/p&gt;
+$$
+\begin{cases}
+x = \varphi(t)\\
+y = \omega(t)\\
+\end{cases}
+$$&lt;p&gt;给定某个质点沿xy轴方向的速度$\mathbf{v}(v_x,v_y)$参数方程
+&lt;/p&gt;
+$$
+\begin{cases}
+v_x = \varphi&#39;(t)\\
+v_y = \omega&#39;(t)\\
+\end{cases}
+$$&lt;p&gt;那么加速度$\mathbf{a}=(a_x,a_y)$
+&lt;/p&gt;
+$$
+\begin{cases}
+a_x = \varphi&#39;&#39;(t)\\
+a_y = \omega&#39;&#39;(t)\\
+\end{cases}
+$$&lt;p&gt;
+根据曲率半径的计算公式
+&lt;/p&gt;
+$$
+r = \left|\frac{\mathbf{v}^2}{\mathbf{a}_{\perp}}\right|
+$$&lt;p&gt;
+又由于
+&lt;/p&gt;
+$$
+|\mathbf{a}_{\perp}| = |\mathbf{a}\sin \theta|=\frac{|\mathbf{a\times v}|}{|\mathbf{v}|}
+$$&lt;p&gt;
+因此
+&lt;/p&gt;
+$$
+\begin{align*}
+\kappa &amp;= \frac{1}{r} = \left|\frac{\mathbf{a}_{\perp}}{\mathbf{v}^2}\right|\\
+&amp;= \frac{|\mathbf{a\times v}|}{|\mathbf{v}|^3}\\
+&amp;= \frac{|\varphi&#39;&#39;(t)\omega&#39;(t)-\varphi&#39;(t)\omega&#39;&#39;(t)|}{\left(\varphi&#39;(t)^2+\omega&#39;(t)^2\right)^{\frac{3}{2}}}
+\end{align*}
+$$</description>
         </item>
         <item>
         <title>0731学习日志</title>
@@ -572,8 +637,8 @@ $$
 &lt;p&gt;&lt;strong&gt;夕暮れ落ちる前に白い月が昇る&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;夜幕还未完全降临 洁白的月光便洒落大地&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;春風優しく2つの影&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;春风温柔地拂过二人的身影
-&lt;strong&gt;囁くように包んでいたよ&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;春风温柔地拂过二人的身影&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;囁くように包んでいたよ&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;静悄悄地围绕在你我身旁&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;初めてこんなに誰かを想った&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;第一次发现在脑海中 有着一个身影挥之不去&lt;/p&gt;&lt;/blockquote&gt;
