@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>极值点 on shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%9E%81%E5%80%BC%E7%82%B9/</link>
+        <description>Recent content in 极值点 on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Sun, 03 Aug 2025 23:58:07 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%9E%81%E5%80%BC%E7%82%B9/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0803学习笔记</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0803/</link>
+        <pubDate>Sun, 03 Aug 2025 23:58:07 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0803/</guid>
+        <description>&lt;h2 id=&#34;数学-拐点和极值点&#34;&gt;数学-拐点和极值点
+&lt;/h2&gt;&lt;h3 id=&#34;二级结论&#34;&gt;二级结论
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;曲线的可导点不可同时为极值点和拐点；曲线的不可导点可同时为极值点和拐点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;设多项式$f(x)={(x-a)}^ng(x)(x&amp;gt;1)$,且$g(a)\neq0$则当n为偶数时，$x=a$ 是$f(x)$的极值点；当n为奇数时，点$(a,0)$是曲线f(x)的拐点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;设多项式函数$f(x)=(x-a_1)^{n_1}(x-a_2)^{n_2}\cdots(x-a_k)^{n_k}$其中$n_i$是正整数，$a_i$是实数且两两不等，则f(x)的极值为
+&lt;/p&gt;
+$$
+   k_1+2k_2+k_3-1
+   $$&lt;p&gt;
+拐点个数为
+&lt;/p&gt;
+$$
+   k_1+2k_2+3k_3-2
+   $$&lt;p&gt;
+其中$k_1$为$n_i=1$的个数，k_2为$n_i$为偶数的个数，$k_3$为$n_i$为奇数的个数&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;数学-曲率证明&#34;&gt;数学-曲率证明
+&lt;/h2&gt;&lt;h3 id=&#34;数学证明过程&#34;&gt;数学证明过程
+&lt;/h3&gt;&lt;p&gt;曲率$\kappa$被定义为
+&lt;/p&gt;
+$$
+\kappa = \left| \frac{d\theta}{ds} \right|
+$$&lt;p&gt;
+同时
+&lt;/p&gt;
+$$
+\begin{align*}
+\tan \theta &amp;= \frac{dy}{dx} = f&#39;(x)\\
+\theta &amp;= \arctan{ f&#39;(x)}\\
+d\theta &amp;= \frac{f&#39;&#39;(x)}{1+{(f&#39;(x))}^2}dx
+\end{align*}
+$$&lt;p&gt;
+弧长微分
+&lt;/p&gt;
+$$
+ds = \sqrt{1+{(f&#39;(x))}^2}dx
+$$&lt;p&gt;
+于是
+&lt;/p&gt;
+$$
+\kappa = \left| \dfrac{\dfrac{d\theta}{dx}}{\dfrac{ds}{dx}} \right|= \frac{f&#39;&#39;(x)}{\left(1+{(f&#39;(x))}^2\right)^{\frac{3}{2}}}
+$$&lt;h3 id=&#34;物理证明视角参数方程&#34;&gt;物理证明视角&amp;ndash;参数方程
+&lt;/h3&gt;&lt;p&gt;给定某个质点沿xy轴方向的位移$\mathbf{x}(x,x)$参数方程
+&lt;/p&gt;
+$$
+\begin{cases}
+x = \varphi(t)\\
+y = \omega(t)\\
+\end{cases}
+$$&lt;p&gt;给定某个质点沿xy轴方向的速度$\mathbf{v}(v_x,v_y)$参数方程
+&lt;/p&gt;
+$$
+\begin{cases}
+v_x = \varphi&#39;(t)\\
+v_y = \omega&#39;(t)\\
+\end{cases}
+$$&lt;p&gt;那么加速度$\mathbf{a}=(a_x,a_y)$
+&lt;/p&gt;
+$$
+\begin{cases}
+a_x = \varphi&#39;&#39;(t)\\
+a_y = \omega&#39;&#39;(t)\\
+\end{cases}
+$$&lt;p&gt;
+根据曲率半径的计算公式
+&lt;/p&gt;
+$$
+r = \left|\frac{\mathbf{v}^2}{\mathbf{a}_{\perp}}\right|
+$$&lt;p&gt;
+又由于
+&lt;/p&gt;
+$$
+|\mathbf{a}_{\perp}| = |\mathbf{a}\sin \theta|=\frac{|\mathbf{a\times v}|}{|\mathbf{v}|}
+$$&lt;p&gt;
+因此
+&lt;/p&gt;
+$$
+\begin{align*}
+\kappa &amp;= \frac{1}{r} = \left|\frac{\mathbf{a}_{\perp}}{\mathbf{v}^2}\right|\\
+&amp;= \frac{|\mathbf{a\times v}|}{|\mathbf{v}|^3}\\
+&amp;= \frac{|\varphi&#39;&#39;(t)\omega&#39;(t)-\varphi&#39;(t)\omega&#39;&#39;(t)|}{\left(\varphi&#39;(t)^2+\omega&#39;(t)^2\right)^{\frac{3}{2}}}
+\end{align*}
+$$</description>
+        </item>
+        
+    </channel>
+</rss>

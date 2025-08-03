@@ -250,12 +250,6 @@
         <li><a href="#postorder">Postorder</a></li>
       </ul>
     </li>
-    <li><a href="#数学-曲率证明">数学-曲率证明</a>
-      <ul>
-        <li><a href="#数学证明过程">数学证明过程</a></li>
-        <li><a href="#物理证明视角参数方程">物理证明视角&ndash;参数方程</a></li>
-      </ul>
-    </li>
   </ul>
 </nav>
         </div>
@@ -320,7 +314,7 @@
 
 
                 <time class="article-time--reading">
-                    4 minute read
+                    3 minute read
                 </time>
             </div>
         
@@ -575,73 +569,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="数学-曲率证明">数学-曲率证明
-</h2><h3 id="数学证明过程">数学证明过程
-</h3><p>曲率$\kappa$被定义为
-</p>
-$$
-\kappa = \left| \frac{d\theta}{ds} \right|
-$$<p>
-同时
-</p>
-$$
-\begin{align*}
-\tan \theta &= \frac{dy}{dx} = f'(x)\\
-\theta &= \arctan{ f'(x)}\\
-d\theta &= \frac{f''(x)}{1+{(f'(x))}^2}dx
-\end{align*}
-$$<p>
-弧长微分
-</p>
-$$
-ds = \sqrt{1+{(f'(x))}^2}dx
-$$<p>
-于是
-</p>
-$$
-\kappa = \left| \dfrac{\dfrac{d\theta}{dx}}{\dfrac{ds}{dx}} \right|= \frac{f''(x)}{\left(1+{(f'(x))}^2\right)^{\frac{3}{2}}}
-$$<h3 id="物理证明视角参数方程">物理证明视角&ndash;参数方程
-</h3><p>给定某个质点沿xy轴方向的位移$\mathbf{x}(x,x)$参数方程
-</p>
-$$
-\begin{cases}
-x = \varphi(t)\\
-y = \omega(t)\\
-\end{cases}
-$$<p>给定某个质点沿xy轴方向的速度$\mathbf{v}(v_x,v_y)$参数方程
-</p>
-$$
-\begin{cases}
-v_x = \varphi'(t)\\
-v_y = \omega'(t)\\
-\end{cases}
-$$<p>那么加速度$\mathbf{a}=(a_x,a_y)$
-</p>
-$$
-\begin{cases}
-a_x = \varphi''(t)\\
-a_y = \omega''(t)\\
-\end{cases}
-$$<p>
-根据曲率半径的计算公式
-</p>
-$$
-r = \left|\frac{\mathbf{v}^2}{\mathbf{a}_{\perp}}\right|
-$$<p>
-又由于
-</p>
-$$
-|\mathbf{a}_{\perp}| = |\mathbf{a}\sin \theta|=\frac{|\mathbf{a\times v}|}{|\mathbf{v}|}
-$$<p>
-因此
-</p>
-$$
-\begin{align*}
-\kappa &= \frac{1}{r} = \left|\frac{\mathbf{a}_{\perp}}{\mathbf{v}^2}\right|\\
-&= \frac{|\mathbf{a\times v}|}{|\mathbf{v}|^3}\\
-&= \frac{|\varphi''(t)\omega'(t)-\varphi'(t)\omega''(t)|}{\left(\varphi'(t)^2+\omega'(t)^2\right)^{\frac{3}{2}}}
-\end{align*}
-$$
+</span></span></code></pre></div>
 </section>
 
 
