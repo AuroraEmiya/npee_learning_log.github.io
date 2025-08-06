@@ -6,7 +6,139 @@
         <description>Recent content in Memoes on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sun, 03 Aug 2025 23:58:07 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/memo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 06 Aug 2025 20:32:29 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/memo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0806学习笔记</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0806/</link>
+        <pubDate>Wed, 06 Aug 2025 20:32:29 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0806/</guid>
+        <description>&lt;h2 id=&#34;数学-一些不等式&#34;&gt;数学-一些不等式
+&lt;/h2&gt;&lt;h3 id=&#34;分析中常用的不等式&#34;&gt;&lt;strong&gt;分析中常用的不等式&lt;/strong&gt;
+&lt;/h3&gt;&lt;h4 id=&#34;1-伯努利不等式-bernoulli&#34;&gt;&lt;strong&gt;1. 伯努利不等式 (Bernoulli&amp;rsquo;s Inequality)&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;对于任意实数 &lt;/p&gt;
+$$x &gt; -1$$&lt;p&gt; 和整数 &lt;/p&gt;
+$$n \ge 1$$&lt;p&gt;，有：
+&lt;/p&gt;
+$$
+(1+x)^n \ge 1+nx
+$$&lt;p&gt;
+当且仅当 &lt;/p&gt;
+$$n=1$$&lt;p&gt; 或 &lt;/p&gt;
+$$x=0$$&lt;p&gt; 时等号成立。&lt;/p&gt;
+&lt;p&gt;对于实数 &lt;/p&gt;
+$$x \ge -1$$&lt;p&gt; 和实数 &lt;/p&gt;
+$$\alpha \ge 1$$&lt;p&gt;，有更广义的形式：
+&lt;/p&gt;
+$$
+(1+x)^\alpha \ge 1+\alpha x
+$$&lt;hr&gt;
+&lt;h4 id=&#34;2-均值不等式-mean-inequalities&#34;&gt;&lt;strong&gt;2. 均值不等式 (Mean Inequalities)&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;对于一组非负实数 &lt;/p&gt;
+$$x_1, x_2, \dots, x_n$$&lt;p&gt;，有以下关系：
+&lt;/p&gt;
+$$
+\frac{n}{\sum_{i=1}^n \frac{1}{x_i}} \le \sqrt[n]{\prod_{i=1}^n x_i} \le \frac{\sum_{i=1}^n x_i}{n} \le \sqrt{\frac{\sum_{i=1}^n x_i^2}{n}}
+$$&lt;p&gt;
+这可以简记为：&lt;strong&gt;调和平均数 ≤ 几何平均数 ≤ 算术平均数 ≤ 平方平均数&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;3-琴生不等式-jensen&#34;&gt;&lt;strong&gt;3. 琴生不等式 (Jensen&amp;rsquo;s Inequality)&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;如果 &lt;/p&gt;
+$$f(x)$$&lt;p&gt; 是一个凸函数，&lt;/p&gt;
+$$\lambda_i \ge 0$$&lt;p&gt; 且 &lt;/p&gt;
+$$\sum_{i=1}^n \lambda_i = 1$$&lt;p&gt;，则对于任意点 &lt;/p&gt;
+$$x_1, x_2, \dots, x_n$$&lt;p&gt;，有：
+&lt;/p&gt;
+$$
+f\left(\sum_{i=1}^n \lambda_i x_i\right) \le \sum_{i=1}^n \lambda_i f(x_i)
+$$&lt;p&gt;
+对于凹函数，不等号方向相反。琴生不等式在概率论和信息论中也有重要应用。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;4-绝对值不等式-triangle-inequality&#34;&gt;&lt;strong&gt;4. 绝对值不等式 (Triangle Inequality)&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;对于任意实数或复数 &lt;/p&gt;
+$$a$$&lt;p&gt; 和 &lt;/p&gt;
+$$b$$&lt;p&gt;，或者对于向量 &lt;/p&gt;
+$$a$$&lt;p&gt; 和 &lt;/p&gt;
+$$b$$&lt;p&gt;，有：
+&lt;/p&gt;
+$$
+|a+b| \le |a| + |b|
+$$&lt;p&gt;
+其推广形式为：
+&lt;/p&gt;
+$$
+\left|\sum_{i=1}^n x_i\right| \le \sum_{i=1}^n |x_i|
+$$&lt;hr&gt;
+&lt;h3 id=&#34;代数与几何中的不等式&#34;&gt;&lt;strong&gt;代数与几何中的不等式&lt;/strong&gt;
+&lt;/h3&gt;&lt;h4 id=&#34;1-柯西-施瓦茨不等式-cauchy-schwarz-inequality&#34;&gt;&lt;strong&gt;1. 柯西-施瓦茨不等式 (Cauchy-Schwarz Inequality)&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;对于任意两组实数 &lt;/p&gt;
+$$a_1, a_2, \dots, a_n$$&lt;p&gt; 和 &lt;/p&gt;
+$$b_1, b_2, \dots, b_n$$&lt;p&gt;，有：
+&lt;/p&gt;
+$$
+\left(\sum_{i=1}^n a_i b_i\right)^2 \le \left(\sum_{i=1}^n a_i^2\right) \left(\sum_{i=1}^n b_i^2\right)
+$$&lt;p&gt;
+在向量空间中，它可以表示为：
+&lt;/p&gt;
+$$
+|\langle \mathbf{u}, \mathbf{v} \rangle|^2 \le \langle \mathbf{u}, \mathbf{u} \rangle \cdot \langle \mathbf{v}, \mathbf{v} \rangle = \|\mathbf{u}\|^2 \cdot \|\mathbf{v}\|^2
+$$&lt;hr&gt;
+&lt;h4 id=&#34;2-赫尔德不等式-hölder&#34;&gt;&lt;strong&gt;2. 赫尔德不等式 (Hölder&amp;rsquo;s Inequality)&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;设 &lt;/p&gt;
+$$p, q$$&lt;p&gt; 为正实数，满足 &lt;/p&gt;
+$$\frac{1}{p} + \frac{1}{q} = 1$$&lt;p&gt;。对于两组实数或复数 &lt;/p&gt;
+$$x_1, \dots, x_n$$&lt;p&gt; 和 &lt;/p&gt;
+$$y_1, \dots, y_n$$&lt;p&gt;，有：
+&lt;/p&gt;
+$$
+\sum_{i=1}^n |x_i y_i| \le \left(\sum_{i=1}^n |x_i|^p\right)^{1/p} \left(\sum_{i=1}^n |y_i|^q\right)^{1/q}
+$$&lt;p&gt;
+柯西-施瓦茨不等式是赫尔德不等式在 &lt;/p&gt;
+$$p=q=2$$&lt;p&gt; 时的特例。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;3-闵可夫斯基不等式-minkowski-inequality&#34;&gt;&lt;strong&gt;3. 闵可夫斯基不等式 (Minkowski Inequality)&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;对于任意实数 &lt;/p&gt;
+$$p \ge 1$$&lt;p&gt; 和两组实数或复数 &lt;/p&gt;
+$$x_1, \dots, x_n$$&lt;p&gt; 和 &lt;/p&gt;
+$$y_1, \dots, y_n$$&lt;p&gt;，有：
+&lt;/p&gt;
+$$
+\left(\sum_{i=1}^n |x_i + y_i|^p\right)^{1/p} \le \left(\sum_{i=1}^n |x_i|^p\right)^{1/p} + \left(\sum_{i=1}^n |y_i|^p\right)^{1/p}
+$$&lt;p&gt;
+这个不等式是向量空间中范数的三角不等式的推广。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;4-排序不等式-rearrangement-inequality&#34;&gt;&lt;strong&gt;4. 排序不等式 (Rearrangement Inequality)&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;设有两组实数 &lt;/p&gt;
+$$a_1 \le a_2 \le \dots \le a_n$$&lt;p&gt; 和 &lt;/p&gt;
+$$b_1 \le b_2 \le \dots \le b_n$$&lt;p&gt;。令 &lt;/p&gt;
+$$(c_1, c_2, \dots, c_n)$$&lt;p&gt; 是 &lt;/p&gt;
+$$(b_1, b_2, \dots, b_n)$$&lt;p&gt; 的任意一个排列，则有：
+&lt;/p&gt;
+$$
+\sum_{i=1}^n a_i b_{n-i+1} \le \sum_{i=1}^n a_i c_i \le \sum_{i=1}^n a_i b_i
+$$&lt;p&gt;
+即“反序和 ≤ 乱序和 ≤ 顺序和”。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;微积分中的不等式&#34;&gt;&lt;strong&gt;微积分中的不等式&lt;/strong&gt;
+&lt;/h3&gt;&lt;h4 id=&#34;1-杨氏不等式-young&#34;&gt;&lt;strong&gt;1. 杨氏不等式 (Young&amp;rsquo;s Inequality)&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;设 &lt;/p&gt;
+$$a, b$$&lt;p&gt; 为非负实数，&lt;/p&gt;
+$$p, q$$&lt;p&gt; 为正实数且满足 &lt;/p&gt;
+$$\frac{1}{p} + \frac{1}{q} = 1$$&lt;p&gt;，则：
+&lt;/p&gt;
+$$
+ab \le \frac{a^p}{p} + \frac{b^q}{q}
+$$&lt;h4 id=&#34;2-切比雪夫总和不等式-chebyshev&#34;&gt;&lt;strong&gt;2. 切比雪夫总和不等式 (Chebyshev&amp;rsquo;s Sum Inequality)&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;设有两组单调序列 &lt;/p&gt;
+$$a_1 \le a_2 \le \dots \le a_n$$&lt;p&gt; 和 &lt;/p&gt;
+$$b_1 \le b_2 \le \dots \le b_n$$&lt;p&gt;，则有：
+&lt;/p&gt;
+$$
+\frac{1}{n} \sum_{i=1}^n a_i b_i \ge \left(\frac{1}{n} \sum_{i=1}^n a_i\right) \left(\frac{1}{n} \sum_{i=1}^n b_i\right)
+$$&lt;p&gt;
+如果一个序列单调递增，另一个单调递减，则不等号方向相反。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>0803学习笔记</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0803/</link>
         <pubDate>Sun, 03 Aug 2025 23:58:07 +0800</pubDate>
