@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/npee_learning_log.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=npee_learning_log.github.io/livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="操作系统\r设备独立性软件\r高速缓存与缓冲区\n磁盘高速缓存 缓冲区 缓冲CPU与I/O设备间速度不匹配的矛盾 减少对CPU的中断频率，放宽对CPU中断响应时间的限制 解决基本数据单元大小（数据粒度）不匹配的问题 提高CPU和IO设备之间的并行性 单缓冲 双缓冲 循环缓冲 缓冲池 设备分配与回收\n设备分配的数据结构 设备控制表（DCT） 设备控制表 设备类型 设备标识符 设备状态 指向控制器表的指针 重复执行次数或时间 设备队列的队首指针 控制器控制表（COCT） 通道控制表（CHCT） 系统设备表（SDT） 设备分配时应考虑的因素\n设备的固有属性 独占设备 共享设备 虚拟设备 设备分配算法 FCFS 最高优先级优先算法 设备分配中的安全性 安全分配方式 不安全分配方式 设备分配步骤 分配设备 分配控制器 分配通道 SPOOLing （假脱机技术）\n输入井和输出井 输入缓冲区和输出缓冲区 输入进程和输出进程 井管理程序 磁盘和固态硬盘\r磁盘\n概念\n磁头 磁道 扇区 盘块 磁盘是一种主要的计算机辅助存储设备，它利用磁性记录来存储和检索数字信息。为了有效地组织和访问这些数据，磁盘被划分成多个层级的结构。\n物理结构：硬件层面 物理结构是磁盘驱动器本身的硬件构造，决定了数据是如何被物理存储的。\n盘片 (Platter) 盘片是构成硬盘的核心部件，它是一个或多个坚硬的、通常由铝、玻璃或陶瓷制成的圆形盘片。盘片的双面都涂有磁性材料，用于存储数据。一个硬盘驱动器通常包含多个堆叠在一起的盘片。 主轴 (Spindle) 主轴是一个马达，所有的盘片都围绕它以恒定且极高的速度旋转（例如，每分钟7200转）。主轴的稳定性和转速对硬盘的性能至关重要。 磁头 (Read/Write Head) 每个盘片的每个磁性表面都有一个对应的磁头。磁头负责读取盘片上的磁性信息（转换为数据）或向盘片写入磁性信息（存储数据）。在工作时，磁头在一个微小的气垫上“飞行”，与盘片表面保持极近但又不接触的距离。 磁道 (Track) 当盘片旋转时，磁头保持在某个固定位置，就会在盘片上划出一个看不见的同心圆，这个圆形的路径就是磁道。数据就是沿着这些磁道存储的。每个盘面都有数千个磁道。 柱面 (Cylinder) 在一个多盘片的硬盘中，所有盘片上半径相同的磁道共同构成了一个柱面。想象一下，从上到下穿过所有盘片，将所有相同编号的磁道连接起来，就形成了一个空心的圆柱体。当磁头臂不移动时，它可以在同一个柱面上访问所有盘面上的数据，这比移动磁头臂去访问不同磁道要快得多。因此，相关的数据通常会存储在同一个柱面内以提高访问速度。 扇区 (Sector) 为了进一步管理数据，每个磁道被划分为若干个小的弧段，这些弧段被称为扇区。扇区是磁盘上进行数据读写的最小物理单位，传统上每个扇区的大小为512字节。在进行读写操作时，磁盘控制器一次至少会读取或写入一个扇区的数据。 总结一下物理结构的层级关系： 硬盘驱动器 &gt; 盘片 &gt; 磁道 &gt; 扇区\n">
 <title>0731学习日志</title>
 
-<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0731/'>
+<link rel='canonical' href='http://localhost:1313/npee_learning_log.github.io/posts/0731/'>
 
 <link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0731学习日志">
 <meta property='og:description' content="操作系统\r设备独立性软件\r高速缓存与缓冲区\n磁盘高速缓存 缓冲区 缓冲CPU与I/O设备间速度不匹配的矛盾 减少对CPU的中断频率，放宽对CPU中断响应时间的限制 解决基本数据单元大小（数据粒度）不匹配的问题 提高CPU和IO设备之间的并行性 单缓冲 双缓冲 循环缓冲 缓冲池 设备分配与回收\n设备分配的数据结构 设备控制表（DCT） 设备控制表 设备类型 设备标识符 设备状态 指向控制器表的指针 重复执行次数或时间 设备队列的队首指针 控制器控制表（COCT） 通道控制表（CHCT） 系统设备表（SDT） 设备分配时应考虑的因素\n设备的固有属性 独占设备 共享设备 虚拟设备 设备分配算法 FCFS 最高优先级优先算法 设备分配中的安全性 安全分配方式 不安全分配方式 设备分配步骤 分配设备 分配控制器 分配通道 SPOOLing （假脱机技术）\n输入井和输出井 输入缓冲区和输出缓冲区 输入进程和输出进程 井管理程序 磁盘和固态硬盘\r磁盘\n概念\n磁头 磁道 扇区 盘块 磁盘是一种主要的计算机辅助存储设备，它利用磁性记录来存储和检索数字信息。为了有效地组织和访问这些数据，磁盘被划分成多个层级的结构。\n物理结构：硬件层面 物理结构是磁盘驱动器本身的硬件构造，决定了数据是如何被物理存储的。\n盘片 (Platter) 盘片是构成硬盘的核心部件，它是一个或多个坚硬的、通常由铝、玻璃或陶瓷制成的圆形盘片。盘片的双面都涂有磁性材料，用于存储数据。一个硬盘驱动器通常包含多个堆叠在一起的盘片。 主轴 (Spindle) 主轴是一个马达，所有的盘片都围绕它以恒定且极高的速度旋转（例如，每分钟7200转）。主轴的稳定性和转速对硬盘的性能至关重要。 磁头 (Read/Write Head) 每个盘片的每个磁性表面都有一个对应的磁头。磁头负责读取盘片上的磁性信息（转换为数据）或向盘片写入磁性信息（存储数据）。在工作时，磁头在一个微小的气垫上“飞行”，与盘片表面保持极近但又不接触的距离。 磁道 (Track) 当盘片旋转时，磁头保持在某个固定位置，就会在盘片上划出一个看不见的同心圆，这个圆形的路径就是磁道。数据就是沿着这些磁道存储的。每个盘面都有数千个磁道。 柱面 (Cylinder) 在一个多盘片的硬盘中，所有盘片上半径相同的磁道共同构成了一个柱面。想象一下，从上到下穿过所有盘片，将所有相同编号的磁道连接起来，就形成了一个空心的圆柱体。当磁头臂不移动时，它可以在同一个柱面上访问所有盘面上的数据，这比移动磁头臂去访问不同磁道要快得多。因此，相关的数据通常会存储在同一个柱面内以提高访问速度。 扇区 (Sector) 为了进一步管理数据，每个磁道被划分为若干个小的弧段，这些弧段被称为扇区。扇区是磁盘上进行数据读写的最小物理单位，传统上每个扇区的大小为512字节。在进行读写操作时，磁盘控制器一次至少会读取或写入一个扇区的数据。 总结一下物理结构的层级关系： 硬盘驱动器 &gt; 盘片 &gt; 磁道 &gt; 扇区\n">
-<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0731/'>
+<meta property='og:url' content='http://localhost:1313/npee_learning_log.github.io/posts/0731/'>
 <meta property='og:site_name' content='shyの考研日志'>
 <meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='操作系统' /><meta property='article:tag' content='设备' /><meta property='article:tag' content='磁盘' /><meta property='article:tag' content='固态硬盘' /><meta property='article:published_time' content='2025-07-31T20:04:32&#43;08:00'/><meta property='article:modified_time' content='2025-07-31T20:04:32&#43;08:00'/>
 <meta name="twitter:title" content="0731学习日志">
@@ -853,7 +853,7 @@ $$
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.d3ce7388ef5941233a2fd0541c1324f59fa8d8764f59d9721e2c172354121bcf.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
