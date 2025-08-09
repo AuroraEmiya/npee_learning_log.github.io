@@ -2,16 +2,83 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Log on shyの考研日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/categories/log/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/</link>
         <description>Recent content in Log on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 08 Aug 2025 20:11:28 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/categories/log/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 09 Aug 2025 23:52:51 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0809学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0809/</link>
+        <pubDate>Sat, 09 Aug 2025 23:52:51 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0809/</guid>
+        <description>&lt;h2 id=&#34;数据结构-查找&#34;&gt;数据结构-查找
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;顺序查找法&lt;/li&gt;
+&lt;li&gt;分块查找法（索引顺序查找）&lt;/li&gt;
+&lt;li&gt;折半查找法
+&lt;ul&gt;
+&lt;li&gt;判定树&lt;/li&gt;
+&lt;li&gt;ASL（平均查找长度）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;二叉搜索树
+&lt;ol&gt;
+&lt;li&gt;查找&lt;/li&gt;
+&lt;li&gt;插入&lt;/li&gt;
+&lt;li&gt;构造&lt;/li&gt;
+&lt;li&gt;删除（中序）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;平衡二叉树（AVL）
+&lt;ol&gt;
+&lt;li&gt;插入
+&lt;ul&gt;
+&lt;li&gt;LL平衡旋转&lt;/li&gt;
+&lt;li&gt;LR平衡旋转&lt;/li&gt;
+&lt;li&gt;RR平衡旋转&lt;/li&gt;
+&lt;li&gt;RL平衡旋转&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;构造&lt;/li&gt;
+&lt;li&gt;删除&lt;/li&gt;
+&lt;li&gt;查找&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;红黑树
+&lt;ol&gt;
+&lt;li&gt;定义
+&lt;ul&gt;
+&lt;li&gt;每个结点或是黑色或是红色&lt;/li&gt;
+&lt;li&gt;根节点是黑色的&lt;/li&gt;
+&lt;li&gt;叶节点（虚构的外部节点、NULL节点）都是黑色&lt;/li&gt;
+&lt;li&gt;不存在两个相邻的红节点&lt;/li&gt;
+&lt;li&gt;对于每个结点，从该结点到任意一个叶节点的简单路径上，所含黑节点的数量相同&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;结论
+&lt;ol&gt;
+&lt;li&gt;从根到叶结点的最长路径不大于最短路径的2倍&lt;/li&gt;
+&lt;li&gt;有n个内部结点的红黑树的高度$h\leq 2\log_2{(n+1)}$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;插入
+&lt;ul&gt;
+&lt;li&gt;新插入红黑树的结点初始着为红色&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;删除*&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>0808学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0808/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0808/</link>
         <pubDate>Fri, 08 Aug 2025 20:11:28 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0808/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0808/</guid>
         <description>&lt;h2 id=&#34;数学-一元微分学的应用&#34;&gt;数学-一元微分学的应用
 &lt;/h2&gt;&lt;h3 id=&#34;微分等式&#34;&gt;微分等式
 &lt;/h3&gt;&lt;ol&gt;
@@ -89,10 +156,10 @@ $$
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;PTE&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/npee_learning_log.github.io/posts/0808/PTE.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/posts/0808/PTE.png&#34;
 	width=&#34;2034&#34;
 	height=&#34;350&#34;
-	srcset=&#34;http://localhost:1313/npee_learning_log.github.io/posts/0808/PTE_hu_6093a7be5b2aaf3a.png 480w, http://localhost:1313/npee_learning_log.github.io/posts/0808/PTE_hu_7cba0b1a9e3e7fa4.png 1024w&#34;
+	srcset=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/posts/0808/PTE_hu_6093a7be5b2aaf3a.png 480w, https://auroraemiya.github.io/npee_learning_log.github.io/posts/0808/PTE_hu_7cba0b1a9e3e7fa4.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Page table entry&#34;
@@ -109,10 +176,10 @@ $$
         </item>
         <item>
         <title>0807学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0807/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0807/</link>
         <pubDate>Thu, 07 Aug 2025 19:33:44 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0807/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0807/</guid>
         <description>&lt;h2 id=&#34;数学-太好了是中值定理我们有救了&#34;&gt;数学-太好了是中值定理我们有救了
 &lt;/h2&gt;&lt;h3 id=&#34;中值定理&#34;&gt;中值定理
 &lt;/h3&gt;&lt;ol&gt;
@@ -176,10 +243,10 @@ $$
         </item>
         <item>
         <title>0806学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0806/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0806/</link>
         <pubDate>Wed, 06 Aug 2025 20:32:24 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0806/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0806/</guid>
         <description>&lt;h2 id=&#34;操作系统-three-easy-pieces&#34;&gt;操作系统-three easy pieces
 &lt;/h2&gt;&lt;h3 id=&#34;memory-api&#34;&gt;Memory API
 &lt;/h3&gt;&lt;ol&gt;
@@ -209,10 +276,10 @@ $$
 &lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;hardware-based address translation: Base and bound&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/npee_learning_log.github.io/posts/0806/Base_and_bound.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/posts/0806/Base_and_bound.png&#34;
 	width=&#34;723&#34;
 	height=&#34;1122&#34;
-	srcset=&#34;http://localhost:1313/npee_learning_log.github.io/posts/0806/Base_and_bound_hu_aba0641098e337a8.png 480w, http://localhost:1313/npee_learning_log.github.io/posts/0806/Base_and_bound_hu_72a071f4a027da31.png 1024w&#34;
+	srcset=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/posts/0806/Base_and_bound_hu_aba0641098e337a8.png 480w, https://auroraemiya.github.io/npee_learning_log.github.io/posts/0806/Base_and_bound_hu_72a071f4a027da31.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;mechanism&#34;
@@ -227,10 +294,10 @@ $$
         </item>
         <item>
         <title>0804学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0804/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0804/</link>
         <pubDate>Mon, 04 Aug 2025 20:51:06 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0804/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0804/</guid>
         <description>&lt;h2 id=&#34;操作系统-io管理&#34;&gt;操作系统-IO管理
 &lt;/h2&gt;&lt;h3 id=&#34;io层次结构&#34;&gt;IO层次结构
 &lt;/h3&gt;&lt;p&gt;计算机的外部设备（I/O 设备）种类繁多，特性千差万别：&lt;/p&gt;
@@ -604,10 +671,10 @@ $$
         </item>
         <item>
         <title>0731学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0731/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0731/</link>
         <pubDate>Thu, 31 Jul 2025 20:04:32 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0731/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0731/</guid>
         <description>&lt;h2 id=&#34;操作系统&#34;&gt;操作系统
 &lt;/h2&gt;&lt;h3 id=&#34;设备独立性软件&#34;&gt;设备独立性软件
 &lt;/h3&gt;&lt;ol&gt;
@@ -691,10 +758,10 @@ $$
 &lt;li&gt;输入进程和输出进程&lt;/li&gt;
 &lt;li&gt;井管理程序&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/npee_learning_log.github.io/posts/0731/SPOOLing.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/posts/0731/SPOOLing.png&#34;
 	width=&#34;1531&#34;
 	height=&#34;734&#34;
-	srcset=&#34;http://localhost:1313/npee_learning_log.github.io/posts/0731/SPOOLing_hu_402004d5932a64c9.png 480w, http://localhost:1313/npee_learning_log.github.io/posts/0731/SPOOLing_hu_3336df8fbee31f45.png 1024w&#34;
+	srcset=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/posts/0731/SPOOLing_hu_402004d5932a64c9.png 480w, https://auroraemiya.github.io/npee_learning_log.github.io/posts/0731/SPOOLing_hu_3336df8fbee31f45.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;SPOOLing &amp; Buffering&#34;
@@ -903,10 +970,10 @@ $$
         </item>
         <item>
         <title>0730学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0730/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0730/</link>
         <pubDate>Wed, 30 Jul 2025 22:23:38 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0730/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0730/</guid>
         <description>&lt;h2 id=&#34;操作系统-io&#34;&gt;操作系统-I/O
 &lt;/h2&gt;&lt;h3 id=&#34;文件系统&#34;&gt;文件系统
 &lt;/h3&gt;&lt;ol&gt;
@@ -1102,10 +1169,10 @@ $$
         </item>
         <item>
         <title>0729学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0729/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0729/</link>
         <pubDate>Tue, 29 Jul 2025 23:17:02 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0729/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0729/</guid>
         <description>&lt;h2 id=&#34;操作系统-mkdir&#34;&gt;操作系统-mkdir
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;文件的物理结构
@@ -1248,10 +1315,10 @@ $$
         </item>
         <item>
         <title>0727学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0727/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0727/</link>
         <pubDate>Sun, 27 Jul 2025 18:55:08 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0727/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0727/</guid>
         <description>&lt;h2 id=&#34;数学-一元函数微分学&#34;&gt;数学-一元函数微分学
 &lt;/h2&gt;&lt;h3 id=&#34;一元函数微分学的概念&#34;&gt;一元函数微分学的概念
 &lt;/h3&gt;&lt;ol&gt;
@@ -1393,10 +1460,10 @@ $$
         </item>
         <item>
         <title>0723学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0723/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0723/</link>
         <pubDate>Wed, 23 Jul 2025 23:53:15 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0723/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0723/</guid>
         <description>&lt;h2 id=&#34;数学-1000题&#34;&gt;数学-1000题
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;对于$x_{n+1}=f(x_n)$的数列极限的判定的过程
@@ -1465,10 +1532,10 @@ $$
         </item>
         <item>
         <title>0722学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0722/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0722/</link>
         <pubDate>Tue, 22 Jul 2025 23:31:50 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0722/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0722/</guid>
         <description>&lt;h2 id=&#34;操作系统--la-pa-ca&#34;&gt;操作系统- (LA-PA-CA)
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;带快表的两级系统的地址翻译过程
@@ -1665,10 +1732,10 @@ $$
         </item>
         <item>
         <title>0721学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0721/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0721/</link>
         <pubDate>Mon, 21 Jul 2025 17:53:02 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0721/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0721/</guid>
         <description>&lt;h2 id=&#34;英语-vocabulary-builder&#34;&gt;英语-vocabulary builder
 &lt;/h2&gt;&lt;p&gt;使用 &lt;code&gt;The Merriam-Webster Vocabulary Builder&lt;/code&gt;作为词根法扩充词汇量的工具书(由网友canon提供)&lt;/p&gt;
 &lt;ol&gt;
@@ -1828,10 +1895,10 @@ $$
         </item>
         <item>
         <title>0719学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0719/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/</link>
         <pubDate>Sat, 19 Jul 2025 22:41:19 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0719/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0719/</guid>
         <description>&lt;h2 id=&#34;数学-是不动点的味道&#34;&gt;数学-是不动点的味道
 &lt;/h2&gt;&lt;h3 id=&#34;数列的极限&#34;&gt;数列的极限
 &lt;/h3&gt;&lt;ol&gt;
@@ -1946,10 +2013,10 @@ $$
         </item>
         <item>
         <title>0717学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0717/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0717/</link>
         <pubDate>Thu, 17 Jul 2025 22:04:43 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0717/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0717/</guid>
         <description>&lt;h2 id=&#34;数学-纸上得来终觉浅&#34;&gt;数学-纸上得来终觉浅
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;
@@ -2064,10 +2131,10 @@ $$
         </item>
         <item>
         <title>0715学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0715/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0715/</link>
         <pubDate>Tue, 15 Jul 2025 21:43:17 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0715/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0715/</guid>
         <description>&lt;h2 id=&#34;操作系统-jyy的map永远的噩梦&#34;&gt;操作系统-jyy的map永远的噩梦
 &lt;/h2&gt;&lt;h3 id=&#34;死锁&#34;&gt;死锁
 &lt;/h3&gt;&lt;ol&gt;
@@ -2142,10 +2209,10 @@ $$
         </item>
         <item>
         <title>0714学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0714/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0714/</link>
         <pubDate>Mon, 14 Jul 2025 21:15:02 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0714/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0714/</guid>
         <description>&lt;h2 id=&#34;操作系统-这什么查一下这什么查一下&#34;&gt;操作系统-这什么查一下这什么查一下
 &lt;/h2&gt;&lt;h3 id=&#34;经典同步问题&#34;&gt;经典同步问题
 &lt;/h3&gt;&lt;ol&gt;
@@ -2379,10 +2446,10 @@ $$
         </item>
         <item>
         <title>0713学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0713/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0713/</link>
         <pubDate>Sun, 13 Jul 2025 23:27:16 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0713/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0713/</guid>
         <description>&lt;h2 id=&#34;数据结构-喜欢在头指针存数据的扣1&#34;&gt;数据结构-喜欢在头指针存数据的扣1
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;线性表的链式存储&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -2488,10 +2555,10 @@ $$
         </item>
         <item>
         <title>0712学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0712/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0712/</link>
         <pubDate>Sat, 12 Jul 2025 22:05:39 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0712/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0712/</guid>
         <description>&lt;h2 id=&#34;操作系统-int-0x80&#34;&gt;操作系统-int 0x80
 &lt;/h2&gt;&lt;p&gt;操作系统的运行环境&lt;/p&gt;
 &lt;ol&gt;
@@ -2541,18 +2608,18 @@ $$
         </item>
         <item>
         <title>0711学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0711/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/</link>
         <pubDate>Fri, 11 Jul 2025 20:29:14 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0711/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/</guid>
         <description>&lt;h2 id=&#34;数据结构-太好了是死记硬背&#34;&gt;数据结构-太好了是死记硬背
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;数据的逻辑和物理结构&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/npee_learning_log.github.io/posts/0711/QQ20250711-202720.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/QQ20250711-202720.png&#34;
 	width=&#34;1702&#34;
 	height=&#34;743&#34;
-	srcset=&#34;http://localhost:1313/npee_learning_log.github.io/posts/0711/QQ20250711-202720_hu_ab8a865d16a46851.png 480w, http://localhost:1313/npee_learning_log.github.io/posts/0711/QQ20250711-202720_hu_5cae573c8a98f94d.png 1024w&#34;
+	srcset=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/QQ20250711-202720_hu_ab8a865d16a46851.png 480w, https://auroraemiya.github.io/npee_learning_log.github.io/posts/0711/QQ20250711-202720_hu_5cae573c8a98f94d.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	

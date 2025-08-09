@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Memo on shyの考研日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/categories/memo/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/categories/memo/</link>
         <description>Recent content in Memo on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 06 Aug 2025 20:32:29 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/categories/memo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 06 Aug 2025 20:32:29 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/memo/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>0806学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0806/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0806/</link>
         <pubDate>Wed, 06 Aug 2025 20:32:29 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0806/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0806/</guid>
         <description>&lt;h2 id=&#34;数学-一些不等式&#34;&gt;数学-一些不等式
 &lt;/h2&gt;&lt;h3 id=&#34;分析中常用的不等式&#34;&gt;&lt;strong&gt;分析中常用的不等式&lt;/strong&gt;
 &lt;/h3&gt;&lt;h4 id=&#34;1-伯努利不等式-bernoulli&#34;&gt;&lt;strong&gt;1. 伯努利不等式 (Bernoulli&amp;rsquo;s Inequality)&lt;/strong&gt;
@@ -109,10 +109,10 @@ $$&lt;p&gt;
         </item>
         <item>
         <title>0803学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0803/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0803/</link>
         <pubDate>Sun, 03 Aug 2025 23:58:07 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0803/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0803/</guid>
         <description>&lt;h2 id=&#34;数学-拐点和极值点&#34;&gt;数学-拐点和极值点
 &lt;/h2&gt;&lt;h3 id=&#34;二级结论&#34;&gt;二级结论
 &lt;/h3&gt;&lt;ol&gt;
@@ -206,10 +206,10 @@ $$</description>
         </item>
         <item>
         <title>0801学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0801/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0801/</link>
         <pubDate>Fri, 01 Aug 2025 20:10:27 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0801/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0801/</guid>
         <description>&lt;h2 id=&#34;数据结构-代码实现&#34;&gt;数据结构-代码实现
 &lt;/h2&gt;&lt;p&gt;下文为三种二叉树遍历的c语言代码实现，包括：&lt;/p&gt;
 &lt;ol&gt;
@@ -454,10 +454,10 @@ $$</description>
         </item>
         <item>
         <title>0730学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0730/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0730/</link>
         <pubDate>Wed, 30 Jul 2025 23:44:55 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0730/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0730/</guid>
         <description>&lt;h2 id=&#34;gcc-manual-rtfm&#34;&gt;GCC manual-RTFM
 &lt;/h2&gt;&lt;p&gt;今天心血来潮想要拜读&lt;code&gt;gcc&lt;/code&gt;man page，学到很多。有时候会思考，AI确实帮助了我快速上手一个领域，比如使用Rust编写一个植物大战僵尸的游戏，比如从零开始认识一个代码，但是一旦结束之后，回头再想就很难说我仍然可以再举一反三地做另一个好玩的事情，事实上Rust的语法和特性我也几乎忘记。&lt;/p&gt;
 &lt;p&gt;jyy老师在课堂上曾经向我们展示了许多很好玩的代码，很有意思的命令行，也曾经嘱咐我们一定要RTFM(Read The Friendly Manual)，现在的我毕业了，同时仍然是AI的重度依赖者，只是心里一直有一个地方在不断的问自己：AI的回答能否坦然接受？&lt;/p&gt;
@@ -1046,10 +1046,10 @@ $$</description>
         </item>
         <item>
         <title>0728学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0728/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0728/</link>
         <pubDate>Mon, 28 Jul 2025 19:40:10 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0728/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0728/</guid>
         <description>&lt;h2 id=&#34;数学-微分学习题&#34;&gt;数学-微分学习题
 &lt;/h2&gt;&lt;h3 id=&#34;错题必刷榜&#34;&gt;错题必刷榜
 &lt;/h3&gt;&lt;ol&gt;
@@ -1098,10 +1098,10 @@ $$</description>
         </item>
         <item>
         <title>0726学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0726/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0726/</link>
         <pubDate>Sat, 26 Jul 2025 11:19:57 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0726/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0726/</guid>
         <description>&lt;h2 id=&#34;操作系统-一些易错知识点&#34;&gt;操作系统-一些易错知识点
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;在计算平均访存时间时要注意快表TLB和页表的访问是&lt;strong&gt;串行&lt;/strong&gt;还是并行的，也要注意页表是&lt;strong&gt;单级&lt;/strong&gt;还是多级的&lt;/li&gt;
@@ -1287,10 +1287,10 @@ $$
         </item>
         <item>
         <title>0725学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0725/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0725/</link>
         <pubDate>Fri, 25 Jul 2025 20:24:54 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0725/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0725/</guid>
         <description>&lt;h2 id=&#34;操作系统-易错小知识&#34;&gt;操作系统-易错小知识
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;在多个进程并发执行时，所有进程的页表大多数驻留在内存中，在系统中只设置一个页表寄存器（PTR），它存放页表在内存中的始址和长度&lt;/li&gt;
@@ -1328,10 +1328,10 @@ $$
         </item>
         <item>
         <title>0721学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0721/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0721/</link>
         <pubDate>Mon, 21 Jul 2025 22:59:30 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0721/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0721/</guid>
         <description>&lt;h2 id=&#34;数据结构-代码待完善&#34;&gt;数据结构-代码(待完善)
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;
@@ -1472,10 +1472,10 @@ $$
         </item>
         <item>
         <title>0718学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0718/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0718/</link>
         <pubDate>Fri, 18 Jul 2025 19:23:00 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0718/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0718/</guid>
         <description>&lt;h2 id=&#34;数学&#34;&gt;数学
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;
@@ -1510,10 +1510,10 @@ $$
         </item>
         <item>
         <title>0717学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0717/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0717/</link>
         <pubDate>Thu, 17 Jul 2025 23:07:05 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0717/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0717/</guid>
         <description>&lt;h2 id=&#34;关于数学cool-stuff&#34;&gt;关于数学，cool stuff
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;
@@ -1555,10 +1555,10 @@ $$
         </item>
         <item>
         <title>0714学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0714/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0714/</link>
         <pubDate>Mon, 14 Jul 2025 21:15:16 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0714/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0714/</guid>
         <description>&lt;h2 id=&#34;朝花夕拾&#34;&gt;朝花夕拾
 &lt;/h2&gt;&lt;p&gt;先回答一下昨天的疑问：&lt;/p&gt;
 &lt;ol&gt;
@@ -1798,10 +1798,10 @@ $$</description>
         </item>
         <item>
         <title>0713学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0713/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0713/</link>
         <pubDate>Sun, 13 Jul 2025 23:27:16 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0713/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0713/</guid>
         <description>&lt;p&gt;今天看来是无法解决所有当下的疑问了，故先列出清单：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;什么是用户级线程和内核级线程？&lt;/li&gt;
@@ -1812,10 +1812,10 @@ $$</description>
         </item>
         <item>
         <title>0712学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0712/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0712/</link>
         <pubDate>Sat, 12 Jul 2025 23:17:40 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0712/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0712/</guid>
         <description>&lt;h2 id=&#34;操作系统&#34;&gt;操作系统
 &lt;/h2&gt;&lt;h3 id=&#34;系统调用&#34;&gt;系统调用
 &lt;/h3&gt;&lt;ol&gt;

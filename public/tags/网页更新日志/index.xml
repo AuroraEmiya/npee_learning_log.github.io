@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>网页更新日志 on shyの考研日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/tags/%E7%BD%91%E9%A1%B5%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E7%BD%91%E9%A1%B5%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</link>
         <description>Recent content in 网页更新日志 on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sun, 27 Jul 2025 02:31:05 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/tags/%E7%BD%91%E9%A1%B5%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 27 Jul 2025 02:31:05 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E7%BD%91%E9%A1%B5%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>网页更新日志.0727</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/update/0727/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/update/0727/</link>
         <pubDate>Sun, 27 Jul 2025 02:31:05 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/update/0727/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/update/0727/</guid>
         <description>&lt;h2 id=&#34;hello-world&#34;&gt;Hello World
 &lt;/h2&gt;&lt;p&gt;这是博主在某个深夜对着自己的博客网页捣鼓后，突然做出的决定：当网站有重大版本更新的时候，记录新版本的变化。&lt;/p&gt;
 &lt;p&gt;其实这个博客页面已经长期维护了2周，一直没有认真上手去学习&lt;code&gt;hugo&lt;/code&gt;和&lt;code&gt;stack&lt;/code&gt;的相关配置，主页的样子也是主打一个能用就行。但是这就是我的网站，我认为有必要记录它和我的成长变化，也好在日后回忆中逐渐鲜活这一路走来的历程，现在博主锐意备战今年（2025）的考研，因此这个网站主要还是记录自己的学习进度和笔记。以后&amp;hellip;&amp;hellip;也许会变成一个更丰富的网站（吧？雾！）&lt;/p&gt;
