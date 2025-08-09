@@ -6,7 +6,74 @@
         <description>Recent content in 数据结构 on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 21 Jul 2025 17:53:02 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 09 Aug 2025 23:52:51 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0809学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0809/</link>
+        <pubDate>Sat, 09 Aug 2025 23:52:51 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0809/</guid>
+        <description>&lt;h2 id=&#34;数据结构-查找&#34;&gt;数据结构-查找
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;顺序查找法&lt;/li&gt;
+&lt;li&gt;分块查找法（索引顺序查找）&lt;/li&gt;
+&lt;li&gt;折半查找法
+&lt;ul&gt;
+&lt;li&gt;判定树&lt;/li&gt;
+&lt;li&gt;ASL（平均查找长度）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;二叉搜索树
+&lt;ol&gt;
+&lt;li&gt;查找&lt;/li&gt;
+&lt;li&gt;插入&lt;/li&gt;
+&lt;li&gt;构造&lt;/li&gt;
+&lt;li&gt;删除（中序）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;平衡二叉树（AVL）
+&lt;ol&gt;
+&lt;li&gt;插入
+&lt;ul&gt;
+&lt;li&gt;LL平衡旋转&lt;/li&gt;
+&lt;li&gt;LR平衡旋转&lt;/li&gt;
+&lt;li&gt;RR平衡旋转&lt;/li&gt;
+&lt;li&gt;RL平衡旋转&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;构造&lt;/li&gt;
+&lt;li&gt;删除&lt;/li&gt;
+&lt;li&gt;查找&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;红黑树
+&lt;ol&gt;
+&lt;li&gt;定义
+&lt;ul&gt;
+&lt;li&gt;每个结点或是黑色或是红色&lt;/li&gt;
+&lt;li&gt;根节点是黑色的&lt;/li&gt;
+&lt;li&gt;叶节点（虚构的外部节点、NULL节点）都是黑色&lt;/li&gt;
+&lt;li&gt;不存在两个相邻的红节点&lt;/li&gt;
+&lt;li&gt;对于每个结点，从该结点到任意一个叶节点的简单路径上，所含黑节点的数量相同&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;结论
+&lt;ol&gt;
+&lt;li&gt;从根到叶结点的最长路径不大于最短路径的2倍&lt;/li&gt;
+&lt;li&gt;有n个内部结点的红黑树的高度$h\leq 2\log_2{(n+1)}$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;插入
+&lt;ul&gt;
+&lt;li&gt;新插入红黑树的结点初始着为红色&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;删除*&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>0721学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0721/</link>
         <pubDate>Mon, 21 Jul 2025 17:53:02 +0800</pubDate>
