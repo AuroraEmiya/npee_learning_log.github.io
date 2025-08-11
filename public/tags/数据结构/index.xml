@@ -6,7 +6,136 @@
         <description>Recent content in 数据结构 on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 09 Aug 2025 23:52:51 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 11 Aug 2025 23:43:07 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0811学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0811/</link>
+        <pubDate>Mon, 11 Aug 2025 23:43:07 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0811/</guid>
+        <description>&lt;h2 id=&#34;数据结构&#34;&gt;数据结构
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;插入排序&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;直接插入排序&lt;/li&gt;
+&lt;li&gt;折半插入排序&lt;/li&gt;
+&lt;li&gt;希尔排序&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;交换排序&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;冒泡排序&lt;/li&gt;
+&lt;li&gt;快速排序&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;二路归并排序&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;基数排序&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;外部排序&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;多路平衡归并与败者树&lt;/li&gt;
+&lt;li&gt;置换-选择排序&lt;/li&gt;
+&lt;li&gt;最佳归并树&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;排序算法的分析和应用&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;算法&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;时间复杂度&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;最好情况&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;平均情况&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;最坏情况&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;空间复杂度&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;稳定性&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;直接插入排序&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n^2)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n^2)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(1)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;是&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;冒泡排序&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n^2)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n^2)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(1)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;是&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;简单选择排序&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n^2)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n^2)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n^2)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(1)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;否&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;希尔排序&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(1)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;否&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;快速排序&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n\log n)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n\log n)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n^2)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(\log n)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;否&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;堆排序&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n\log n)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n\log n)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n\log n)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(1)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;否&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;二路归并排序&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n\log n)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n\log n)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n\log n)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(n)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;是&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;基数排序&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(d(n+r)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(d(n+r))$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(d(n+r)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$O(1)$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;是&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>0809学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0809/</link>
         <pubDate>Sat, 09 Aug 2025 23:52:51 +0800</pubDate>
