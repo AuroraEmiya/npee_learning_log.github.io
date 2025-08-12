@@ -6,7 +6,170 @@
         <description>Recent content in Memoes on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 06 Aug 2025 20:32:29 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/memo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 12 Aug 2025 11:20:48 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/memo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0812学习笔记</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/</link>
+        <pubDate>Tue, 12 Aug 2025 11:20:48 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/</guid>
+        <description>&lt;h2 id=&#34;数据结构&#34;&gt;数据结构
+&lt;/h2&gt;&lt;h3 id=&#34;红黑树&#34;&gt;红黑树
+&lt;/h3&gt;&lt;h4 id=&#34;rule&#34;&gt;RULE
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;Every node is either black or red.&lt;/li&gt;
+&lt;li&gt;The root is black&lt;/li&gt;
+&lt;li&gt;All leaves(NIL/null nodes) are black.&lt;/li&gt;
+&lt;li&gt;Red node rule : &lt;strong&gt;If a node is red ,both its children and parents are black.&lt;/strong&gt;(no two red in a row)&lt;/li&gt;
+&lt;li&gt;Black height rule: Every path from a node to its descendant NIL node contains  &lt;strong&gt;the same number of black nodes.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;h4 id=&#34;construction-insertion&#34;&gt;Construction (Insertion)
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Case 1: Parent node is BLACK, go ahead.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Case 2: RED parent,See your uncle:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Case 2.1 :BLACK uncle , Rotation to make things in balance.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/Case2.1l.png&#34;
+	width=&#34;969&#34;
+	height=&#34;759&#34;
+	srcset=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/Case2.1l_hu_e2a977b617f265b1.png 480w, https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/Case2.1l_hu_32210b6c6b327c94.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Case2.1 LL&amp;LR&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;127&#34;
+		data-flex-basis=&#34;306px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/Case2.1r.png&#34;
+	width=&#34;874&#34;
+	height=&#34;762&#34;
+	srcset=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/Case2.1r_hu_388296b4c50491dd.png 480w, https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/Case2.1r_hu_40f33465402eeb38.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Case2.1 RL&amp;RR&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;114&#34;
+		data-flex-basis=&#34;275px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Case 2.2 :RED uncle, BLACK-lize your parent and uncle,RED-lize your grand.&lt;/p&gt;
+&lt;p&gt;Now consider the process of your grand and repeat cases above.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/Case2.2.png&#34;
+	width=&#34;861&#34;
+	height=&#34;390&#34;
+	srcset=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/Case2.2_hu_2bb9d3b36231e15c.png 480w, https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/Case2.2_hu_a2caedb5d994483b.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Case2.2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;220&#34;
+		data-flex-basis=&#34;529px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;b树&#34;&gt;B树
+&lt;/h3&gt;&lt;h4 id=&#34;rules&#34;&gt;RULES
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Key properties&lt;/strong&gt; of a B-Tree of order $m$:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Every node can have at most &lt;strong&gt;m&lt;/strong&gt; children&lt;/li&gt;
+&lt;li&gt;Every node (except root )has at least $\lceil \frac{m}{2}\rceil$ children&lt;/li&gt;
+&lt;li&gt;Every non-leaf node with $k$ children has exactly $k-1$ keys&lt;/li&gt;
+&lt;li&gt;Keys in each node are sorted&lt;/li&gt;
+&lt;li&gt;All leaves appear on the same level&lt;/li&gt;
+&lt;/ol&gt;
+$$
+\lfloor\log_{\lceil\frac{m}{2}\rceil}(\frac{n+1}{2})\rfloor +1 \geq h\geq \lceil\log_{m}(n+1)\rceil
+$$&lt;p&gt;推理过程&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;左式：对于一个m阶的具有n个关键字的B树，其第二层至少有2个结点，第三层至少有$2\lceil\frac{m}{2}\rceil$个结点,以此类推，第$h+1$层至少有$2\lceil\frac{m}{2}\rceil^{h-1}$,这一层为查找失败的叶节点，结点数为$n+1$，因此有&lt;/li&gt;
+&lt;/ol&gt;
+$$
+n+1\geq 2\lceil\frac{m}{2}\rceil^{h-1}
+$$&lt;p&gt;​	化简得左式&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;右式：对于一个m阶的具有n个关键字的B树，其满足不等式
+$$
+   n\leq (m-1)(1+m+\cdots+m^{h-1})=m^h-1
+   $$
+化简得右式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;constructioninsertion&#34;&gt;Construction(Insertion)
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Find the correct leaf&lt;/strong&gt;
+Use the same logic as binary search but in multi-key nodes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Compare the new key to the existing keys in the current node.&lt;/li&gt;
+&lt;li&gt;Descend into the correct child pointer until you reach a leaf.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Insert key in sorted order&lt;/strong&gt; in that leaf.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;If the node has ≤ m − 1 keys after insertion&lt;/strong&gt; → done.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;If the node overflows&lt;/strong&gt; (has m keys):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Split&lt;/strong&gt; the node into two nodes:
+&lt;ul&gt;
+&lt;li&gt;Middle key moves &lt;strong&gt;up&lt;/strong&gt; to the parent.&lt;/li&gt;
+&lt;li&gt;Left half of keys go to the left child.&lt;/li&gt;
+&lt;li&gt;Right half of keys go to the right child.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;If the parent also overflows, split it &lt;strong&gt;recursively&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;If the root splits&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a &lt;strong&gt;new root&lt;/strong&gt; containing the middle key.&lt;/li&gt;
+&lt;li&gt;The height of the B-Tree increases by 1.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;deletion&#34;&gt;Deletion
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;If the key is in a leaf → just remove it.&lt;/li&gt;
+&lt;li&gt;If the key is in an internal node:
+&lt;ul&gt;
+&lt;li&gt;Replace it with the &lt;strong&gt;predecessor&lt;/strong&gt; (largest in left subtree) or &lt;strong&gt;successor&lt;/strong&gt; (smallest in right subtree).&lt;/li&gt;
+&lt;li&gt;Then delete that replacement key from the leaf.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;If a node falls below &lt;strong&gt;⌈m/2⌉ − 1 keys&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Borrow&lt;/strong&gt; a key from a sibling if possible.&lt;/li&gt;
+&lt;li&gt;Otherwise, &lt;strong&gt;merge&lt;/strong&gt; with a sibling.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;If the root becomes empty → its only child becomes the new root.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+</description>
+        </item>
+        <item>
         <title>0806学习笔记</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0806/</link>
         <pubDate>Wed, 06 Aug 2025 20:32:29 +0800</pubDate>
