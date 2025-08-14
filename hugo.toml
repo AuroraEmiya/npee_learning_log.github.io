@@ -55,7 +55,23 @@ enableRobotsTXT = true
   [menu.main.params]
     icon = "home"
 
+[params.comments]
+  enabled = true
+  provider = "giscus"
 
+[params.comments.giscus]
+  repo = "AuroraEmiya/npee_learning_log.github.io"
+  repoID = "R_kgDOPKrKPw"
+  category = "Comments"
+  categoryID = "DIC_kwDOPKrKP84CuLn2"
+  mapping = "url"  # 或 "url" / "title"，建议用 "pathname"
+  strict = 0
+  inputPosition = "bottom"
+  lightTheme = "light"
+  darkTheme = "dark"
+  reactionsEnabled = 1   # 1 = 开启 GitHub 表情反应
+  emitMetadata = 0       # 0 = 不向页面注入额外元数据
+  lang = "zn-CN"
 
 [[menu.main]]
   name = "日记"

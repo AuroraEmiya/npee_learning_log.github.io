@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/npee_learning_log.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=npee_learning_log.github.io/livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="操作系统-I/O\r文件系统\r文件系统（自底向上）\nI/O控制层 基本文件系统 文件组织模块 逻辑文件系统 文件系统布局\n文件系统在磁盘中的结构 主引导记录 引导块 超级块 文件系统中空闲块的信息 文件系统在内存中的结构 内存中的安装表（mount table） 内存中的目录结构的缓存 整个系统的打开文件表 每个进程的打开文件表，包含进程打开文件的文件描述符 虚拟文件系统VFS 超级块对象 索引节点对象 目录项对象 文件对象 文件系统挂载 I/O\rI/O设备\n信息交换单位分类 块设备 字符设备 传输速率分类 低速设备 中速设备 高速设备 使用特性 存储设备 输入/输出设备 共享属性 独占设备 共享设备 虚拟设备 I/O接口\n设备控制器与CPU的接口 设备控制器与设备的接口 I/O逻辑 类型：\n数据传送方式：并行接口、串行接口 主机访问I/O设备的控制方式：程序查询接口、终端接口、DMA接口 功能选择的灵活性：可编程接口、不可编程接口 端口：\n数据寄存器 状态寄存器 控制寄存器 I/O端口编址方式：\n独立编址 统一编址 I/O控制方式\n程序直接控制方式 中断驱动方式 DMA方式（重要） 通道控制方式 I/O软件层次结构\n用户层软件 设备独立性软件 设备驱动软件 中断处理软件 硬件（非软件层次） 数学-极值点？拐点？\r极值的定义\n">
 <title>0730学习日志</title>
 
-<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0730/'>
+<link rel='canonical' href='http://localhost:1313/npee_learning_log.github.io/posts/0730/'>
 
 <link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0730学习日志">
 <meta property='og:description' content="操作系统-I/O\r文件系统\r文件系统（自底向上）\nI/O控制层 基本文件系统 文件组织模块 逻辑文件系统 文件系统布局\n文件系统在磁盘中的结构 主引导记录 引导块 超级块 文件系统中空闲块的信息 文件系统在内存中的结构 内存中的安装表（mount table） 内存中的目录结构的缓存 整个系统的打开文件表 每个进程的打开文件表，包含进程打开文件的文件描述符 虚拟文件系统VFS 超级块对象 索引节点对象 目录项对象 文件对象 文件系统挂载 I/O\rI/O设备\n信息交换单位分类 块设备 字符设备 传输速率分类 低速设备 中速设备 高速设备 使用特性 存储设备 输入/输出设备 共享属性 独占设备 共享设备 虚拟设备 I/O接口\n设备控制器与CPU的接口 设备控制器与设备的接口 I/O逻辑 类型：\n数据传送方式：并行接口、串行接口 主机访问I/O设备的控制方式：程序查询接口、终端接口、DMA接口 功能选择的灵活性：可编程接口、不可编程接口 端口：\n数据寄存器 状态寄存器 控制寄存器 I/O端口编址方式：\n独立编址 统一编址 I/O控制方式\n程序直接控制方式 中断驱动方式 DMA方式（重要） 通道控制方式 I/O软件层次结构\n用户层软件 设备独立性软件 设备驱动软件 中断处理软件 硬件（非软件层次） 数学-极值点？拐点？\r极值的定义\n">
-<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0730/'>
+<meta property='og:url' content='http://localhost:1313/npee_learning_log.github.io/posts/0730/'>
 <meta property='og:site_name' content='shyの考研日志'>
 <meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:published_time' content='2025-07-30T22:23:38&#43;08:00'/><meta property='article:modified_time' content='2025-07-30T22:23:38&#43;08:00'/>
 <meta name="twitter:title" content="0730学习日志">
@@ -566,6 +566,57 @@ $$
      
     
         
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="AuroraEmiya/npee_learning_log.github.io"
+    data-repo-id="R_kgDOPKrKPw"
+    data-category="Comments"
+    data-category-id="DIC_kwDOPKrKP84CuLn2"
+    data-mapping="url"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zn-CN"
+    data-loading=""
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark');
+            }
+        }
+    })();
+</script>
+
     
 
     <footer class="site-footer">
@@ -668,7 +719,7 @@ $$
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.d3ce7388ef5941233a2fd0541c1324f59fa8d8764f59d9721e2c172354121bcf.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

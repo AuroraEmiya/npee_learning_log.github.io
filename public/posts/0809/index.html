@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/npee_learning_log.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=npee_learning_log.github.io/livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="数据结构-查找\r顺序查找法 分块查找法（索引顺序查找） 折半查找法 判定树 ASL（平均查找长度） 二叉搜索树 查找 插入 构造 删除（中序） 平衡二叉树（AVL） 插入 LL平衡旋转 LR平衡旋转 RR平衡旋转 RL平衡旋转 构造 删除 查找 红黑树 定义 每个结点或是黑色或是红色 根节点是黑色的 叶节点（虚构的外部节点、NULL节点）都是黑色 不存在两个相邻的红节点 对于每个结点，从该结点到任意一个叶节点的简单路径上，所含黑节点的数量相同 结论 从根到叶结点的最长路径不大于最短路径的2倍 有n个内部结点的红黑树的高度$h\\leq 2\\log_2{(n+1)}$ 插入 新插入红黑树的结点初始着为红色 删除* ">
 <title>0809学习日志</title>
 
-<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0809/'>
+<link rel='canonical' href='http://localhost:1313/npee_learning_log.github.io/posts/0809/'>
 
 <link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0809学习日志">
 <meta property='og:description' content="数据结构-查找\r顺序查找法 分块查找法（索引顺序查找） 折半查找法 判定树 ASL（平均查找长度） 二叉搜索树 查找 插入 构造 删除（中序） 平衡二叉树（AVL） 插入 LL平衡旋转 LR平衡旋转 RR平衡旋转 RL平衡旋转 构造 删除 查找 红黑树 定义 每个结点或是黑色或是红色 根节点是黑色的 叶节点（虚构的外部节点、NULL节点）都是黑色 不存在两个相邻的红节点 对于每个结点，从该结点到任意一个叶节点的简单路径上，所含黑节点的数量相同 结论 从根到叶结点的最长路径不大于最短路径的2倍 有n个内部结点的红黑树的高度$h\\leq 2\\log_2{(n+1)}$ 插入 新插入红黑树的结点初始着为红色 删除* ">
-<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0809/'>
+<meta property='og:url' content='http://localhost:1313/npee_learning_log.github.io/posts/0809/'>
 <meta property='og:site_name' content='shyの考研日志'>
 <meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='数据结构' /><meta property='article:tag' content='查找' /><meta property='article:tag' content='线性查找' /><meta property='article:tag' content='折半查找' /><meta property='article:tag' content='分块查找' /><meta property='article:tag' content='二叉树查找' /><meta property='article:published_time' content='2025-08-09T23:52:51&#43;08:00'/><meta property='article:modified_time' content='2025-08-09T23:52:51&#43;08:00'/>
 <meta name="twitter:title" content="0809学习日志">
@@ -518,6 +518,57 @@
      
     
         
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="AuroraEmiya/npee_learning_log.github.io"
+    data-repo-id="R_kgDOPKrKPw"
+    data-category="Comments"
+    data-category-id="DIC_kwDOPKrKP84CuLn2"
+    data-mapping="url"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zn-CN"
+    data-loading=""
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark');
+            }
+        }
+    })();
+</script>
+
     
 
     <footer class="site-footer">
@@ -620,7 +671,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.d3ce7388ef5941233a2fd0541c1324f59fa8d8764f59d9721e2c172354121bcf.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

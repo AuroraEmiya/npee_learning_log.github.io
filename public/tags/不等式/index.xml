@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>不等式 on shyの考研日志</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E4%B8%8D%E7%AD%89%E5%BC%8F/</link>
+        <link>http://localhost:1313/npee_learning_log.github.io/tags/%E4%B8%8D%E7%AD%89%E5%BC%8F/</link>
         <description>Recent content in 不等式 on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 06 Aug 2025 20:32:29 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E4%B8%8D%E7%AD%89%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 06 Aug 2025 20:32:29 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/tags/%E4%B8%8D%E7%AD%89%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>0806学习笔记</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0806/</link>
+        <link>http://localhost:1313/npee_learning_log.github.io/memo/0806/</link>
         <pubDate>Wed, 06 Aug 2025 20:32:29 +0800</pubDate>
         
-        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0806/</guid>
+        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0806/</guid>
         <description>&lt;h2 id=&#34;数学-一些不等式&#34;&gt;数学-一些不等式
 &lt;/h2&gt;&lt;h3 id=&#34;分析中常用的不等式&#34;&gt;&lt;strong&gt;分析中常用的不等式&lt;/strong&gt;
 &lt;/h3&gt;&lt;h4 id=&#34;1-伯努利不等式-bernoulli&#34;&gt;&lt;strong&gt;1. 伯努利不等式 (Bernoulli&amp;rsquo;s Inequality)&lt;/strong&gt;
