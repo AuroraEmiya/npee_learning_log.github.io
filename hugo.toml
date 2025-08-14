@@ -72,7 +72,12 @@ enableRobotsTXT = true
   reactionsEnabled = 1   # 1 = 开启 GitHub 表情反应
   emitMetadata = 0       # 0 = 不向页面注入额外元数据
   lang = "zn-CN"
-
+# --- ADD THIS NEW SECTION ---
+[params.security]
+  enable = true
+  
+  [params.security.csp]
+    policy = "frame-ancestors 'self' https://giscus.app;"
 [[menu.main]]
   name = "日记"
   url = "/categories/diary"
