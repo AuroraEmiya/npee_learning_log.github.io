@@ -6,7 +6,24 @@
         <description>Recent content in 查找 on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 09 Aug 2025 23:52:51 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%9F%A5%E6%89%BE/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 13 Aug 2025 09:45:30 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%9F%A5%E6%89%BE/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0813错题笔记</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0813/</link>
+        <pubDate>Wed, 13 Aug 2025 09:45:30 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0813/</guid>
+        <description>&lt;h2 id=&#34;数据结构&#34;&gt;数据结构
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;采用开放定址法解决冲突的散列查找中，发生聚集的主要原因是：&lt;strong&gt;解决冲突的办法选择不当&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;对于任意n个关键字排序的比较次数至少为$\lceil \log_2{(n!)}\rceil$。&lt;/li&gt;
+&lt;li&gt;折半插入虽然改进了搜索时间，但是移动次数相较于直接插入排序没有变化，其时间复杂度仍然是$O(n^2)$&lt;/li&gt;
+&lt;li&gt;快速排序的空间复杂度平均为$O(\log_2 n)$，最坏情况为$O(n)$，这是递归的形式。但似乎考试默认是递归栈的空间？&lt;/li&gt;
+&lt;li&gt;倘若要对某个进制的整数进行基数排序，那么队列的个数等于进制数，即十进制有10个队列，八进制有8个队列。&lt;/li&gt;
+&lt;li&gt;对于同等大小的不同初始序列，&lt;strong&gt;折半插入排序、简单选择排序&lt;/strong&gt;总比较次数一定，特别是&lt;strong&gt;折半插入排序&lt;/strong&gt;，需要特别注意。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>0809学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0809/</link>
         <pubDate>Sat, 09 Aug 2025 23:52:51 +0800</pubDate>

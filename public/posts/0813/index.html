@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="计算机组成原理\r计算机系统概述\r冯诺依曼计算机的特点 采用“存储程序”的工作方式 计算机硬件系统由运算器、存储器、控制器、输入设备和输出设备五大设备类型 指令和数据以同等地位存储在存储器中，形式上没有任何区别，但计算机应能区分它们 指令和数据均用二进制代码表示 指令由操作码和地址码组成，操作码指出操作的类型，地址码指出操作数的地址 计算机的功能部件 输入设备 输出设备 存储器 运算器 控制器 计算机软件 系统软件和应用软件 三个级别的语言 软件和硬件的逻辑功能等价性 计算机系统的层次结构 微程序机器层 传统机器语言层 操作系统层 汇编语言层 高级语言层 计算机系统的工作原理 “存储程序”工作方式 从源文件到可执行文件* 预处理阶段(pre process) 编译阶段(compile) 汇编阶段(assemble) 链接阶段(link) 指令执行过程的描述 取指令 分析指令 执行指令 计算机的性能指标\r计算机的主要性能指标\n机器字长\n数据通路带宽\n主存容量\n运算速度\n吞吐量和响应时间 主频和CPU时钟周期 CPI(Cycle per Instruction) IPS(Instruction per Second) CPU执行时间 = CPU时钟周期数/主频 = （指令条数/CPI）/主频 CPU的性能取决于三个要素：主频、CPI和指令条数 MIPS(Million Instruction per Second) = 指令条数/(执行时间*$10^6$) FLOPS(Floating-point Operations Per Second) 基准程序(benchmark)\n">
+<title>0813学习日志</title>
+
+<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0813/'>
+
+<link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0813学习日志">
+<meta property='og:description' content="计算机组成原理\r计算机系统概述\r冯诺依曼计算机的特点 采用“存储程序”的工作方式 计算机硬件系统由运算器、存储器、控制器、输入设备和输出设备五大设备类型 指令和数据以同等地位存储在存储器中，形式上没有任何区别，但计算机应能区分它们 指令和数据均用二进制代码表示 指令由操作码和地址码组成，操作码指出操作的类型，地址码指出操作数的地址 计算机的功能部件 输入设备 输出设备 存储器 运算器 控制器 计算机软件 系统软件和应用软件 三个级别的语言 软件和硬件的逻辑功能等价性 计算机系统的层次结构 微程序机器层 传统机器语言层 操作系统层 汇编语言层 高级语言层 计算机系统的工作原理 “存储程序”工作方式 从源文件到可执行文件* 预处理阶段(pre process) 编译阶段(compile) 汇编阶段(assemble) 链接阶段(link) 指令执行过程的描述 取指令 分析指令 执行指令 计算机的性能指标\r计算机的主要性能指标\n机器字长\n数据通路带宽\n主存容量\n运算速度\n吞吐量和响应时间 主频和CPU时钟周期 CPI(Cycle per Instruction) IPS(Instruction per Second) CPU执行时间 = CPU时钟周期数/主频 = （指令条数/CPI）/主频 CPU的性能取决于三个要素：主频、CPI和指令条数 MIPS(Million Instruction per Second) = 指令条数/(执行时间*$10^6$) FLOPS(Floating-point Operations Per Second) 基准程序(benchmark)\n">
+<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0813/'>
+<meta property='og:site_name' content='shyの考研日志'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='计算机组成原理' /><meta property='article:tag' content='冯诺依曼计算机' /><meta property='article:tag' content='计算机性能指标' /><meta property='article:published_time' content='2025-08-13T09:45:22&#43;08:00'/><meta property='article:modified_time' content='2025-08-13T09:45:22&#43;08:00'/>
+<meta name="twitter:title" content="0813学习日志">
+<meta name="twitter:description" content="计算机组成原理\r计算机系统概述\r冯诺依曼计算机的特点 采用“存储程序”的工作方式 计算机硬件系统由运算器、存储器、控制器、输入设备和输出设备五大设备类型 指令和数据以同等地位存储在存储器中，形式上没有任何区别，但计算机应能区分它们 指令和数据均用二进制代码表示 指令由操作码和地址码组成，操作码指出操作的类型，地址码指出操作数的地址 计算机的功能部件 输入设备 输出设备 存储器 运算器 控制器 计算机软件 系统软件和应用软件 三个级别的语言 软件和硬件的逻辑功能等价性 计算机系统的层次结构 微程序机器层 传统机器语言层 操作系统层 汇编语言层 高级语言层 计算机系统的工作原理 “存储程序”工作方式 从源文件到可执行文件* 预处理阶段(pre process) 编译阶段(compile) 汇编阶段(assemble) 链接阶段(link) 指令执行过程的描述 取指令 分析指令 执行指令 计算机的性能指标\r计算机的主要性能指标\n机器字长\n数据通路带宽\n主存容量\n运算速度\n吞吐量和响应时间 主频和CPU时钟周期 CPI(Cycle per Instruction) IPS(Instruction per Second) CPU执行时间 = CPU时钟周期数/主频 = （指令条数/CPI）/主频 CPU的性能取决于三个要素：主频、CPI和指令条数 MIPS(Million Instruction per Second) = 指令条数/(执行时间*$10^6$) FLOPS(Floating-point Operations Per Second) 基准程序(benchmark)\n">
+    
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/npee_learning_log.github.io/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/npee_learning_log.github.io/img/shiki_hu_20273a3af6c00ff3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🎧</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/npee_learning_log.github.io">shyの考研日志</a></h1>
+            <h2 class="site-description">無職受験生 ～408に挑んだら本気だす～</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/diary' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                
+                <span>日记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/log' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>日志</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/memo' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>笔记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/interests' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+                
+                <span>兴趣</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/update' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                
+                <span>更新</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#计算机组成原理">计算机组成原理</a>
+      <ul>
+        <li><a href="#计算机系统概述">计算机系统概述</a></li>
+        <li><a href="#计算机的性能指标">计算机的性能指标</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/npee_learning_log.github.io/categories/log/" >
+                Log
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/npee_learning_log.github.io/posts/0813/">0813学习日志</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 13, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="计算机组成原理">计算机组成原理
+</h2><h3 id="计算机系统概述">计算机系统概述
+</h3><ol>
+<li>冯诺依曼计算机的特点
+<ol>
+<li>采用“存储程序”的工作方式</li>
+<li>计算机硬件系统由运算器、存储器、控制器、输入设备和输出设备五大设备类型</li>
+<li>指令和数据以同等地位存储在存储器中，形式上没有任何区别，但计算机应能区分它们</li>
+<li>指令和数据均用二进制代码表示</li>
+<li>指令由操作码和地址码组成，操作码指出操作的类型，地址码指出操作数的地址</li>
+</ol>
+</li>
+<li>计算机的功能部件
+<ol>
+<li>输入设备</li>
+<li>输出设备</li>
+<li>存储器</li>
+<li>运算器</li>
+<li>控制器</li>
+</ol>
+</li>
+<li>计算机软件
+<ol>
+<li>系统软件和应用软件</li>
+<li>三个级别的语言</li>
+<li>软件和硬件的逻辑功能等价性</li>
+</ol>
+</li>
+<li>计算机系统的层次结构
+<ol>
+<li>微程序机器层</li>
+<li>传统机器语言层</li>
+<li>操作系统层</li>
+<li>汇编语言层</li>
+<li>高级语言层</li>
+</ol>
+</li>
+<li>计算机系统的工作原理
+<ol>
+<li>“存储程序”工作方式</li>
+<li>从源文件到可执行文件*
+<ol>
+<li>预处理阶段(pre process)</li>
+<li>编译阶段(compile)</li>
+<li>汇编阶段(assemble)</li>
+<li>链接阶段(link)</li>
+</ol>
+</li>
+<li>指令执行过程的描述
+<ol>
+<li>取指令</li>
+<li>分析指令</li>
+<li>执行指令</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h3 id="计算机的性能指标">计算机的性能指标
+</h3><ol>
+<li>
+<p>计算机的主要性能指标</p>
+<ol>
+<li>
+<p>机器字长</p>
+</li>
+<li>
+<p>数据通路带宽</p>
+</li>
+<li>
+<p>主存容量</p>
+</li>
+<li>
+<p>运算速度</p>
+<ol>
+<li>吞吐量和响应时间</li>
+<li>主频和CPU时钟周期</li>
+<li>CPI(Cycle per Instruction)</li>
+<li>IPS(Instruction per Second)</li>
+<li>CPU执行时间 = CPU时钟周期数/主频 = （指令条数/CPI）/主频</li>
+</ol>
+<ul>
+<li>CPU的性能取决于三个要素：<strong>主频、CPI和指令条数</strong></li>
+</ul>
+<ol start="6">
+<li>MIPS(Million Instruction per Second) = 指令条数/(执行时间*$10^6$)</li>
+<li>FLOPS(Floating-point Operations Per Second)</li>
+</ol>
+</li>
+<li>
+<p>基准程序(benchmark)</p>
+</li>
+</ol>
+</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/npee_learning_log.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E5%86%AF%E8%AF%BA%E4%BE%9D%E6%9B%BC%E8%AE%A1%E7%AE%97%E6%9C%BA/">冯诺依曼计算机</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87/">计算机性能指标</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 shyの考研日志
+    </section>
+    
+    <section class="powerby">
+        
+            Blogroll：<a href="https://void-island-site.vercel.app/">舍友的雾岛电台</a> <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+        
+    </body>
+</html>
