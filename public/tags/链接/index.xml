@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>链接 on shyの考研日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/tags/%E9%93%BE%E6%8E%A5/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E9%93%BE%E6%8E%A5/</link>
         <description>Recent content in 链接 on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 26 Jul 2025 11:19:57 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/tags/%E9%93%BE%E6%8E%A5/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 26 Jul 2025 11:19:57 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E9%93%BE%E6%8E%A5/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>0726学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0726/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0726/</link>
         <pubDate>Sat, 26 Jul 2025 11:19:57 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0726/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0726/</guid>
         <description>&lt;h2 id=&#34;操作系统-一些易错知识点&#34;&gt;操作系统-一些易错知识点
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;在计算平均访存时间时要注意快表TLB和页表的访问是&lt;strong&gt;串行&lt;/strong&gt;还是并行的，也要注意页表是&lt;strong&gt;单级&lt;/strong&gt;还是多级的&lt;/li&gt;

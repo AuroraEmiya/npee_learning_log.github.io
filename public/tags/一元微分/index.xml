@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>一元微分 on shyの考研日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/tags/%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86/</link>
         <description>Recent content in 一元微分 on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 28 Jul 2025 19:40:10 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/tags/%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 28 Jul 2025 19:40:10 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>0728学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0728/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0728/</link>
         <pubDate>Mon, 28 Jul 2025 19:40:10 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0728/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0728/</guid>
         <description>&lt;h2 id=&#34;数学-微分学习题&#34;&gt;数学-微分学习题
 &lt;/h2&gt;&lt;h3 id=&#34;错题必刷榜&#34;&gt;错题必刷榜
 &lt;/h3&gt;&lt;ol&gt;
@@ -60,10 +60,10 @@ $$</description>
         </item>
         <item>
         <title>0727学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0727/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0727/</link>
         <pubDate>Sun, 27 Jul 2025 18:55:08 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0727/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0727/</guid>
         <description>&lt;h2 id=&#34;数学-一元函数微分学&#34;&gt;数学-一元函数微分学
 &lt;/h2&gt;&lt;h3 id=&#34;一元函数微分学的概念&#34;&gt;一元函数微分学的概念
 &lt;/h3&gt;&lt;ol&gt;
