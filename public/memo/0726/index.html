@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/npee_learning_log.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=npee_learning_log.github.io/livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="操作系统-一些易错知识点\r在计算平均访存时间时要注意快表TLB和页表的访问是串行还是并行的，也要注意页表是单级还是多级的 虚拟存储器的最大容量只和计算机的地址结构决定，实际容量和内存和外存有关 工作集不是驻留集的子集，只是数量要小于（不大于）驻留集的大小 一些你需要搞明白的概念：\n链接，包括静态和动态\n链接是将不同编译单元及其依赖库整合到一个统一逻辑地址空间的过程。根据发生时间不同，链接分为：\n静态链接：在编译阶段将所有代码打包进可执行文件中； 动态链接： 加载时链接（Load-Time Linking）：程序加载时操作系统自动加载依赖库； 运行时链接（Run-Time Linking）：程序运行过程中手动加载库，例如通过 dlopen() 等函数调用。 类别 链接时间 控制方式 示例函数 静态链接 编译/链接阶段 编译器自动处理 - 动态链接（加载时） 程序加载阶段 操作系统自动处理 - 动态链接（运行时） 程序运行阶段 程序员手动调用 dlopen, dlsym 等 $&gt;dive into the procedure of linking of a C code program(Gemini 2.5 pro)\nThe Final Step: Unraveling the Linking Process of a C Program\rThe journey from human-readable C code to an executable program culminates in a crucial, often-overlooked stage: linking. This final step in the compilation process is where all the disparate pieces of your program are brought together to create a single, functional executable file. The linker, a key component of the C toolchain, orchestrates this assembly, resolving references between different parts of your code and incorporating necessary library functions.\n">
 <title>0726学习笔记</title>
 
-<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/memo/0726/'>
+<link rel='canonical' href='http://localhost:1313/npee_learning_log.github.io/memo/0726/'>
 
 <link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0726学习笔记">
 <meta property='og:description' content="操作系统-一些易错知识点\r在计算平均访存时间时要注意快表TLB和页表的访问是串行还是并行的，也要注意页表是单级还是多级的 虚拟存储器的最大容量只和计算机的地址结构决定，实际容量和内存和外存有关 工作集不是驻留集的子集，只是数量要小于（不大于）驻留集的大小 一些你需要搞明白的概念：\n链接，包括静态和动态\n链接是将不同编译单元及其依赖库整合到一个统一逻辑地址空间的过程。根据发生时间不同，链接分为：\n静态链接：在编译阶段将所有代码打包进可执行文件中； 动态链接： 加载时链接（Load-Time Linking）：程序加载时操作系统自动加载依赖库； 运行时链接（Run-Time Linking）：程序运行过程中手动加载库，例如通过 dlopen() 等函数调用。 类别 链接时间 控制方式 示例函数 静态链接 编译/链接阶段 编译器自动处理 - 动态链接（加载时） 程序加载阶段 操作系统自动处理 - 动态链接（运行时） 程序运行阶段 程序员手动调用 dlopen, dlsym 等 $&gt;dive into the procedure of linking of a C code program(Gemini 2.5 pro)\nThe Final Step: Unraveling the Linking Process of a C Program\rThe journey from human-readable C code to an executable program culminates in a crucial, often-overlooked stage: linking. This final step in the compilation process is where all the disparate pieces of your program are brought together to create a single, functional executable file. The linker, a key component of the C toolchain, orchestrates this assembly, resolving references between different parts of your code and incorporating necessary library functions.\n">
-<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/memo/0726/'>
+<meta property='og:url' content='http://localhost:1313/npee_learning_log.github.io/memo/0726/'>
 <meta property='og:site_name' content='shyの考研日志'>
 <meta property='og:type' content='article'><meta property='article:section' content='Memo' /><meta property='article:tag' content='操作系统' /><meta property='article:tag' content='虚拟存储系统' /><meta property='article:tag' content='链接' /><meta property='article:tag' content='英语' /><meta property='article:published_time' content='2025-07-26T11:19:57&#43;08:00'/><meta property='article:modified_time' content='2025-07-26T11:19:57&#43;08:00'/>
 <meta name="twitter:title" content="0726学习笔记">
@@ -800,7 +800,7 @@ $$
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.d3ce7388ef5941233a2fd0541c1324f59fa8d8764f59d9721e2c172354121bcf.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
