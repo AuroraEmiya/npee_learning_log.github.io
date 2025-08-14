@@ -6,7 +6,99 @@
         <description>Recent content in Log on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 13 Aug 2025 09:45:22 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Aug 2025 22:31:10 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0814学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0814/</link>
+        <pubDate>Thu, 14 Aug 2025 22:31:10 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0814/</guid>
+        <description>&lt;h2 id=&#34;概率论-自然界是对数的吗&#34;&gt;概率论-自然界是对数的吗？
+&lt;/h2&gt;&lt;h3 id=&#34;基本概念&#34;&gt;基本概念
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;随机试验&lt;/p&gt;
+&lt;p&gt;（1）试验可以在相同的条件下重复进行&lt;/p&gt;
+&lt;p&gt;（2）实验所有可能结果明确可知，且不止一个&lt;/p&gt;
+&lt;p&gt;（3）每一次试验会出现哪一个结果，事先并不能确定&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;投篮&lt;/li&gt;
+&lt;li&gt;掷硬币&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;随机事件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;样本空间&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;事件的关系与运算&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;关系
+&lt;ul&gt;
+&lt;li&gt;包含：如果事件A发生必导致事件B发生，则称事件B&lt;strong&gt;包含&lt;/strong&gt;事件A,$A\subset B$&lt;/li&gt;
+&lt;li&gt;相等&lt;/li&gt;
+&lt;li&gt;积（交）：称“事件A与B同时发生”的事件为事件A与B的积事件，$A\cap B$&lt;/li&gt;
+&lt;li&gt;相容：若$AB\neq \varnothing$则称事件A和B相容&lt;/li&gt;
+&lt;li&gt;互斥：若$AB=\varnothing$,则称事件A和B互不相容，即互斥&lt;/li&gt;
+&lt;li&gt;和（并）：“事件A与B至少有一个发生”的事件为事件A与B的和事件，$A\cup B$&lt;/li&gt;
+&lt;li&gt;差：“事件A与B至少有一个发生”的事件为事件A与B的差事件，$A-B$&lt;/li&gt;
+&lt;li&gt;逆（对立）&lt;/li&gt;
+&lt;li&gt;完备事件组&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;运算
+&lt;ol&gt;
+&lt;li&gt;吸收律&lt;/li&gt;
+&lt;li&gt;交换律&lt;/li&gt;
+&lt;li&gt;结合律&lt;/li&gt;
+&lt;li&gt;分配律&lt;/li&gt;
+&lt;li&gt;对偶率（德摩根律）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;概率的定义&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;描述性定义&lt;/li&gt;
+&lt;li&gt;统计性定义&lt;/li&gt;
+&lt;li&gt;公理化定义&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;古典概型和几何概型&#34;&gt;古典概型和几何概型
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;古典概型
+&lt;ol&gt;
+&lt;li&gt;概念
+&lt;ul&gt;
+&lt;li&gt;只有有限个样本点（基本事件）&lt;/li&gt;
+&lt;li&gt;每个样本点（基本事件）发生的可能性都一样&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;计算方法
+&lt;ol&gt;
+&lt;li&gt;随机分配问题&lt;/li&gt;
+&lt;li&gt;简单随机抽样问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;几何概型
+&lt;ol&gt;
+&lt;li&gt;概念
+&lt;ul&gt;
+&lt;li&gt;样本空间（基本事件空间）$\Omega$是一个可度量的有界区域&lt;/li&gt;
+&lt;li&gt;每个样本点（基本事件）发生的可能性都一样，即样本点落入$\Omega$的某一个可度量的子区域$S$的可能性大小和S的几何度量成正比。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>0813学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0813/</link>
         <pubDate>Wed, 13 Aug 2025 09:45:22 +0800</pubDate>
