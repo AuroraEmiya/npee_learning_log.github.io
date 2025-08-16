@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>B树 on shyの考研日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/tags/b%E6%A0%91/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/b%E6%A0%91/</link>
         <description>Recent content in B树 on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Tue, 12 Aug 2025 11:20:48 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/tags/b%E6%A0%91/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 12 Aug 2025 11:20:48 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/b%E6%A0%91/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>0812学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0812/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/</link>
         <pubDate>Tue, 12 Aug 2025 11:20:48 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0812/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/</guid>
         <description>&lt;h2 id=&#34;数据结构&#34;&gt;数据结构
 &lt;/h2&gt;&lt;h3 id=&#34;红黑树&#34;&gt;红黑树
 &lt;/h3&gt;&lt;h4 id=&#34;rule&#34;&gt;RULE
@@ -33,10 +33,10 @@
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Case 2.1 :BLACK uncle , Rotation to make things in balance.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/npee_learning_log.github.io/memo/0812/Case2.1l.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/Case2.1l.png&#34;
 	width=&#34;969&#34;
 	height=&#34;759&#34;
-	srcset=&#34;http://localhost:1313/npee_learning_log.github.io/memo/0812/Case2.1l_hu_e2a977b617f265b1.png 480w, http://localhost:1313/npee_learning_log.github.io/memo/0812/Case2.1l_hu_32210b6c6b327c94.png 1024w&#34;
+	srcset=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/Case2.1l_hu_e2a977b617f265b1.png 480w, https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/Case2.1l_hu_32210b6c6b327c94.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Case2.1 LL&amp;LR&#34;
@@ -47,10 +47,10 @@
 		data-flex-basis=&#34;306px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/npee_learning_log.github.io/memo/0812/Case2.1r.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/Case2.1r.png&#34;
 	width=&#34;874&#34;
 	height=&#34;762&#34;
-	srcset=&#34;http://localhost:1313/npee_learning_log.github.io/memo/0812/Case2.1r_hu_388296b4c50491dd.png 480w, http://localhost:1313/npee_learning_log.github.io/memo/0812/Case2.1r_hu_40f33465402eeb38.png 1024w&#34;
+	srcset=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/Case2.1r_hu_388296b4c50491dd.png 480w, https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/Case2.1r_hu_40f33465402eeb38.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Case2.1 RL&amp;RR&#34;
@@ -65,10 +65,10 @@
 &lt;li&gt;
 &lt;p&gt;Case 2.2 :RED uncle, BLACK-lize your parent and uncle,RED-lize your grand.&lt;/p&gt;
 &lt;p&gt;Now consider the process of your grand and repeat cases above.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/npee_learning_log.github.io/memo/0812/Case2.2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/Case2.2.png&#34;
 	width=&#34;861&#34;
 	height=&#34;390&#34;
-	srcset=&#34;http://localhost:1313/npee_learning_log.github.io/memo/0812/Case2.2_hu_2bb9d3b36231e15c.png 480w, http://localhost:1313/npee_learning_log.github.io/memo/0812/Case2.2_hu_a2caedb5d994483b.png 1024w&#34;
+	srcset=&#34;https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/Case2.2_hu_2bb9d3b36231e15c.png 480w, https://auroraemiya.github.io/npee_learning_log.github.io/memo/0812/Case2.2_hu_a2caedb5d994483b.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Case2.2&#34;

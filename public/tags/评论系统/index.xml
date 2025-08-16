@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>评论系统 on shyの考研日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</link>
         <description>Recent content in 评论系统 on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 15 Aug 2025 01:46:06 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 01:46:06 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>0815网站更新日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/update/0815/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/update/0815/</link>
         <pubDate>Fri, 15 Aug 2025 01:46:06 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/update/0815/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/update/0815/</guid>
         <description>&lt;h2 id=&#34;网站更新ver21评论系统&#34;&gt;网站更新ver2.1&amp;ndash;评论系统
 &lt;/h2&gt;&lt;p&gt;🔊 更新内容：为每一篇博文添加了基于 &lt;a class=&#34;link&#34; href=&#34;https://giscus.app/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Giscus&lt;/a&gt;的评论系统，如果想要评论请使用github账号登陆。&lt;/p&gt;

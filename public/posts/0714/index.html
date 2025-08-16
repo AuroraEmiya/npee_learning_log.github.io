@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/npee_learning_log.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=npee_learning_log.github.io/livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="操作系统-这什么查一下这什么查一下\r经典同步问题\r生产者消费者问题 哲学家进餐问题 读者-写者问题 理发师问题 抽烟者问题 处理机调度\r处理及调度的层次\n高级调度（作业调度、长程调度）\n作业选择\n从**后备队列（外存中等待的作业）**中选择作业 判断系统资源（内存、CPU、I/O）是否充足 资源分配\n为选中的作业分配内存、I/O、文件等资源 进程创建\n将作业转化为一个或多个进程，放入就绪队列 中级调度（内存调度、中程调度）\n选择部分进程挂起（移出内存到外存） 选择挂起的进程恢复（从外存调回内存） 低级调度（进程调度、线程调度、短程调度）\n从就绪队列中选择一个进程 把 CPU 分配给选中的进程 保存和恢复进程的上下文（进程切换 Context Switch） 控制 CPU 的执行顺序 处理机的调度方式\n非抢占式 抢占式 选择调度算法的若干准则\nCPU利用率\n$$ \\frac{\\text{worktime of CPU}}{\\text{total time}} $$ 系统吞吐量\n$$ \\frac{\\text{number of tasks}}{\\text{total time}} $$ 周转时间(Turnaround Time)\n$$ \\text{Completion Time - Arrival Time} $$ 平均周转时间\n$$ \\frac{\\sum\\limits_{N}\\text{Turnaround Time of all processes}}{N} $$ 带权周转时间\n$$ \\frac{\\text{Turnaround Time}}{\\text{Service Time}} $$ 平均带权周转时间\n">
 <title>0714学习日志</title>
 
-<link rel='canonical' href='http://localhost:1313/npee_learning_log.github.io/posts/0714/'>
+<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0714/'>
 
 <link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0714学习日志">
 <meta property='og:description' content="操作系统-这什么查一下这什么查一下\r经典同步问题\r生产者消费者问题 哲学家进餐问题 读者-写者问题 理发师问题 抽烟者问题 处理机调度\r处理及调度的层次\n高级调度（作业调度、长程调度）\n作业选择\n从**后备队列（外存中等待的作业）**中选择作业 判断系统资源（内存、CPU、I/O）是否充足 资源分配\n为选中的作业分配内存、I/O、文件等资源 进程创建\n将作业转化为一个或多个进程，放入就绪队列 中级调度（内存调度、中程调度）\n选择部分进程挂起（移出内存到外存） 选择挂起的进程恢复（从外存调回内存） 低级调度（进程调度、线程调度、短程调度）\n从就绪队列中选择一个进程 把 CPU 分配给选中的进程 保存和恢复进程的上下文（进程切换 Context Switch） 控制 CPU 的执行顺序 处理机的调度方式\n非抢占式 抢占式 选择调度算法的若干准则\nCPU利用率\n$$ \\frac{\\text{worktime of CPU}}{\\text{total time}} $$ 系统吞吐量\n$$ \\frac{\\text{number of tasks}}{\\text{total time}} $$ 周转时间(Turnaround Time)\n$$ \\text{Completion Time - Arrival Time} $$ 平均周转时间\n$$ \\frac{\\sum\\limits_{N}\\text{Turnaround Time of all processes}}{N} $$ 带权周转时间\n$$ \\frac{\\text{Turnaround Time}}{\\text{Service Time}} $$ 平均带权周转时间\n">
-<meta property='og:url' content='http://localhost:1313/npee_learning_log.github.io/posts/0714/'>
+<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0714/'>
 <meta property='og:site_name' content='shyの考研日志'>
 <meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='操作系统' /><meta property='article:tag' content='数据结构' /><meta property='article:tag' content='数学' /><meta property='article:tag' content='同步' /><meta property='article:tag' content='上下文' /><meta property='article:tag' content='调度' /><meta property='article:tag' content='栈' /><meta property='article:tag' content='函数' /><meta property='article:published_time' content='2025-07-14T21:15:02&#43;08:00'/><meta property='article:modified_time' content='2025-07-14T21:15:02&#43;08:00'/>
 <meta name="twitter:title" content="0714学习日志">
@@ -861,7 +861,7 @@ $$
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.d3ce7388ef5941233a2fd0541c1324f59fa8d8764f59d9721e2c172354121bcf.js" defer></script>
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

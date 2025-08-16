@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>不定积分 on shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</link>
+        <description>Recent content in 不定积分 on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Sat, 16 Aug 2025 23:48:21 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0816学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0816/</link>
+        <pubDate>Sat, 16 Aug 2025 23:48:21 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0816/</guid>
+        <description>&lt;h2 id=&#34;数学-一元积分学&#34;&gt;数学-一元积分学
+&lt;/h2&gt;&lt;h3 id=&#34;不定积分&#34;&gt;不定积分
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;原函数与不定积分&lt;/li&gt;
+&lt;li&gt;原函数（不定积分）存在定理
+&lt;ol&gt;
+&lt;li&gt;连续函数f(x)必有原函数F(x)&lt;/li&gt;
+&lt;li&gt;含有第一类间断点和无穷间断点的函数f(x)在包含该间断点的区间内没有原函数F(x)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;定积分&#34;&gt;定积分
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;定义
+&lt;ol&gt;
+&lt;li&gt;定积分的概念&lt;/li&gt;
+&lt;li&gt;几何意义&lt;/li&gt;
+&lt;li&gt;定积分的精确的定义&lt;/li&gt;
+&lt;li&gt;定积分的值与字母无关&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;存在定理
+&lt;ol&gt;
+&lt;li&gt;定积分存在的充分条件&lt;/li&gt;
+&lt;li&gt;定积分存在的必要条件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;性质
+&lt;ol&gt;
+&lt;li&gt;性质1 ：求区间长度&lt;/li&gt;
+&lt;li&gt;性质2：积分的线性性质&lt;/li&gt;
+&lt;li&gt;性质3：积分的可加（拆）性&lt;/li&gt;
+&lt;li&gt;性质4：积分的保号性&lt;/li&gt;
+&lt;li&gt;性质5：估值定理&lt;/li&gt;
+&lt;li&gt;性质6：中值定理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;变限积分&#34;&gt;变限积分
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;概念&lt;/li&gt;
+&lt;li&gt;性质&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;反常积分&#34;&gt;反常积分
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;概念&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;敛散性的判别法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;无穷区间&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;比较判别法&lt;/li&gt;
+&lt;li&gt;比较判别法的极限形式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;无界函数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;比较判别法&lt;/li&gt;
+&lt;li&gt;比较判别法的极限形式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
