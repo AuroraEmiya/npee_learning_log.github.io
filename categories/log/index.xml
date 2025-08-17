@@ -6,7 +6,101 @@
         <description>Recent content in Log on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 16 Aug 2025 23:48:21 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 17 Aug 2025 23:52:05 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0817学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0817/</link>
+        <pubDate>Sun, 17 Aug 2025 23:52:05 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0817/</guid>
+        <description>&lt;h2 id=&#34;数学-朝花夕拾&#34;&gt;数学-朝花夕拾
+&lt;/h2&gt;&lt;p&gt;关于一元函数的不定积分和积分&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;关于原函数的存在条件&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;连续函数一定有原函数&lt;/li&gt;
+&lt;li&gt;含有第一类间断点和无穷间断点的函数在包含改间断点的区间内不存在原函数&lt;/li&gt;
+&lt;li&gt;震荡间断点可能有可能没有&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定积分的极限形式
+&lt;/p&gt;
+$$
+   \begin{align}
+   \int_b^af(x)dx&amp;=\lim\limits_{\lambda\to0}\sum\limits_{k=1}^n{f(\xi_k)\Delta x_k},\xi\in[x_{k-1},x_k],\Delta x_i = x_i - x_{i-1}\\
+   \int_b^af(x)dx&amp;=\lim\limits_{n\to \infty}\sum\limits_{i=1}^nf(a+\frac{b-a}{n}i)\frac{b-a}{n}\\
+   \int_0^1f(x)dx&amp;=\lim\limits_{n\to \infty}\sum\limits_{i=1}^nf(\frac{i}{n})\frac{1}{n}
+   \end{align}
+   $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定积分存在定理&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;充分条件
+&lt;ol&gt;
+&lt;li&gt;闭区间连续&lt;/li&gt;
+&lt;li&gt;闭区间单调&lt;/li&gt;
+&lt;li&gt;闭区间有界，有限间断点（不包含无穷间断点）&lt;/li&gt;
+&lt;li&gt;闭区间有有限个第一类间断点&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;必要条件
+&lt;ol&gt;
+&lt;li&gt;闭区间有界&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;几个重要的积分不等式
+&lt;/p&gt;
+$$
+   \begin{align}
+   \left|\int_b^af(x)dx\right|&amp;\leq\int_b^a\left|f(x)\right|\\
+   mL\leq\int_b^af(x)dx&amp;\leq ML,(m\leq f(x)\leq M,L=|b-a|)
+   \end{align}
+   $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;变限积分性质&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;f(x)可积$\Rightarrow F(x)=\int_a^xf(t)dt$ 连续&lt;/li&gt;
+&lt;li&gt;f(x)连续$\Rightarrow F(x)=\int_a^xf(t)dt$ 可导且$F&amp;rsquo;(x)=f(x)$&lt;/li&gt;
+&lt;li&gt;跳跃间断点，则$F(x)$在该处不可导&lt;/li&gt;
+&lt;li&gt;可取间断点，则$F(x)$在该处可导，但$F&amp;rsquo;(x)\neq f(x)$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;反常积分&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+$$
+      \int_0^1\frac{1}{x^p}dx\begin{cases}
+      \text{收敛},0&lt;p&lt;1,\\
+      \\
+      \text{发散},p\geq1.\\
+      \end{cases}
+      $$&lt;/li&gt;
+&lt;li&gt;
+$$
+      \int_{1}^{+\infty}\frac{1}{x^p}dx\begin{cases}
+      \text{发散},0&lt;p&lt;1,\\
+      \\
+      \text{收敛},p\geq1.\\
+      \end{cases}
+      $$&lt;/li&gt;
+&lt;li&gt;
+$$
+      \int_0^1\frac{\ln x}{x^p}dx\begin{cases}
+      \text{收敛},0&lt;p&lt;1,\\
+      \text{发散},p\geq1.\\
+      \end{cases}
+      $$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>0816学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0816/</link>
         <pubDate>Sat, 16 Aug 2025 23:48:21 +0800</pubDate>
