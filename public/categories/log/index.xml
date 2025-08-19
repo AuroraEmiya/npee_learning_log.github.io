@@ -71,32 +71,24 @@ $$
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;反常积分&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
 $$
       \int_0^1\frac{1}{x^p}dx\begin{cases}
       \text{收敛},0&lt;p&lt;1,\\
       \\
       \text{发散},p\geq1.\\
       \end{cases}
-      $$&lt;/li&gt;
-&lt;li&gt;
-$$
+   $$$$
       \int_{1}^{+\infty}\frac{1}{x^p}dx\begin{cases}
       \text{发散},0&lt;p&lt;1,\\
       \\
       \text{收敛},p\geq1.\\
       \end{cases}
-      $$&lt;/li&gt;
-&lt;li&gt;
-$$
-      \int_0^1\frac{\ln x}{x^p}dx\begin{cases}
+   $$$$
+   \int_0^1\frac{\ln x}{x^p}dx\begin{cases}
       \text{收敛},0&lt;p&lt;1,\\
       \text{发散},p\geq1.\\
       \end{cases}
-      $$&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
+   $$&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         </item>
