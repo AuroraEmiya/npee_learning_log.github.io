@@ -6,7 +6,30 @@
         <description>Recent content in Memoes on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 13 Aug 2025 09:45:30 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/memo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 18 Aug 2025 14:04:16 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/memo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0818学习笔记</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0818/</link>
+        <pubDate>Mon, 18 Aug 2025 14:04:16 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0818/</guid>
+        <description>&lt;h2 id=&#34;计算机组成原理&#34;&gt;计算机组成原理
+&lt;/h2&gt;&lt;h3 id=&#34;朝花夕拾&#34;&gt;朝花夕拾
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;机器字长、指令字长、存储字长：
+&lt;ul&gt;
+&lt;li&gt;机器字长等于CPU内部的运算器位数和通用寄存器宽度。&lt;/li&gt;
+&lt;li&gt;一个存储单元中的位数称为存储字长。&lt;/li&gt;
+&lt;li&gt;指令字长取决于指令的功能和格式，可以单字长、半字长或双字长。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;即使是相同的高级语言程序在不同的计算机上进行编译生成的机器指令条数也有可能不同。&lt;/li&gt;
+&lt;li&gt;IR,MAR,MDR是CPU内部工作状态寄存器，对程序员透明（不可见）。&lt;/li&gt;
+&lt;li&gt;时钟频率不会影响CPI。&lt;/li&gt;
+&lt;li&gt;字长也是评价计算机系统性能的指标。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>0813错题笔记</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0813/</link>
         <pubDate>Wed, 13 Aug 2025 09:45:30 +0800</pubDate>
