@@ -6,7 +6,112 @@
         <description>Recent content in Posts on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sun, 24 Aug 2025 00:19:58 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 27 Aug 2025 19:12:07 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0827.1学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0827.1/</link>
+        <pubDate>Wed, 27 Aug 2025 19:12:07 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0827.1/</guid>
+        <description>&lt;h2 id=&#34;计算机组成原理&#34;&gt;计算机组成原理
+&lt;/h2&gt;&lt;h3 id=&#34;数据的表示和运算&#34;&gt;数据的表示和运算
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;进位计数制及其相互转换&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;进位计数法&lt;/li&gt;
+&lt;li&gt;不同进制之间的相互转换（十进制小数转换为二进制小数）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定点数的编码表示&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;真值与机器数&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;机器数的定点表示&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;定点小数&lt;/li&gt;
+&lt;li&gt;定点整数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;原码&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;最高位为符号位，对于一个n+1位的原码数，其表示范围为.
+&lt;/p&gt;
+$$
+         -(2^n-1)\leq x \leq 2^n-1
+         $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;简单直观&lt;/li&gt;
+&lt;li&gt;乘除实现简单&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;缺点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0表示不唯一&lt;/li&gt;
+&lt;li&gt;加减法复杂&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;补码&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;定义（n位）
+&lt;/p&gt;
+$$
+         [x]_{\text{补}}= (2^n + x )\mod2^n
+         $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;负数补码的方法：最高位为1，各位取反，末位加1&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;变形补码：双符号位&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;反码&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;移码&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;整数的表示&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;无符号整数&lt;/li&gt;
+&lt;li&gt;有符号整数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;C语言中的整数类型及类型转换&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;有符号无符号转换&lt;/p&gt;
+&lt;p&gt;机器数不变，解释方式发生改变&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;不同字长&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;0扩展&lt;/li&gt;
+&lt;li&gt;符号扩展&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>0824学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0824/</link>
         <pubDate>Sun, 24 Aug 2025 00:19:58 +0800</pubDate>
