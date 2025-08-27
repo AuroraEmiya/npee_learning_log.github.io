@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="计算机组成原理\r数据的表示和运算\r进位计数制及其相互转换\n进位计数法 不同进制之间的相互转换（十进制小数转换为二进制小数） 定点数的编码表示\n真值与机器数\n机器数的定点表示\n定点小数 定点整数 原码\n最高位为符号位，对于一个n+1位的原码数，其表示范围为. $$ -(2^n-1)\\leq x \\leq 2^n-1 $$ 优点：\n简单直观 乘除实现简单 缺点\n0表示不唯一 加减法复杂 补码\n定义（n位） $$ [x]_{\\text{补}}= (2^n + x )\\mod2^n $$ 负数补码的方法：最高位为1，各位取反，末位加1\n变形补码：双符号位\n反码\n移码\n整数的表示\n无符号整数 有符号整数 C语言中的整数类型及类型转换\n有符号无符号转换\n机器数不变，解释方式发生改变\n不同字长\n0扩展 符号扩展 ">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="计算机组成原理\r数据的表示和运算\r进位计数制及其相互转换\n进位计数法 不同进制之间的相互转换（十进制小数转换为二进制小数） 定点数的编码表示\n真值与机器数\n机器数的定点表示\n定点小数 定点整数 原码\n最高位为符号位，对于一个n+1位的原码数，其表示范围为. $$ -(2^n-1)\\leq x \\leq 2^n-1 $$ 优点：\n简单直观 乘除实现简单 缺点\n0表示不唯一 加减法复杂 补码\n定义（n位） $$ [x]_{\\text{补}}= (2^n + x )\\mod2^n $$ 负数补码的方法：最高位为1，各位取反，末位加1\n变形补码：双符号位\n反码\n移码\n整数的表示\n无符号整数 有符号整数 C语言中的整数类型及类型转换\n有符号无符号转换\n机器数不变，解释方式发生改变\n不同字长\n0扩展 符号扩展 运算方法和运算电路\r基本运算部件\n带标志加法器 算数逻辑单元(ALU ) 定点数的位移运算\n逻辑移位 算术移位 定点数的加减运算\n补码的加减运算\n逢二进一 加法，补码直接相加；减法，被减数与-减数的补码相加。 符号位一起参与运算 最终结果高位丢弃 溢出判别方法\n一位符号位\n操作数符号相同且与结果不同，即溢出\n双符号位\n00：正数，无溢出 01：正数，溢出 11：负数，无溢出 10：负数，溢出 采用一位符号位根据数值位的进位情况判断溢出\n">
 <title>0827.1学习日志</title>
 
 <link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0827.1/'>
 
 <link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0827.1学习日志">
-<meta property='og:description' content="计算机组成原理\r数据的表示和运算\r进位计数制及其相互转换\n进位计数法 不同进制之间的相互转换（十进制小数转换为二进制小数） 定点数的编码表示\n真值与机器数\n机器数的定点表示\n定点小数 定点整数 原码\n最高位为符号位，对于一个n+1位的原码数，其表示范围为. $$ -(2^n-1)\\leq x \\leq 2^n-1 $$ 优点：\n简单直观 乘除实现简单 缺点\n0表示不唯一 加减法复杂 补码\n定义（n位） $$ [x]_{\\text{补}}= (2^n + x )\\mod2^n $$ 负数补码的方法：最高位为1，各位取反，末位加1\n变形补码：双符号位\n反码\n移码\n整数的表示\n无符号整数 有符号整数 C语言中的整数类型及类型转换\n有符号无符号转换\n机器数不变，解释方式发生改变\n不同字长\n0扩展 符号扩展 ">
+<meta property='og:description' content="计算机组成原理\r数据的表示和运算\r进位计数制及其相互转换\n进位计数法 不同进制之间的相互转换（十进制小数转换为二进制小数） 定点数的编码表示\n真值与机器数\n机器数的定点表示\n定点小数 定点整数 原码\n最高位为符号位，对于一个n+1位的原码数，其表示范围为. $$ -(2^n-1)\\leq x \\leq 2^n-1 $$ 优点：\n简单直观 乘除实现简单 缺点\n0表示不唯一 加减法复杂 补码\n定义（n位） $$ [x]_{\\text{补}}= (2^n + x )\\mod2^n $$ 负数补码的方法：最高位为1，各位取反，末位加1\n变形补码：双符号位\n反码\n移码\n整数的表示\n无符号整数 有符号整数 C语言中的整数类型及类型转换\n有符号无符号转换\n机器数不变，解释方式发生改变\n不同字长\n0扩展 符号扩展 运算方法和运算电路\r基本运算部件\n带标志加法器 算数逻辑单元(ALU ) 定点数的位移运算\n逻辑移位 算术移位 定点数的加减运算\n补码的加减运算\n逢二进一 加法，补码直接相加；减法，被减数与-减数的补码相加。 符号位一起参与运算 最终结果高位丢弃 溢出判别方法\n一位符号位\n操作数符号相同且与结果不同，即溢出\n双符号位\n00：正数，无溢出 01：正数，溢出 11：负数，无溢出 10：负数，溢出 采用一位符号位根据数值位的进位情况判断溢出\n">
 <meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0827.1/'>
 <meta property='og:site_name' content='shyの考研日志'>
-<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2025-08-27T19:12:07&#43;08:00'/><meta property='article:modified_time' content='2025-08-27T19:12:07&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='数据的表示和运算' /><meta property='article:tag' content='计算机组成原理' /><meta property='article:published_time' content='2025-08-27T19:12:07&#43;08:00'/><meta property='article:modified_time' content='2025-08-27T19:12:07&#43;08:00'/>
 <meta name="twitter:title" content="0827.1学习日志">
-<meta name="twitter:description" content="计算机组成原理\r数据的表示和运算\r进位计数制及其相互转换\n进位计数法 不同进制之间的相互转换（十进制小数转换为二进制小数） 定点数的编码表示\n真值与机器数\n机器数的定点表示\n定点小数 定点整数 原码\n最高位为符号位，对于一个n+1位的原码数，其表示范围为. $$ -(2^n-1)\\leq x \\leq 2^n-1 $$ 优点：\n简单直观 乘除实现简单 缺点\n0表示不唯一 加减法复杂 补码\n定义（n位） $$ [x]_{\\text{补}}= (2^n + x )\\mod2^n $$ 负数补码的方法：最高位为1，各位取反，末位加1\n变形补码：双符号位\n反码\n移码\n整数的表示\n无符号整数 有符号整数 C语言中的整数类型及类型转换\n有符号无符号转换\n机器数不变，解释方式发生改变\n不同字长\n0扩展 符号扩展 ">
+<meta name="twitter:description" content="计算机组成原理\r数据的表示和运算\r进位计数制及其相互转换\n进位计数法 不同进制之间的相互转换（十进制小数转换为二进制小数） 定点数的编码表示\n真值与机器数\n机器数的定点表示\n定点小数 定点整数 原码\n最高位为符号位，对于一个n+1位的原码数，其表示范围为. $$ -(2^n-1)\\leq x \\leq 2^n-1 $$ 优点：\n简单直观 乘除实现简单 缺点\n0表示不唯一 加减法复杂 补码\n定义（n位） $$ [x]_{\\text{补}}= (2^n + x )\\mod2^n $$ 负数补码的方法：最高位为1，各位取反，末位加1\n变形补码：双符号位\n反码\n移码\n整数的表示\n无符号整数 有符号整数 C语言中的整数类型及类型转换\n有符号无符号转换\n机器数不变，解释方式发生改变\n不同字长\n0扩展 符号扩展 运算方法和运算电路\r基本运算部件\n带标志加法器 算数逻辑单元(ALU ) 定点数的位移运算\n逻辑移位 算术移位 定点数的加减运算\n补码的加减运算\n逢二进一 加法，补码直接相加；减法，被减数与-减数的补码相加。 符号位一起参与运算 最终结果高位丢弃 溢出判别方法\n一位符号位\n操作数符号相同且与结果不同，即溢出\n双符号位\n00：正数，无溢出 01：正数，溢出 11：负数，无溢出 10：负数，溢出 采用一位符号位根据数值位的进位情况判断溢出\n">
     
     </head>
     <body class="
@@ -246,6 +246,7 @@
     <li><a href="#计算机组成原理">计算机组成原理</a>
       <ul>
         <li><a href="#数据的表示和运算">数据的表示和运算</a></li>
+        <li><a href="#运算方法和运算电路">运算方法和运算电路</a></li>
       </ul>
     </li>
   </ul>
@@ -424,6 +425,85 @@ $$
 </ol>
 </li>
 </ol>
+<h3 id="运算方法和运算电路">运算方法和运算电路
+</h3><ol>
+<li>
+<p>基本运算部件</p>
+<ul>
+<li>带标志加法器</li>
+<li>算数逻辑单元(ALU )</li>
+</ul>
+</li>
+<li>
+<p>定点数的位移运算</p>
+<ul>
+<li>逻辑移位</li>
+<li>算术移位</li>
+</ul>
+</li>
+<li>
+<p>定点数的加减运算</p>
+<ul>
+<li>
+<p>补码的加减运算</p>
+<ol>
+<li>逢二进一</li>
+<li>加法，补码直接相加；减法，被减数与-减数的补码相加。</li>
+<li>符号位一起参与运算</li>
+<li>最终结果高位丢弃</li>
+</ol>
+</li>
+<li>
+<p>溢出判别方法</p>
+<ol>
+<li>
+<p>一位符号位</p>
+<p>操作数符号相同且与结果不同，即溢出</p>
+</li>
+<li>
+<p>双符号位</p>
+<ol>
+<li>00：正数，无溢出</li>
+<li>01：正数，溢出</li>
+<li>11：负数，无溢出</li>
+<li>10：负数，溢出</li>
+</ol>
+</li>
+<li>
+<p>采用一位符号位根据数值位的进位情况判断溢出</p>
+<p>符号位的进位与最高数位的进位相同，则无溢出，否则溢出。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>加减运算电路</p>
+<ol>
+<li><strong>CF</strong></li>
+<li><strong>OF</strong></li>
+<li><strong>ZF</strong></li>
+<li><strong>SF</strong></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>定点数的乘除运算</strong></p>
+<ol>
+<li>定点乘法运算
+<ul>
+<li>基本原理</li>
+<li>乘法运算电路</li>
+</ul>
+</li>
+<li>除法运算
+<ul>
+<li>基本原理</li>
+<li>除法运算电路</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
 
 </section>
 
@@ -431,6 +511,10 @@ $$
     <footer class="article-footer">
     
     <section class="article-tags">
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97/">数据的表示和运算</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
         
     </section>
 
@@ -470,6 +554,41 @@ $$
     
 
     
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/memo/0818/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0818学习笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0813/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0813学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
 
      
     
