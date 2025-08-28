@@ -6,7 +6,191 @@
         <description>Recent content in 计算机组成原理 on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 18 Aug 2025 14:04:16 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 27 Aug 2025 19:12:07 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0827.1学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0827.1/</link>
+        <pubDate>Wed, 27 Aug 2025 19:12:07 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0827.1/</guid>
+        <description>&lt;h2 id=&#34;计算机组成原理&#34;&gt;计算机组成原理
+&lt;/h2&gt;&lt;h3 id=&#34;数据的表示和运算&#34;&gt;数据的表示和运算
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;进位计数制及其相互转换&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;进位计数法&lt;/li&gt;
+&lt;li&gt;不同进制之间的相互转换（十进制小数转换为二进制小数）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定点数的编码表示&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;真值与机器数&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;机器数的定点表示&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;定点小数&lt;/li&gt;
+&lt;li&gt;定点整数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;原码&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;最高位为符号位，对于一个n+1位的原码数，其表示范围为.
+&lt;/p&gt;
+$$
+         -(2^n-1)\leq x \leq 2^n-1
+         $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;简单直观&lt;/li&gt;
+&lt;li&gt;乘除实现简单&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;缺点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0表示不唯一&lt;/li&gt;
+&lt;li&gt;加减法复杂&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;补码&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;定义（n位）
+&lt;/p&gt;
+$$
+         [x]_{\text{补}}= (2^n + x )\mod2^n
+         $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;负数补码的方法：最高位为1，各位取反，末位加1&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;变形补码：双符号位&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;反码&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;移码&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;整数的表示&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;无符号整数&lt;/li&gt;
+&lt;li&gt;有符号整数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;C语言中的整数类型及类型转换&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;有符号无符号转换&lt;/p&gt;
+&lt;p&gt;机器数不变，解释方式发生改变&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;不同字长&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;0扩展&lt;/li&gt;
+&lt;li&gt;符号扩展&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;运算方法和运算电路&#34;&gt;运算方法和运算电路
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;基本运算部件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;带标志加法器&lt;/li&gt;
+&lt;li&gt;算数逻辑单元(ALU )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定点数的位移运算&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;逻辑移位&lt;/li&gt;
+&lt;li&gt;算术移位&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定点数的加减运算&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;补码的加减运算&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;逢二进一&lt;/li&gt;
+&lt;li&gt;加法，补码直接相加；减法，被减数与-减数的补码相加。&lt;/li&gt;
+&lt;li&gt;符号位一起参与运算&lt;/li&gt;
+&lt;li&gt;最终结果高位丢弃&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;溢出判别方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;一位符号位&lt;/p&gt;
+&lt;p&gt;操作数符号相同且与结果不同，即溢出&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;双符号位&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;00：正数，无溢出&lt;/li&gt;
+&lt;li&gt;01：正数，溢出&lt;/li&gt;
+&lt;li&gt;11：负数，无溢出&lt;/li&gt;
+&lt;li&gt;10：负数，溢出&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;采用一位符号位根据数值位的进位情况判断溢出&lt;/p&gt;
+&lt;p&gt;符号位的进位与最高数位的进位相同，则无溢出，否则溢出。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;加减运算电路&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;CF&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OF&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ZF&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SF&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;定点数的乘除运算&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;定点乘法运算
+&lt;ul&gt;
+&lt;li&gt;基本原理&lt;/li&gt;
+&lt;li&gt;乘法运算电路&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;除法运算
+&lt;ul&gt;
+&lt;li&gt;基本原理&lt;/li&gt;
+&lt;li&gt;除法运算电路&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>0818学习笔记</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0818/</link>
         <pubDate>Mon, 18 Aug 2025 14:04:16 +0800</pubDate>
