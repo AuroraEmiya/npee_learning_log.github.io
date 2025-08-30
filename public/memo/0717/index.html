@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/npee_learning_log.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=npee_learning_log.github.io/livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="关于数学，cool stuff\r首先，泰勒吧\n设$f(x)$在点$x=0$处$n$阶可导，则存在$x=0$的一个领域，对于该领域内的任一点$x$，有\n$$ f(x) = f(0) + f{'}(0)x + \\frac{f^{''}(0)}{2!}x^2 + \\frac{f^{'''}(0)}{3!}x^3 + ...+ \\frac{f^{(n)}(0)}{n!}x^n + o(x^n) $$ 其次，记住吧\n一些食品级的等价无穷小\n$x-\\sin{x}\\sim\\frac{1}{6}x^3,(x\\to 0)$ $\\text{arcsin}x-x\\sim\\frac{1}{6}x^3,(x\\to 0)$ $x-\\text{arctan}x\\sim\\frac{1}{3}x^3,(x\\to 0)$ $\\tan{x}-x\\sim\\frac{1}{3}x^3,(x\\to 0)$ 一些重要的泰勒展开\n$\\sin x = x - \\frac{1}{3!}x^3 + o(x^3)$ $\\text{arcsin} x = x + \\frac{1}{3!}x^3 + o(x^3)$ $\\cos x = 1 - \\frac{1}{2!}x^2 + \\frac{1}{4!}x^4 + o(x^4)$ $\\tan x = x + \\frac{1}{3}x^3 + o(x^3)$ $\\text{arctan} x = x - \\frac{1}{3}x^3 + o(x^3)$ $\\ln (x+1) = x - \\frac{1}{2}x^2 + \\frac{1}{3}x^3 + o(x^3)$ $e^x =1 + x + \\frac{1}{2!}x^2 + \\frac{1}{3!}x^3 + o(x^3)$ ${(1+a)}^{\\alpha} = 1 + \\alpha x - \\frac{\\alpha(\\alpha-1)}{2!}x^2 +o(x^2)$ 易错栏目-时不时更新一些易错的知识点\r临界区和临界资源，以及进程处于临界区是否可以进行调度 $\\lim\\limits_{x\\to\\infty}e^x$,$\\lim\\limits_{x\\to-\\infty}e^x$,$\\lim\\limits_{x\\to+\\infty}e^x$ 系统调用的过程，谁保存了什么上下文信息（操作系统，硬件）。 安全状态，不安全状态，死锁发生的时间的关系 ">
 <title>0717学习笔记</title>
 
-<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/memo/0717/'>
+<link rel='canonical' href='http://localhost:1313/npee_learning_log.github.io/memo/0717/'>
 
 <link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0717学习笔记">
 <meta property='og:description' content="关于数学，cool stuff\r首先，泰勒吧\n设$f(x)$在点$x=0$处$n$阶可导，则存在$x=0$的一个领域，对于该领域内的任一点$x$，有\n$$ f(x) = f(0) + f{'}(0)x + \\frac{f^{''}(0)}{2!}x^2 + \\frac{f^{'''}(0)}{3!}x^3 + ...+ \\frac{f^{(n)}(0)}{n!}x^n + o(x^n) $$ 其次，记住吧\n一些食品级的等价无穷小\n$x-\\sin{x}\\sim\\frac{1}{6}x^3,(x\\to 0)$ $\\text{arcsin}x-x\\sim\\frac{1}{6}x^3,(x\\to 0)$ $x-\\text{arctan}x\\sim\\frac{1}{3}x^3,(x\\to 0)$ $\\tan{x}-x\\sim\\frac{1}{3}x^3,(x\\to 0)$ 一些重要的泰勒展开\n$\\sin x = x - \\frac{1}{3!}x^3 + o(x^3)$ $\\text{arcsin} x = x + \\frac{1}{3!}x^3 + o(x^3)$ $\\cos x = 1 - \\frac{1}{2!}x^2 + \\frac{1}{4!}x^4 + o(x^4)$ $\\tan x = x + \\frac{1}{3}x^3 + o(x^3)$ $\\text{arctan} x = x - \\frac{1}{3}x^3 + o(x^3)$ $\\ln (x+1) = x - \\frac{1}{2}x^2 + \\frac{1}{3}x^3 + o(x^3)$ $e^x =1 + x + \\frac{1}{2!}x^2 + \\frac{1}{3!}x^3 + o(x^3)$ ${(1+a)}^{\\alpha} = 1 + \\alpha x - \\frac{\\alpha(\\alpha-1)}{2!}x^2 +o(x^2)$ 易错栏目-时不时更新一些易错的知识点\r临界区和临界资源，以及进程处于临界区是否可以进行调度 $\\lim\\limits_{x\\to\\infty}e^x$,$\\lim\\limits_{x\\to-\\infty}e^x$,$\\lim\\limits_{x\\to+\\infty}e^x$ 系统调用的过程，谁保存了什么上下文信息（操作系统，硬件）。 安全状态，不安全状态，死锁发生的时间的关系 ">
-<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/memo/0717/'>
+<meta property='og:url' content='http://localhost:1313/npee_learning_log.github.io/memo/0717/'>
 <meta property='og:site_name' content='shyの考研日志'>
 <meta property='og:type' content='article'><meta property='article:section' content='Memo' /><meta property='article:tag' content='泰勒展开' /><meta property='article:tag' content='等价无穷小' /><meta property='article:published_time' content='2025-07-17T23:07:05&#43;08:00'/><meta property='article:modified_time' content='2025-07-17T23:07:05&#43;08:00'/>
 <meta name="twitter:title" content="0717学习笔记">
@@ -590,7 +590,7 @@ $$
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.d3ce7388ef5941233a2fd0541c1324f59fa8d8764f59d9721e2c172354121bcf.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

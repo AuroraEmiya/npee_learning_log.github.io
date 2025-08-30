@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Update on shyの考研日志</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/categories/update/</link>
+        <link>http://localhost:1313/npee_learning_log.github.io/categories/update/</link>
         <description>Recent content in Update on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 15 Aug 2025 01:46:06 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/update/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Aug 2025 01:46:06 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/categories/update/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>0815网站更新日志</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/update/0815/</link>
+        <link>http://localhost:1313/npee_learning_log.github.io/update/0815/</link>
         <pubDate>Fri, 15 Aug 2025 01:46:06 +0800</pubDate>
         
-        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/update/0815/</guid>
+        <guid>http://localhost:1313/npee_learning_log.github.io/update/0815/</guid>
         <description>&lt;h2 id=&#34;网站更新ver21评论系统&#34;&gt;网站更新ver2.1&amp;ndash;评论系统
 &lt;/h2&gt;&lt;p&gt;🔊 更新内容：为每一篇博文添加了基于 &lt;a class=&#34;link&#34; href=&#34;https://giscus.app/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Giscus&lt;/a&gt;的评论系统，如果想要评论请使用github账号登陆。&lt;/p&gt;
@@ -30,10 +30,10 @@
         </item>
         <item>
         <title>0727网站更新日志</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/update/0727/</link>
+        <link>http://localhost:1313/npee_learning_log.github.io/update/0727/</link>
         <pubDate>Sun, 27 Jul 2025 02:31:05 +0800</pubDate>
         
-        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/update/0727/</guid>
+        <guid>http://localhost:1313/npee_learning_log.github.io/update/0727/</guid>
         <description>&lt;h2 id=&#34;hello-world&#34;&gt;Hello World
 &lt;/h2&gt;&lt;p&gt;这是博主在某个深夜对着自己的博客网页捣鼓后，突然做出的决定：当网站有重大版本更新的时候，记录新版本的变化。&lt;/p&gt;
 &lt;p&gt;其实这个博客页面已经长期维护了2周，一直没有认真上手去学习&lt;code&gt;hugo&lt;/code&gt;和&lt;code&gt;stack&lt;/code&gt;的相关配置，主页的样子也是主打一个能用就行。但是这就是我的网站，我认为有必要记录它和我的成长变化，也好在日后回忆中逐渐鲜活这一路走来的历程，现在博主锐意备战今年（2025）的考研，因此这个网站主要还是记录自己的学习进度和笔记。以后&amp;hellip;&amp;hellip;也许会变成一个更丰富的网站（吧？雾！）&lt;/p&gt;
