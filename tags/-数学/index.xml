@@ -15,13 +15,35 @@
         <description>&lt;h2 id=&#34;数学-积分不等式和等式&#34;&gt;数学-积分不等式和等式
 &lt;/h2&gt;&lt;h3 id=&#34;积分等式&#34;&gt;积分等式
 &lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;积分中值定理&lt;/li&gt;
-&lt;li&gt;用夹逼准则&lt;/li&gt;
-&lt;li&gt;用积分法
+&lt;li&gt;
+&lt;p&gt;积分中值定理
+&lt;/p&gt;
+$$
+   \exists \xi\in(a,b),\int_a^bf(x)dx = f(\xi)(b-a)
+   $$$$
+   \exists \xi\in(a,b),\int_a^b{f(x)g(x)d x} = f(\xi)\int_a^bg(x)dx,g(x)\text{保号}
+   $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;用夹逼准则&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;用积分法&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;恒等变形&lt;/li&gt;
-&lt;li&gt;换元法&lt;/li&gt;
-&lt;li&gt;分布积分法&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;恒等变形&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;换元法
+&lt;/p&gt;
+$$
+     \int f(x)dx = \int f(\varphi(t))\cdot\varphi&#39;(t)dt
+     $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;分布积分法
+&lt;/p&gt;
+$$
+     \int vdu = vu - \int udv
+     $$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>柯西不等式积分形式 on shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%9F%AF%E8%A5%BF%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%A7%AF%E5%88%86%E5%BD%A2%E5%BC%8F/</link>
+        <description>Recent content in 柯西不等式积分形式 on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Sat, 30 Aug 2025 19:32:01 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%9F%AF%E8%A5%BF%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%A7%AF%E5%88%86%E5%BD%A2%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0830学习笔记</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0830/</link>
+        <pubDate>Sat, 30 Aug 2025 19:32:01 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0830/</guid>
+        <description>&lt;h2 id=&#34;数学-柯西不等式三代人的传承&#34;&gt;数学-柯西不等式：三代人的传承
+&lt;/h2&gt;&lt;p&gt;Given any $\alpha \in \mathbb{R}$
+&lt;/p&gt;
+$$
+\int_a^b \left|f(x)-\alpha g(x)\right|^2dx\geq 0
+$$&lt;p&gt;
+Break it Down and become
+&lt;/p&gt;
+$$
+\alpha^2\int_a^b g^2(x)dx - 2\alpha \int_a^b f(x)g(x)dx+\int_a^b f^2(x)dx\geq 0
+$$&lt;p&gt;
+to make it apply for any $\alpha$
+&lt;/p&gt;
+$$
+\Delta = 4\left(\int_a^b f(x)g(x)dx\right)^2 - 4\int_a^bf^2(x)dx\int_a^b g^2(x)dx \leq 0
+$$&lt;p&gt;
+which is
+&lt;/p&gt;
+$$
+\left(\int_a^b f(x)g(x)dx\right)^2 \leq \int_a^bf^2(x)dx\int_a^b g^2(x)dx
+$$&lt;p&gt;
+遇到一道题目,$f(a)=0$
+&lt;/p&gt;
+$$
+\int_a^b f^2(x)dx\leq \frac{(b-a)^2}{2}\int_a^b[f&#39;(x)]^2dx
+$$&lt;p&gt;
+题眼：
+&lt;/p&gt;
+$$
+f^2(x) = \left(\int_a^x f&#39;(x)dx\right)^2\leq \int_a^x 1^2 dx\int_a^x[f&#39;(x)]^2dx
+$$</description>
+        </item>
+        
+    </channel>
+</rss>
