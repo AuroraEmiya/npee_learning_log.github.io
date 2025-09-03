@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on shyの考研日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/categories/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/categories/</link>
         <description>Recent content in Categories on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 30 Aug 2025 19:32:01 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Memo</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/categories/memo/</link>
-        <pubDate>Sat, 30 Aug 2025 19:32:01 +0800</pubDate>
+        <lastBuildDate>Wed, 03 Sep 2025 22:21:06 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Log</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/</link>
+        <pubDate>Wed, 03 Sep 2025 22:21:06 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/categories/memo/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/</guid>
         <description></description>
         </item>
         <item>
-        <title>Log</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/categories/log/</link>
-        <pubDate>Fri, 29 Aug 2025 23:30:56 +0800</pubDate>
+        <title>Memo</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/categories/memo/</link>
+        <pubDate>Sat, 30 Aug 2025 19:32:01 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/categories/log/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/categories/memo/</guid>
         <description></description>
         </item>
         <item>
         <title>Update</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/categories/update/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/categories/update/</link>
         <pubDate>Fri, 15 Aug 2025 01:46:06 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/categories/update/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/categories/update/</guid>
         <description></description>
         </item>
         <item>
         <title>Interests</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/categories/interests/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/categories/interests/</link>
         <pubDate>Thu, 31 Jul 2025 16:01:32 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/categories/interests/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/categories/interests/</guid>
         <description></description>
         </item>
         <item>
         <title>Diary</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/categories/diary/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/categories/diary/</link>
         <pubDate>Sat, 12 Jul 2025 22:27:55 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/categories/diary/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/categories/diary/</guid>
         <description></description>
         </item>
         

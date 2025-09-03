@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>英语 on shyの考研日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/tags/%E8%8B%B1%E8%AF%AD/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E8%8B%B1%E8%AF%AD/</link>
         <description>Recent content in 英语 on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sun, 24 Aug 2025 00:19:58 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/tags/%E8%8B%B1%E8%AF%AD/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 24 Aug 2025 00:19:58 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E8%8B%B1%E8%AF%AD/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>0824学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0824/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0824/</link>
         <pubDate>Sun, 24 Aug 2025 00:19:58 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0824/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0824/</guid>
         <description>&lt;h2 id=&#34;a&#34;&gt;A
 &lt;/h2&gt;&lt;h3 id=&#34;-auth-&#34;&gt;-auth-
 &lt;/h3&gt;&lt;ol&gt;
@@ -174,10 +174,10 @@
         </item>
         <item>
         <title>0726学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0726/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0726/</link>
         <pubDate>Sat, 26 Jul 2025 11:19:57 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0726/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0726/</guid>
         <description>&lt;h2 id=&#34;操作系统-一些易错知识点&#34;&gt;操作系统-一些易错知识点
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;在计算平均访存时间时要注意快表TLB和页表的访问是&lt;strong&gt;串行&lt;/strong&gt;还是并行的，也要注意页表是&lt;strong&gt;单级&lt;/strong&gt;还是多级的&lt;/li&gt;
@@ -363,10 +363,10 @@ $$
         </item>
         <item>
         <title>0725学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0725/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0725/</link>
         <pubDate>Fri, 25 Jul 2025 20:24:54 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0725/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0725/</guid>
         <description>&lt;h2 id=&#34;操作系统-易错小知识&#34;&gt;操作系统-易错小知识
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;在多个进程并发执行时，所有进程的页表大多数驻留在内存中，在系统中只设置一个页表寄存器（PTR），它存放页表在内存中的始址和长度&lt;/li&gt;
@@ -404,10 +404,10 @@ $$
         </item>
         <item>
         <title>0723学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0723/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0723/</link>
         <pubDate>Wed, 23 Jul 2025 23:53:15 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0723/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0723/</guid>
         <description>&lt;h2 id=&#34;数学-1000题&#34;&gt;数学-1000题
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;对于$x_{n+1}=f(x_n)$的数列极限的判定的过程
@@ -476,10 +476,10 @@ $$
         </item>
         <item>
         <title>0722学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0722/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0722/</link>
         <pubDate>Tue, 22 Jul 2025 23:31:50 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0722/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0722/</guid>
         <description>&lt;h2 id=&#34;操作系统--la-pa-ca&#34;&gt;操作系统- (LA-PA-CA)
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;带快表的两级系统的地址翻译过程
@@ -676,10 +676,10 @@ $$
         </item>
         <item>
         <title>0721学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0721/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0721/</link>
         <pubDate>Mon, 21 Jul 2025 17:53:02 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0721/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0721/</guid>
         <description>&lt;h2 id=&#34;英语-vocabulary-builder&#34;&gt;英语-vocabulary builder
 &lt;/h2&gt;&lt;p&gt;使用 &lt;code&gt;The Merriam-Webster Vocabulary Builder&lt;/code&gt;作为词根法扩充词汇量的工具书(由网友canon提供)&lt;/p&gt;
 &lt;ol&gt;
@@ -839,10 +839,10 @@ $$
         </item>
         <item>
         <title>0712学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0712/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0712/</link>
         <pubDate>Sat, 12 Jul 2025 22:05:39 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0712/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0712/</guid>
         <description>&lt;h2 id=&#34;操作系统-int-0x80&#34;&gt;操作系统-int 0x80
 &lt;/h2&gt;&lt;p&gt;操作系统的运行环境&lt;/p&gt;
 &lt;ol&gt;
