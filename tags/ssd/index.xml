@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>SSD on shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/ssd/</link>
+        <description>Recent content in SSD on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Wed, 03 Sep 2025 22:37:10 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/ssd/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0902学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0902/</link>
+        <pubDate>Wed, 03 Sep 2025 22:37:10 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0902/</guid>
+        <description>&lt;h2 id=&#34;计算机组成原理&#34;&gt;计算机组成原理
+&lt;/h2&gt;&lt;h3 id=&#34;主存储器与cpu的连接&#34;&gt;主存储器与CPU的连接
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;连接原理：
+&lt;ul&gt;
+&lt;li&gt;主存储器通过数据总线、地址总线和控制总线与CPU连接&lt;/li&gt;
+&lt;li&gt;数据总线的位数与工作频率的乘积正比于数据传输速率&lt;/li&gt;
+&lt;li&gt;地址总线的位数决定了可寻址的最大内存空间&lt;/li&gt;
+&lt;li&gt;控制总线(读/写)指出总线周期的类型和本次输入/输出操作完成的时刻&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;主存容量的扩展
+&lt;ul&gt;
+&lt;li&gt;位扩展法&lt;/li&gt;
+&lt;li&gt;字扩展法&lt;/li&gt;
+&lt;li&gt;位字同时扩展法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;存储芯片的地址分配和片选
+&lt;ul&gt;
+&lt;li&gt;线选法&lt;/li&gt;
+&lt;li&gt;译码片选法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;存储器与CPU的连接
+&lt;ul&gt;
+&lt;li&gt;合理选择存储芯片&lt;/li&gt;
+&lt;li&gt;地址线的连接(cpu的地址线通常比芯片的地址线多，地位连接，高位片选)&lt;/li&gt;
+&lt;li&gt;数据线的连接&lt;/li&gt;
+&lt;li&gt;读写命令线的连接&lt;/li&gt;
+&lt;li&gt;片选线的连接&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;外部存储器&#34;&gt;外部存储器
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;磁盘存储器&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;组成&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;磁盘驱动器&lt;/li&gt;
+&lt;li&gt;磁盘控制器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;存储区域&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;磁头数&lt;/li&gt;
+&lt;li&gt;柱面数&lt;/li&gt;
+&lt;li&gt;扇区数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;性能指标&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;记录密度&lt;/li&gt;
+&lt;li&gt;磁盘的容量 = 记录面数 * 柱面数* 每道扇区数 * 每个扇区的容量&lt;/li&gt;
+&lt;li&gt;存取时间&lt;/li&gt;
+&lt;li&gt;数据传输速率&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;磁盘地址&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;柱面号（磁道号）&lt;/th&gt;
+          &lt;th&gt;盘面号（磁头）&lt;/th&gt;
+          &lt;th&gt;扇区号&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;磁盘的工作过程&lt;/p&gt;
+&lt;p&gt;寻址、读盘、写盘。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;取控制字&lt;/li&gt;
+&lt;li&gt;执行控制字&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;磁盘阵列（RAID）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;RAID0：无冗余和无校验的磁盘阵列&lt;/li&gt;
+&lt;li&gt;RAID1：镜像磁盘阵列&lt;/li&gt;
+&lt;li&gt;RAID2：采用纠错的海明码的磁盘阵列&lt;/li&gt;
+&lt;li&gt;RAID3：位交叉奇偶校验的磁盘阵列&lt;/li&gt;
+&lt;li&gt;RAID4：块交叉奇偶校验的磁盘阵列&lt;/li&gt;
+&lt;li&gt;RAID5：无独立校验的奇偶校验磁盘阵列&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;固态硬盘（SSD）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;劣势：随机写很慢，擦除块较慢&lt;/li&gt;
+&lt;li&gt;优势：
+&lt;ol&gt;
+&lt;li&gt;半导体存储器，没有移动部件，随机访问速度比磁盘块很多，无噪音和震动；&lt;/li&gt;
+&lt;li&gt;能耗低，抗震性好，安全性高&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;磨损均衡
+&lt;ol&gt;
+&lt;li&gt;动态磨损均衡&lt;/li&gt;
+&lt;li&gt;静态磨损均衡（操作系统重合知识点）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;高速缓冲存储器cache&#34;&gt;高速缓冲存储器Cache
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;程序访问的局部性原理&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cache的基本工作原理&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;当CPU发出读请求时：若命中，则将访存地址转换成Cache地址。直接对Cache进行读操作；否则，需要访问主存，并把此字所在的块一次性的从主存调入Cache。若满，则根据某种替换算法，用这个块替换。整个过程由硬件实现。&lt;/li&gt;
+&lt;li&gt;当CPU发出写请求时：若命中，有可能会遇到Cache与主存中的内容不一致的问题。需要按照一定的写策略进行处理。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cache的命中率计算&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cache和主存的映射方式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;直接映射&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;标记&lt;/th&gt;
+          &lt;th&gt;Cache行号&lt;/th&gt;
+          &lt;th&gt;块内地址&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;全相联映射&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;标记&lt;/th&gt;
+          &lt;th&gt;块内地址&lt;/th&gt;
+          &lt;th&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;组相联映射&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;标记&lt;/th&gt;
+          &lt;th&gt;组号&lt;/th&gt;
+          &lt;th&gt;块内地址&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cache中主存块的替换算法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;随机算法&lt;/li&gt;
+&lt;li&gt;FIFO算法&lt;/li&gt;
+&lt;li&gt;LRU算法&lt;/li&gt;
+&lt;li&gt;最不经常使用算法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cache的一致性问题&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;全写法（直写法、write-through）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;写缓冲&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;回写法（wirte-back）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;脏位&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;写分配法(write-allocate)（写不命中）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;非写分配法(not-write-allocate)（写不命中）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;​&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
