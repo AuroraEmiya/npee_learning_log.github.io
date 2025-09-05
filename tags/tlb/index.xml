@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>TLB on shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/tlb/</link>
+        <description>Recent content in TLB on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Fri, 05 Sep 2025 23:00:46 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/tlb/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0903学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0903/</link>
+        <pubDate>Fri, 05 Sep 2025 23:00:46 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0903/</guid>
+        <description>&lt;h2 id=&#34;计算机组成原理&#34;&gt;计算机组成原理
+&lt;/h2&gt;&lt;h3 id=&#34;虚拟存储器&#34;&gt;虚拟存储器
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;基本概念&lt;/li&gt;
+&lt;li&gt;页式虚拟存储器
+&lt;ol&gt;
+&lt;li&gt;页表&lt;/li&gt;
+&lt;li&gt;地址转换&lt;/li&gt;
+&lt;li&gt;快表(TLB translation lookaside buffer)&lt;/li&gt;
+&lt;li&gt;具有TLB和Cache的多级存储系统&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;段式虚拟存储器&lt;/li&gt;
+&lt;li&gt;段页式虚拟存储器&lt;/li&gt;
+&lt;li&gt;虚拟存储器与Cache的比较
+&lt;ol&gt;
+&lt;li&gt;相同之处
+&lt;ul&gt;
+&lt;li&gt;最终目标都是为了提高系统性能，两者都有容量、速度、价格的梯度&lt;/li&gt;
+&lt;li&gt;都把数据划分为小信息块，并作为基本的交换单位，虚存系统的信息块更大&lt;/li&gt;
+&lt;li&gt;都有地址映射、替换算法、更新策略等问题&lt;/li&gt;
+&lt;li&gt;都依据局部性原理应用快速缓存的思想，将活跃的数据放在相对高速的部件中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;不同之处
+&lt;ul&gt;
+&lt;li&gt;Cache主要解决系统速度，而虚拟存储器却是为了解决主存容量&lt;/li&gt;
+&lt;li&gt;Cache全由硬件实现，是硬件存储器，对所有程序员透明；而虚拟存储器由OS和硬件共同实现，是逻辑上的存储器，对系统程序员不透明，但对应用程序员透明&lt;/li&gt;
+&lt;li&gt;对于不命中性能影响， 因为CPU的速度约为Cache的10倍，主存的速度为硬件的100倍以上，因此虚拟存储器系统不命中时对系统性能影响更大&lt;/li&gt;
+&lt;li&gt;CPU与Cache和主存都建立了直接访问通道，而辅存与CPU没有直接通路。也就是说在Cache不命中时能和CPU直接通信，同时将数据调入Cache；而虚拟存储器系统不命中时，只能先由硬盘调入主存，而不能直接和CPU通信&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
