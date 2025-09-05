@@ -6,7 +6,270 @@
         <description>Recent content in Log on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 03 Sep 2025 22:37:10 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 05 Sep 2025 23:42:41 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0904学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0904/</link>
+        <pubDate>Fri, 05 Sep 2025 23:42:41 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0904/</guid>
+        <description>&lt;h2 id=&#34;计算机组成原理&#34;&gt;计算机组成原理
+&lt;/h2&gt;&lt;h3 id=&#34;指令系统&#34;&gt;指令系统
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;指令集体系结构（ISA）&lt;/p&gt;
+&lt;p&gt;ISA规定的内容主要包括：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;指令格式，指令寻址方式，操作类型，以及每种操作对应的操作数的相应规定&lt;/li&gt;
+&lt;li&gt;操作数的类型，操作数寻址方式，以及是按大段方式还是小端方式&lt;/li&gt;
+&lt;li&gt;程序可访问的寄存器编号、个数和位数，存储空间的大小和编址方式&lt;/li&gt;
+&lt;li&gt;指令执行过程的控制方式等，包括程序计数器、条件码定义等&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;指令的基本格式&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;操作码字段&lt;/th&gt;
+          &lt;th&gt;地址码字段&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;定长指令字结构，变长指令字结构。主存一般是按字节编址的，所以指令字长通常为字节的整数倍。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;零地址指令&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;OP&lt;/th&gt;
+          &lt;th&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一地址指令&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;OP&lt;/th&gt;
+          &lt;th&gt;$A_1$&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;二地址指令&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;OP&lt;/th&gt;
+          &lt;th&gt;$A_1$&lt;/th&gt;
+          &lt;th&gt;$A_2$&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;三地址指令&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;OP&lt;/th&gt;
+          &lt;th&gt;$A_1$&lt;/th&gt;
+          &lt;th&gt;$A_2$&lt;/th&gt;
+          &lt;th&gt;$A_3$（结果）&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;四地址指令&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;OP&lt;/th&gt;
+          &lt;th&gt;$A_1$&lt;/th&gt;
+          &lt;th&gt;$A_2$&lt;/th&gt;
+          &lt;th&gt;$A_3$（结果）&lt;/th&gt;
+          &lt;th&gt;$A_4$（下址）&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定长操作码指令格式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;扩展操作码指令格式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;指令的操作类型&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;数据传送MOV，LOAD，STORE，PUSH，POP&lt;/li&gt;
+&lt;li&gt;算数和逻辑运算ADD，SUB，MUL，DIV，INC，DEC，AND，OR，NOT，XOR&lt;/li&gt;
+&lt;li&gt;移位操作&lt;/li&gt;
+&lt;li&gt;转移操作JMP，BRANCH，CALL，RET，TRAP&lt;/li&gt;
+&lt;li&gt;输入输出操作&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;指令的寻址方式&#34;&gt;指令的寻址方式
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;指令寻址和数据寻址&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;指令寻址&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;顺序寻址PC+1&lt;/li&gt;
+&lt;li&gt;跳跃寻址&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;数据寻址&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;操作码&lt;/th&gt;
+          &lt;th&gt;寻址特征&lt;/th&gt;
+          &lt;th&gt;形式地址A&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;常见的数据寻址方式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;隐含寻址&lt;/li&gt;
+&lt;li&gt;立即（数）寻址&lt;/li&gt;
+&lt;li&gt;直接寻址&lt;/li&gt;
+&lt;li&gt;间接寻址&lt;/li&gt;
+&lt;li&gt;寄存器寻址EA=$R_i$&lt;/li&gt;
+&lt;li&gt;寄存器间接寻址&lt;/li&gt;
+&lt;li&gt;相对寻址&lt;/li&gt;
+&lt;li&gt;基址寻址&lt;/li&gt;
+&lt;li&gt;变址寻址&lt;/li&gt;
+&lt;li&gt;堆栈寻址&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;寻址方式&lt;/th&gt;
+          &lt;th&gt;有效地址&lt;/th&gt;
+          &lt;th&gt;访存次数&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;立即寻址&lt;/td&gt;
+          &lt;td&gt;A即是操作数&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;直接寻址&lt;/td&gt;
+          &lt;td&gt;EA=A&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;一次性间接寻址&lt;/td&gt;
+          &lt;td&gt;EA=(A)&lt;/td&gt;
+          &lt;td&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;寄存器寻址&lt;/td&gt;
+          &lt;td&gt;EA=$R_i$&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;寄存器间接一次寻址&lt;/td&gt;
+          &lt;td&gt;EA=($R_i$)&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;相对寻址&lt;/td&gt;
+          &lt;td&gt;EA=(PC)+A&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;基址寻址&lt;/td&gt;
+          &lt;td&gt;EA=(BR)+A&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;变址寻址&lt;/td&gt;
+          &lt;td&gt;EA=(IX)+A&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
+        <title>0903学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0903/</link>
+        <pubDate>Fri, 05 Sep 2025 23:00:46 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0903/</guid>
+        <description>&lt;h2 id=&#34;计算机组成原理&#34;&gt;计算机组成原理
+&lt;/h2&gt;&lt;h3 id=&#34;虚拟存储器&#34;&gt;虚拟存储器
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;基本概念&lt;/li&gt;
+&lt;li&gt;页式虚拟存储器
+&lt;ol&gt;
+&lt;li&gt;页表&lt;/li&gt;
+&lt;li&gt;地址转换&lt;/li&gt;
+&lt;li&gt;快表(TLB translation lookaside buffer)&lt;/li&gt;
+&lt;li&gt;具有TLB和Cache的多级存储系统&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;段式虚拟存储器&lt;/li&gt;
+&lt;li&gt;段页式虚拟存储器&lt;/li&gt;
+&lt;li&gt;虚拟存储器与Cache的比较
+&lt;ol&gt;
+&lt;li&gt;相同之处
+&lt;ul&gt;
+&lt;li&gt;最终目标都是为了提高系统性能，两者都有容量、速度、价格的梯度&lt;/li&gt;
+&lt;li&gt;都把数据划分为小信息块，并作为基本的交换单位，虚存系统的信息块更大&lt;/li&gt;
+&lt;li&gt;都有地址映射、替换算法、更新策略等问题&lt;/li&gt;
+&lt;li&gt;都依据局部性原理应用快速缓存的思想，将活跃的数据放在相对高速的部件中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;不同之处
+&lt;ul&gt;
+&lt;li&gt;Cache主要解决系统速度，而虚拟存储器却是为了解决主存容量&lt;/li&gt;
+&lt;li&gt;Cache全由硬件实现，是硬件存储器，对所有程序员透明；而虚拟存储器由OS和硬件共同实现，是逻辑上的存储器，对系统程序员不透明，但对应用程序员透明&lt;/li&gt;
+&lt;li&gt;对于不命中性能影响， 因为CPU的速度约为Cache的10倍，主存的速度为硬件的100倍以上，因此虚拟存储器系统不命中时对系统性能影响更大&lt;/li&gt;
+&lt;li&gt;CPU与Cache和主存都建立了直接访问通道，而辅存与CPU没有直接通路。也就是说在Cache不命中时能和CPU直接通信，同时将数据调入Cache；而虚拟存储器系统不命中时，只能先由硬盘调入主存，而不能直接和CPU通信&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>0902学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0902/</link>
         <pubDate>Wed, 03 Sep 2025 22:37:10 +0800</pubDate>
