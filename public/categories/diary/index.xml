@@ -2,17 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Diary on shyの考研日志</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/categories/diary/</link>
+        <link>http://localhost:1313/npee_learning_log.github.io/categories/diary/</link>
         <description>Recent content in Diary on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 12 Jul 2025 22:27:55 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/diary/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 06 Sep 2025 12:18:02 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/categories/diary/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>晴子の誕生日</title>
+        <link>http://localhost:1313/npee_learning_log.github.io/diary/0905/</link>
+        <pubDate>Sat, 06 Sep 2025 12:18:02 +0800</pubDate>
+        
+        <guid>http://localhost:1313/npee_learning_log.github.io/diary/0905/</guid>
+        <description>&lt;h1 id=&#34;彼女の誕生日&#34;&gt;彼女の誕生日
+&lt;/h1&gt;&lt;h2 id=&#34;手作り晩ご飯&#34;&gt;手作り晩ご飯
+&lt;/h2&gt;&lt;p&gt;今日はまだ平日だから、彼女が働いている間に僕は晩ご飯の食材を買いに行ってきた。
+最初は排骨スープだけ作るつもりだったけど、少し物足りない気がしたので、ピーマンと豚肉の炒め物と青菜炒めも作ることにした。
+とにかく、得意な料理を作ろう！&lt;/p&gt;
+&lt;p&gt;彼女が帰る2時間前に、僕は排骨を煮込み始めた。
+作り方は簡単だけど、愛を込めればきっと美味しくなる。&lt;/p&gt;
+&lt;p&gt;彼女が帰ってくる頃に、僕は残りの料理を仕上げた。&lt;/p&gt;
+&lt;p&gt;二人の夜が降りてくる。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;二人の夜&#34;&gt;二人の夜
+&lt;/h2&gt;&lt;p&gt;彼女が味見をした後で、「美味しい」と言ってくれた。
+一番嬉しかったのは、やっぱり僕だ。&lt;/p&gt;
+&lt;p&gt;僕がハッピーバースデーを歌い、彼女はロウソクの火に願いを込めた。
+それから、乾杯して一緒にケーキを味わった。&lt;/p&gt;
+&lt;p&gt;「Happy Birthday！」と耳に囁き、二人はキスをした。その後、光が消え、僕たちは酔っぱらって寝てしまった。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>暴雨西湖</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/diary/westlake-with-haruko/</link>
+        <link>http://localhost:1313/npee_learning_log.github.io/diary/westlake-with-haruko/</link>
         <pubDate>Sat, 12 Jul 2025 22:27:55 +0800</pubDate>
         
-        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/diary/westlake-with-haruko/</guid>
-        <description>&lt;img src="https://auroraemiya.github.io/npee_learning_log.github.io/diary/westlake-with-haruko/westlake_in_strom.jpg" alt="Featured image of post 暴雨西湖" /&gt;&lt;p&gt;今天带刚来杭州的&lt;strong&gt;太阳&lt;/strong&gt;(应当事人的要求使用该昵称)去西湖游玩。其实天气预报有雨，但东坡先生有诗为证：&lt;/p&gt;
+        <guid>http://localhost:1313/npee_learning_log.github.io/diary/westlake-with-haruko/</guid>
+        <description>&lt;img src="http://localhost:1313/npee_learning_log.github.io/diary/westlake-with-haruko/westlake_in_strom.jpg" alt="Featured image of post 暴雨西湖" /&gt;&lt;p&gt;今天带刚来杭州的&lt;strong&gt;太阳&lt;/strong&gt;(应当事人的要求使用该昵称)去西湖游玩。其实天气预报有雨，但东坡先生有诗为证：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;水光潋滟晴方好，山色空蒙雨亦奇。
 欲把西湖比西子，淡妆浓抹总相宜。&lt;/p&gt;&lt;/blockquote&gt;
@@ -31,10 +55,10 @@
         </item>
         <item>
         <title>Intro-全部の始まり</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/diary/intro/</link>
+        <link>http://localhost:1313/npee_learning_log.github.io/diary/intro/</link>
         <pubDate>Fri, 11 Jul 2025 16:35:21 +0800</pubDate>
         
-        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/diary/intro/</guid>
+        <guid>http://localhost:1313/npee_learning_log.github.io/diary/intro/</guid>
         <description>&lt;h2 id=&#34;写在一切的前面&#34;&gt;写在一切的前面
 &lt;/h2&gt;&lt;p&gt;欢迎来到我的博客，这是我 （笔者自称小shy)为了记录参加2026考研全过程而开始的新栏目。&lt;/p&gt;
 &lt;p&gt;我准备参加今年年底的2026NPEE(The national entrance examination for postgraduate)，科目是11408。&lt;/p&gt;
