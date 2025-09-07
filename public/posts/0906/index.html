@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="计算机组成原理-死去的RISC-V突然攻击我\r程序的机器级代码表示\r常用汇编指令介绍\n相关寄存器\n16bit 32bit 说明 AX EAX 累加器（Accumulator） BX EBX 基地址寄存器(Base Register) CX ECX 计数寄存器(Count Register) DX EDX 数据寄存器(Data Register) ESI 变址寄存器(Index Register) EDI 变址寄存器(Index Register) EBP 堆栈基指针(Base Pointer) ESP 堆栈顶指针(Stack Pointer) 汇编指令格式\nAT&amp;T 格式简介\n主要用于 GNU Assembler (GAS)，即 gcc 默认输出。\n语法较“繁琐”，但严格、明确，容易让编译器处理。\n特点：寄存器有 % 前缀，立即数 $ 前缀，操作数顺序是 源, 目的。\n示例：\nmovl $5, %eax # 把立即数 5 移动到 eax addl %eax, %ebx # ebx = ebx + eax movl 8(%ebp), %ecx # 从 [ebp+8] 取数到 ecx Intel 格式简介\n">
+<title>0906学习日志</title>
+
+<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0906/'>
+
+<link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0906学习日志">
+<meta property='og:description' content="计算机组成原理-死去的RISC-V突然攻击我\r程序的机器级代码表示\r常用汇编指令介绍\n相关寄存器\n16bit 32bit 说明 AX EAX 累加器（Accumulator） BX EBX 基地址寄存器(Base Register) CX ECX 计数寄存器(Count Register) DX EDX 数据寄存器(Data Register) ESI 变址寄存器(Index Register) EDI 变址寄存器(Index Register) EBP 堆栈基指针(Base Pointer) ESP 堆栈顶指针(Stack Pointer) 汇编指令格式\nAT&amp;T 格式简介\n主要用于 GNU Assembler (GAS)，即 gcc 默认输出。\n语法较“繁琐”，但严格、明确，容易让编译器处理。\n特点：寄存器有 % 前缀，立即数 $ 前缀，操作数顺序是 源, 目的。\n示例：\nmovl $5, %eax # 把立即数 5 移动到 eax addl %eax, %ebx # ebx = ebx + eax movl 8(%ebp), %ecx # 从 [ebp+8] 取数到 ecx Intel 格式简介\n">
+<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0906/'>
+<meta property='og:site_name' content='shyの考研日志'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='计算机组成原理' /><meta property='article:tag' content='指令系统' /><meta property='article:tag' content='RISC' /><meta property='article:tag' content='CISC' /><meta property='article:tag' content='程序的机器级代码表示' /><meta property='article:tag' content='汇编语言' /><meta property='article:tag' content='常用指令' /><meta property='article:published_time' content='2025-09-07T23:32:42&#43;08:00'/><meta property='article:modified_time' content='2025-09-07T23:32:42&#43;08:00'/>
+<meta name="twitter:title" content="0906学习日志">
+<meta name="twitter:description" content="计算机组成原理-死去的RISC-V突然攻击我\r程序的机器级代码表示\r常用汇编指令介绍\n相关寄存器\n16bit 32bit 说明 AX EAX 累加器（Accumulator） BX EBX 基地址寄存器(Base Register) CX ECX 计数寄存器(Count Register) DX EDX 数据寄存器(Data Register) ESI 变址寄存器(Index Register) EDI 变址寄存器(Index Register) EBP 堆栈基指针(Base Pointer) ESP 堆栈顶指针(Stack Pointer) 汇编指令格式\nAT&amp;T 格式简介\n主要用于 GNU Assembler (GAS)，即 gcc 默认输出。\n语法较“繁琐”，但严格、明确，容易让编译器处理。\n特点：寄存器有 % 前缀，立即数 $ 前缀，操作数顺序是 源, 目的。\n示例：\nmovl $5, %eax # 把立即数 5 移动到 eax addl %eax, %ebx # ebx = ebx + eax movl 8(%ebp), %ecx # 从 [ebp+8] 取数到 ecx Intel 格式简介\n">
+    
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/npee_learning_log.github.io/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/npee_learning_log.github.io/img/shiki_hu_20273a3af6c00ff3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🎧</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/npee_learning_log.github.io">shyの考研日志</a></h1>
+            <h2 class="site-description">無職受験生 ～408に挑んだら本気だす～</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/diary' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                
+                <span>日记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/log' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>日志</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/memo' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>笔记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/interests' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+                
+                <span>兴趣</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/update' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                
+                <span>更新</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#计算机组成原理-死去的risc-v突然攻击我">计算机组成原理-死去的RISC-V突然攻击我</a>
+      <ul>
+        <li><a href="#程序的机器级代码表示">程序的机器级代码表示</a></li>
+        <li><a href="#cisc和risc的基本概念">CISC和RISC的基本概念</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/npee_learning_log.github.io/categories/log/" >
+                Log
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/npee_learning_log.github.io/posts/0906/">0906学习日志</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 07, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="计算机组成原理-死去的risc-v突然攻击我">计算机组成原理-死去的RISC-V突然攻击我
+</h2><h3 id="程序的机器级代码表示">程序的机器级代码表示
+</h3><ol>
+<li>
+<p>常用汇编指令介绍</p>
+<ol>
+<li>
+<p>相关寄存器</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>16bit</th>
+          <th>32bit</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>AX</td>
+          <td>EAX</td>
+          <td>累加器（Accumulator）</td>
+      </tr>
+      <tr>
+          <td>BX</td>
+          <td>EBX</td>
+          <td>基地址寄存器(Base Register)</td>
+      </tr>
+      <tr>
+          <td>CX</td>
+          <td>ECX</td>
+          <td>计数寄存器(Count Register)</td>
+      </tr>
+      <tr>
+          <td>DX</td>
+          <td>EDX</td>
+          <td>数据寄存器(Data Register)</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td>ESI</td>
+          <td>变址寄存器(Index Register)</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td>EDI</td>
+          <td>变址寄存器(Index Register)</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td>EBP</td>
+          <td>堆栈基指针(Base Pointer)</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td>ESP</td>
+          <td>堆栈顶指针(Stack Pointer)</td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+<li>
+<p>汇编指令格式</p>
+<ol>
+<li>
+<p>AT&amp;T 格式简介</p>
+<ul>
+<li>
+<p>主要用于 <strong>GNU Assembler (GAS)</strong>，即 <code>gcc</code> 默认输出。</p>
+</li>
+<li>
+<p>语法较“繁琐”，但严格、明确，容易让编译器处理。</p>
+</li>
+<li>
+<p>特点：寄存器有 <code>%</code> 前缀，立即数 <code>$</code> 前缀，操作数顺序是 <code>源, 目的</code>。</p>
+</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span><span style="color:#a6e22e">movl</span> <span style="color:#66d9ef">$5</span>, %eax      <span style="color:#75715e"># 把立即数 5 移动到 eax
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">addl</span> %eax, %ebx    <span style="color:#75715e"># ebx = ebx + eax
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">movl</span> <span style="color:#ae81ff">8</span>(%ebp), %ecx <span style="color:#75715e"># 从 [ebp+8] 取数到 ecx
+</span></span></span></code></pre></div></li>
+<li>
+<p>Intel 格式简介</p>
+<ul>
+<li>
+<p>常见于 <strong>MASM / NASM / Windows 平台</strong>。</p>
+</li>
+<li>
+<p>更接近高级语言风格，简洁直观，广泛用于手写汇编和逆向分析。</p>
+</li>
+<li>
+<p>特点：操作数顺序 <code>目的, 源</code>，寄存器无 <code>%</code>，立即数直接写，内存寻址用 <code>[]</code>。</p>
+</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span><span style="color:#a6e22e">mov</span> <span style="color:#66d9ef">eax</span>, <span style="color:#ae81ff">5</span>          <span style="color:#75715e">; 把立即数 5 移动到 eax
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">add</span> <span style="color:#66d9ef">ebx</span>, <span style="color:#66d9ef">eax</span>        <span style="color:#75715e">; ebx = ebx + eax
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">mov</span> <span style="color:#66d9ef">ecx</span>, [<span style="color:#66d9ef">ebp</span><span style="color:#960050;background-color:#1e0010">+</span><span style="color:#ae81ff">8</span>]    <span style="color:#75715e">; 从 [ebp+8] 取数到 ecx
+</span></span></span></code></pre></div></li>
+<li>
+<p>对比表：AT&amp;T vs Intel 汇编格式</p>
+</li>
+</ol>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>特点</th>
+          <th><strong>AT&amp;T 格式</strong></th>
+          <th><strong>Intel 格式</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>操作数顺序</strong></td>
+          <td>源, 目的</td>
+          <td>目的, 源</td>
+      </tr>
+      <tr>
+          <td><strong>寄存器</strong></td>
+          <td><code>%eax</code>、<code>%ebx</code></td>
+          <td><code>eax</code>、<code>ebx</code></td>
+      </tr>
+      <tr>
+          <td><strong>立即数</strong></td>
+          <td><code>$5</code></td>
+          <td><code>5</code></td>
+      </tr>
+      <tr>
+          <td><strong>内存寻址</strong></td>
+          <td><code>disp(base, index, scale)</code> → <code>8(%ebp, %ecx, 4)</code></td>
+          <td><code>[base + index*scale + disp]</code> → <code>[ebp + ecx*4 + 8]</code></td>
+      </tr>
+      <tr>
+          <td><strong>操作数大小</strong></td>
+          <td>指令后缀：<code>b</code>=8位, <code>w</code>=16位, <code>l</code>=32位, <code>q</code>=64位</td>
+          <td><code>byte ptr</code>, <code>word ptr</code>, <code>dword ptr</code>, <code>qword ptr</code></td>
+      </tr>
+      <tr>
+          <td><strong>符号/变量</strong></td>
+          <td><code>movl $var, %eax</code> (取地址)  <code>movl var, %eax</code> (取值)</td>
+          <td><code>mov eax, offset var</code> (取地址)  <code>mov eax, [var]</code> (取值)</td>
+      </tr>
+      <tr>
+          <td><strong>汇编器</strong></td>
+          <td>GNU Assembler (<code>gas</code>)</td>
+          <td>MASM, NASM, FASM 等</td>
+      </tr>
+      <tr>
+          <td><strong>常见平台</strong></td>
+          <td>Linux/Unix 系统</td>
+          <td>Windows、逆向工程</td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+<li>
+<p>常用指令</p>
+<ul>
+<li>
+<reg>
+</li>
+<li>
+<mem>
+</li>
+<li><con>,<con32></li>
+</ul>
+<ol>
+<li>数据传送指令
+<ol>
+<li>mov</li>
+<li>push</li>
+<li>pop</li>
+</ol>
+</li>
+<li>算术和逻辑运算指令
+<ol>
+<li>add/sub</li>
+<li>inc/dec</li>
+<li>imul</li>
+<li>idiv</li>
+<li>and/or/xor</li>
+<li>not</li>
+<li>neg</li>
+<li>shl/shr</li>
+</ol>
+</li>
+<li>控制流指令
+<ol>
+<li>jmp</li>
+<li>jcondition: je,jz,jne,jg,jge,jl,jle</li>
+<li>cmp/test</li>
+<li>call/ret</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>选择语句的机器级表示</p>
+<pre tabindex="0"><code class="language-pseudocode" data-lang="pseudocode">if(test_expr)
+	then_statement
+else
+	else_statement
+</code></pre><pre tabindex="0"><code class="language-pseudocode" data-lang="pseudocode">t=test_expr
+if(!t)
+	goto false;
+then_statement
+goto done;
+false:
+else_statement
+done;
+</code></pre></li>
+<li>
+<p>循环语句的机器级表示</p>
+<ol>
+<li>
+<p>do-while</p>
+<pre tabindex="0"><code class="language-pseudocode" data-lang="pseudocode">do 
+	body_statement
+	while(test_expr);
+</code></pre><pre tabindex="0"><code class="language-pseudocode" data-lang="pseudocode">loop:
+body_statement
+t=test_expr;
+if(t)
+	goto loop;
+</code></pre></li>
+<li>
+<p>while</p>
+<pre tabindex="0"><code class="language-pseudocode" data-lang="pseudocode">while(test_expr)
+	body_statement
+</code></pre><pre tabindex="0"><code class="language-pseudocode" data-lang="pseudocode">t=test_expr;
+if(!t)
+	goto done;
+loop:
+body_statement;
+t=test_expr;
+if(t)
+	goto loop;
+done:
+</code></pre></li>
+<li>
+<p>for</p>
+<pre tabindex="0"><code class="language-pseudocode" data-lang="pseudocode">for(init_expr;test_expr;update_expr)
+	body_statement
+</code></pre><pre tabindex="0"><code class="language-pseudocode" data-lang="pseudocode">init_expr;
+t=test_expr;
+if(!t)
+	goto done;
+loop:
+body_statement
+update_expr;
+t=test_expr;
+if(t)
+	goto loop;
+done:
+</code></pre></li>
+</ol>
+</li>
+<li>
+<p>过程调用的机器级表示</p>
+</li>
+</ol>
+<hr>
+<h3 id="cisc和risc的基本概念">CISC和RISC的基本概念
+</h3><ol>
+<li>
+<p>复杂指令系统计算机(CISC)</p>
+<ul>
+<li>特点：指令集复杂，每条指令可以完成较复杂的操作，指令长度不固定。</li>
+<li>设计理念：<strong>软件简单化，把更多功能交给硬件来完成</strong>。</li>
+<li>常见架构：x86、VAX、68000。</li>
+</ul>
+</li>
+<li>
+<p>精简指令系统计算机(RISC)</p>
+<ul>
+<li>特点：指令集简单，每条指令长度固定，执行时间大多相同。</li>
+<li>设计理念：<strong>硬件简单化，指令执行快，依靠编译器优化来实现复杂功能</strong>。</li>
+<li>常见架构：ARM、MIPS、RISC-V、SPARC。</li>
+</ul>
+</li>
+<li>
+<p>CISC和RISC的比较</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>特点</th>
+          <th><strong>RISC</strong>（精简指令集）</th>
+          <th><strong>CISC</strong>（复杂指令集）</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>指令数量</strong></td>
+          <td>少，指令集精简</td>
+          <td>多，指令功能复杂</td>
+      </tr>
+      <tr>
+          <td><strong>指令长度</strong></td>
+          <td>固定（常见 32 位）</td>
+          <td>不固定（8～120 字节不等）</td>
+      </tr>
+      <tr>
+          <td><strong>指令执行时间</strong></td>
+          <td>大多数指令 1 个时钟周期</td>
+          <td>指令执行时间差别大</td>
+      </tr>
+      <tr>
+          <td><strong>寻址方式</strong></td>
+          <td>少（常 3～5 种）</td>
+          <td>多（十几种甚至几十种）</td>
+      </tr>
+      <tr>
+          <td><strong>硬件复杂度</strong></td>
+          <td>控制器一般为硬布线（简单）</td>
+          <td>控制器常为微程序（复杂）</td>
+      </tr>
+      <tr>
+          <td><strong>编译器依赖性</strong></td>
+          <td>高，复杂操作要由编译器分解</td>
+          <td>低，硬件可直接完成复杂操作</td>
+      </tr>
+      <tr>
+          <td><strong>性能优化方式</strong></td>
+          <td>通过流水线、寄存器优化</td>
+          <td>通过复杂指令减少代码长度</td>
+      </tr>
+      <tr>
+          <td><strong>代表架构</strong></td>
+          <td>ARM、MIPS、RISC-V</td>
+          <td>x86、Intel 8086、VAX</td>
+      </tr>
+      <tr>
+          <td><strong>代码密度</strong></td>
+          <td>代码长（指令多）</td>
+          <td>代码短（指令少，但复杂）</td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/npee_learning_log.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/">指令系统</a>
+        
+            <a href="/npee_learning_log.github.io/tags/risc/">RISC</a>
+        
+            <a href="/npee_learning_log.github.io/tags/cisc/">CISC</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E4%BB%A3%E7%A0%81%E8%A1%A8%E7%A4%BA/">程序的机器级代码表示</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">常用指令</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0904/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0904学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0903/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0903学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0902/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0902学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0901/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0901学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0827.1/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0827.1学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="AuroraEmiya/npee_learning_log.github.io"
+    data-repo-id="R_kgDOPKrKPw"
+    data-category="Comments"
+    data-category-id="DIC_kwDOPKrKP84CuLn2"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading=""
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 shyの考研日志
+    </section>
+    
+    <section class="powerby">
+        
+            Blogroll：<a href="https://void-island-site.vercel.app/">舍友的雾岛电台</a> <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+        
+    </body>
+</html>

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/npee_learning_log.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=npee_learning_log.github.io/livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="计算机组成原理\r虚拟存储器\r基本概念 页式虚拟存储器 页表 地址转换 快表(TLB translation lookaside buffer) 具有TLB和Cache的多级存储系统 段式虚拟存储器 段页式虚拟存储器 虚拟存储器与Cache的比较 相同之处 最终目标都是为了提高系统性能，两者都有容量、速度、价格的梯度 都把数据划分为小信息块，并作为基本的交换单位，虚存系统的信息块更大 都有地址映射、替换算法、更新策略等问题 都依据局部性原理应用快速缓存的思想，将活跃的数据放在相对高速的部件中 不同之处 Cache主要解决系统速度，而虚拟存储器却是为了解决主存容量 Cache全由硬件实现，是硬件存储器，对所有程序员透明；而虚拟存储器由OS和硬件共同实现，是逻辑上的存储器，对系统程序员不透明，但对应用程序员透明 对于不命中性能影响， 因为CPU的速度约为Cache的10倍，主存的速度为硬件的100倍以上，因此虚拟存储器系统不命中时对系统性能影响更大 CPU与Cache和主存都建立了直接访问通道，而辅存与CPU没有直接通路。也就是说在Cache不命中时能和CPU直接通信，同时将数据调入Cache；而虚拟存储器系统不命中时，只能先由硬盘调入主存，而不能直接和CPU通信 ">
 <title>0903学习日志</title>
 
-<link rel='canonical' href='http://localhost:1313/npee_learning_log.github.io/posts/0903/'>
+<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0903/'>
 
 <link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0903学习日志">
 <meta property='og:description' content="计算机组成原理\r虚拟存储器\r基本概念 页式虚拟存储器 页表 地址转换 快表(TLB translation lookaside buffer) 具有TLB和Cache的多级存储系统 段式虚拟存储器 段页式虚拟存储器 虚拟存储器与Cache的比较 相同之处 最终目标都是为了提高系统性能，两者都有容量、速度、价格的梯度 都把数据划分为小信息块，并作为基本的交换单位，虚存系统的信息块更大 都有地址映射、替换算法、更新策略等问题 都依据局部性原理应用快速缓存的思想，将活跃的数据放在相对高速的部件中 不同之处 Cache主要解决系统速度，而虚拟存储器却是为了解决主存容量 Cache全由硬件实现，是硬件存储器，对所有程序员透明；而虚拟存储器由OS和硬件共同实现，是逻辑上的存储器，对系统程序员不透明，但对应用程序员透明 对于不命中性能影响， 因为CPU的速度约为Cache的10倍，主存的速度为硬件的100倍以上，因此虚拟存储器系统不命中时对系统性能影响更大 CPU与Cache和主存都建立了直接访问通道，而辅存与CPU没有直接通路。也就是说在Cache不命中时能和CPU直接通信，同时将数据调入Cache；而虚拟存储器系统不命中时，只能先由硬盘调入主存，而不能直接和CPU通信 ">
-<meta property='og:url' content='http://localhost:1313/npee_learning_log.github.io/posts/0903/'>
+<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0903/'>
 <meta property='og:site_name' content='shyの考研日志'>
 <meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='计算机组成原理' /><meta property='article:tag' content='虚拟存储器' /><meta property='article:tag' content='TLB' /><meta property='article:tag' content='Cache' /><meta property='article:published_time' content='2025-09-05T23:00:46&#43;08:00'/><meta property='article:modified_time' content='2025-09-05T23:00:46&#43;08:00'/>
 <meta name="twitter:title" content="0903学习日志">
@@ -647,7 +647,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.d3ce7388ef5941233a2fd0541c1324f59fa8d8764f59d9721e2c172354121bcf.js" defer></script>
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Gcc Man on shyの考研日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/tags/gcc-man/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/gcc-man/</link>
         <description>Recent content in Gcc Man on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 30 Jul 2025 23:44:55 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/tags/gcc-man/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 30 Jul 2025 23:44:55 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/gcc-man/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>0730学习笔记</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/memo/0730/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0730/</link>
         <pubDate>Wed, 30 Jul 2025 23:44:55 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/memo/0730/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/memo/0730/</guid>
         <description>&lt;h2 id=&#34;gcc-manual-rtfm&#34;&gt;GCC manual-RTFM
 &lt;/h2&gt;&lt;p&gt;今天心血来潮想要拜读&lt;code&gt;gcc&lt;/code&gt;man page，学到很多。有时候会思考，AI确实帮助了我快速上手一个领域，比如使用Rust编写一个植物大战僵尸的游戏，比如从零开始认识一个代码，但是一旦结束之后，回头再想就很难说我仍然可以再举一反三地做另一个好玩的事情，事实上Rust的语法和特性我也几乎忘记。&lt;/p&gt;
 &lt;p&gt;jyy老师在课堂上曾经向我们展示了许多很好玩的代码，很有意思的命令行，也曾经嘱咐我们一定要RTFM(Read The Friendly Manual)，现在的我毕业了，同时仍然是AI的重度依赖者，只是心里一直有一个地方在不断的问自己：AI的回答能否坦然接受？&lt;/p&gt;

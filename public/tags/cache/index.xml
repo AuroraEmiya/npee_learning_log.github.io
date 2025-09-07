@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Cache on shyの考研日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/tags/cache/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/cache/</link>
         <description>Recent content in Cache on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 05 Sep 2025 23:00:46 +0800</lastBuildDate><atom:link href="http://localhost:1313/npee_learning_log.github.io/tags/cache/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 05 Sep 2025 23:00:46 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/cache/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>0903学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0903/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0903/</link>
         <pubDate>Fri, 05 Sep 2025 23:00:46 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0903/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0903/</guid>
         <description>&lt;h2 id=&#34;计算机组成原理&#34;&gt;计算机组成原理
 &lt;/h2&gt;&lt;h3 id=&#34;虚拟存储器&#34;&gt;虚拟存储器
 &lt;/h3&gt;&lt;ol&gt;
@@ -51,10 +51,10 @@
         </item>
         <item>
         <title>0902学习日志</title>
-        <link>http://localhost:1313/npee_learning_log.github.io/posts/0902/</link>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0902/</link>
         <pubDate>Wed, 03 Sep 2025 22:37:10 +0800</pubDate>
         
-        <guid>http://localhost:1313/npee_learning_log.github.io/posts/0902/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0902/</guid>
         <description>&lt;h2 id=&#34;计算机组成原理&#34;&gt;计算机组成原理
 &lt;/h2&gt;&lt;h3 id=&#34;主存储器与cpu的连接&#34;&gt;主存储器与CPU的连接
 &lt;/h3&gt;&lt;ol&gt;
