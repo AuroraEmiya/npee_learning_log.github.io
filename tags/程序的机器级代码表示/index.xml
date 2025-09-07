@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>程序的机器级代码表示 on shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E4%BB%A3%E7%A0%81%E8%A1%A8%E7%A4%BA/</link>
+        <description>Recent content in 程序的机器级代码表示 on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Sun, 07 Sep 2025 23:32:42 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E4%BB%A3%E7%A0%81%E8%A1%A8%E7%A4%BA/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0906学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0906/</link>
+        <pubDate>Sun, 07 Sep 2025 23:32:42 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0906/</guid>
+        <description>&lt;h2 id=&#34;计算机组成原理-死去的risc-v突然攻击我&#34;&gt;计算机组成原理-死去的RISC-V突然攻击我
+&lt;/h2&gt;&lt;h3 id=&#34;程序的机器级代码表示&#34;&gt;程序的机器级代码表示
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;常用汇编指令介绍&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;相关寄存器&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;16bit&lt;/th&gt;
+          &lt;th&gt;32bit&lt;/th&gt;
+          &lt;th&gt;说明&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;AX&lt;/td&gt;
+          &lt;td&gt;EAX&lt;/td&gt;
+          &lt;td&gt;累加器（Accumulator）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;BX&lt;/td&gt;
+          &lt;td&gt;EBX&lt;/td&gt;
+          &lt;td&gt;基地址寄存器(Base Register)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;CX&lt;/td&gt;
+          &lt;td&gt;ECX&lt;/td&gt;
+          &lt;td&gt;计数寄存器(Count Register)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;DX&lt;/td&gt;
+          &lt;td&gt;EDX&lt;/td&gt;
+          &lt;td&gt;数据寄存器(Data Register)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;ESI&lt;/td&gt;
+          &lt;td&gt;变址寄存器(Index Register)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;EDI&lt;/td&gt;
+          &lt;td&gt;变址寄存器(Index Register)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;EBP&lt;/td&gt;
+          &lt;td&gt;堆栈基指针(Base Pointer)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;ESP&lt;/td&gt;
+          &lt;td&gt;堆栈顶指针(Stack Pointer)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;汇编指令格式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;AT&amp;amp;T 格式简介&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;主要用于 &lt;strong&gt;GNU Assembler (GAS)&lt;/strong&gt;，即 &lt;code&gt;gcc&lt;/code&gt; 默认输出。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;语法较“繁琐”，但严格、明确，容易让编译器处理。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;特点：寄存器有 &lt;code&gt;%&lt;/code&gt; 前缀，立即数 &lt;code&gt;$&lt;/code&gt; 前缀，操作数顺序是 &lt;code&gt;源, 目的&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-asm&#34; data-lang=&#34;asm&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;movl&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;$5&lt;/span&gt;, %eax      &lt;span style=&#34;color:#75715e&#34;&gt;# 把立即数 5 移动到 eax
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;addl&lt;/span&gt; %eax, %ebx    &lt;span style=&#34;color:#75715e&#34;&gt;# ebx = ebx + eax
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;movl&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;(%ebp), %ecx &lt;span style=&#34;color:#75715e&#34;&gt;# 从 [ebp+8] 取数到 ecx
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Intel 格式简介&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;常见于 &lt;strong&gt;MASM / NASM / Windows 平台&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;更接近高级语言风格，简洁直观，广泛用于手写汇编和逆向分析。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;特点：操作数顺序 &lt;code&gt;目的, 源&lt;/code&gt;，寄存器无 &lt;code&gt;%&lt;/code&gt;，立即数直接写，内存寻址用 &lt;code&gt;[]&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-asm&#34; data-lang=&#34;asm&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;mov&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;eax&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;          &lt;span style=&#34;color:#75715e&#34;&gt;; 把立即数 5 移动到 eax
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ebx&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;eax&lt;/span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;; ebx = ebx + eax
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;mov&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ecx&lt;/span&gt;, [&lt;span style=&#34;color:#66d9ef&#34;&gt;ebp&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;]    &lt;span style=&#34;color:#75715e&#34;&gt;; 从 [ebp+8] 取数到 ecx
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对比表：AT&amp;amp;T vs Intel 汇编格式&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;特点&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;AT&amp;amp;T 格式&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Intel 格式&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;操作数顺序&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;源, 目的&lt;/td&gt;
+          &lt;td&gt;目的, 源&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;寄存器&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;%eax&lt;/code&gt;、&lt;code&gt;%ebx&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;eax&lt;/code&gt;、&lt;code&gt;ebx&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;立即数&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;$5&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;5&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;内存寻址&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;disp(base, index, scale)&lt;/code&gt; → &lt;code&gt;8(%ebp, %ecx, 4)&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;[base + index*scale + disp]&lt;/code&gt; → &lt;code&gt;[ebp + ecx*4 + 8]&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;操作数大小&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;指令后缀：&lt;code&gt;b&lt;/code&gt;=8位, &lt;code&gt;w&lt;/code&gt;=16位, &lt;code&gt;l&lt;/code&gt;=32位, &lt;code&gt;q&lt;/code&gt;=64位&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;byte ptr&lt;/code&gt;, &lt;code&gt;word ptr&lt;/code&gt;, &lt;code&gt;dword ptr&lt;/code&gt;, &lt;code&gt;qword ptr&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;符号/变量&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;movl $var, %eax&lt;/code&gt; (取地址)  &lt;code&gt;movl var, %eax&lt;/code&gt; (取值)&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;mov eax, offset var&lt;/code&gt; (取地址)  &lt;code&gt;mov eax, [var]&lt;/code&gt; (取值)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;汇编器&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;GNU Assembler (&lt;code&gt;gas&lt;/code&gt;)&lt;/td&gt;
+          &lt;td&gt;MASM, NASM, FASM 等&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;常见平台&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Linux/Unix 系统&lt;/td&gt;
+          &lt;td&gt;Windows、逆向工程&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;常用指令&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;reg&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;mem&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;con&gt;,&lt;con32&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;数据传送指令
+&lt;ol&gt;
+&lt;li&gt;mov&lt;/li&gt;
+&lt;li&gt;push&lt;/li&gt;
+&lt;li&gt;pop&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;算术和逻辑运算指令
+&lt;ol&gt;
+&lt;li&gt;add/sub&lt;/li&gt;
+&lt;li&gt;inc/dec&lt;/li&gt;
+&lt;li&gt;imul&lt;/li&gt;
+&lt;li&gt;idiv&lt;/li&gt;
+&lt;li&gt;and/or/xor&lt;/li&gt;
+&lt;li&gt;not&lt;/li&gt;
+&lt;li&gt;neg&lt;/li&gt;
+&lt;li&gt;shl/shr&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;控制流指令
+&lt;ol&gt;
+&lt;li&gt;jmp&lt;/li&gt;
+&lt;li&gt;jcondition: je,jz,jne,jg,jge,jl,jle&lt;/li&gt;
+&lt;li&gt;cmp/test&lt;/li&gt;
+&lt;li&gt;call/ret&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选择语句的机器级表示&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-pseudocode&#34; data-lang=&#34;pseudocode&#34;&gt;if(test_expr)
+	then_statement
+else
+	else_statement
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-pseudocode&#34; data-lang=&#34;pseudocode&#34;&gt;t=test_expr
+if(!t)
+	goto false;
+then_statement
+goto done;
+false:
+else_statement
+done;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;循环语句的机器级表示&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;do-while&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-pseudocode&#34; data-lang=&#34;pseudocode&#34;&gt;do 
+	body_statement
+	while(test_expr);
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-pseudocode&#34; data-lang=&#34;pseudocode&#34;&gt;loop:
+body_statement
+t=test_expr;
+if(t)
+	goto loop;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;while&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-pseudocode&#34; data-lang=&#34;pseudocode&#34;&gt;while(test_expr)
+	body_statement
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-pseudocode&#34; data-lang=&#34;pseudocode&#34;&gt;t=test_expr;
+if(!t)
+	goto done;
+loop:
+body_statement;
+t=test_expr;
+if(t)
+	goto loop;
+done:
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;for&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-pseudocode&#34; data-lang=&#34;pseudocode&#34;&gt;for(init_expr;test_expr;update_expr)
+	body_statement
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-pseudocode&#34; data-lang=&#34;pseudocode&#34;&gt;init_expr;
+t=test_expr;
+if(!t)
+	goto done;
+loop:
+body_statement
+update_expr;
+t=test_expr;
+if(t)
+	goto loop;
+done:
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;过程调用的机器级表示&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;cisc和risc的基本概念&#34;&gt;CISC和RISC的基本概念
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;复杂指令系统计算机(CISC)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;特点：指令集复杂，每条指令可以完成较复杂的操作，指令长度不固定。&lt;/li&gt;
+&lt;li&gt;设计理念：&lt;strong&gt;软件简单化，把更多功能交给硬件来完成&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;常见架构：x86、VAX、68000。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;精简指令系统计算机(RISC)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;特点：指令集简单，每条指令长度固定，执行时间大多相同。&lt;/li&gt;
+&lt;li&gt;设计理念：&lt;strong&gt;硬件简单化，指令执行快，依靠编译器优化来实现复杂功能&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;常见架构：ARM、MIPS、RISC-V、SPARC。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;CISC和RISC的比较&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;特点&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;RISC&lt;/strong&gt;（精简指令集）&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;CISC&lt;/strong&gt;（复杂指令集）&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;指令数量&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;少，指令集精简&lt;/td&gt;
+          &lt;td&gt;多，指令功能复杂&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;指令长度&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;固定（常见 32 位）&lt;/td&gt;
+          &lt;td&gt;不固定（8～120 字节不等）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;指令执行时间&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;大多数指令 1 个时钟周期&lt;/td&gt;
+          &lt;td&gt;指令执行时间差别大&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;寻址方式&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;少（常 3～5 种）&lt;/td&gt;
+          &lt;td&gt;多（十几种甚至几十种）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;硬件复杂度&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;控制器一般为硬布线（简单）&lt;/td&gt;
+          &lt;td&gt;控制器常为微程序（复杂）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;编译器依赖性&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;高，复杂操作要由编译器分解&lt;/td&gt;
+          &lt;td&gt;低，硬件可直接完成复杂操作&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;性能优化方式&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;通过流水线、寄存器优化&lt;/td&gt;
+          &lt;td&gt;通过复杂指令减少代码长度&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;代表架构&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;ARM、MIPS、RISC-V&lt;/td&gt;
+          &lt;td&gt;x86、Intel 8086、VAX&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;代码密度&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;代码长（指令多）&lt;/td&gt;
+          &lt;td&gt;代码短（指令少，但复杂）&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

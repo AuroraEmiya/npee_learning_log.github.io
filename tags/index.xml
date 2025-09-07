@@ -6,28 +6,68 @@
         <description>Recent content in Tags on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 06 Sep 2025 12:18:02 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>誕生日のお祝い</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E8%AA%95%E7%94%9F%E6%97%A5%E3%81%AE%E3%81%8A%E7%A5%9D%E3%81%84/</link>
-        <pubDate>Sat, 06 Sep 2025 12:18:02 +0800</pubDate>
+        <lastBuildDate>Sun, 07 Sep 2025 23:32:42 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>CISC</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/cisc/</link>
+        <pubDate>Sun, 07 Sep 2025 23:32:42 +0800</pubDate>
         
-        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E8%AA%95%E7%94%9F%E6%97%A5%E3%81%AE%E3%81%8A%E7%A5%9D%E3%81%84/</guid>
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/tags/cisc/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>RISC</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/risc/</link>
+        <pubDate>Sun, 07 Sep 2025 23:32:42 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/tags/risc/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>常用指令</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</link>
+        <pubDate>Sun, 07 Sep 2025 23:32:42 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</guid>
         <description></description>
         </item>
         <item>
         <title>指令系统</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/</link>
-        <pubDate>Fri, 05 Sep 2025 23:42:41 +0800</pubDate>
+        <pubDate>Sun, 07 Sep 2025 23:32:42 +0800</pubDate>
         
         <guid>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/</guid>
         <description></description>
         </item>
         <item>
+        <title>汇编语言</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/</link>
+        <pubDate>Sun, 07 Sep 2025 23:32:42 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>程序的机器级代码表示</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E4%BB%A3%E7%A0%81%E8%A1%A8%E7%A4%BA/</link>
+        <pubDate>Sun, 07 Sep 2025 23:32:42 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E4%BB%A3%E7%A0%81%E8%A1%A8%E7%A4%BA/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>计算机组成原理</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</link>
-        <pubDate>Fri, 05 Sep 2025 23:42:41 +0800</pubDate>
+        <pubDate>Sun, 07 Sep 2025 23:32:42 +0800</pubDate>
         
         <guid>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>誕生日のお祝い</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E8%AA%95%E7%94%9F%E6%97%A5%E3%81%AE%E3%81%8A%E7%A5%9D%E3%81%84/</link>
+        <pubDate>Sat, 06 Sep 2025 12:18:02 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E8%AA%95%E7%94%9F%E6%97%A5%E3%81%AE%E3%81%8A%E7%A5%9D%E3%81%84/</guid>
         <description></description>
         </item>
         <item>
