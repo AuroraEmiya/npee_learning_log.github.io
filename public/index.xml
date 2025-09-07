@@ -170,13 +170,9 @@
 &lt;li&gt;
 &lt;p&gt;常用指令&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;reg&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;mem&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;con&gt;,&lt;con32&gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;reg&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;mem&amp;gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;con&amp;gt;,&amp;lt;con32&amp;gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
 &lt;li&gt;数据传送指令
@@ -377,7 +373,7 @@ done:
 一番嬉しかったのは、やっぱり僕だ。&lt;/p&gt;
 &lt;p&gt;僕がハッピーバースデーを歌い、彼女はロウソクの火に願いを込めた。
 それから、乾杯して一緒にケーキを味わった。&lt;/p&gt;
-&lt;p&gt;「Happy Birthday！」と耳に囁き、二人はキスをした。その後、光が消え、僕たちは酔っぱらって寝てしまった。&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:white&#34;&gt;「Happy Birthday！」と耳に囁き、二人はキスをした。その後、光が消え、僕たちは酔っぱらって寝てしまった。&lt;/span&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
