@@ -34,6 +34,7 @@ enableRobotsTXT = true
     [markup.goldmark.renderer]
       unsafe = true
 
+
 [params.sidebar.avatar]
     enabled = true
     local = true
@@ -110,5 +111,5 @@ enableRobotsTXT = true
     icon = "clock"
 
 [params.footer]
-  customText='Blogroll：<a href="https://void-island-site.vercel.app/">舍友的雾岛电台</a>'
+  customText='Blogroll：<a href="https://void-island-site.vercel.app/">舍友的雾岛电台</a>  ,<a href="https://starrydreamawa.github.io/hugo-stack.github.io">然然の时间记录站</a>'
   since = 2025
