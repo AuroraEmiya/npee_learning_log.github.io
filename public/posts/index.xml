@@ -6,7 +6,322 @@
         <description>Recent content in Posts on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sun, 07 Sep 2025 23:32:42 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 07 Sep 2025 23:32:48 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0907学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0907/</link>
+        <pubDate>Sun, 07 Sep 2025 23:32:48 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0907/</guid>
+        <description>&lt;h2 id=&#34;计算机组成原理-中央处理器&#34;&gt;计算机组成原理-中央处理器
+&lt;/h2&gt;&lt;h3 id=&#34;cpu的功能和基本结构&#34;&gt;CPU的功能和基本结构
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;CPU的功能
+&lt;ol&gt;
+&lt;li&gt;指令控制：取指令、分析指令和执行指令&lt;/li&gt;
+&lt;li&gt;操作控制&lt;/li&gt;
+&lt;li&gt;时间控制&lt;/li&gt;
+&lt;li&gt;数据加工&lt;/li&gt;
+&lt;li&gt;中断处理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;CPU的基本结构
+&lt;ol&gt;
+&lt;li&gt;运算器
+&lt;ul&gt;
+&lt;li&gt;ALU&lt;/li&gt;
+&lt;li&gt;暂存寄存器&lt;/li&gt;
+&lt;li&gt;累加寄存器ACC&lt;/li&gt;
+&lt;li&gt;通用寄存器GPRs&lt;/li&gt;
+&lt;li&gt;程序状态字寄存器PSW&lt;/li&gt;
+&lt;li&gt;移位寄存器&lt;/li&gt;
+&lt;li&gt;计数器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;控制器
+&lt;ul&gt;
+&lt;li&gt;PC&lt;/li&gt;
+&lt;li&gt;指令寄存器IR&lt;/li&gt;
+&lt;li&gt;指令译码器ID&lt;/li&gt;
+&lt;li&gt;存储器地址寄存器MAR&lt;/li&gt;
+&lt;li&gt;存储器数据寄存器MDR&lt;/li&gt;
+&lt;li&gt;时序电路&lt;/li&gt;
+&lt;li&gt;微操作信号发生器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;CPU的寄存器
+&lt;ol&gt;
+&lt;li&gt;运算器的寄存器
+&lt;ol&gt;
+&lt;li&gt;通用寄存器组GPRs&lt;/li&gt;
+&lt;li&gt;累加从寄存器ACC&lt;/li&gt;
+&lt;li&gt;移位寄存器SR&lt;/li&gt;
+&lt;li&gt;暂存寄存器&lt;/li&gt;
+&lt;li&gt;程序状态字寄存器PSW&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;控制器中的寄存器
+&lt;ol&gt;
+&lt;li&gt;程序计数器PC&lt;/li&gt;
+&lt;li&gt;指令寄存器IR&lt;/li&gt;
+&lt;li&gt;存储器地址寄存器MAR&lt;/li&gt;
+&lt;li&gt;存储器数据寄存器MDR&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;指令执行过程&#34;&gt;指令执行过程
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;指令周期&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;定长的机器周期&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;取值周期&lt;/th&gt;
+          &lt;th&gt;间址周期（取有效地址）&lt;/th&gt;
+          &lt;th&gt;执行周期（执行指令）&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;不定长的机器周期&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;取值周期&lt;/th&gt;
+          &lt;th&gt;执行周期&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;指令周期的数据流&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;取值周期&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;PC - MAR - 地址总线 - 存储器&lt;/li&gt;
+&lt;li&gt;CU 发出读命令 - 控制总线 - 存储器&lt;/li&gt;
+&lt;li&gt;主存 - 数据总线 - MDR - IR&lt;/li&gt;
+&lt;li&gt;CU 发出控制信号 - PC内容加1&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;间址周期&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ad(IR)或MDR - MAR -  地址总线 - 存储器&lt;/li&gt;
+&lt;li&gt;CU发出读命令 - 控制总线 - 存储器&lt;/li&gt;
+&lt;li&gt;主存 - 数据总线 - MDR (EA)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;执行周期&lt;/p&gt;
+&lt;p&gt;取操作数，根据IR中的指令字的操作码通过ALU操作产生执行结果。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;中断周期&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;CU 控制将SP-1(stack pointer)，SP - MAR - 地址总线-存储器&lt;/li&gt;
+&lt;li&gt;CU 发出写命令 - 控制总线 - 存储器&lt;/li&gt;
+&lt;li&gt;PC - MDR - 数据总线 - 主存 （程序断电存入存储器）&lt;/li&gt;
+&lt;li&gt;CU （中断服务程序的入口地址）- PC&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;指令执行方案&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;单周期处理器&lt;/p&gt;
+&lt;p&gt;所有指令相同执行时间&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;多周期处理器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;流水线处理器&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;数据通路的功能和基本结构&#34;&gt;数据通路的功能和基本结构
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;数据通路的功能&lt;/li&gt;
+&lt;li&gt;数据通路的组成
+&lt;ol&gt;
+&lt;li&gt;组合逻辑元件（操作元件）&lt;/li&gt;
+&lt;li&gt;时序逻辑元件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;数据通路的基本结构
+&lt;ol&gt;
+&lt;li&gt;CPU内部单总线方式&lt;/li&gt;
+&lt;li&gt;CPU内部多总线方式&lt;/li&gt;
+&lt;li&gt;专用数据通路方式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;控制器的功能和工作原理&#34;&gt;控制器的功能和工作原理
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;控制器的结构和功能&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;硬布线控制器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;微程序控制器&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;微程序控制的基本概念&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;微命令与微操作&lt;/li&gt;
+&lt;li&gt;微指令与微周期&lt;/li&gt;
+&lt;li&gt;主存储器与控制存储器&lt;/li&gt;
+&lt;li&gt;程序与微程序&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;微程序控制器的组成和工作过程&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;微程序控制器的组成和工作过程&lt;/li&gt;
+&lt;li&gt;微程序控制器的工作过程&lt;/li&gt;
+&lt;li&gt;微程序和机器指令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;微指令的编码方式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;直接编码（直接控制）方式&lt;/li&gt;
+&lt;li&gt;字段直接编码方式&lt;/li&gt;
+&lt;li&gt;字段间接编码方式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;微指令的地址形成方式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;微指令的后继地址字段（下地址字段）&lt;/li&gt;
+&lt;li&gt;根据机器指令的操作码形成。&lt;/li&gt;
+&lt;li&gt;增量计数器法&lt;/li&gt;
+&lt;li&gt;根据各种标志决定下一条微指令分支转移的地址&lt;/li&gt;
+&lt;li&gt;友硬件直接产生微程序入口地址。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;微指令的格式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;水平型微指令&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;A1&lt;/th&gt;
+          &lt;th&gt;A2&lt;/th&gt;
+          &lt;th&gt;&amp;hellip;&lt;/th&gt;
+          &lt;th&gt;An-1&lt;/th&gt;
+          &lt;th&gt;An&lt;/th&gt;
+          &lt;th&gt;判断测试字段&lt;/th&gt;
+          &lt;th&gt;后继地址字段&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;操作控制&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;顺序控制&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;垂直型微指令&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;$\mu$OP&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Rd&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Rs&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;微操作码&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;目的地址&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;源地址&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;硬布线和微程序控制器的特点&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;硬布线控制器的特点&lt;/li&gt;
+&lt;li&gt;微程序控制器的特点&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;异常和中断机制&#34;&gt;异常和中断机制
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;异常和中断的基本概念
+&lt;ol&gt;
+&lt;li&gt;异常：由CPU内部产生的意外事件。a.k.a内中断&lt;/li&gt;
+&lt;li&gt;中断：由来自CPU外部的设备向CPU发出的中断请求。a.k.a外中断。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;异常和中断的分类
+&lt;ol&gt;
+&lt;li&gt;异常的分类
+&lt;ol&gt;
+&lt;li&gt;故障Fault&lt;/li&gt;
+&lt;li&gt;自陷Trap&lt;/li&gt;
+&lt;li&gt;终止Abort&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;中断的分类
+&lt;ol&gt;
+&lt;li&gt;可屏蔽中断&lt;/li&gt;
+&lt;li&gt;不可屏蔽中断&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;异常和中断响应过程
+&lt;ol&gt;
+&lt;li&gt;关中断&lt;/li&gt;
+&lt;li&gt;保存断点和程序状态&lt;/li&gt;
+&lt;li&gt;识别异常和中断并转到相应的处理程序
+&lt;ol&gt;
+&lt;li&gt;软件识别方式：CPU设置一个异常状态寄存器&lt;/li&gt;
+&lt;li&gt;硬件识别a.k.a向量中断&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>0906学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0906/</link>
         <pubDate>Sun, 07 Sep 2025 23:32:42 +0800</pubDate>
