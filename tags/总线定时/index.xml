@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>总线定时 on shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%80%BB%E7%BA%BF%E5%AE%9A%E6%97%B6/</link>
+        <description>Recent content in 总线定时 on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Tue, 09 Sep 2025 10:56:39 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E6%80%BB%E7%BA%BF%E5%AE%9A%E6%97%B6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0909学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0909/</link>
+        <pubDate>Tue, 09 Sep 2025 10:56:39 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0909/</guid>
+        <description>&lt;h2 id=&#34;计算机组成原理-总线&#34;&gt;计算机组成原理-总线
+&lt;/h2&gt;&lt;h3 id=&#34;总线概述&#34;&gt;总线概述
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;总线基本概念&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;总线定义
+&lt;ul&gt;
+&lt;li&gt;分时和共享是总线的两个特点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;总线设备
+&lt;ol&gt;
+&lt;li&gt;主设备&lt;/li&gt;
+&lt;li&gt;从设备&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;总线特性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;总线的分类&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;按功能层次分类
+&lt;ol&gt;
+&lt;li&gt;片内总线&lt;/li&gt;
+&lt;li&gt;系统总线
+&lt;ol&gt;
+&lt;li&gt;数据总线&lt;/li&gt;
+&lt;li&gt;地址总线&lt;/li&gt;
+&lt;li&gt;控制总线&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;I/O总线&lt;/li&gt;
+&lt;li&gt;通信总线&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;按时序控制方式分类
+&lt;ol&gt;
+&lt;li&gt;同步总线&lt;/li&gt;
+&lt;li&gt;异步总线&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;按数据传输方式分类
+&lt;ol&gt;
+&lt;li&gt;串行总线&lt;/li&gt;
+&lt;li&gt;并行总线&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;系统总线的结构&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;单总线&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;优点：结构简单，成本低，易于接入新的设备&lt;/li&gt;
+&lt;li&gt;缺点：带宽低、负载重，多个部件争用唯一的总线，且不支持开发传送操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;双总线结构&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;优点：将低速IO设备从原单线上分离出来，实现了存储器总线和IO总线分离&lt;/li&gt;
+&lt;li&gt;缺点：需要增加通道等硬件设备&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;三总线结构&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;优点：提高了IO设备的性能，使其更快的响应命令，提高系统吞吐量&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;缺点：任意时刻只能使用一种总线，系统工作效率降低&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;总线的性能指标&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;总线时钟周期&lt;/li&gt;
+&lt;li&gt;总线时钟频率&lt;/li&gt;
+&lt;li&gt;总线传输周期：一次总线操作所需的时间，包括申请阶段、寻址阶段、传输阶段和结束阶段。通常由若干个时钟周期构成。&lt;/li&gt;
+&lt;li&gt;总线工作频率&lt;/li&gt;
+&lt;li&gt;总线宽度&lt;/li&gt;
+&lt;li&gt;总线带宽&lt;/li&gt;
+&lt;li&gt;总线复用&lt;/li&gt;
+&lt;li&gt;信号线束&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;总线最主要的性能指标为总线宽度、总线的工作频率，总线带宽&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;总线事物和定时&#34;&gt;总线事物和定时
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;总线事物&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;请求阶段。主设备（CPU或DMA）发出总线传输请求，并且获得总线控制权&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;仲裁阶段。主线仲裁机构决定将下一个传输周期的总线使用权授予某个申请者&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;寻址阶段。主设备通过总线给出要访问的从设备地址及有关命令，启动从模块&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;传输阶段。主模块和从模块进行数据交换，可单向或双向进行数据传输&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;释放阶段。主模块的有关信息均从系统总线上撤除，让出总线使用权。&lt;/p&gt;
+&lt;p&gt;突发（猝发）能够进行连续成组数据的传送。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;总线定时&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;同步定时方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;优点：传送速度快，具有较高的传输速率；总线控制逻辑简单&lt;/li&gt;
+&lt;li&gt;缺点：主从设备属于强制性同步；不能及时进行数据通信的有效性检验，可靠性差。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;异步定时方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;优点：总线周期长度可变，能保证两个工作速度相差很大的部件或设备之间可靠性地进行信息交换，自动适应时间的配合&lt;/li&gt;
+&lt;li&gt;缺点：比同步控制方式稍复杂一些，速度比同步较慢&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;根据”请求“和”回答“信号的撤销是否互锁，异步定时方式又分为7以下三种类型&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;不互锁方式&lt;/li&gt;
+&lt;li&gt;半互锁方式&lt;/li&gt;
+&lt;li&gt;全互锁方式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;半同步定时方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;优点：控制方式比异步定时简单，各模块在系统时钟的控制下同步工作，可靠性较高&lt;/li&gt;
+&lt;li&gt;缺点：系统时钟频率不能要求太高，所以从整体上看，系统工作的速度不是很高。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;分离式定时方式&lt;/p&gt;
+&lt;p&gt;将总线事务分解为请求和应答两个子过程。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;优点：在不传送数据时释放总线，使总线可接受其他设备的请求，不存在空闲等待时间&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;缺点：控制复杂，开销也大&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
