@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="计算机组成原理-总线\r总线概述\r总线基本概念\n总线定义 分时和共享是总线的两个特点 总线设备 主设备 从设备 总线特性 总线的分类\n按功能层次分类 片内总线 系统总线 数据总线 地址总线 控制总线 I/O总线 通信总线 按时序控制方式分类 同步总线 异步总线 按数据传输方式分类 串行总线 并行总线 系统总线的结构\n单总线\n优点：结构简单，成本低，易于接入新的设备 缺点：带宽低、负载重，多个部件争用唯一的总线，且不支持开发传送操作 双总线结构\n优点：将低速IO设备从原单线上分离出来，实现了存储器总线和IO总线分离 缺点：需要增加通道等硬件设备 三总线结构\n优点：提高了IO设备的性能，使其更快的响应命令，提高系统吞吐量\n缺点：任意时刻只能使用一种总线，系统工作效率降低\n总线的性能指标\n总线时钟周期 总线时钟频率 总线传输周期：一次总线操作所需的时间，包括申请阶段、寻址阶段、传输阶段和结束阶段。通常由若干个时钟周期构成。 总线工作频率 总线宽度 总线带宽 总线复用 信号线束 总线最主要的性能指标为总线宽度、总线的工作频率，总线带宽\n总线事物和定时\r总线事物\n请求阶段。主设备（CPU或DMA）发出总线传输请求，并且获得总线控制权\n仲裁阶段。主线仲裁机构决定将下一个传输周期的总线使用权授予某个申请者\n寻址阶段。主设备通过总线给出要访问的从设备地址及有关命令，启动从模块\n传输阶段。主模块和从模块进行数据交换，可单向或双向进行数据传输\n释放阶段。主模块的有关信息均从系统总线上撤除，让出总线使用权。\n突发（猝发）能够进行连续成组数据的传送。\n总线定时\n同步定时方式\n优点：传送速度快，具有较高的传输速率；总线控制逻辑简单 缺点：主从设备属于强制性同步；不能及时进行数据通信的有效性检验，可靠性差。 异步定时方式\n优点：总线周期长度可变，能保证两个工作速度相差很大的部件或设备之间可靠性地进行信息交换，自动适应时间的配合 缺点：比同步控制方式稍复杂一些，速度比同步较慢 根据”请求“和”回答“信号的撤销是否互锁，异步定时方式又分为7以下三种类型\n不互锁方式 半互锁方式 全互锁方式 半同步定时方式\n优点：控制方式比异步定时简单，各模块在系统时钟的控制下同步工作，可靠性较高 缺点：系统时钟频率不能要求太高，所以从整体上看，系统工作的速度不是很高。 分离式定时方式\n将总线事务分解为请求和应答两个子过程。\n">
+<title>0909学习日志</title>
+
+<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0909/'>
+
+<link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0909学习日志">
+<meta property='og:description' content="计算机组成原理-总线\r总线概述\r总线基本概念\n总线定义 分时和共享是总线的两个特点 总线设备 主设备 从设备 总线特性 总线的分类\n按功能层次分类 片内总线 系统总线 数据总线 地址总线 控制总线 I/O总线 通信总线 按时序控制方式分类 同步总线 异步总线 按数据传输方式分类 串行总线 并行总线 系统总线的结构\n单总线\n优点：结构简单，成本低，易于接入新的设备 缺点：带宽低、负载重，多个部件争用唯一的总线，且不支持开发传送操作 双总线结构\n优点：将低速IO设备从原单线上分离出来，实现了存储器总线和IO总线分离 缺点：需要增加通道等硬件设备 三总线结构\n优点：提高了IO设备的性能，使其更快的响应命令，提高系统吞吐量\n缺点：任意时刻只能使用一种总线，系统工作效率降低\n总线的性能指标\n总线时钟周期 总线时钟频率 总线传输周期：一次总线操作所需的时间，包括申请阶段、寻址阶段、传输阶段和结束阶段。通常由若干个时钟周期构成。 总线工作频率 总线宽度 总线带宽 总线复用 信号线束 总线最主要的性能指标为总线宽度、总线的工作频率，总线带宽\n总线事物和定时\r总线事物\n请求阶段。主设备（CPU或DMA）发出总线传输请求，并且获得总线控制权\n仲裁阶段。主线仲裁机构决定将下一个传输周期的总线使用权授予某个申请者\n寻址阶段。主设备通过总线给出要访问的从设备地址及有关命令，启动从模块\n传输阶段。主模块和从模块进行数据交换，可单向或双向进行数据传输\n释放阶段。主模块的有关信息均从系统总线上撤除，让出总线使用权。\n突发（猝发）能够进行连续成组数据的传送。\n总线定时\n同步定时方式\n优点：传送速度快，具有较高的传输速率；总线控制逻辑简单 缺点：主从设备属于强制性同步；不能及时进行数据通信的有效性检验，可靠性差。 异步定时方式\n优点：总线周期长度可变，能保证两个工作速度相差很大的部件或设备之间可靠性地进行信息交换，自动适应时间的配合 缺点：比同步控制方式稍复杂一些，速度比同步较慢 根据”请求“和”回答“信号的撤销是否互锁，异步定时方式又分为7以下三种类型\n不互锁方式 半互锁方式 全互锁方式 半同步定时方式\n优点：控制方式比异步定时简单，各模块在系统时钟的控制下同步工作，可靠性较高 缺点：系统时钟频率不能要求太高，所以从整体上看，系统工作的速度不是很高。 分离式定时方式\n将总线事务分解为请求和应答两个子过程。\n">
+<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0909/'>
+<meta property='og:site_name' content='shyの考研日志'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='计算机组成原理' /><meta property='article:tag' content='总线' /><meta property='article:tag' content='总线定时' /><meta property='article:published_time' content='2025-09-09T10:56:39&#43;08:00'/><meta property='article:modified_time' content='2025-09-09T10:56:39&#43;08:00'/>
+<meta name="twitter:title" content="0909学习日志">
+<meta name="twitter:description" content="计算机组成原理-总线\r总线概述\r总线基本概念\n总线定义 分时和共享是总线的两个特点 总线设备 主设备 从设备 总线特性 总线的分类\n按功能层次分类 片内总线 系统总线 数据总线 地址总线 控制总线 I/O总线 通信总线 按时序控制方式分类 同步总线 异步总线 按数据传输方式分类 串行总线 并行总线 系统总线的结构\n单总线\n优点：结构简单，成本低，易于接入新的设备 缺点：带宽低、负载重，多个部件争用唯一的总线，且不支持开发传送操作 双总线结构\n优点：将低速IO设备从原单线上分离出来，实现了存储器总线和IO总线分离 缺点：需要增加通道等硬件设备 三总线结构\n优点：提高了IO设备的性能，使其更快的响应命令，提高系统吞吐量\n缺点：任意时刻只能使用一种总线，系统工作效率降低\n总线的性能指标\n总线时钟周期 总线时钟频率 总线传输周期：一次总线操作所需的时间，包括申请阶段、寻址阶段、传输阶段和结束阶段。通常由若干个时钟周期构成。 总线工作频率 总线宽度 总线带宽 总线复用 信号线束 总线最主要的性能指标为总线宽度、总线的工作频率，总线带宽\n总线事物和定时\r总线事物\n请求阶段。主设备（CPU或DMA）发出总线传输请求，并且获得总线控制权\n仲裁阶段。主线仲裁机构决定将下一个传输周期的总线使用权授予某个申请者\n寻址阶段。主设备通过总线给出要访问的从设备地址及有关命令，启动从模块\n传输阶段。主模块和从模块进行数据交换，可单向或双向进行数据传输\n释放阶段。主模块的有关信息均从系统总线上撤除，让出总线使用权。\n突发（猝发）能够进行连续成组数据的传送。\n总线定时\n同步定时方式\n优点：传送速度快，具有较高的传输速率；总线控制逻辑简单 缺点：主从设备属于强制性同步；不能及时进行数据通信的有效性检验，可靠性差。 异步定时方式\n优点：总线周期长度可变，能保证两个工作速度相差很大的部件或设备之间可靠性地进行信息交换，自动适应时间的配合 缺点：比同步控制方式稍复杂一些，速度比同步较慢 根据”请求“和”回答“信号的撤销是否互锁，异步定时方式又分为7以下三种类型\n不互锁方式 半互锁方式 全互锁方式 半同步定时方式\n优点：控制方式比异步定时简单，各模块在系统时钟的控制下同步工作，可靠性较高 缺点：系统时钟频率不能要求太高，所以从整体上看，系统工作的速度不是很高。 分离式定时方式\n将总线事务分解为请求和应答两个子过程。\n">
+    
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/npee_learning_log.github.io/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/npee_learning_log.github.io/img/shiki_hu_20273a3af6c00ff3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🎧</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/npee_learning_log.github.io">shyの考研日志</a></h1>
+            <h2 class="site-description">無職受験生 ～408に挑んだら本気だす～</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/diary' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                
+                <span>日记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/log' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>日志</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/memo' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>笔记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/interests' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+                
+                <span>兴趣</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/update' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                
+                <span>更新</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#计算机组成原理-总线">计算机组成原理-总线</a>
+      <ul>
+        <li><a href="#总线概述">总线概述</a></li>
+        <li><a href="#总线事物和定时">总线事物和定时</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/npee_learning_log.github.io/categories/log/" >
+                Log
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/npee_learning_log.github.io/posts/0909/">0909学习日志</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 09, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="计算机组成原理-总线">计算机组成原理-总线
+</h2><h3 id="总线概述">总线概述
+</h3><ol>
+<li>
+<p>总线基本概念</p>
+<ol>
+<li>总线定义
+<ul>
+<li>分时和共享是总线的两个特点</li>
+</ul>
+</li>
+<li>总线设备
+<ol>
+<li>主设备</li>
+<li>从设备</li>
+</ol>
+</li>
+<li>总线特性</li>
+</ol>
+</li>
+<li>
+<p>总线的分类</p>
+<ol>
+<li>按功能层次分类
+<ol>
+<li>片内总线</li>
+<li>系统总线
+<ol>
+<li>数据总线</li>
+<li>地址总线</li>
+<li>控制总线</li>
+</ol>
+</li>
+<li>I/O总线</li>
+<li>通信总线</li>
+</ol>
+</li>
+<li>按时序控制方式分类
+<ol>
+<li>同步总线</li>
+<li>异步总线</li>
+</ol>
+</li>
+<li>按数据传输方式分类
+<ol>
+<li>串行总线</li>
+<li>并行总线</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>系统总线的结构</p>
+<ol>
+<li>
+<p>单总线</p>
+<ul>
+<li>优点：结构简单，成本低，易于接入新的设备</li>
+<li>缺点：带宽低、负载重，多个部件争用唯一的总线，且不支持开发传送操作</li>
+</ul>
+</li>
+<li>
+<p>双总线结构</p>
+<ul>
+<li>优点：将低速IO设备从原单线上分离出来，实现了存储器总线和IO总线分离</li>
+<li>缺点：需要增加通道等硬件设备</li>
+</ul>
+</li>
+<li>
+<p>三总线结构</p>
+<ul>
+<li>
+<p>优点：提高了IO设备的性能，使其更快的响应命令，提高系统吞吐量</p>
+</li>
+<li>
+<p>缺点：任意时刻只能使用一种总线，系统工作效率降低</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>总线的性能指标</p>
+<ol>
+<li>总线时钟周期</li>
+<li>总线时钟频率</li>
+<li>总线传输周期：一次总线操作所需的时间，包括申请阶段、寻址阶段、传输阶段和结束阶段。通常由若干个时钟周期构成。</li>
+<li>总线工作频率</li>
+<li>总线宽度</li>
+<li>总线带宽</li>
+<li>总线复用</li>
+<li>信号线束</li>
+</ol>
+<p>总线最主要的性能指标为总线宽度、总线的工作频率，总线带宽</p>
+</li>
+</ol>
+<h3 id="总线事物和定时">总线事物和定时
+</h3><ol>
+<li>
+<p>总线事物</p>
+<ol>
+<li>
+<p>请求阶段。主设备（CPU或DMA）发出总线传输请求，并且获得总线控制权</p>
+</li>
+<li>
+<p>仲裁阶段。主线仲裁机构决定将下一个传输周期的总线使用权授予某个申请者</p>
+</li>
+<li>
+<p>寻址阶段。主设备通过总线给出要访问的从设备地址及有关命令，启动从模块</p>
+</li>
+<li>
+<p>传输阶段。主模块和从模块进行数据交换，可单向或双向进行数据传输</p>
+</li>
+<li>
+<p>释放阶段。主模块的有关信息均从系统总线上撤除，让出总线使用权。</p>
+<p>突发（猝发）能够进行连续成组数据的传送。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>总线定时</p>
+<ol>
+<li>
+<p>同步定时方式</p>
+<ul>
+<li>优点：传送速度快，具有较高的传输速率；总线控制逻辑简单</li>
+<li>缺点：主从设备属于强制性同步；不能及时进行数据通信的有效性检验，可靠性差。</li>
+</ul>
+</li>
+<li>
+<p>异步定时方式</p>
+<ul>
+<li>优点：总线周期长度可变，能保证两个工作速度相差很大的部件或设备之间可靠性地进行信息交换，自动适应时间的配合</li>
+<li>缺点：比同步控制方式稍复杂一些，速度比同步较慢</li>
+</ul>
+<p>根据”请求“和”回答“信号的撤销是否互锁，异步定时方式又分为7以下三种类型</p>
+<ol>
+<li>不互锁方式</li>
+<li>半互锁方式</li>
+<li>全互锁方式</li>
+</ol>
+</li>
+<li>
+<p>半同步定时方式</p>
+<ul>
+<li>优点：控制方式比异步定时简单，各模块在系统时钟的控制下同步工作，可靠性较高</li>
+<li>缺点：系统时钟频率不能要求太高，所以从整体上看，系统工作的速度不是很高。</li>
+</ul>
+</li>
+<li>
+<p>分离式定时方式</p>
+<p>将总线事务分解为请求和应答两个子过程。</p>
+<ul>
+<li>
+<p>优点：在不传送数据时释放总线，使总线可接受其他设备的请求，不存在空闲等待时间</p>
+</li>
+<li>
+<p>缺点：控制复杂，开销也大</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/npee_learning_log.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%80%BB%E7%BA%BF/">总线</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%80%BB%E7%BA%BF%E5%AE%9A%E6%97%B6/">总线定时</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0908/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0908学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0907/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0907学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0906/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0906学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0904/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0904学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0903/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0903学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="AuroraEmiya/npee_learning_log.github.io"
+    data-repo-id="R_kgDOPKrKPw"
+    data-category="Comments"
+    data-category-id="DIC_kwDOPKrKP84CuLn2"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading=""
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 shyの考研日志
+    </section>
+    
+    <section class="powerby">
+        
+            Blogroll：<a href="https://void-island-site.vercel.app/">舍友的雾岛电台</a>  ,<a href="https://starrydreamawa.github.io/hugo-stack.github.io">然然の时间记录站</a> <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+        
+    </body>
+</html>

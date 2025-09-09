@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>多处理器 on shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8/</link>
+        <description>Recent content in 多处理器 on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Tue, 09 Sep 2025 10:56:33 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0908学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0908/</link>
+        <pubDate>Tue, 09 Sep 2025 10:56:33 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0908/</guid>
+        <description>&lt;h2 id=&#34;计算机组成原理&#34;&gt;计算机组成原理
+&lt;/h2&gt;&lt;h3 id=&#34;指令流水线&#34;&gt;指令流水线
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;指令流水线的基本概念&lt;/p&gt;
+&lt;p&gt;时间上的并行技术：流水线技术&lt;/p&gt;
+&lt;p&gt;空间上的并行技术：超标量处理机&lt;/p&gt;
+&lt;p&gt;假设一条指令的执行过程分为如下5个阶段（功能段或流水段）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;取指（IF）：从指令存储器或Cache中取指令&lt;/li&gt;
+&lt;li&gt;译码/读寄存器（ID）：操作控制器对指令进行译码，同时从寄存器堆中取操作数&lt;/li&gt;
+&lt;li&gt;执行/计算地址（EX）：执行运算操作或计算地址&lt;/li&gt;
+&lt;li&gt;访存（MEM）：对存储器进行读/写操作&lt;/li&gt;
+&lt;li&gt;写回（WB）：将指令执行结果写回寄存器堆&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;为了利于实现指令流水线，指令集应具有如下特征：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;指令长度应尽量一致，有利于简化取指令和指令译码操作。&lt;/li&gt;
+&lt;li&gt;指令格式应尽量规整，尽量保证源寄存器的位置相同。&lt;/li&gt;
+&lt;li&gt;采用LOAD/STORE型指令，其他指令不能访问存储器，这样可把LOAD/SZTORE指令的地址计算和运算指令的执行步骤规整在一个周期中。&lt;/li&gt;
+&lt;li&gt;数据和指令在存储器中”按边界对齐“存放。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;流水线的基本实现&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;流水线设计的原则
+&lt;ol&gt;
+&lt;li&gt;指令流水段个数以最复杂指令所用的功能段个数为准&lt;/li&gt;
+&lt;li&gt;流水段的长度以最复杂的操作所花的时间为准&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;流水线的逻辑结构&lt;/li&gt;
+&lt;li&gt;流水线的时空图表示&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;流水线的冒险与处理&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;结构冒险&lt;/li&gt;
+&lt;li&gt;数据冒险
+&lt;ol&gt;
+&lt;li&gt;RAW
+&lt;ul&gt;
+&lt;li&gt;延迟执行相关指令&lt;/li&gt;
+&lt;li&gt;采用转发（旁路）技术&lt;/li&gt;
+&lt;li&gt;load-use数据冒险处理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;WAR&lt;/li&gt;
+&lt;li&gt;WAW&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;控制冒险&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;流水线的性能指标&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;流水线的吞吐率（n是任务数，$T_k$是处理完n个任务所用的总时间，k为流水线的段数）
+&lt;/p&gt;
+$$
+      TP = \frac{n}{T_k}
+      $$&lt;p&gt;
+$\Delta t$为时钟周期。在输入流水线中的任务连续的理想情况下，一条$k$段流水线能在$k+n-1$
+&lt;/p&gt;
+$$
+      TP = \lim\limits_{n\to \infty} \frac{n}{(k+n-1)\Delta t} = \frac{1}{\Delta t}
+      $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;流水线的加速比
+&lt;/p&gt;
+$$
+      S = \frac{T_0}{T_k}
+      $$&lt;p&gt;
+一条k段流水线完成n个任务所需的时间为$T_k=(k+n-1)\Delta t$。顺序执行n个任务时,所需的总时间为 $T_0=kn\Delta t$
+&lt;/p&gt;
+$$
+      S = \frac{kn\Delta t}{(k+n-1)\Delta t}
+      $$$$
+      S_{\lim\limits_{n\to \infty}} = k
+      $$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;高级流水线技术&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;超标量流水线技术（多发射技术）&lt;/li&gt;
+&lt;li&gt;超长指令字技术&lt;/li&gt;
+&lt;li&gt;超流水线技术&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;多处理器的基本概念&#34;&gt;多处理器的基本概念
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;SISD，SIMD，MIMD的基本概念
+&lt;ol&gt;
+&lt;li&gt;单指令流单数据流（SISD）结构&lt;/li&gt;
+&lt;li&gt;单指令流多数据流（SIMD）结构&lt;/li&gt;
+&lt;li&gt;多指令流单数据流（MISD）结构（不存在）&lt;/li&gt;
+&lt;li&gt;多指令流多数据流（MIMD）结构&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;硬件多线程的基本概念
+&lt;ol&gt;
+&lt;li&gt;细粒度多线程&lt;/li&gt;
+&lt;li&gt;粗粒度多线程&lt;/li&gt;
+&lt;li&gt;同时多线程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;多核处理器的基本概念&lt;/li&gt;
+&lt;li&gt;共享内存多处理器的基本概念
+&lt;ul&gt;
+&lt;li&gt;统一存储访问（UMA）多处理器&lt;/li&gt;
+&lt;li&gt;非统一存储访问（NUMA）多处理器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
