@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>TCP/IP on shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/tcp/ip/</link>
+        <description>Recent content in TCP/IP on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Wed, 10 Sep 2025 11:53:46 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/tcp/ip/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0910学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0910/</link>
+        <pubDate>Wed, 10 Sep 2025 11:53:46 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0910/</guid>
+        <description>&lt;h2 id=&#34;计算机网络&#34;&gt;计算机网络
+&lt;/h2&gt;&lt;p&gt;PCI: protocol control information&lt;/p&gt;
+&lt;p&gt;PDU:protocol data unit&lt;/p&gt;
+&lt;p&gt;协议三要素&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;语法&lt;/li&gt;
+&lt;li&gt;语义&lt;/li&gt;
+&lt;li&gt;同步。时序，时间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;OSI&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;应用层 （资源子网）http ftp smtp&lt;/li&gt;
+&lt;li&gt;表示层（资源子网）&lt;/li&gt;
+&lt;li&gt;会话层（资源子网）&lt;/li&gt;
+&lt;li&gt;运输层&lt;/li&gt;
+&lt;li&gt;网络层（通信子网）&lt;/li&gt;
+&lt;li&gt;数据链路层（通信子网）&lt;/li&gt;
+&lt;li&gt;物理层（通信子网）比特&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;物理层：透明传输比特流&lt;/p&gt;
+&lt;p&gt;用什么电子信号表示1和0&lt;/p&gt;
+&lt;p&gt;一个比特持续多长时间&lt;/p&gt;
+&lt;p&gt;是否可以两个方向传输&lt;/p&gt;
+&lt;p&gt;连接建立&lt;/p&gt;
+&lt;p&gt;撤销链接&lt;/p&gt;
+&lt;p&gt;用途&lt;/p&gt;
+&lt;p&gt;机械电子时序接口&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;数据链路层：将一个原始的传输线路变成一条没有传输错误的线路&lt;/p&gt;
+&lt;p&gt;输入的数据拆分成数据帧，顺序发送数据帧PDU&lt;/p&gt;
+&lt;p&gt;流量调节机制共享信道的访问&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;网络层：主机间的路由选择，分组转发和网络的划分&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;网络异构细节&lt;/li&gt;
+&lt;li&gt;子网划分&lt;/li&gt;
+&lt;li&gt;路由选择&lt;/li&gt;
+&lt;li&gt;数据转发&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;传输层：接受来自上一层的数据，在必要时的时候把这些数据分割成较小的单元&lt;/p&gt;
+&lt;p&gt;UDPTCP&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;会话层：允许不同机器上的用户建立会话&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对话控制&lt;/li&gt;
+&lt;li&gt;令牌管理&lt;/li&gt;
+&lt;li&gt;同步功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;表示层：关注所传递信息的语法和语义*&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;标准的编码方法&lt;/li&gt;
+&lt;li&gt;加密解密&lt;/li&gt;
+&lt;li&gt;压缩解压&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;应用层：包含了用户通常需要的各种各样的协议&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;TCP/IP模型&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;应用层：提供系统与用户的接口&lt;/li&gt;
+&lt;li&gt;运输层&lt;/li&gt;
+&lt;li&gt;网络层&lt;/li&gt;
+&lt;li&gt;网络接口层&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
