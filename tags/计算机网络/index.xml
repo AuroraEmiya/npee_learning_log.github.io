@@ -6,7 +6,247 @@
         <description>Recent content in 计算机网络 on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 10 Sep 2025 11:53:46 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 14 Sep 2025 00:58:10 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0913学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0913/</link>
+        <pubDate>Sun, 14 Sep 2025 00:58:10 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0913/</guid>
+        <description>&lt;h2 id=&#34;计算机网络物理层&#34;&gt;计算机网络&amp;ndash;物理层
+&lt;/h2&gt;&lt;h3 id=&#34;通信概念&#34;&gt;通信概念
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;基本概念&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;数据、信号与码元&lt;/li&gt;
+&lt;li&gt;信源、信道与信宿&lt;/li&gt;
+&lt;li&gt;单向通信、半双工与全双工通信&lt;/li&gt;
+&lt;li&gt;速率、波特与带宽
+&lt;ol&gt;
+&lt;li&gt;码元传输速率&lt;/li&gt;
+&lt;li&gt;信息传输速率&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;信道的极限容量&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;奈奎斯特定理（奈氏准测）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;理想低通信道下的极限码元传输速率
+&lt;/p&gt;
+$$
+         2W
+         $$&lt;p&gt;
+对应的数据传输速率
+&lt;/p&gt;
+$$
+         2W\log_2V
+         $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;香农定理&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;带宽受限且有高斯噪声干扰&lt;/strong&gt;的信道的极限数据传输速率
+&lt;/p&gt;
+$$
+          W\log_2(1+\frac{S}{N})
+         $$&lt;p&gt;
+其中
+&lt;/p&gt;
+$$
+         1dB = 10 \lg\frac{S}{N}
+         $$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编码与调制&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;数字数据编码为数字信号
+&lt;ol&gt;
+&lt;li&gt;不归零数据&lt;/li&gt;
+&lt;li&gt;归零编码&lt;/li&gt;
+&lt;li&gt;反向非归零编码&lt;/li&gt;
+&lt;li&gt;曼彻斯特编码&lt;/li&gt;
+&lt;li&gt;差分曼彻斯特编码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;模拟数据编码为数字信号&lt;/li&gt;
+&lt;li&gt;数字数据调制为模拟信号
+&lt;ul&gt;
+&lt;li&gt;调幅AM&lt;/li&gt;
+&lt;li&gt;调频FM&lt;/li&gt;
+&lt;li&gt;调相PM&lt;/li&gt;
+&lt;li&gt;正交幅度调制QAM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;模拟数据调制为模拟信号&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;传输介质&#34;&gt;传输介质
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;传输介质
+&lt;ol&gt;
+&lt;li&gt;双绞线&lt;/li&gt;
+&lt;li&gt;同轴电缆&lt;/li&gt;
+&lt;li&gt;光纤&lt;/li&gt;
+&lt;li&gt;无线传输介质&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;物理层接口的特性
+&lt;ol&gt;
+&lt;li&gt;机械特性&lt;/li&gt;
+&lt;li&gt;电气特性&lt;/li&gt;
+&lt;li&gt;功能特性&lt;/li&gt;
+&lt;li&gt;过程特性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;物理层设备
+&lt;ol&gt;
+&lt;li&gt;中继器&lt;/li&gt;
+&lt;li&gt;集线器（Hub）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
+        <title>0912 学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0912/</link>
+        <pubDate>Sun, 14 Sep 2025 00:40:32 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0912/</guid>
+        <description>&lt;h2 id=&#34;计算机网络&#34;&gt;计算机网络
+&lt;/h2&gt;&lt;h3 id=&#34;计算机网络体系结构&#34;&gt;计算机网络体系结构
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;计算机网络的概念&lt;/li&gt;
+&lt;li&gt;计算机网络的组成&lt;/li&gt;
+&lt;li&gt;计算机网络的功能
+&lt;ol&gt;
+&lt;li&gt;数据通信&lt;/li&gt;
+&lt;li&gt;资源共享&lt;/li&gt;
+&lt;li&gt;分布式处理&lt;/li&gt;
+&lt;li&gt;负载均衡&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;电路交换&lt;/li&gt;
+&lt;li&gt;报文交换&lt;/li&gt;
+&lt;li&gt;分组交换&lt;/li&gt;
+&lt;li&gt;计算机网络的分类
+&lt;ol&gt;
+&lt;li&gt;按分布范围分类
+&lt;ul&gt;
+&lt;li&gt;WAN&lt;/li&gt;
+&lt;li&gt;MAN&lt;/li&gt;
+&lt;li&gt;LAN&lt;/li&gt;
+&lt;li&gt;PAN&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;按传输技术分类
+&lt;ul&gt;
+&lt;li&gt;广播式网络&lt;/li&gt;
+&lt;li&gt;点对点网络&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;按拓扑结构分类
+&lt;ol&gt;
+&lt;li&gt;总线型网络&lt;/li&gt;
+&lt;li&gt;星型网络&lt;/li&gt;
+&lt;li&gt;环形网络&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;按使用者分类
+&lt;ul&gt;
+&lt;li&gt;公用网&lt;/li&gt;
+&lt;li&gt;专用网&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;计算机网络的性能指标
+&lt;ol&gt;
+&lt;li&gt;速率&lt;/li&gt;
+&lt;li&gt;带宽&lt;/li&gt;
+&lt;li&gt;吞吐量&lt;/li&gt;
+&lt;li&gt;时延
+&lt;ol&gt;
+&lt;li&gt;发送时延（传输时延）&lt;/li&gt;
+&lt;li&gt;传播时延&lt;/li&gt;
+&lt;li&gt;处理时延&lt;/li&gt;
+&lt;li&gt;排队时延&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;时延带宽积&lt;/li&gt;
+&lt;li&gt;往返时延&lt;/li&gt;
+&lt;li&gt;信道利用率 = 有数据通过时间/（有 + 无数据通过时间）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;计算机网络体系结构与参考模型&#34;&gt;计算机网络体系结构与参考模型
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;计算机网络分层结构&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SDU 服务数据单元&lt;/li&gt;
+&lt;li&gt;PCI 协议控制信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;计算机网络协议、接口、服务的概念&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;协议&lt;/p&gt;
+&lt;p&gt;语法、语义、同步&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;接口&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;服务&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;请求&lt;/li&gt;
+&lt;li&gt;指示&lt;/li&gt;
+&lt;li&gt;响应&lt;/li&gt;
+&lt;li&gt;证实&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;面向连接服务与无连接服务&lt;/li&gt;
+&lt;li&gt;可靠服务和不可靠服务&lt;/li&gt;
+&lt;li&gt;有应答服务和无应答服务&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ISO/OSI参考模型&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;应用层&lt;/li&gt;
+&lt;li&gt;表示层&lt;/li&gt;
+&lt;li&gt;会话层&lt;/li&gt;
+&lt;li&gt;传输层&lt;/li&gt;
+&lt;li&gt;网络层&lt;/li&gt;
+&lt;li&gt;数据链路层&lt;/li&gt;
+&lt;li&gt;物理层&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;TCP/IP模型&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;应用层&lt;/li&gt;
+&lt;li&gt;传输层&lt;/li&gt;
+&lt;li&gt;网际层&lt;/li&gt;
+&lt;li&gt;网络接口层&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;&#34;&gt;
+&lt;/h3&gt;</description>
+        </item>
+        <item>
         <title>0910学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0910/</link>
         <pubDate>Wed, 10 Sep 2025 11:53:46 +0800</pubDate>
