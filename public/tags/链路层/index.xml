@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>链路层 on shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E9%93%BE%E8%B7%AF%E5%B1%82/</link>
+        <description>Recent content in 链路层 on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Wed, 17 Sep 2025 23:42:11 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E9%93%BE%E8%B7%AF%E5%B1%82/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0914学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0914/</link>
+        <pubDate>Wed, 17 Sep 2025 23:42:11 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0914/</guid>
+        <description>&lt;h2 id=&#34;计算机网络-数据链路层&#34;&gt;计算机网络-数据链路层
+&lt;/h2&gt;&lt;h3 id=&#34;数据链路层的功能&#34;&gt;数据链路层的功能
+&lt;/h3&gt;&lt;p&gt;基本问题&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;封装成帧&lt;/li&gt;
+&lt;li&gt;透明传输&lt;/li&gt;
+&lt;li&gt;差错检测&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;信道：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;点对点信道&lt;/li&gt;
+&lt;li&gt;广播信道&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;数据链路层所处的地位&lt;/li&gt;
+&lt;li&gt;基本概念
+&lt;ol&gt;
+&lt;li&gt;链路&lt;/li&gt;
+&lt;li&gt;数据链路&lt;/li&gt;
+&lt;li&gt;帧&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;为网络层提供服务&lt;/li&gt;
+&lt;li&gt;链路管理&lt;/li&gt;
+&lt;li&gt;封装成帧与透明传输&lt;/li&gt;
+&lt;li&gt;流量控制&lt;/li&gt;
+&lt;li&gt;差错检测
+&lt;ul&gt;
+&lt;li&gt;位错&lt;/li&gt;
+&lt;li&gt;帧错&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;组帧&#34;&gt;组帧
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;字符计数法 首部添加字节数&lt;/li&gt;
+&lt;li&gt;字节填充法
+&lt;ul&gt;
+&lt;li&gt;SOH 最前面&lt;/li&gt;
+&lt;li&gt;EOT 帧结束&lt;/li&gt;
+&lt;li&gt;特殊字符 使用ESC 转义字符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;零比特填充法&lt;/li&gt;
+&lt;li&gt;违规编码法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;差错控制&#34;&gt;差错控制
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;检错编码
+&lt;ol&gt;
+&lt;li&gt;奇偶校验&lt;/li&gt;
+&lt;li&gt;循环冗余码CRC&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;纠错编码
+&lt;ul&gt;
+&lt;li&gt;海明码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;流量控制与可靠传输机制&#34;&gt;流量控制与可靠传输机制
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;流量控制与滑动窗口机制&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;停止-等待流量控制基本原理&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;滑动窗口流量控制基本原理&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;协议&lt;/th&gt;
+          &lt;th&gt;发送窗口$W_T$&lt;/th&gt;
+          &lt;th&gt;接收窗口$W_R$&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;停止-等待协议&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;后退N帧协议&lt;/td&gt;
+          &lt;td&gt;$&amp;gt;1$&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;选择重传协议&lt;/td&gt;
+          &lt;td&gt;$&amp;gt;1$&lt;/td&gt;
+          &lt;td&gt;$&amp;gt;1$&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;若采用n比特对帧编号，则后两种滑动窗口协议还需满足$W_T+W_R\leq 2^n$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;可靠传输机制&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;单帧滑动窗口与停止-等待协议(S-W)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;多帧滑动窗口与后退N帧协议(GBN)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;多帧滑动窗口与选择重传协议(SR)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;信道利用率分析&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;停止等待（$T_D$分组发送时延，$T_A$确认发送时延）
+&lt;/p&gt;
+$$
+         U=\frac{T_D}{T_D+ RTT+T_A}
+         $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;连续ARQ协议的新年到利用率&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;$nT_D&amp;lt;T_D+RTT+R_A$:
+&lt;/p&gt;
+$$
+            U=\frac{nT_D}{T_D+ RTT+T_A}
+            $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;否则：
+&lt;/p&gt;
+$$
+            1
+            $$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;介质访问控制&#34;&gt;介质访问控制
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;信道划分介质访问控制&lt;/li&gt;
+&lt;li&gt;频分复用FDM&lt;/li&gt;
+&lt;li&gt;时分复用TDM&lt;/li&gt;
+&lt;li&gt;波分复用WDM&lt;/li&gt;
+&lt;li&gt;码分复用CDM&lt;/li&gt;
+&lt;li&gt;随机访问介质访问控制
+&lt;ol&gt;
+&lt;li&gt;ALOHA协议
+&lt;ol&gt;
+&lt;li&gt;纯ALOHA协议&lt;/li&gt;
+&lt;li&gt;时隙ALOHA&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;CSMA协议（载波监听多路访问）
+&lt;ol&gt;
+&lt;li&gt;1-坚持CSMA&lt;/li&gt;
+&lt;li&gt;非坚持CSMA&lt;/li&gt;
+&lt;li&gt;p-坚持CSMA&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;CSMA/DA协议（载波监听多路访问/冲突检测）&lt;/li&gt;
+&lt;li&gt;CSMA/CA协议&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;轮询访问：令牌传递协议&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;​&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

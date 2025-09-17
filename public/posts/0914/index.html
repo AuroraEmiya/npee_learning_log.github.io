@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="计算机网络-数据链路层\r数据链路层的功能\r基本问题\n封装成帧 透明传输 差错检测 信道：\n点对点信道 广播信道 数据链路层所处的地位 基本概念 链路 数据链路 帧 为网络层提供服务 链路管理 封装成帧与透明传输 流量控制 差错检测 位错 帧错 组帧\r字符计数法 首部添加字节数 字节填充法 SOH 最前面 EOT 帧结束 特殊字符 使用ESC 转义字符 零比特填充法 违规编码法 差错控制\r检错编码 奇偶校验 循环冗余码CRC 纠错编码 海明码 流量控制与可靠传输机制\r流量控制与滑动窗口机制\n停止-等待流量控制基本原理\n滑动窗口流量控制基本原理\n协议 发送窗口$W_T$ 接收窗口$W_R$ 停止-等待协议 1 1 后退N帧协议 $&gt;1$ 1 选择重传协议 $&gt;1$ $&gt;1$ 若采用n比特对帧编号，则后两种滑动窗口协议还需满足$W_T+W_R\\leq 2^n$\n可靠传输机制\n单帧滑动窗口与停止-等待协议(S-W)\n多帧滑动窗口与后退N帧协议(GBN)\n多帧滑动窗口与选择重传协议(SR)\n信道利用率分析\n停止等待（$T_D$分组发送时延，$T_A$确认发送时延） $$ U=\\frac{T_D}{T_D+ RTT+T_A} $$ 连续ARQ协议的新年到利用率\n">
+<title>0914学习日志</title>
+
+<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0914/'>
+
+<link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0914学习日志">
+<meta property='og:description' content="计算机网络-数据链路层\r数据链路层的功能\r基本问题\n封装成帧 透明传输 差错检测 信道：\n点对点信道 广播信道 数据链路层所处的地位 基本概念 链路 数据链路 帧 为网络层提供服务 链路管理 封装成帧与透明传输 流量控制 差错检测 位错 帧错 组帧\r字符计数法 首部添加字节数 字节填充法 SOH 最前面 EOT 帧结束 特殊字符 使用ESC 转义字符 零比特填充法 违规编码法 差错控制\r检错编码 奇偶校验 循环冗余码CRC 纠错编码 海明码 流量控制与可靠传输机制\r流量控制与滑动窗口机制\n停止-等待流量控制基本原理\n滑动窗口流量控制基本原理\n协议 发送窗口$W_T$ 接收窗口$W_R$ 停止-等待协议 1 1 后退N帧协议 $&gt;1$ 1 选择重传协议 $&gt;1$ $&gt;1$ 若采用n比特对帧编号，则后两种滑动窗口协议还需满足$W_T+W_R\\leq 2^n$\n可靠传输机制\n单帧滑动窗口与停止-等待协议(S-W)\n多帧滑动窗口与后退N帧协议(GBN)\n多帧滑动窗口与选择重传协议(SR)\n信道利用率分析\n停止等待（$T_D$分组发送时延，$T_A$确认发送时延） $$ U=\\frac{T_D}{T_D+ RTT+T_A} $$ 连续ARQ协议的新年到利用率\n">
+<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0914/'>
+<meta property='og:site_name' content='shyの考研日志'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='计算机网络' /><meta property='article:tag' content='链路层' /><meta property='article:published_time' content='2025-09-17T23:42:11&#43;08:00'/><meta property='article:modified_time' content='2025-09-17T23:42:11&#43;08:00'/>
+<meta name="twitter:title" content="0914学习日志">
+<meta name="twitter:description" content="计算机网络-数据链路层\r数据链路层的功能\r基本问题\n封装成帧 透明传输 差错检测 信道：\n点对点信道 广播信道 数据链路层所处的地位 基本概念 链路 数据链路 帧 为网络层提供服务 链路管理 封装成帧与透明传输 流量控制 差错检测 位错 帧错 组帧\r字符计数法 首部添加字节数 字节填充法 SOH 最前面 EOT 帧结束 特殊字符 使用ESC 转义字符 零比特填充法 违规编码法 差错控制\r检错编码 奇偶校验 循环冗余码CRC 纠错编码 海明码 流量控制与可靠传输机制\r流量控制与滑动窗口机制\n停止-等待流量控制基本原理\n滑动窗口流量控制基本原理\n协议 发送窗口$W_T$ 接收窗口$W_R$ 停止-等待协议 1 1 后退N帧协议 $&gt;1$ 1 选择重传协议 $&gt;1$ $&gt;1$ 若采用n比特对帧编号，则后两种滑动窗口协议还需满足$W_T+W_R\\leq 2^n$\n可靠传输机制\n单帧滑动窗口与停止-等待协议(S-W)\n多帧滑动窗口与后退N帧协议(GBN)\n多帧滑动窗口与选择重传协议(SR)\n信道利用率分析\n停止等待（$T_D$分组发送时延，$T_A$确认发送时延） $$ U=\\frac{T_D}{T_D+ RTT+T_A} $$ 连续ARQ协议的新年到利用率\n">
+    
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/npee_learning_log.github.io/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/npee_learning_log.github.io/img/shiki_hu_20273a3af6c00ff3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🎧</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/npee_learning_log.github.io">shyの考研日志</a></h1>
+            <h2 class="site-description">無職受験生 ～408に挑んだら本気だす～</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/diary' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                
+                <span>日记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/log' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>日志</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/memo' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>笔记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/interests' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+                
+                <span>兴趣</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/update' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                
+                <span>更新</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#计算机网络-数据链路层">计算机网络-数据链路层</a>
+      <ul>
+        <li><a href="#数据链路层的功能">数据链路层的功能</a></li>
+        <li><a href="#组帧">组帧</a></li>
+        <li><a href="#差错控制">差错控制</a></li>
+        <li><a href="#流量控制与可靠传输机制">流量控制与可靠传输机制</a></li>
+        <li><a href="#介质访问控制">介质访问控制</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/npee_learning_log.github.io/categories/log/" >
+                Log
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/npee_learning_log.github.io/posts/0914/">0914学习日志</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 17, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="计算机网络-数据链路层">计算机网络-数据链路层
+</h2><h3 id="数据链路层的功能">数据链路层的功能
+</h3><p>基本问题</p>
+<ul>
+<li>封装成帧</li>
+<li>透明传输</li>
+<li>差错检测</li>
+</ul>
+<p>信道：</p>
+<ul>
+<li>点对点信道</li>
+<li>广播信道</li>
+</ul>
+<ol>
+<li>数据链路层所处的地位</li>
+<li>基本概念
+<ol>
+<li>链路</li>
+<li>数据链路</li>
+<li>帧</li>
+</ol>
+</li>
+<li>为网络层提供服务</li>
+<li>链路管理</li>
+<li>封装成帧与透明传输</li>
+<li>流量控制</li>
+<li>差错检测
+<ul>
+<li>位错</li>
+<li>帧错</li>
+</ul>
+</li>
+</ol>
+<h3 id="组帧">组帧
+</h3><ol>
+<li>字符计数法 首部添加字节数</li>
+<li>字节填充法
+<ul>
+<li>SOH 最前面</li>
+<li>EOT 帧结束</li>
+<li>特殊字符 使用ESC 转义字符</li>
+</ul>
+</li>
+<li>零比特填充法</li>
+<li>违规编码法</li>
+</ol>
+<h3 id="差错控制">差错控制
+</h3><ol>
+<li>检错编码
+<ol>
+<li>奇偶校验</li>
+<li>循环冗余码CRC</li>
+</ol>
+</li>
+<li>纠错编码
+<ul>
+<li>海明码</li>
+</ul>
+</li>
+</ol>
+<h3 id="流量控制与可靠传输机制">流量控制与可靠传输机制
+</h3><ol>
+<li>
+<p>流量控制与滑动窗口机制</p>
+<ol>
+<li>
+<p>停止-等待流量控制基本原理</p>
+</li>
+<li>
+<p>滑动窗口流量控制基本原理</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>协议</th>
+          <th>发送窗口$W_T$</th>
+          <th>接收窗口$W_R$</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>停止-等待协议</td>
+          <td>1</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>后退N帧协议</td>
+          <td>$&gt;1$</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>选择重传协议</td>
+          <td>$&gt;1$</td>
+          <td>$&gt;1$</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>若采用n比特对帧编号，则后两种滑动窗口协议还需满足$W_T+W_R\leq 2^n$</p>
+</li>
+</ol>
+</li>
+<li>
+<p>可靠传输机制</p>
+<ol>
+<li>
+<p>单帧滑动窗口与停止-等待协议(S-W)</p>
+</li>
+<li>
+<p>多帧滑动窗口与后退N帧协议(GBN)</p>
+</li>
+<li>
+<p>多帧滑动窗口与选择重传协议(SR)</p>
+</li>
+<li>
+<p>信道利用率分析</p>
+<ol>
+<li>
+<p>停止等待（$T_D$分组发送时延，$T_A$确认发送时延）
+</p>
+$$
+         U=\frac{T_D}{T_D+ RTT+T_A}
+         $$</li>
+<li>
+<p>连续ARQ协议的新年到利用率</p>
+<ol>
+<li>
+<p>$nT_D&lt;T_D+RTT+R_A$:
+</p>
+$$
+            U=\frac{nT_D}{T_D+ RTT+T_A}
+            $$</li>
+<li>
+<p>否则：
+</p>
+$$
+            1
+            $$</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="介质访问控制">介质访问控制
+</h3><ol>
+<li>信道划分介质访问控制</li>
+<li>频分复用FDM</li>
+<li>时分复用TDM</li>
+<li>波分复用WDM</li>
+<li>码分复用CDM</li>
+<li>随机访问介质访问控制
+<ol>
+<li>ALOHA协议
+<ol>
+<li>纯ALOHA协议</li>
+<li>时隙ALOHA</li>
+</ol>
+</li>
+<li>CSMA协议（载波监听多路访问）
+<ol>
+<li>1-坚持CSMA</li>
+<li>非坚持CSMA</li>
+<li>p-坚持CSMA</li>
+</ol>
+</li>
+<li>CSMA/DA协议（载波监听多路访问/冲突检测）</li>
+<li>CSMA/CA协议</li>
+</ol>
+</li>
+<li>轮询访问：令牌传递协议</li>
+</ol>
+<p>​</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/npee_learning_log.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E9%93%BE%E8%B7%AF%E5%B1%82/">链路层</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0913/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0913学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0912/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0912 学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0910/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0910学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="AuroraEmiya/npee_learning_log.github.io"
+    data-repo-id="R_kgDOPKrKPw"
+    data-category="Comments"
+    data-category-id="DIC_kwDOPKrKP84CuLn2"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading=""
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 shyの考研日志
+    </section>
+    
+    <section class="powerby">
+        
+            Blogroll：<a href="https://void-island-site.vercel.app/">舍友的雾岛电台</a>  ,<a href="https://starrydreamawa.github.io/hugo-stack.github.io">然然の时间记录站</a> <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+        
+    </body>
+</html>
