@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="计算机网络\r局域网\r局域网的基本概念和体系结构\n主要特点： 为一个单位所拥有，其地理范围和站点数量均有限 所有站点共享较高的总带宽 较低的时延和较低的误码率 各站点为平等关系而非主从关系 能进行广播和多播 三种特殊的局域网拓扑 以太网 令牌环(Token Ring) FDDI：逻辑拓扑环形结构，物理拓扑是双环结构 以太网与IEEE 802.3\nDIX Ethernet V2 IEEE 802.3 以太网的传输介质与网卡\n标准名称 10BASE5 10BASE2 10BASE-T 10BASE-F 传输介质 同轴电缆（粗缆） 同轴电缆（细缆） 非屏蔽双绞线 光线对（850mm） 编码 曼彻斯特编码 曼彻斯特编码 曼彻斯特编码 曼彻斯特编码 拓扑结构 总线型 总线型 星形 点对点 最大段长 500m 185m 100m 2000m 最多节点数目 100 30 2 2 以太网的MAC地址：6字节，具体分配方式如下表\n厂商代码 自行分配的适配器编号 高24位 低24位 单播帧 广播帧 多播帧 MAC帧的首部：\n（6字节）目的MAC地址 （6字节）源MAC地址 （2字节）类型：交付上层协议 MAC帧的尾部：\n（四字节）FCS：校验码 IEEE 802.11 无线局域网\n">
+<title>0915学习日志</title>
+
+<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0915/'>
+
+<link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0915学习日志">
+<meta property='og:description' content="计算机网络\r局域网\r局域网的基本概念和体系结构\n主要特点： 为一个单位所拥有，其地理范围和站点数量均有限 所有站点共享较高的总带宽 较低的时延和较低的误码率 各站点为平等关系而非主从关系 能进行广播和多播 三种特殊的局域网拓扑 以太网 令牌环(Token Ring) FDDI：逻辑拓扑环形结构，物理拓扑是双环结构 以太网与IEEE 802.3\nDIX Ethernet V2 IEEE 802.3 以太网的传输介质与网卡\n标准名称 10BASE5 10BASE2 10BASE-T 10BASE-F 传输介质 同轴电缆（粗缆） 同轴电缆（细缆） 非屏蔽双绞线 光线对（850mm） 编码 曼彻斯特编码 曼彻斯特编码 曼彻斯特编码 曼彻斯特编码 拓扑结构 总线型 总线型 星形 点对点 最大段长 500m 185m 100m 2000m 最多节点数目 100 30 2 2 以太网的MAC地址：6字节，具体分配方式如下表\n厂商代码 自行分配的适配器编号 高24位 低24位 单播帧 广播帧 多播帧 MAC帧的首部：\n（6字节）目的MAC地址 （6字节）源MAC地址 （2字节）类型：交付上层协议 MAC帧的尾部：\n（四字节）FCS：校验码 IEEE 802.11 无线局域网\n">
+<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0915/'>
+<meta property='og:site_name' content='shyの考研日志'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='计算机网络' /><meta property='article:tag' content='局域网' /><meta property='article:tag' content='IEEE 802.3' /><meta property='article:tag' content='IEEE 802.11' /><meta property='article:tag' content='IEEE 802.1Q帧' /><meta property='article:tag' content='以太网' /><meta property='article:tag' content='以太网交换机' /><meta property='article:published_time' content='2025-09-17T23:42:14&#43;08:00'/><meta property='article:modified_time' content='2025-09-17T23:42:14&#43;08:00'/>
+<meta name="twitter:title" content="0915学习日志">
+<meta name="twitter:description" content="计算机网络\r局域网\r局域网的基本概念和体系结构\n主要特点： 为一个单位所拥有，其地理范围和站点数量均有限 所有站点共享较高的总带宽 较低的时延和较低的误码率 各站点为平等关系而非主从关系 能进行广播和多播 三种特殊的局域网拓扑 以太网 令牌环(Token Ring) FDDI：逻辑拓扑环形结构，物理拓扑是双环结构 以太网与IEEE 802.3\nDIX Ethernet V2 IEEE 802.3 以太网的传输介质与网卡\n标准名称 10BASE5 10BASE2 10BASE-T 10BASE-F 传输介质 同轴电缆（粗缆） 同轴电缆（细缆） 非屏蔽双绞线 光线对（850mm） 编码 曼彻斯特编码 曼彻斯特编码 曼彻斯特编码 曼彻斯特编码 拓扑结构 总线型 总线型 星形 点对点 最大段长 500m 185m 100m 2000m 最多节点数目 100 30 2 2 以太网的MAC地址：6字节，具体分配方式如下表\n厂商代码 自行分配的适配器编号 高24位 低24位 单播帧 广播帧 多播帧 MAC帧的首部：\n（6字节）目的MAC地址 （6字节）源MAC地址 （2字节）类型：交付上层协议 MAC帧的尾部：\n（四字节）FCS：校验码 IEEE 802.11 无线局域网\n">
+    
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/npee_learning_log.github.io/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/npee_learning_log.github.io/img/shiki_hu_20273a3af6c00ff3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🎧</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/npee_learning_log.github.io">shyの考研日志</a></h1>
+            <h2 class="site-description">無職受験生 ～408に挑んだら本気だす～</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/diary' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                
+                <span>日记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/log' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>日志</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/memo' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>笔记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/interests' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+                
+                <span>兴趣</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/update' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                
+                <span>更新</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#计算机网络">计算机网络</a>
+      <ul>
+        <li><a href="#局域网">局域网</a></li>
+        <li><a href="#广域网">广域网</a></li>
+        <li><a href="#数据链路层设备">数据链路层设备</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/npee_learning_log.github.io/categories/log/" >
+                Log
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/npee_learning_log.github.io/posts/0915/">0915学习日志</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 17, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="计算机网络">计算机网络
+</h2><h3 id="局域网">局域网
+</h3><ol>
+<li>
+<p>局域网的基本概念和体系结构</p>
+<ul>
+<li>主要特点：
+<ol>
+<li>为一个单位所拥有，其地理范围和站点数量均有限</li>
+<li>所有站点共享较高的总带宽</li>
+<li>较低的时延和较低的误码率</li>
+<li>各站点为平等关系而非主从关系</li>
+<li>能进行广播和多播</li>
+</ol>
+</li>
+<li>三种特殊的局域网拓扑
+<ol>
+<li>以太网</li>
+<li>令牌环(Token Ring)</li>
+<li>FDDI：逻辑拓扑环形结构，物理拓扑是双环结构</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>以太网与IEEE 802.3</p>
+<ul>
+<li>DIX Ethernet V2</li>
+<li>IEEE 802.3</li>
+</ul>
+<ol>
+<li>
+<p>以太网的传输介质与网卡</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>标准名称</th>
+          <th>10BASE5</th>
+          <th>10BASE2</th>
+          <th>10BASE-T</th>
+          <th>10BASE-F</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>传输介质</td>
+          <td>同轴电缆（粗缆）</td>
+          <td>同轴电缆（细缆）</td>
+          <td>非屏蔽双绞线</td>
+          <td>光线对（850mm）</td>
+      </tr>
+      <tr>
+          <td>编码</td>
+          <td>曼彻斯特编码</td>
+          <td>曼彻斯特编码</td>
+          <td>曼彻斯特编码</td>
+          <td>曼彻斯特编码</td>
+      </tr>
+      <tr>
+          <td>拓扑结构</td>
+          <td>总线型</td>
+          <td>总线型</td>
+          <td>星形</td>
+          <td>点对点</td>
+      </tr>
+      <tr>
+          <td>最大段长</td>
+          <td>500m</td>
+          <td>185m</td>
+          <td>100m</td>
+          <td>2000m</td>
+      </tr>
+      <tr>
+          <td>最多节点数目</td>
+          <td>100</td>
+          <td>30</td>
+          <td>2</td>
+          <td>2</td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+<li>
+<p>以太网的MAC地址：6字节，具体分配方式如下表</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center">厂商代码</th>
+          <th style="text-align: center">自行分配的适配器编号</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">高24位</td>
+          <td style="text-align: center">低24位</td>
+      </tr>
+  </tbody>
+</table></div>
+<ul>
+<li>单播帧</li>
+<li>广播帧</li>
+<li>多播帧</li>
+</ul>
+<p>MAC帧的首部：</p>
+<ol>
+<li>（6字节）目的MAC地址</li>
+<li>（6字节）源MAC地址</li>
+<li>（2字节）类型：交付上层协议</li>
+</ol>
+<p>MAC帧的尾部：</p>
+<ol>
+<li>（四字节）FCS：校验码</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>IEEE 802.11 无线局域网</p>
+<ol>
+<li>
+<p>无线局域网的组成</p>
+<ol>
+<li>有固定基础设施无线局域网</li>
+<li>无固定基础设施无线局域网：自组网络（ad hoc network）</li>
+</ol>
+</li>
+<li>
+<p>802.11 局域网的MAC帧</p>
+<ol>
+<li>
+<p>（30字节）MAC首部</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">MAC首部组成部分（按序）</th>
+          <th style="text-align: center">字节数</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">帧控制</td>
+          <td style="text-align: center">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">持续期</td>
+          <td style="text-align: center">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">地址1 （接收地址）</td>
+          <td style="text-align: center">6</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">地址2 （发送地址）</td>
+          <td style="text-align: center">6</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">地址3  （视情况而定）</td>
+          <td style="text-align: center">6</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">序号控制</td>
+          <td style="text-align: center">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">地址4</td>
+          <td style="text-align: center">6</td>
+      </tr>
+  </tbody>
+</table></div>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>帧控制组成部分</th>
+          <th style="text-align: center">bit位数</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>协议版本</td>
+          <td style="text-align: center">2</td>
+      </tr>
+      <tr>
+          <td>类型</td>
+          <td style="text-align: center">2</td>
+      </tr>
+      <tr>
+          <td>子类型</td>
+          <td style="text-align: center">3</td>
+      </tr>
+      <tr>
+          <td>去往AP</td>
+          <td style="text-align: center">1</td>
+      </tr>
+      <tr>
+          <td>来自AP</td>
+          <td style="text-align: center">1</td>
+      </tr>
+      <tr>
+          <td>更多分片</td>
+          <td style="text-align: center">1</td>
+      </tr>
+      <tr>
+          <td>重试</td>
+          <td style="text-align: center">1</td>
+      </tr>
+      <tr>
+          <td>功率管理</td>
+          <td style="text-align: center">1</td>
+      </tr>
+      <tr>
+          <td>更多数据</td>
+          <td style="text-align: center">1</td>
+      </tr>
+      <tr>
+          <td>WEP</td>
+          <td style="text-align: center">1</td>
+      </tr>
+      <tr>
+          <td>顺序</td>
+          <td style="text-align: center">1</td>
+      </tr>
+  </tbody>
+</table></div>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>去往AP</th>
+          <th>来自AP</th>
+          <th>地址1</th>
+          <th>地址2</th>
+          <th>地址3</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>接收地址=AP地址</td>
+          <td>发送地址=源地址</td>
+          <td>目的地址</td>
+      </tr>
+      <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>接收地址=目的地址</td>
+          <td>发送地址=AP地址</td>
+          <td>源地址</td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+<li>
+<p>帧主体</p>
+</li>
+<li>
+<p>（4字节）FCS帧校验序列</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>VLAN基本概念与基本原理</p>
+<ul>
+<li>802.1Q帧
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center">目的地址</th>
+          <th style="text-align: center">源地址</th>
+          <th style="text-align: center">VLAN标签</th>
+          <th style="text-align: center">类型</th>
+          <th style="text-align: center">数据</th>
+          <th style="text-align: center">FCS</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">6B</td>
+          <td style="text-align: center">6B</td>
+          <td style="text-align: center">4B</td>
+          <td style="text-align: center">2B</td>
+          <td style="text-align: center">46B-1500B</td>
+          <td style="text-align: center">4B</td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="广域网">广域网
+</h3><ol>
+<li>
+<p>基本概念</p>
+</li>
+<li>
+<p>PPP协议（点对点链路控制协议）</p>
+<ul>
+<li>用户需要连接到某个ISP</li>
+<li>广域网路由器之间的专用线路</li>
+</ul>
+<ol>
+<li>LCP：链路控制协议</li>
+<li>NCP：网络控制协议</li>
+<li>一种将IP数据报封装到串行链路的方法</li>
+</ol>
+</li>
+</ol>
+<h3 id="数据链路层设备">数据链路层设备
+</h3><ol>
+<li>网桥</li>
+<li>以太网交换机
+<ol>
+<li>原理和特点</li>
+<li>自学习功能</li>
+</ol>
+</li>
+<li>共享式以太网和交换式以太网的对比
+<ul>
+<li>集线器不隔离广播域、冲突域</li>
+<li>交换机不隔离广播域、隔离冲突域</li>
+</ul>
+</li>
+</ol>
+<p>​</p>
+<p>​</p>
+<p>​   <br>
+​</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/npee_learning_log.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E5%B1%80%E5%9F%9F%E7%BD%91/">局域网</a>
+        
+            <a href="/npee_learning_log.github.io/tags/ieee-802.3/">IEEE 802.3</a>
+        
+            <a href="/npee_learning_log.github.io/tags/ieee-802.11/">IEEE 802.11</a>
+        
+            <a href="/npee_learning_log.github.io/tags/ieee-802.1q%E5%B8%A7/">IEEE 802.1Q帧</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E4%BB%A5%E5%A4%AA%E7%BD%91/">以太网</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E4%BB%A5%E5%A4%AA%E7%BD%91%E4%BA%A4%E6%8D%A2%E6%9C%BA/">以太网交换机</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0914/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0914学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0913/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0913学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0912/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0912 学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0910/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0910学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="AuroraEmiya/npee_learning_log.github.io"
+    data-repo-id="R_kgDOPKrKPw"
+    data-category="Comments"
+    data-category-id="DIC_kwDOPKrKP84CuLn2"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading=""
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 shyの考研日志
+    </section>
+    
+    <section class="powerby">
+        
+            Blogroll：<a href="https://void-island-site.vercel.app/">舍友的雾岛电台</a>  ,<a href="https://starrydreamawa.github.io/hugo-stack.github.io">然然の时间记录站</a> <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+        
+    </body>
+</html>
