@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="计算机网络-网络层 网络层的功能 异构网络直连 路由与转发 路由选择 分组转发 网络层提供的两种服务 虚电路 数据报 SDN（软件定义网络） 拥塞控制 IPv4 IPv4分组\n格式 （0-3，4b）版本 （4-7，4b）首部长度：4B为单位 （8-15，8b）区分服务 （16-31，16b）总长度 （32-47，16b）标识 （48-51，4b）标志 （52-63，12b）片位移：8B为单位 （64-71，8b）生存时间TTL （72-79，8b）协议 （80-95，16b）首部校验和 （96-127，4B）源IP地址 （128-159，4B）目的IP地址 IP数据报分片 IPv4地址与NAT\nIPv4地址\nA类\n网络号 主机号 8bit(0xxx xxxx, 01H - FEH) 24bit(00 00 01H-FF FF FEH,00 00 00H为网络地址,FF FF FF为广播地址) B类\n网络号 主机号 16bit(10xx xxxx xxxx xxxx,8000H-BFFFH) 16bit(00 01H-FF FEH) C类\n网络号 主机号 24bit(110x xxxx xxxx xxxx xxxx xxxx,C0 00 00H-DF FF FFH) 8bit(01H-FEH) D类\n">
+<title>0916学习日志</title>
+
+<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0916/'>
+
+<link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="0916学习日志">
+<meta property='og:description' content="计算机网络-网络层 网络层的功能 异构网络直连 路由与转发 路由选择 分组转发 网络层提供的两种服务 虚电路 数据报 SDN（软件定义网络） 拥塞控制 IPv4 IPv4分组\n格式 （0-3，4b）版本 （4-7，4b）首部长度：4B为单位 （8-15，8b）区分服务 （16-31，16b）总长度 （32-47，16b）标识 （48-51，4b）标志 （52-63，12b）片位移：8B为单位 （64-71，8b）生存时间TTL （72-79，8b）协议 （80-95，16b）首部校验和 （96-127，4B）源IP地址 （128-159，4B）目的IP地址 IP数据报分片 IPv4地址与NAT\nIPv4地址\nA类\n网络号 主机号 8bit(0xxx xxxx, 01H - FEH) 24bit(00 00 01H-FF FF FEH,00 00 00H为网络地址,FF FF FF为广播地址) B类\n网络号 主机号 16bit(10xx xxxx xxxx xxxx,8000H-BFFFH) 16bit(00 01H-FF FEH) C类\n网络号 主机号 24bit(110x xxxx xxxx xxxx xxxx xxxx,C0 00 00H-DF FF FFH) 8bit(01H-FEH) D类\n">
+<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0916/'>
+<meta property='og:site_name' content='shyの考研日志'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='计算机网络' /><meta property='article:tag' content='网络层' /><meta property='article:published_time' content='2025-09-17T23:42:18&#43;08:00'/><meta property='article:modified_time' content='2025-09-17T23:42:18&#43;08:00'/>
+<meta name="twitter:title" content="0916学习日志">
+<meta name="twitter:description" content="计算机网络-网络层 网络层的功能 异构网络直连 路由与转发 路由选择 分组转发 网络层提供的两种服务 虚电路 数据报 SDN（软件定义网络） 拥塞控制 IPv4 IPv4分组\n格式 （0-3，4b）版本 （4-7，4b）首部长度：4B为单位 （8-15，8b）区分服务 （16-31，16b）总长度 （32-47，16b）标识 （48-51，4b）标志 （52-63，12b）片位移：8B为单位 （64-71，8b）生存时间TTL （72-79，8b）协议 （80-95，16b）首部校验和 （96-127，4B）源IP地址 （128-159，4B）目的IP地址 IP数据报分片 IPv4地址与NAT\nIPv4地址\nA类\n网络号 主机号 8bit(0xxx xxxx, 01H - FEH) 24bit(00 00 01H-FF FF FEH,00 00 00H为网络地址,FF FF FF为广播地址) B类\n网络号 主机号 16bit(10xx xxxx xxxx xxxx,8000H-BFFFH) 16bit(00 01H-FF FEH) C类\n网络号 主机号 24bit(110x xxxx xxxx xxxx xxxx xxxx,C0 00 00H-DF FF FFH) 8bit(01H-FEH) D类\n">
+    
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/npee_learning_log.github.io/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/npee_learning_log.github.io/img/shiki_hu_20273a3af6c00ff3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🎧</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/npee_learning_log.github.io">shyの考研日志</a></h1>
+            <h2 class="site-description">無職受験生 ～408に挑んだら本気だす～</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/diary' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                
+                <span>日记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/log' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>日志</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/memo' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>笔记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/interests' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+                
+                <span>兴趣</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/update' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                
+                <span>更新</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#计算机网络-网络层">计算机网络-网络层</a>
+      <ul>
+        <li><a href="#网络层的功能">网络层的功能</a></li>
+        <li><a href="#ipv4">IPv4</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/npee_learning_log.github.io/categories/log/" >
+                Log
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/npee_learning_log.github.io/posts/0916/">0916学习日志</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 17, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="计算机网络-网络层">计算机网络-网络层
+</h2><h3 id="网络层的功能">网络层的功能
+</h3><ol>
+<li>异构网络直连</li>
+<li>路由与转发
+<ol>
+<li>路由选择</li>
+<li>分组转发</li>
+</ol>
+</li>
+<li>网络层提供的两种服务
+<ol>
+<li>虚电路</li>
+<li>数据报</li>
+</ol>
+</li>
+<li>SDN（软件定义网络）</li>
+<li>拥塞控制</li>
+</ol>
+<h3 id="ipv4">IPv4
+</h3><ol>
+<li>
+<p>IPv4分组</p>
+<ol>
+<li>格式
+<ol>
+<li>（0-3，4b）版本</li>
+<li>（4-7，4b）首部长度：4B为单位</li>
+<li>（8-15，8b）区分服务</li>
+<li>（16-31，16b）总长度</li>
+<li>（32-47，16b）标识</li>
+<li>（48-51，4b）标志</li>
+<li>（52-63，12b）片位移：8B为单位</li>
+<li>（64-71，8b）生存时间TTL</li>
+<li>（72-79，8b）协议</li>
+<li>（80-95，16b）首部校验和</li>
+<li>（96-127，4B）源IP地址</li>
+<li>（128-159，4B）目的IP地址</li>
+</ol>
+</li>
+<li>IP数据报分片</li>
+</ol>
+</li>
+<li>
+<p>IPv4地址与NAT</p>
+<ol>
+<li>
+<p>IPv4地址</p>
+<ol>
+<li>
+<p>A类</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>网络号</th>
+          <th>主机号</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>8bit(0xxx xxxx, 01H - FEH)</td>
+          <td>24bit(00 00 01H-FF FF FEH,00 00 00H为网络地址,FF FF FF为广播地址)</td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+<li>
+<p>B类</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>网络号</th>
+          <th>主机号</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>16bit(10xx xxxx xxxx xxxx,8000H-BFFFH)</td>
+          <td>16bit(00 01H-FF FEH)</td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+<li>
+<p>C类</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>网络号</th>
+          <th>主机号</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>24bit(110x xxxx xxxx xxxx xxxx xxxx,C0 00 00H-DF FF FFH)</td>
+          <td>8bit(01H-FEH)</td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+<li>
+<p>D类</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>1110</th>
+          <th>多播地址</th>
+      </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table></div>
+</li>
+<li>
+<p>E类</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>1111</th>
+          <th>保留为今后使用</th>
+      </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table></div>
+</li>
+</ol>
+</li>
+<li>
+<p>网络地址转换NAT</p>
+</li>
+</ol>
+</li>
+<li>
+<p>划分子网与路由聚合</p>
+<ol>
+<li>划分子网</li>
+<li>子网掩码和默认网关</li>
+<li>无分类编址CIDR</li>
+<li>路由聚合</li>
+</ol>
+</li>
+<li>
+<p>网络层转发分组过程</p>
+<p>（目的网络地址，下一跳地址）</p>
+<ol>
+<li>首部提取目的IP</li>
+<li>特定主机路由查询，命中转发否则继续执行3</li>
+<li>最长子网掩码匹配，命中转发否则继续执行4</li>
+<li>若存在默认路由，则转发至默认路由；否则，报告转发分组出错</li>
+</ol>
+<p>注：自始至终不会修改IP地址，而是修改MAC地址</p>
+</li>
+<li>
+<p>地址解析协议ARP</p>
+</li>
+<li>
+<p>动态主机配置协议DHCP（应用层协议）</p>
+<ol>
+<li>DHCP客户广播”DHCP发现“消息，寻找网络中的DHCP服务器</li>
+<li>DHCP服务器收到”DHCP发现“，广播”DHCP提供“消息</li>
+<li>DHCP客户收到”DHCP提供“消息，若接受，广播”DHCP请求“</li>
+<li>DHCP服务器广播”DHCP确认“消息，将IP地址分配给DHCP客户</li>
+</ol>
+</li>
+<li>
+<p>网际控制报文协议ICMP</p>
+<ol>
+<li>
+<p>ICMP差错报告报文</p>
+<ol>
+<li>终点不可达</li>
+<li>源点抑制</li>
+<li>时间超过</li>
+<li>参数问题</li>
+<li>改变路由</li>
+</ol>
+</li>
+<li>
+<p>以下情况不发送差错报告报文</p>
+<ol>
+<li>对ICMP差错报告报文</li>
+<li>对第一个分片的数据报片的所有后续数据报片</li>
+<li>对就有多播地址的数据报</li>
+<li>特殊地址</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/npee_learning_log.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/">网络层</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0915/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0915学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0914/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0914学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0913/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0913学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0912/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0912 学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0910/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0910学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="AuroraEmiya/npee_learning_log.github.io"
+    data-repo-id="R_kgDOPKrKPw"
+    data-category="Comments"
+    data-category-id="DIC_kwDOPKrKP84CuLn2"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading=""
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 shyの考研日志
+    </section>
+    
+    <section class="powerby">
+        
+            Blogroll：<a href="https://void-island-site.vercel.app/">舍友的雾岛电台</a>  ,<a href="https://starrydreamawa.github.io/hugo-stack.github.io">然然の时间记录站</a> <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
