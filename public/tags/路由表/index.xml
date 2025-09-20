@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>路由表 on shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E8%B7%AF%E7%94%B1%E8%A1%A8/</link>
+        <description>Recent content in 路由表 on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Fri, 19 Sep 2025 19:43:20 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E8%B7%AF%E7%94%B1%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0918学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0918/</link>
+        <pubDate>Fri, 19 Sep 2025 19:43:20 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0918/</guid>
+        <description>&lt;h2 id=&#34;计算机网络&#34;&gt;计算机网络
+&lt;/h2&gt;&lt;h3 id=&#34;移动ip&#34;&gt;移动IP
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;移动IP的概念
+&lt;ol&gt;
+&lt;li&gt;移动结点&lt;/li&gt;
+&lt;li&gt;本地代理&lt;/li&gt;
+&lt;li&gt;外地代理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;移动IP通信过程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;网络层设备&#34;&gt;网络层设备
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;冲突域和广播域
+&lt;ol&gt;
+&lt;li&gt;冲突域&lt;/li&gt;
+&lt;li&gt;广播域&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;路由器的组成和功能
+&lt;ol&gt;
+&lt;li&gt;路由选择（控制部分）&lt;/li&gt;
+&lt;li&gt;分组转发（交换组织）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;路由表与分组转发
+&lt;ol&gt;
+&lt;li&gt;路由表
+&lt;ul&gt;
+&lt;li&gt;目的网络IP地址&lt;/li&gt;
+&lt;li&gt;子网掩码&lt;/li&gt;
+&lt;li&gt;下一跳IP地址&lt;/li&gt;
+&lt;li&gt;接口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;转发表
+&lt;ul&gt;
+&lt;li&gt;目的站&lt;/li&gt;
+&lt;li&gt;下一跳&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

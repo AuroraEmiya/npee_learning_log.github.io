@@ -61,8 +61,7 @@
 &lt;li&gt;
 &lt;p&gt;IPv4地址&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;A类&lt;/p&gt;
+&lt;li&gt;A类
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
@@ -78,8 +77,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;B类&lt;/p&gt;
+&lt;li&gt;B类
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
@@ -95,8 +93,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;C类&lt;/p&gt;
+&lt;li&gt;C类
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
@@ -112,8 +109,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;D类&lt;/p&gt;
+&lt;li&gt;D类
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
@@ -125,8 +121,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;E类&lt;/p&gt;
+&lt;li&gt;E类
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;

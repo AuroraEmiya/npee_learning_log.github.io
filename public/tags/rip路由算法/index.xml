@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>RIP路由算法 on shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/rip%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95/</link>
+        <description>Recent content in RIP路由算法 on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Wed, 17 Sep 2025 23:42:21 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/rip%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0917学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0917/</link>
+        <pubDate>Wed, 17 Sep 2025 23:42:21 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0917/</guid>
+        <description>&lt;h2 id=&#34;计算机网络&#34;&gt;计算机网络
+&lt;/h2&gt;&lt;h3 id=&#34;ipv6&#34;&gt;IPv6
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;IPv6的特点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;更大的地址空间&lt;/li&gt;
+&lt;li&gt;扩展的地址层次结构&lt;/li&gt;
+&lt;li&gt;灵活的首部格式&lt;/li&gt;
+&lt;li&gt;改进的选项&lt;/li&gt;
+&lt;li&gt;允许协议继续扩充&lt;/li&gt;
+&lt;li&gt;支持即插即用&lt;/li&gt;
+&lt;li&gt;支持资源的预分配&lt;/li&gt;
+&lt;li&gt;IPv6只有源主机才能分片&lt;/li&gt;
+&lt;li&gt;IPv6首部长度是固定的40B&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;IPv6数据报的基本首部&lt;/p&gt;
+&lt;p&gt;IPv6数据报的基本格式&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;基本首部（40B）&lt;/th&gt;
+          &lt;th&gt;有效载荷&lt;/th&gt;
+          &lt;th&gt;有效载荷&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;扩展首部1&amp;hellip;N&lt;/td&gt;
+          &lt;td&gt;数据部分&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;IPv6基本首部的基本格式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;（0-3，4b）版本&lt;/li&gt;
+&lt;li&gt;（4-11，8b）通信量类，用来区分不同的Ipv6数据报的类别和优先级&lt;/li&gt;
+&lt;li&gt;（12-31，20b）流标号&lt;/li&gt;
+&lt;li&gt;（32-47，16b）有效载荷长度，单位字节&lt;/li&gt;
+&lt;li&gt;（48-55，8b）下一个首部，如果有扩展首部，此处标识第一个扩展首部的类型&lt;/li&gt;
+&lt;li&gt;（56-63，8b）跳数限制&lt;/li&gt;
+&lt;li&gt;（64-191，128b）源地址&lt;/li&gt;
+&lt;li&gt;（192-320，128b）目的地址&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;IPv6地址&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;单播&lt;/li&gt;
+&lt;li&gt;多播&lt;/li&gt;
+&lt;li&gt;任播&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;地址类型&lt;/th&gt;
+          &lt;th&gt;二进制前缀&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;未指明地址&lt;/td&gt;
+          &lt;td&gt;::/128&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;环回地址&lt;/td&gt;
+          &lt;td&gt;::1/128&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;多播地址&lt;/td&gt;
+          &lt;td&gt;FF00::/8(1111 1111)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;本地链路单播地址&lt;/td&gt;
+          &lt;td&gt;FE80::/10(1111 1111 10)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;全球单播地址&lt;/td&gt;
+          &lt;td&gt;除上述以外的所有IPv6地址&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;从IPv4到IPv6过渡&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;路由算法与路由协议&#34;&gt;路由算法与路由协议
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;路由算法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;静态路由与动态路由&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;静态路由算法。&lt;/li&gt;
+&lt;li&gt;动态路由算法。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;距离-向量路由算法（如RIP算法）&lt;/p&gt;
+&lt;p&gt;每个结点x维护下列路由信息：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;从x到每个直接相连邻居v的链路信息&lt;/li&gt;
+&lt;li&gt;结点x的距离向量，即x到网络中其他结点的费用。&lt;/li&gt;
+&lt;li&gt;它收到的每个邻居的距离向量，即x的每个邻居到网络中其它结点的费用。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;链路状态路由算法（如OSPF算法）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;分层次的路由选择算法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;内部网关协议IGP
+&lt;ol&gt;
+&lt;li&gt;RIP&lt;/li&gt;
+&lt;li&gt;OSPF&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;外部网关协议EGP
+&lt;ol&gt;
+&lt;li&gt;BGP-4&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;路由信息协议（Routing Information Protocol）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;RIP的规定&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;每个路由器维护&lt;strong&gt;距离向量&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;条数&lt;/strong&gt;作为距离&lt;/li&gt;
+&lt;li&gt;RIP认为好的路由就是它通过的路由器数目少&lt;/li&gt;
+&lt;li&gt;RIP允许一条路径最多只能包含15个路由器，因此距离等于16时表示网络不可达。&lt;/li&gt;
+&lt;li&gt;每个路由表项有三个关键字段：&amp;lt;目的网络N，距离d，下一条路由器地址X&amp;gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;RIP的特点&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;仅和直接相邻的路由器交换信息&lt;/li&gt;
+&lt;li&gt;交换的信息是本路由器所知道的全部信息&lt;/li&gt;
+&lt;li&gt;按固定的时间间隔交换路由信息&lt;/li&gt;
+&lt;li&gt;应用层协议，在传输层使用UDP&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;RIP的距离向量算法&lt;/p&gt;
+&lt;p&gt;对每个相邻路由器X发来的RIP报文，执行如下步骤&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;修改下一跳路由器地址为X，并且把所有距离字段+1&lt;/li&gt;
+&lt;li&gt;对于原表没有的目的网络表项，添加到自己的表中&lt;/li&gt;
+&lt;li&gt;对于原表有的目的网络表项，且下一跳为X的，更新替换&lt;/li&gt;
+&lt;li&gt;对于原表有的目的网络表项，且下一跳不为X的，选择跳数更小的&lt;/li&gt;
+&lt;li&gt;若180s（RIP默认超时时间）还没有收到相邻路由器的更新路由表，则把此相邻路由器记为不可达状态，距离设置为16&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;RIP的优缺点&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;优点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;实现简单，开销较小&lt;/li&gt;
+&lt;li&gt;若有一个路由器发现了更短的路由，则这种消息就传播的很快&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;缺点&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;RIP限制了网络规模，它能使用的最大距离15&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;路由器之间交换的是完整的路由表，规模越大开销越大&lt;/p&gt;
+&lt;p&gt;当网络出现故障时，路由器之间需反复多次交换信息才能完成收敛，要经过较长时间才能将故障消息传送到所有路由器”坏消息传得慢“&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;开放最短路径优先协议（OSPF）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;基本特点
+&lt;ol&gt;
+&lt;li&gt;OSPF向本自治系统中的所有路由器发送信息。&lt;/li&gt;
+&lt;li&gt;发送的信息是与本路由器相邻的所有路由器的链路状态，但这只是路由器所知道的部分，&lt;/li&gt;
+&lt;li&gt;只有当链路状态发生变化的时，路由器才用洪泛法向所有路由器发送此信息&lt;/li&gt;
+&lt;li&gt;OSPF是网络层协议，直接使用IP数据报传送&lt;/li&gt;
+&lt;li&gt;OSPF允许对每条路由器设置成不同的代价。&lt;/li&gt;
+&lt;li&gt;若同一个目的网络有多条相同代价的路径，则可将通信量分配给这几条路径&lt;/li&gt;
+&lt;li&gt;OSPF分组具有鉴别的功能，从而保证仅在可信赖的路由器之间交换链路状态信息。&lt;/li&gt;
+&lt;li&gt;OSPF支持可变长度的子网划分和无分类编址CIDR&lt;/li&gt;
+&lt;li&gt;每个链路状态都带上一个32位的序号，序号越大状态越新&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;基本工作原理&lt;/li&gt;
+&lt;li&gt;OSPF的五种分组类型
+&lt;ol&gt;
+&lt;li&gt;问候分组，用来发现和维持邻站的可达性&lt;/li&gt;
+&lt;li&gt;数据库描述分组，向邻站给出自己的链路状态数据库中的所有链路状态项目的摘要信息&lt;/li&gt;
+&lt;li&gt;链路状态请求分组，向对方请求发送某些链路状态项目的详细信息。&lt;/li&gt;
+&lt;li&gt;链路状态更新分组，用洪泛法对全网更新链路状态&lt;/li&gt;
+&lt;li&gt;链路状态确认分组，对链路更新分组进行确认&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;边界网关协议（BGP）（TCP协议）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;配置BGP时。每个AS的管理员要选择至少一个路由器，作为该AS的”BGP发言人“，BGP发言人往往就是BGP边界路由器&lt;/li&gt;
+&lt;li&gt;一个BGP发言人与其他AS中的BGP发言人要交换路由信息，就要先建立TCP连接，然后在此连接上交换BGP报文以建立BGP会话，再利用BGP会话交换路由信息。&lt;/li&gt;
+&lt;li&gt;BGP所交换的网络可达性的信息，就是要到达某个网络所经过的一系列自治系统。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;BGP-4一共使用4种报文、&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;打开（Open）报文。建立关系，通信初始化。&lt;/li&gt;
+&lt;li&gt;更新（Update）报文。用来通知某一路由的信息，以及列出要撤销的多条路由&lt;/li&gt;
+&lt;li&gt;保活（Keepalive）报文。用来周期性地证实邻站的连通性。&lt;/li&gt;
+&lt;li&gt;通知（Notification）报文。用来发送检测到的差错。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;ip多播&#34;&gt;IP多播
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;多播的概念&lt;/li&gt;
+&lt;li&gt;IP多播地址&lt;/li&gt;
+&lt;li&gt;在局域网上进行硬件多播&lt;/li&gt;
+&lt;li&gt;IGMP与多播路由协议&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
