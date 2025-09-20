@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>IPv4 on shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/ipv4/</link>
+        <description>Recent content in IPv4 on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Wed, 17 Sep 2025 23:42:18 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/ipv4/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0916学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0916/</link>
+        <pubDate>Wed, 17 Sep 2025 23:42:18 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0916/</guid>
+        <description>&lt;h2 id=&#34;计算机网络-网络层&#34;&gt;计算机网络-网络层
+&lt;/h2&gt;&lt;h3 id=&#34;网络层的功能&#34;&gt;网络层的功能
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;异构网络直连&lt;/li&gt;
+&lt;li&gt;路由与转发
+&lt;ol&gt;
+&lt;li&gt;路由选择&lt;/li&gt;
+&lt;li&gt;分组转发&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;网络层提供的两种服务
+&lt;ol&gt;
+&lt;li&gt;虚电路&lt;/li&gt;
+&lt;li&gt;数据报&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;SDN（软件定义网络）&lt;/li&gt;
+&lt;li&gt;拥塞控制&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;ipv4&#34;&gt;IPv4
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;IPv4分组&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;格式
+&lt;ol&gt;
+&lt;li&gt;（0-3，4b）版本&lt;/li&gt;
+&lt;li&gt;（4-7，4b）首部长度：4B为单位&lt;/li&gt;
+&lt;li&gt;（8-15，8b）区分服务&lt;/li&gt;
+&lt;li&gt;（16-31，16b）总长度&lt;/li&gt;
+&lt;li&gt;（32-47，16b）标识&lt;/li&gt;
+&lt;li&gt;（48-51，4b）标志&lt;/li&gt;
+&lt;li&gt;（52-63，12b）片位移：8B为单位&lt;/li&gt;
+&lt;li&gt;（64-71，8b）生存时间TTL&lt;/li&gt;
+&lt;li&gt;（72-79，8b）协议&lt;/li&gt;
+&lt;li&gt;（80-95，16b）首部校验和&lt;/li&gt;
+&lt;li&gt;（96-127，4B）源IP地址&lt;/li&gt;
+&lt;li&gt;（128-159，4B）目的IP地址&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;IP数据报分片&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;IPv4地址与NAT&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;IPv4地址&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;A类
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;网络号&lt;/th&gt;
+          &lt;th&gt;主机号&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;8bit(0xxx xxxx, 01H - FEH)&lt;/td&gt;
+          &lt;td&gt;24bit(00 00 01H-FF FF FEH,00 00 00H为网络地址,FF FF FF为广播地址)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;B类
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;网络号&lt;/th&gt;
+          &lt;th&gt;主机号&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;16bit(10xx xxxx xxxx xxxx,8000H-BFFFH)&lt;/td&gt;
+          &lt;td&gt;16bit(00 01H-FF FEH)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;C类
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;网络号&lt;/th&gt;
+          &lt;th&gt;主机号&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;24bit(110x xxxx xxxx xxxx xxxx xxxx,C0 00 00H-DF FF FFH)&lt;/td&gt;
+          &lt;td&gt;8bit(01H-FEH)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;D类
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;1110&lt;/th&gt;
+          &lt;th&gt;多播地址&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;E类
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;1111&lt;/th&gt;
+          &lt;th&gt;保留为今后使用&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;网络地址转换NAT&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;划分子网与路由聚合&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;划分子网&lt;/li&gt;
+&lt;li&gt;子网掩码和默认网关&lt;/li&gt;
+&lt;li&gt;无分类编址CIDR&lt;/li&gt;
+&lt;li&gt;路由聚合&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;网络层转发分组过程&lt;/p&gt;
+&lt;p&gt;（目的网络地址，下一跳地址）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首部提取目的IP&lt;/li&gt;
+&lt;li&gt;特定主机路由查询，命中转发否则继续执行3&lt;/li&gt;
+&lt;li&gt;最长子网掩码匹配，命中转发否则继续执行4&lt;/li&gt;
+&lt;li&gt;若存在默认路由，则转发至默认路由；否则，报告转发分组出错&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;注：自始至终不会修改IP地址，而是修改MAC地址&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;地址解析协议ARP&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;动态主机配置协议DHCP（应用层协议）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;DHCP客户广播”DHCP发现“消息，寻找网络中的DHCP服务器&lt;/li&gt;
+&lt;li&gt;DHCP服务器收到”DHCP发现“，广播”DHCP提供“消息&lt;/li&gt;
+&lt;li&gt;DHCP客户收到”DHCP提供“消息，若接受，广播”DHCP请求“&lt;/li&gt;
+&lt;li&gt;DHCP服务器广播”DHCP确认“消息，将IP地址分配给DHCP客户&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;网际控制报文协议ICMP&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;ICMP差错报告报文&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;终点不可达&lt;/li&gt;
+&lt;li&gt;源点抑制&lt;/li&gt;
+&lt;li&gt;时间超过&lt;/li&gt;
+&lt;li&gt;参数问题&lt;/li&gt;
+&lt;li&gt;改变路由&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下情况不发送差错报告报文&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对ICMP差错报告报文&lt;/li&gt;
+&lt;li&gt;对第一个分片的数据报片的所有后续数据报片&lt;/li&gt;
+&lt;li&gt;对就有多播地址的数据报&lt;/li&gt;
+&lt;li&gt;特殊地址&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
