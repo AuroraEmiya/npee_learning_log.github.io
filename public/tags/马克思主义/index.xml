@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>马克思主义 on shyの考研日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89/</link>
+        <description>Recent content in 马克思主义 on shyの考研日志</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Thu, 25 Sep 2025 22:39:01 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/tags/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0925学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0925/</link>
+        <pubDate>Thu, 25 Sep 2025 22:39:01 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0925/</guid>
+        <description>&lt;h2 id=&#34;前言&#34;&gt;前言
+&lt;/h2&gt;&lt;p&gt;鉴于本人发现更新一次日志甚至需要一个多小时，使得一个作为日记性质的log变成了一项”艰巨“的任务，实在是本末倒置，不过，既然开了这个栏目，为了记录自己的学习过程，当然还是要如实记录，前面的就慢慢更新，总之先把今天的更新了。&lt;/p&gt;
+&lt;h2 id=&#34;数学-微分方程&#34;&gt;数学-微分方程
+&lt;/h2&gt;&lt;p&gt;数学其实已经学完了多元微分、二重（多重）积分以及微分方程的解法。就今天来说，今天完成了如下学习&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;数学（领域）&lt;/th&gt;
+          &lt;th&gt;内容&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;微分方程&lt;/td&gt;
+          &lt;td&gt;一阶、高阶微分方程的求解&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;线性代数&lt;/td&gt;
+          &lt;td&gt;矩阵的各种性质&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;看起来挺轻描淡写的，不过内容展开还是很多的，详细的内容我还是会放在学习笔记里阐述，比如微分方程的各种解法，矩阵如逆矩阵，伴随矩阵等的性质一并专开一个专栏进行阐述，不然日志显得过于冗长，变成了流水账。&lt;/p&gt;
+&lt;h3 id=&#34;微分方程&#34;&gt;微分方程
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;微分方程的概念
+&lt;ol&gt;
+&lt;li&gt;微分方程及其阶&lt;/li&gt;
+&lt;li&gt;常微分方程（一元）&lt;/li&gt;
+&lt;li&gt;线性微分方程&lt;/li&gt;
+&lt;li&gt;微分方程的解&lt;/li&gt;
+&lt;li&gt;微分方程的通解&lt;/li&gt;
+&lt;li&gt;初始条件与特解&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;一阶微分方程的求解
+&lt;ol&gt;
+&lt;li&gt;可分离变量型微分方程&lt;/li&gt;
+&lt;li&gt;齐次型微分方程&lt;/li&gt;
+&lt;li&gt;一阶线性微分方程&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;伯努利方程&lt;/strong&gt;（欠掌握）&lt;/li&gt;
+&lt;li&gt;二阶可降阶微分方程&lt;/li&gt;
+&lt;li&gt;全微分方程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;高阶线性微分方程的求解
+&lt;ol&gt;
+&lt;li&gt;二阶常系数齐次线性微分方程&lt;/li&gt;
+&lt;li&gt;二阶常系数非齐次线性微分方程
+&lt;ol&gt;
+&lt;li&gt;待定系数法&lt;/li&gt;
+&lt;li&gt;微分算子法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;n阶常系数齐次线性微分方程&lt;/li&gt;
+&lt;li&gt;欧拉方程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;微分方程的几何应用&lt;/li&gt;
+&lt;li&gt;微分方程的物理应用&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;矩阵&#34;&gt;矩阵
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;矩阵的本质&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;n维向量空间种的一个基可表达所有信息&lt;/li&gt;
+&lt;li&gt;矩阵信息表达中的关系
+&lt;ul&gt;
+&lt;li&gt;Gram矩阵&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;矩阵的定义及其基本运算&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;矩阵的定义&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;矩阵的基本运算&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;相等&lt;/li&gt;
+&lt;li&gt;加法&lt;/li&gt;
+&lt;li&gt;数乘矩阵&lt;/li&gt;
+&lt;li&gt;乘法&lt;/li&gt;
+&lt;li&gt;转置矩阵&lt;/li&gt;
+&lt;li&gt;方阵的幂&lt;/li&gt;
+&lt;li&gt;方阵的行列式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;矩阵的逆&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;逆矩阵的定义&lt;/li&gt;
+&lt;li&gt;逆矩阵的性质与重要公式&lt;/li&gt;
+&lt;li&gt;用定义法求可逆矩阵的逆矩阵&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;伴随矩阵&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;定义&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;性质与重要公式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;用伴随矩阵求可逆矩阵的逆矩阵
+&lt;/p&gt;
+$$
+      A^{-1} = \frac{1}{|A|}A^*
+      $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;求伴随矩阵的方法&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;初等变换与初等矩阵&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;初等变换&lt;/li&gt;
+&lt;li&gt;初等矩阵的定义&lt;/li&gt;
+&lt;li&gt;初等矩阵的性质与重要公式&lt;/li&gt;
+&lt;li&gt;用初等变换求逆矩阵的方法&lt;/li&gt;
+&lt;li&gt;行阶梯型矩阵与行最简梯形矩阵&lt;/li&gt;
+&lt;li&gt;简单分块矩阵的逆&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;矩阵方程&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;等价矩阵和矩阵的等价标准型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;矩阵的秩&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;定义&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;求法&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;有关秩的重要式子
+&lt;/p&gt;
+$$
+      0\leq r(A)\leq \min\{m,n\}
+      $$$$
+      r(kA) = r(A)(k\neq0)
+      $$$$
+      r(AB)\leq\min\{r(A),r(B)\}
+      $$$$
+      r(A+B)\leq r(A) + r(B)
+      $$&lt;p&gt;$$
+r(A)=\begin{cases}
+n,r(A)=n\
+1,r(A)=n-1\
+0,r(A)&amp;lt;n-1&lt;/p&gt;
+&lt;p&gt;\end{cases}
+$$&lt;/p&gt;
+$$
+      r(A) = r(PA) = r(AQ) = r(PAQ)
+      $$&lt;p&gt;这里$P$，$Q$为可逆矩阵
+&lt;/p&gt;
+$$
+      A_{m\times n}B_{n\times s} = O \Rightarrow r(A) + r(B) \leq n
+      $$$$
+      r(A) = r(A^T) = r(AA^T)=r(A^TA)
+      $$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;马克思主义&#34;&gt;马克思主义
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;矛盾的同一性与斗争性及其在事物发展中的作用
+&lt;ol&gt;
+&lt;li&gt;含义&lt;/li&gt;
+&lt;li&gt;两种基本属性
+&lt;ol&gt;
+&lt;li&gt;同一性&lt;/li&gt;
+&lt;li&gt;斗争性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;矛盾的同一性和斗争性的辩证关系&lt;/li&gt;
+&lt;li&gt;矛盾是事物发展的动力&lt;/li&gt;
+&lt;li&gt;矛盾的同一性和斗争性辩证关系原理的方法论意义&lt;/li&gt;
+&lt;li&gt;运用矛盾的同一性和斗争性辩证关系原理指导实践需要把握的两个问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;矛盾的普遍性和特殊性及其相互关系
+&lt;ol&gt;
+&lt;li&gt;矛盾的普遍性和特殊性的含义&lt;/li&gt;
+&lt;li&gt;矛盾的不平衡性：主要矛盾和次要矛盾、矛盾的主要方面和次要方面
+&lt;ol&gt;
+&lt;li&gt;含义&lt;/li&gt;
+&lt;li&gt;方法论意义&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;矛盾的普遍性和特殊性的辩证统一关系&lt;/li&gt;
+&lt;li&gt;矛盾的普遍性和特殊性辩证关系原理的意义&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;量变质变规律
+&lt;ol&gt;
+&lt;li&gt;质、量、度的含义&lt;/li&gt;
+&lt;li&gt;量变和质变的含义及其辩证关系
+&lt;ol&gt;
+&lt;li&gt;含义&lt;/li&gt;
+&lt;li&gt;辩证关系&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;量变质变规律的方法论意义&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

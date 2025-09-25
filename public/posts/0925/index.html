@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前言\r鉴于本人发现更新一次日志甚至需要一个多小时，使得一个作为日记性质的log变成了一项”艰巨“的任务，实在是本末倒置，不过，既然开了这个栏目，为了记录自己的学习过程，当然还是要如实记录，前面的就慢慢更新，总之先把今天的更新了。\n数学-微分方程\r数学其实已经学完了多元微分、二重（多重）积分以及微分方程的解法。就今天来说，今天完成了如下学习\n数学（领域） 内容 微分方程 一阶、高阶微分方程的求解 线性代数 矩阵的各种性质 看起来挺轻描淡写的，不过内容展开还是很多的，详细的内容我还是会放在学习笔记里阐述，比如微分方程的各种解法，矩阵如逆矩阵，伴随矩阵等的性质一并专开一个专栏进行阐述，不然日志显得过于冗长，变成了流水账。\n微分方程\r微分方程的概念 微分方程及其阶 常微分方程（一元） 线性微分方程 微分方程的解 微分方程的通解 初始条件与特解 一阶微分方程的求解 可分离变量型微分方程 齐次型微分方程 一阶线性微分方程 伯努利方程（欠掌握） 二阶可降阶微分方程 全微分方程 高阶线性微分方程的求解 二阶常系数齐次线性微分方程 二阶常系数非齐次线性微分方程 待定系数法 微分算子法 n阶常系数齐次线性微分方程 欧拉方程 微分方程的几何应用 微分方程的物理应用 矩阵\r矩阵的本质\nn维向量空间种的一个基可表达所有信息 矩阵信息表达中的关系 Gram矩阵 矩阵的定义及其基本运算\n矩阵的定义\n矩阵的基本运算\n相等 加法 数乘矩阵 乘法 转置矩阵 方阵的幂 方阵的行列式 矩阵的逆\n逆矩阵的定义 逆矩阵的性质与重要公式 用定义法求可逆矩阵的逆矩阵 伴随矩阵\n定义\n性质与重要公式\n用伴随矩阵求可逆矩阵的逆矩阵 $$ A^{-1} = \\frac{1}{|A|}A^* $$ 求伴随矩阵的方法\n初等变换与初等矩阵\n初等变换 初等矩阵的定义 初等矩阵的性质与重要公式 用初等变换求逆矩阵的方法 行阶梯型矩阵与行最简梯形矩阵 简单分块矩阵的逆 矩阵方程\n">
+<title>0925学习日志</title>
+
+<link rel='canonical' href='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0925/'>
+
+<link rel="stylesheet" href="/npee_learning_log.github.io/scss/style.min.cfa5b1b0e78d61c00a14173992a1f3fa3b5c1b9fa34d023de959af564e7b19dd.css"><meta property='og:title' content="0925学习日志">
+<meta property='og:description' content="前言\r鉴于本人发现更新一次日志甚至需要一个多小时，使得一个作为日记性质的log变成了一项”艰巨“的任务，实在是本末倒置，不过，既然开了这个栏目，为了记录自己的学习过程，当然还是要如实记录，前面的就慢慢更新，总之先把今天的更新了。\n数学-微分方程\r数学其实已经学完了多元微分、二重（多重）积分以及微分方程的解法。就今天来说，今天完成了如下学习\n数学（领域） 内容 微分方程 一阶、高阶微分方程的求解 线性代数 矩阵的各种性质 看起来挺轻描淡写的，不过内容展开还是很多的，详细的内容我还是会放在学习笔记里阐述，比如微分方程的各种解法，矩阵如逆矩阵，伴随矩阵等的性质一并专开一个专栏进行阐述，不然日志显得过于冗长，变成了流水账。\n微分方程\r微分方程的概念 微分方程及其阶 常微分方程（一元） 线性微分方程 微分方程的解 微分方程的通解 初始条件与特解 一阶微分方程的求解 可分离变量型微分方程 齐次型微分方程 一阶线性微分方程 伯努利方程（欠掌握） 二阶可降阶微分方程 全微分方程 高阶线性微分方程的求解 二阶常系数齐次线性微分方程 二阶常系数非齐次线性微分方程 待定系数法 微分算子法 n阶常系数齐次线性微分方程 欧拉方程 微分方程的几何应用 微分方程的物理应用 矩阵\r矩阵的本质\nn维向量空间种的一个基可表达所有信息 矩阵信息表达中的关系 Gram矩阵 矩阵的定义及其基本运算\n矩阵的定义\n矩阵的基本运算\n相等 加法 数乘矩阵 乘法 转置矩阵 方阵的幂 方阵的行列式 矩阵的逆\n逆矩阵的定义 逆矩阵的性质与重要公式 用定义法求可逆矩阵的逆矩阵 伴随矩阵\n定义\n性质与重要公式\n用伴随矩阵求可逆矩阵的逆矩阵 $$ A^{-1} = \\frac{1}{|A|}A^* $$ 求伴随矩阵的方法\n初等变换与初等矩阵\n初等变换 初等矩阵的定义 初等矩阵的性质与重要公式 用初等变换求逆矩阵的方法 行阶梯型矩阵与行最简梯形矩阵 简单分块矩阵的逆 矩阵方程\n">
+<meta property='og:url' content='https://auroraemiya.github.io/npee_learning_log.github.io/posts/0925/'>
+<meta property='og:site_name' content='shyの考研日志'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='数学' /><meta property='article:tag' content='马克思主义' /><meta property='article:tag' content='微分方程' /><meta property='article:tag' content='常微分线性方程' /><meta property='article:tag' content='微分算子' /><meta property='article:tag' content='矛盾的同一性和斗争性' /><meta property='article:tag' content='矛盾的普遍性和特殊性' /><meta property='article:tag' content='量变质变规律 ' /><meta property='article:published_time' content='2025-09-25T22:39:01&#43;08:00'/><meta property='article:modified_time' content='2025-09-25T22:39:01&#43;08:00'/>
+<meta name="twitter:title" content="0925学习日志">
+<meta name="twitter:description" content="前言\r鉴于本人发现更新一次日志甚至需要一个多小时，使得一个作为日记性质的log变成了一项”艰巨“的任务，实在是本末倒置，不过，既然开了这个栏目，为了记录自己的学习过程，当然还是要如实记录，前面的就慢慢更新，总之先把今天的更新了。\n数学-微分方程\r数学其实已经学完了多元微分、二重（多重）积分以及微分方程的解法。就今天来说，今天完成了如下学习\n数学（领域） 内容 微分方程 一阶、高阶微分方程的求解 线性代数 矩阵的各种性质 看起来挺轻描淡写的，不过内容展开还是很多的，详细的内容我还是会放在学习笔记里阐述，比如微分方程的各种解法，矩阵如逆矩阵，伴随矩阵等的性质一并专开一个专栏进行阐述，不然日志显得过于冗长，变成了流水账。\n微分方程\r微分方程的概念 微分方程及其阶 常微分方程（一元） 线性微分方程 微分方程的解 微分方程的通解 初始条件与特解 一阶微分方程的求解 可分离变量型微分方程 齐次型微分方程 一阶线性微分方程 伯努利方程（欠掌握） 二阶可降阶微分方程 全微分方程 高阶线性微分方程的求解 二阶常系数齐次线性微分方程 二阶常系数非齐次线性微分方程 待定系数法 微分算子法 n阶常系数齐次线性微分方程 欧拉方程 微分方程的几何应用 微分方程的物理应用 矩阵\r矩阵的本质\nn维向量空间种的一个基可表达所有信息 矩阵信息表达中的关系 Gram矩阵 矩阵的定义及其基本运算\n矩阵的定义\n矩阵的基本运算\n相等 加法 数乘矩阵 乘法 转置矩阵 方阵的幂 方阵的行列式 矩阵的逆\n逆矩阵的定义 逆矩阵的性质与重要公式 用定义法求可逆矩阵的逆矩阵 伴随矩阵\n定义\n性质与重要公式\n用伴随矩阵求可逆矩阵的逆矩阵 $$ A^{-1} = \\frac{1}{|A|}A^* $$ 求伴随矩阵的方法\n初等变换与初等矩阵\n初等变换 初等矩阵的定义 初等矩阵的性质与重要公式 用初等变换求逆矩阵的方法 行阶梯型矩阵与行最简梯形矩阵 简单分块矩阵的逆 矩阵方程\n">
+    
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/npee_learning_log.github.io/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/npee_learning_log.github.io/img/shiki_hu_20273a3af6c00ff3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🎧</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/npee_learning_log.github.io">shyの考研日志</a></h1>
+            <h2 class="site-description">無職受験生 ～408に挑んだら本気だす～</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/diary' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                
+                <span>日记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/log' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>日志</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/memo' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>笔记</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/interests' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+                
+                <span>兴趣</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/npee_learning_log.github.io/categories/update' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                
+                <span>更新</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#数学-微分方程">数学-微分方程</a>
+      <ul>
+        <li><a href="#微分方程">微分方程</a></li>
+        <li><a href="#矩阵">矩阵</a></li>
+      </ul>
+    </li>
+    <li><a href="#马克思主义">马克思主义</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/npee_learning_log.github.io/categories/log/" >
+                Log
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/npee_learning_log.github.io/posts/0925/">0925学习日志</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 25, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="前言">前言
+</h2><p>鉴于本人发现更新一次日志甚至需要一个多小时，使得一个作为日记性质的log变成了一项”艰巨“的任务，实在是本末倒置，不过，既然开了这个栏目，为了记录自己的学习过程，当然还是要如实记录，前面的就慢慢更新，总之先把今天的更新了。</p>
+<h2 id="数学-微分方程">数学-微分方程
+</h2><p>数学其实已经学完了多元微分、二重（多重）积分以及微分方程的解法。就今天来说，今天完成了如下学习</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>数学（领域）</th>
+          <th>内容</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>微分方程</td>
+          <td>一阶、高阶微分方程的求解</td>
+      </tr>
+      <tr>
+          <td>线性代数</td>
+          <td>矩阵的各种性质</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>看起来挺轻描淡写的，不过内容展开还是很多的，详细的内容我还是会放在学习笔记里阐述，比如微分方程的各种解法，矩阵如逆矩阵，伴随矩阵等的性质一并专开一个专栏进行阐述，不然日志显得过于冗长，变成了流水账。</p>
+<h3 id="微分方程">微分方程
+</h3><ol>
+<li>微分方程的概念
+<ol>
+<li>微分方程及其阶</li>
+<li>常微分方程（一元）</li>
+<li>线性微分方程</li>
+<li>微分方程的解</li>
+<li>微分方程的通解</li>
+<li>初始条件与特解</li>
+</ol>
+</li>
+<li>一阶微分方程的求解
+<ol>
+<li>可分离变量型微分方程</li>
+<li>齐次型微分方程</li>
+<li>一阶线性微分方程</li>
+<li><strong>伯努利方程</strong>（欠掌握）</li>
+<li>二阶可降阶微分方程</li>
+<li>全微分方程</li>
+</ol>
+</li>
+<li>高阶线性微分方程的求解
+<ol>
+<li>二阶常系数齐次线性微分方程</li>
+<li>二阶常系数非齐次线性微分方程
+<ol>
+<li>待定系数法</li>
+<li>微分算子法</li>
+</ol>
+</li>
+<li>n阶常系数齐次线性微分方程</li>
+<li>欧拉方程</li>
+</ol>
+</li>
+<li>微分方程的几何应用</li>
+<li>微分方程的物理应用</li>
+</ol>
+<h3 id="矩阵">矩阵
+</h3><ol>
+<li>
+<p>矩阵的本质</p>
+<ol>
+<li>n维向量空间种的一个基可表达所有信息</li>
+<li>矩阵信息表达中的关系
+<ul>
+<li>Gram矩阵</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>矩阵的定义及其基本运算</p>
+<ol>
+<li>
+<p>矩阵的定义</p>
+</li>
+<li>
+<p>矩阵的基本运算</p>
+<ol>
+<li>相等</li>
+<li>加法</li>
+<li>数乘矩阵</li>
+<li>乘法</li>
+<li>转置矩阵</li>
+<li>方阵的幂</li>
+<li>方阵的行列式</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>矩阵的逆</p>
+<ol>
+<li>逆矩阵的定义</li>
+<li>逆矩阵的性质与重要公式</li>
+<li>用定义法求可逆矩阵的逆矩阵</li>
+</ol>
+</li>
+<li>
+<p>伴随矩阵</p>
+<ol>
+<li>
+<p>定义</p>
+</li>
+<li>
+<p>性质与重要公式</p>
+</li>
+<li>
+<p>用伴随矩阵求可逆矩阵的逆矩阵
+</p>
+$$
+      A^{-1} = \frac{1}{|A|}A^*
+      $$</li>
+<li>
+<p>求伴随矩阵的方法</p>
+</li>
+</ol>
+</li>
+<li>
+<p>初等变换与初等矩阵</p>
+<ol>
+<li>初等变换</li>
+<li>初等矩阵的定义</li>
+<li>初等矩阵的性质与重要公式</li>
+<li>用初等变换求逆矩阵的方法</li>
+<li>行阶梯型矩阵与行最简梯形矩阵</li>
+<li>简单分块矩阵的逆</li>
+</ol>
+</li>
+<li>
+<p>矩阵方程</p>
+</li>
+<li>
+<p>等价矩阵和矩阵的等价标准型</p>
+</li>
+<li>
+<p>矩阵的秩</p>
+<ol>
+<li>
+<p>定义</p>
+</li>
+<li>
+<p>求法</p>
+</li>
+<li>
+<p>有关秩的重要式子
+</p>
+$$
+      0\leq r(A)\leq \min\{m,n\}
+      $$$$
+      r(kA) = r(A)(k\neq0)
+      $$$$
+      r(AB)\leq\min\{r(A),r(B)\}
+      $$$$
+      r(A+B)\leq r(A) + r(B)
+      $$<p>$$
+r(A)=\begin{cases}
+n,r(A)=n\
+1,r(A)=n-1\
+0,r(A)&lt;n-1</p>
+<p>\end{cases}
+$$</p>
+$$
+      r(A) = r(PA) = r(AQ) = r(PAQ)
+      $$<p>这里$P$，$Q$为可逆矩阵
+</p>
+$$
+      A_{m\times n}B_{n\times s} = O \Rightarrow r(A) + r(B) \leq n
+      $$$$
+      r(A) = r(A^T) = r(AA^T)=r(A^TA)
+      $$</li>
+</ol>
+</li>
+</ol>
+<h2 id="马克思主义">马克思主义
+</h2><ol>
+<li>矛盾的同一性与斗争性及其在事物发展中的作用
+<ol>
+<li>含义</li>
+<li>两种基本属性
+<ol>
+<li>同一性</li>
+<li>斗争性</li>
+</ol>
+</li>
+<li>矛盾的同一性和斗争性的辩证关系</li>
+<li>矛盾是事物发展的动力</li>
+<li>矛盾的同一性和斗争性辩证关系原理的方法论意义</li>
+<li>运用矛盾的同一性和斗争性辩证关系原理指导实践需要把握的两个问题</li>
+</ol>
+</li>
+<li>矛盾的普遍性和特殊性及其相互关系
+<ol>
+<li>矛盾的普遍性和特殊性的含义</li>
+<li>矛盾的不平衡性：主要矛盾和次要矛盾、矛盾的主要方面和次要方面
+<ol>
+<li>含义</li>
+<li>方法论意义</li>
+</ol>
+</li>
+<li>矛盾的普遍性和特殊性的辩证统一关系</li>
+<li>矛盾的普遍性和特殊性辩证关系原理的意义</li>
+</ol>
+</li>
+<li>量变质变规律
+<ol>
+<li>质、量、度的含义</li>
+<li>量变和质变的含义及其辩证关系
+<ol>
+<li>含义</li>
+<li>辩证关系</li>
+</ol>
+</li>
+<li>量变质变规律的方法论意义</li>
+</ol>
+</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/npee_learning_log.github.io/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89/">马克思主义</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">微分方程</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E5%B8%B8%E5%BE%AE%E5%88%86%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B/">常微分线性方程</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90/">微分算子</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E7%9F%9B%E7%9B%BE%E7%9A%84%E5%90%8C%E4%B8%80%E6%80%A7%E5%92%8C%E6%96%97%E4%BA%89%E6%80%A7/">矛盾的同一性和斗争性</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E7%9F%9B%E7%9B%BE%E7%9A%84%E6%99%AE%E9%81%8D%E6%80%A7%E5%92%8C%E7%89%B9%E6%AE%8A%E6%80%A7/">矛盾的普遍性和特殊性</a>
+        
+            <a href="/npee_learning_log.github.io/tags/%E9%87%8F%E5%8F%98%E8%B4%A8%E5%8F%98%E8%A7%84%E5%BE%8B-/">量变质变规律 </a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0911/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0911学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/memo/0830/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0830学习笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0817/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0817学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0816/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0816学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/npee_learning_log.github.io/posts/0807/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">0807学习日志</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="AuroraEmiya/npee_learning_log.github.io"
+    data-repo-id="R_kgDOPKrKPw"
+    data-category="Comments"
+    data-category-id="DIC_kwDOPKrKP84CuLn2"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading=""
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 shyの考研日志
+    </section>
+    
+    <section class="powerby">
+        
+            Blogroll：<a href="https://void-island-site.vercel.app/">舍友的雾岛电台</a>  ,<a href="https://starrydreamawa.github.io/hugo-stack.github.io">然然の时间记录站</a> <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/npee_learning_log.github.io/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+        
+    </body>
+</html>
