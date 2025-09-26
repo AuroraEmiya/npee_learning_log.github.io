@@ -6,7 +6,81 @@
         <description>Recent content in Log on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Thu, 25 Sep 2025 22:39:01 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 26 Sep 2025 21:45:15 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/categories/log/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>0926学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0926/</link>
+        <pubDate>Fri, 26 Sep 2025 21:45:15 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0926/</guid>
+        <description>&lt;h2 id=&#34;数学-无穷级数&#34;&gt;数学-无穷级数
+&lt;/h2&gt;&lt;p&gt;听得我脑子膨胀说是。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;常数项级数的概念与性质
+&lt;ol&gt;
+&lt;li&gt;引例&lt;/li&gt;
+&lt;li&gt;概念及其敛散性&lt;/li&gt;
+&lt;li&gt;性质
+&lt;ol&gt;
+&lt;li&gt;收敛级数的线性组合仍然收敛&lt;/li&gt;
+&lt;li&gt;改变级数的有限项，不会改变敛散性&lt;/li&gt;
+&lt;li&gt;收敛级数的项任意加括号后所得的新级数仍收敛，且其和不变&lt;/li&gt;
+&lt;li&gt;若$\sum\limits_{n=1}^{\infty}u_n$收敛，则$\lim\limits_{n\to\infty}u_n=0$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;级数敛散性的判别方法
+&lt;ol&gt;
+&lt;li&gt;正项级数及其敛散性判别
+&lt;ol&gt;
+&lt;li&gt;收敛原则&lt;/li&gt;
+&lt;li&gt;比较判别法&lt;/li&gt;
+&lt;li&gt;比较判别法的极限形式（无穷小比阶）&lt;/li&gt;
+&lt;li&gt;比值判别法（达朗贝尔判别法）&lt;/li&gt;
+&lt;li&gt;根值判别法（柯西判别法）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;交错级数及其敛散性判别
+&lt;ul&gt;
+&lt;li&gt;莱布尼茨判别法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;任意项级数及其敛散性判别（绝对值判别法）
+&lt;ol&gt;
+&lt;li&gt;绝对收敛&lt;/li&gt;
+&lt;li&gt;条件收敛&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;幂级数及其收敛域
+&lt;ol&gt;
+&lt;li&gt;概念
+&lt;ol&gt;
+&lt;li&gt;函数项级数&lt;/li&gt;
+&lt;li&gt;幂级数&lt;/li&gt;
+&lt;li&gt;收敛点域发散点&lt;/li&gt;
+&lt;li&gt;收敛域&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;阿贝尔定理&lt;/li&gt;
+&lt;li&gt;收敛半径&lt;/li&gt;
+&lt;li&gt;收敛域的求法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;幂级数求和
+&lt;ol&gt;
+&lt;li&gt;概念&lt;/li&gt;
+&lt;li&gt;运算法则&lt;/li&gt;
+&lt;li&gt;恒等变形方式&lt;/li&gt;
+&lt;li&gt;性质&lt;/li&gt;
+&lt;li&gt;重要展开式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>0925学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0925/</link>
         <pubDate>Thu, 25 Sep 2025 22:39:01 +0800</pubDate>
@@ -238,7 +312,7 @@ $$
         <item>
         <title>0918学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0918/</link>
-        <pubDate>Fri, 19 Sep 2025 19:43:20 +0800</pubDate>
+        <pubDate>Thu, 18 Sep 2025 19:43:20 +0800</pubDate>
         
         <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0918/</guid>
         <description>&lt;h2 id=&#34;计算机网络&#34;&gt;计算机网络
@@ -541,7 +615,7 @@ $$
         <item>
         <title>0916学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0916/</link>
-        <pubDate>Wed, 17 Sep 2025 23:42:18 +0800</pubDate>
+        <pubDate>Tue, 16 Sep 2025 23:42:18 +0800</pubDate>
         
         <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0916/</guid>
         <description>&lt;h2 id=&#34;计算机网络-网络层&#34;&gt;计算机网络-网络层
@@ -734,7 +808,7 @@ $$
         <item>
         <title>0915学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0915/</link>
-        <pubDate>Wed, 17 Sep 2025 23:42:14 +0800</pubDate>
+        <pubDate>Mon, 15 Sep 2025 23:42:14 +0800</pubDate>
         
         <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0915/</guid>
         <description>&lt;h2 id=&#34;计算机网络&#34;&gt;计算机网络
@@ -1071,7 +1145,7 @@ $$
         <item>
         <title>0914学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0914/</link>
-        <pubDate>Wed, 17 Sep 2025 23:42:11 +0800</pubDate>
+        <pubDate>Sun, 14 Sep 2025 23:42:11 +0800</pubDate>
         
         <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0914/</guid>
         <description>&lt;h2 id=&#34;计算机网络-数据链路层&#34;&gt;计算机网络-数据链路层
@@ -1249,114 +1323,6 @@ $$
 </description>
         </item>
         <item>
-        <title>0913学习日志</title>
-        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0913/</link>
-        <pubDate>Sun, 14 Sep 2025 00:58:10 +0800</pubDate>
-        
-        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0913/</guid>
-        <description>&lt;h2 id=&#34;计算机网络物理层&#34;&gt;计算机网络&amp;ndash;物理层
-&lt;/h2&gt;&lt;h3 id=&#34;通信概念&#34;&gt;通信概念
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;基本概念&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;数据、信号与码元&lt;/li&gt;
-&lt;li&gt;信源、信道与信宿&lt;/li&gt;
-&lt;li&gt;单向通信、半双工与全双工通信&lt;/li&gt;
-&lt;li&gt;速率、波特与带宽
-&lt;ol&gt;
-&lt;li&gt;码元传输速率&lt;/li&gt;
-&lt;li&gt;信息传输速率&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;信道的极限容量&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;奈奎斯特定理（奈氏准测）&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;理想低通信道下的极限码元传输速率
-&lt;/p&gt;
-$$
-         2W
-         $$&lt;p&gt;
-对应的数据传输速率
-&lt;/p&gt;
-$$
-         2W\log_2V
-         $$&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;香农定理&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;带宽受限且有高斯噪声干扰&lt;/strong&gt;的信道的极限数据传输速率
-&lt;/p&gt;
-$$
-          W\log_2(1+\frac{S}{N})
-         $$&lt;p&gt;
-其中
-&lt;/p&gt;
-$$
-         1dB = 10 \lg\frac{S}{N}
-         $$&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;编码与调制&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;数字数据编码为数字信号
-&lt;ol&gt;
-&lt;li&gt;不归零数据&lt;/li&gt;
-&lt;li&gt;归零编码&lt;/li&gt;
-&lt;li&gt;反向非归零编码&lt;/li&gt;
-&lt;li&gt;曼彻斯特编码&lt;/li&gt;
-&lt;li&gt;差分曼彻斯特编码&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;模拟数据编码为数字信号&lt;/li&gt;
-&lt;li&gt;数字数据调制为模拟信号
-&lt;ul&gt;
-&lt;li&gt;调幅AM&lt;/li&gt;
-&lt;li&gt;调频FM&lt;/li&gt;
-&lt;li&gt;调相PM&lt;/li&gt;
-&lt;li&gt;正交幅度调制QAM&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;模拟数据调制为模拟信号&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;传输介质&#34;&gt;传输介质
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;传输介质
-&lt;ol&gt;
-&lt;li&gt;双绞线&lt;/li&gt;
-&lt;li&gt;同轴电缆&lt;/li&gt;
-&lt;li&gt;光纤&lt;/li&gt;
-&lt;li&gt;无线传输介质&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;物理层接口的特性
-&lt;ol&gt;
-&lt;li&gt;机械特性&lt;/li&gt;
-&lt;li&gt;电气特性&lt;/li&gt;
-&lt;li&gt;功能特性&lt;/li&gt;
-&lt;li&gt;过程特性&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;物理层设备
-&lt;ol&gt;
-&lt;li&gt;中继器&lt;/li&gt;
-&lt;li&gt;集线器（Hub）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        </item>
-        <item>
         <title>0912 学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0912/</link>
         <pubDate>Sun, 14 Sep 2025 00:40:32 +0800</pubDate>
@@ -1487,6 +1453,114 @@ $$
 &lt;/ol&gt;
 &lt;h3 id=&#34;&#34;&gt;
 &lt;/h3&gt;</description>
+        </item>
+        <item>
+        <title>0913学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0913/</link>
+        <pubDate>Sat, 13 Sep 2025 00:58:10 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0913/</guid>
+        <description>&lt;h2 id=&#34;计算机网络物理层&#34;&gt;计算机网络&amp;ndash;物理层
+&lt;/h2&gt;&lt;h3 id=&#34;通信概念&#34;&gt;通信概念
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;基本概念&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;数据、信号与码元&lt;/li&gt;
+&lt;li&gt;信源、信道与信宿&lt;/li&gt;
+&lt;li&gt;单向通信、半双工与全双工通信&lt;/li&gt;
+&lt;li&gt;速率、波特与带宽
+&lt;ol&gt;
+&lt;li&gt;码元传输速率&lt;/li&gt;
+&lt;li&gt;信息传输速率&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;信道的极限容量&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;奈奎斯特定理（奈氏准测）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;理想低通信道下的极限码元传输速率
+&lt;/p&gt;
+$$
+         2W
+         $$&lt;p&gt;
+对应的数据传输速率
+&lt;/p&gt;
+$$
+         2W\log_2V
+         $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;香农定理&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;带宽受限且有高斯噪声干扰&lt;/strong&gt;的信道的极限数据传输速率
+&lt;/p&gt;
+$$
+          W\log_2(1+\frac{S}{N})
+         $$&lt;p&gt;
+其中
+&lt;/p&gt;
+$$
+         1dB = 10 \lg\frac{S}{N}
+         $$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编码与调制&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;数字数据编码为数字信号
+&lt;ol&gt;
+&lt;li&gt;不归零数据&lt;/li&gt;
+&lt;li&gt;归零编码&lt;/li&gt;
+&lt;li&gt;反向非归零编码&lt;/li&gt;
+&lt;li&gt;曼彻斯特编码&lt;/li&gt;
+&lt;li&gt;差分曼彻斯特编码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;模拟数据编码为数字信号&lt;/li&gt;
+&lt;li&gt;数字数据调制为模拟信号
+&lt;ul&gt;
+&lt;li&gt;调幅AM&lt;/li&gt;
+&lt;li&gt;调频FM&lt;/li&gt;
+&lt;li&gt;调相PM&lt;/li&gt;
+&lt;li&gt;正交幅度调制QAM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;模拟数据调制为模拟信号&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;传输介质&#34;&gt;传输介质
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;传输介质
+&lt;ol&gt;
+&lt;li&gt;双绞线&lt;/li&gt;
+&lt;li&gt;同轴电缆&lt;/li&gt;
+&lt;li&gt;光纤&lt;/li&gt;
+&lt;li&gt;无线传输介质&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;物理层接口的特性
+&lt;ol&gt;
+&lt;li&gt;机械特性&lt;/li&gt;
+&lt;li&gt;电气特性&lt;/li&gt;
+&lt;li&gt;功能特性&lt;/li&gt;
+&lt;li&gt;过程特性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;物理层设备
+&lt;ol&gt;
+&lt;li&gt;中继器&lt;/li&gt;
+&lt;li&gt;集线器（Hub）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
         </item>
         <item>
         <title>0911学习日志</title>
