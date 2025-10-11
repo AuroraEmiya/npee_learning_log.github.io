@@ -6,7 +6,204 @@
         <description>Recent content on shyの考研日志</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 26 Sep 2025 21:45:15 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 11 Oct 2025 23:17:48 +0800</lastBuildDate><atom:link href="https://auroraemiya.github.io/npee_learning_log.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>1011学习日志</title>
+        <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/1011/</link>
+        <pubDate>Sat, 11 Oct 2025 23:17:48 +0800</pubDate>
+        
+        <guid>https://auroraemiya.github.io/npee_learning_log.github.io/posts/1011/</guid>
+        <description>&lt;h2 id=&#34;数学-概率论&#34;&gt;数学-概率论
+&lt;/h2&gt;&lt;h3 id=&#34;多维随机变量及其分布&#34;&gt;多维随机变量及其分布
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;n维随机变量及其分布函数&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;n维随机变量的概念&lt;/li&gt;
+&lt;li&gt;n维随机变量的分布函数的概念和性质
+&lt;ol&gt;
+&lt;li&gt;概念&lt;/li&gt;
+&lt;li&gt;性质
+&lt;ol&gt;
+&lt;li&gt;单调性&lt;/li&gt;
+&lt;li&gt;右连续性&lt;/li&gt;
+&lt;li&gt;有界性&lt;/li&gt;
+&lt;li&gt;非负性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;边缘分布函数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;常见的两类二维随机变量&amp;ndash;离散型随机变量与连续型随机变量&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;二维离散型随机变量的概率分布、边缘分布和条件分布&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;概率分布
+&lt;/p&gt;
+$$
+         p_y = P\{X=x_i,Y=y_i\},i,j = 1,2,...
+         $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;联合分布函数、边缘分布、条件分布&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;联合分布函数
+&lt;/p&gt;
+$$
+            F(x,y)=P\{X\leq x,Y\leq y\} = \sum\limits_{x_i\leq x}\sum\limits_{y_i\leq y}p_{ij}
+            $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;边缘分布
+&lt;/p&gt;
+$$
+            p_{i\cdot} = P\{X=x_i\}=\sum_{j=1}^{\infty}P\{X=x_i,Y=y_j\}=\sum\limits_{j=1}^{\infty}p_{ij}(i=1,2,...)
+            $$$$
+            p_{\cdot j} = P\{Y=y_i\}=\sum_{i=1}^{\infty}P\{X=x_i,Y=y_j\}=\sum\limits_{i=1}^{\infty}p_{ij}(i=1,2,...)
+            $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;条件分布
+&lt;/p&gt;
+$$
+            P\{X=x_i|Y=y_j\}=\frac{P\{X=x_i,Y=y_j\}}{P\{Y=y_j\}}=\frac{p_{ij}}{p_{\cdot j}}
+            $$$$
+            P\{Y=y_j|X=x_i\}=\frac{P\{X=x_i,Y=y_j\}}{P\{X=x_i\}}=\frac{p_{ij}}{p_{i\cdot }}
+            $$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;二维连续型随机变量的概率密度、边缘概率密度和条件概率密度&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;概率密度&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;概念
+&lt;/p&gt;
+$$
+            F(x,y)=\int_{-\infty}^{y}dv\int_{-\infty}^{x}f(u,v)du,(x,y)\in\mathbf{R}^2
+            $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;二元函数$f(x,y)$是概率密度的充分必要条件为
+&lt;/p&gt;
+$$
+            f(x,y)\geq 0,\int_{-\infty}^{+\infty}dy\int_{-\infty}^{+\infty}f(x,y)dx = 1
+            $$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;联合分布函数与概率密度、边缘概率密度、条件概率密度&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;联合分布函数与概率密度&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;$F(x,y)$为$(x,y)$的二元连续函数，且
+&lt;/p&gt;
+$$
+               F(x,y) = P\{X\leq x,Y\leq y\} = \int_{-\infty}^{y}dv\int_{-\infty}^{x}f(u,v)du
+               $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;设G为平面上某个区域，则
+&lt;/p&gt;
+$$
+               P\{(x,y)\in G\} = \iint\limits_{G}f(x,y)dxdy
+               $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;若$f(x,y)$在点$(x,y)$处连续，则$\dfrac{\partial^2F(x,y)}{\partial x \partial y}$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;若$F(x,y)$连续且可导，则$(X,Y)$是连续型随机变量，且$\dfrac{\partial^2F(x,y)}{\partial x \partial y}$是它的概率密度&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;边缘概率密度&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;条件概率密度
+&lt;/p&gt;
+$$
+            f_{Y|X}(y|x) = \frac{f(x,y)}{f_X(x)}
+            $$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;常见的二维分布&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;二维均匀分布&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;二维正态分布&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;若$(X_1,X_2)\sim N(\mu_1,\mu_2;\sigma_1^2,\sigma_2^2;\rho)$,则
+&lt;/p&gt;
+$$
+               X_1\sim N(\mu_1,\sigma_1^2),X_2\sim N(\mu_2,\sigma_2^2)
+               $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;若$X_1\sim N(\mu_1,\sigma_1^2),X_2\sim N(\mu_2,\sigma_2^2)$,且$X_1,X_2$相互独立，则
+&lt;/p&gt;
+$$
+               (X_1,X_2)\sim N(\mu_1,\mu_2;\sigma_1^2,\sigma_2^2;0)
+               $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$(X_1,X_2)\sim N\Rightarrow k_1X_1+ k_2X_2 \sim N(k_1 , k_2\text{不全为零})$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;随机变量的相互独立性&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;概念&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;设二维随机变量$(X,Y)$的分布函数$F(x,y)$，边缘分布函数分别为$F_X(x),F_Y(y)$，如果对任意的实数$x,y$,都有
+&lt;/p&gt;
+$$
+         F(x,y)=F_X(x)\cdot F_Y(y)
+         $$&lt;p&gt;
+则称$X$与$Y$相互独立，否则不相互独立&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果$n$维随机变量$(X_1,X_2,\cdots,X_n)$的分布函数等于边缘分布函数的乘积，即
+&lt;/p&gt;
+$$
+         F(x_1,x_2,\cdots,x_n) = F_1(x_1)F_2(x_2)\cdots F_n(x_n)
+         $$&lt;p&gt;
+则称$X_1,X_2,\cdots,X_n$相互独立&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;相互独立的充要条件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;相互独立的性质&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$X$与$Y$不独立的判断与证明&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>0926学习日志</title>
         <link>https://auroraemiya.github.io/npee_learning_log.github.io/posts/0926/</link>
         <pubDate>Fri, 26 Sep 2025 21:45:15 +0800</pubDate>
